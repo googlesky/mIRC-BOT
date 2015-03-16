@@ -1,0 +1,173 @@
+alias War {
+  var %GameMini 1,1 00,04C00,01a00,04s00,01i00,04n00,01o00,04 00,01W00,04a00,01r12,04 
+  .timercasinowar1 1 2 describeVC %r 2=-=-=3*4°12*3°4*12°3*2[ $InsertBC(%GameMini) 2]3*12°4*3°12*4°3*2=-=-=
+  .timercasinowar2 1 4 set %war on
+  .timercasinowar4 1 4 describeVC %r $InsertSymbol(1,Gõ 8-=[ 11 $+ $InsertBC(!War) $+  4<Tìên> 8]=- ðê² tham gia choi 07Casino 07War00, các ban có 1140s ðê² ðåt tìên cho ván bài !!!)
+  .timercasinowar6 1 44 set %war off
+  .timercasinowar7 1 46 describeVC %r 11,1 Thòi gian ðåt tìên ðã hê´t !!! Ðåt xong lâý cái tay ra nha !!! ba('t dda^u` cho+i nà !!! 
+  .timercasinowar8 1 46 War_Play
+}
+on 1:TEXT:!War *:%r: {
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chua Ðång ký , Ðê² ðång ký choi game , 8Gõ 11/msg $me 4!register <pass1> <pass2> | .ignore -u5 $nick }
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) != $null) && ($level($nick) < 3) { noticeVC $nick 4,01 $+ $nick 9,01Chua Login , 13/msg $me !identify <pass> , 9Ðê² choi Games | .ignore -u5 $nick }
+  if ($level($nick) >= 3) && ($ChkBet($nick,$2) == True) {
+    if (%war == on) {
+      if ($2 > $coidiem(diem,$nick)) { noticeVC $nick 12* $nick không ðu² tiê`n ðåt | halt }
+      else {
+        if ($2 isnum) {         
+          writeini hethong\CasinoWar.txt CasinoWar $nick $int($calc($2))
+          ghidiem diem $nick $int($calc($coidiem(diem,$nick) - $2))
+          describeVC %r 12* 8,1 $nick  12ðã ðåt tìên choi War là: 04,01 $ $+ $tien($2) 
+          .ignore $nick
+        }
+        else noticeVC $nick 12Ban ðåt sai rôì, Gõ 8,1-=[11 !War 4< $+ 4 500 - $money($checkProperty($nick)) > 8]=-
+      }
+    }
+  }
+}
+alias War_Play {
+  ignore -r
+  if ($lines(hethong\CasinoWar.txt) >= 2) {
+    set %lines 2
+    War_Player
+  }
+  else {
+    .timercasinowar10 1 2 describeVC %r 0,12 Không có ai tham gia choi War. Hen các ban vào lâ`n sau 
+    .timercasinowar11 1 %quacau choigame
+  }
+}
+alias War_Player {
+  :player
+  .timerngung off
+  var %item = $read(hethong\CasinoWar.txt, %lines)
+  var %nick = $uw(%item,1,=) $uw(%item,2,=)
+  if (%lines <= $lines(hethong\CasinoWar.txt)) {
+    if (%item == $null) || (%nick == $null) { inc %lines | goto player }
+    War_Player_RutBai %nick
+  }
+  else War_Bot_RutBai $me
+}
+alias War_Player_RutBai {
+  ;tokenize 32 $1-
+  ;echo -a $2 --- $1
+  .timercasinowar2 $+ $calc($rand(1000,9999) + %line) 1 2 describeVC %r 0,15*8,1 Player 0,15*9,1 $1 0,15*04,01 08$ $+ $tien($2) 
+  .timercasinowar2 $+ $calc($rand(1000,9999) + %line + 1) 1 4 describeVC %r $InsertSymbol(1,Gõ 04!Rut 08<1-52> ðê² rút lá bài mà ban mong muô'n)
+  .timercasinowar2 $+ $calc($rand(1000,9999) + %line + 2) 1 6 describeVC %r $InsertSymbol(1,Ban có 0415s ðê² rút bài!!!)
+  .timercasinowar2 $+ $calc($rand(1000,9999) + %line + 3) 1 2 set %nickrut $1
+  .timercasinowar2 $+ $calc($rand(1000,9999) + %line + 4) 1 17 War_Rut $1
+}
+on *:TEXT:!Rut *:%r: {
+  if (%nickrut == $nick) {
+    if ($2 isnum 1 - 52) {
+      var %baiduocrut
+      if ($2 < 10) { 
+        %baiduocrut = 0 $+ $2
+      }
+      else { %baiduocrut = $2 }
+      if (%war.baiduocrut != $null) {
+        if (%baiduocrut isin %war.baiduocrut) {
+          noticeVC $nick 0,1Lá bài này ðã ðuoc rút. Vui lòng chon lá bài khác.
+        }
+        else {
+          set %war.baiduocrut %war.baiduocrut $+ . $+ %baiduocrut
+          War_Player_KetQuaRut $nick
+          unset %nickrut
+          set %darut. [ $+ [ $nick ] ] $nick
+          .timerngung1 off
+        }
+      }
+      if (%war.baiduocrut == $null) {
+        set %war.baiduocrut %baiduocrut
+        War_Player_KetQuaRut $nick
+        unset %nickrut
+        set %darut. [ $+ [ $nick ] ] $nick
+        .timerngung1 off
+      }
+    }
+    else noticeVC $nick 12Ban rút sai rôì, Gõ 8,1-=[11 !Rut 4<1-52> 8]=-
+  }
+  else { noticeVC $nick 11,1 Chua ðê´n luot ban rút bài! }
+}
+alias War_Rut {
+  .timerngung1 off
+  if (%darut. [ $+ [ $1 ] ] == $null) {
+    describeVC %r 3Player:4 $1 3ðã không rút bài nên bi mâ´t luot
+    unset %nickrut
+    inc %lines 1
+    set %matluot. [ $+ [ $1 ] ] true
+    War_Player
+  }
+  else {
+    inc %lines 1
+    War_Player
+  }
+}
+alias War_Player_KetQuaRut {
+  var %item = $dealer(war)
+  set %labai. [ $+ [ $1 ] ] $uw(%item,1,=)
+  var %point.labai = $strip($uw(%item,1,=))
+  if (%point.labai == J) { %point.labai = 11 }
+  if (%point.labai == Q) { %point.labai = 12 }
+  if (%point.labai == K) { %point.labai = 13 }
+  if (%point.labai == A) { %point.labai = 14 }
+  set %point. [ $+ [ $1 ] ] %point.labai
+  .timercasinowar $+ $rand(100000,999999) 1 1 describeVC %r 3Lá bài cu²a: 4 $+ $1 3rút ðuoc là:  $+ %labai. [ $+ [ $1 ] ]
+}
+alias War_Player_KetThuc {
+  inc %lines 1
+  War_Player
+}
+alias War_Bot_RutBai {
+  var %item = $dealer(war)
+  if (%botWar) { set %labai. [ $+ [ $1 ] ] $iif($r(0,1) == 0,01,04) $+ %botWar | var %point.labai = %botWar | unset %botWar }
+  else { set %labai. [ $+ [ $1 ] ] $uw(%item,1,=) |  var %point.labai = $strip($uw(%item,1,=)) }
+  if (%point.labai == J) { %point.labai = 11 }
+  if (%point.labai == Q) { %point.labai = 12 }
+  if (%point.labai == K) { %point.labai = 13 }
+  if (%point.labai == A) { %point.labai = 14 }
+  set %point. [ $+ [ $1 ] ] %point.labai
+  .timercasinowar $+ $rand(100000,999999) 1 2 describeVC %r 0,15*8,1 Bot 0,15*9,1 $1 0,15*
+  .timercasinowar $+ $rand(100000,999999) 1 4 describeVC %r 3Lá bài cu²a: 4 $+ $1 3rút ðuoc là:  $+ %labai. [ $+ [ $1 ] ]
+  .timercasinowar $+ $rand(100000,999999) 1 6 describeVC %r 12Tô²ng kê´t Casino War
+  .timercasinowar $+ $rand(100000,999999) 1 6 War_TongKet
+}
+alias War_TongKet {
+  var %line = 2
+  var %point.bot = %point. [ $+ [ $me ] ]
+  var %post.bot = %post. [ $+ [ $me ] ]
+  :tongketwar
+  if (%line <= $lines(hethong\CasinoWar.txt)) {
+    var %item = $read(hethong\CasinoWar.txt, %line)
+    var %nick = $uw(%item,1,=)
+    var %bonus = $uw(%item,2,=)
+    if (%item == $null) { inc %line | goto tongketwar }
+    var %point.player = %point. [ $+ [ %nick ] ]
+    var %post.player = %post. [ $+ [ %nick ] ] 
+    if (%darut. [ $+ [ %nick ] ] != $null) {
+      if (%point.bot > %point.player) {
+        .timercasinowar $+ $calc($rand(1000000,9999999) + %line) 1 $calc(%line * 2 - 2) describeVC %r 3Player: 4 $+ %nick 3rút ðuoc lá bài:  $+ %labai. [ $+ [ %nick ] ] $+ 3 - Thua sô' tiê`n: 04,01$ $+ $tien(%bonus) $+  $+ 3 Tài sa²n: 04,01$ $+ $tien($coidiem(diem,%nick))
+      }
+      if (%point.bot < %point.player) {
+        var %bonus2 = $calc(%bonus * 2)
+        ghidiem diem %nick $int($calc($coidiem(diem,%nick) + %bonus2))
+        .timercasinowar $+ $calc($rand(1000000,9999999) + %line) 1 $calc(%line * 2 - 2) describeVC %r 3Player: 4 $+ %nick 3rút ðuoc lá bài:  $+ %labai. [ $+ [ %nick ] ] $+ 3 - Thå´ng sô' tiê`n: 04,01$ $+ $tien(%bonus) $+  $+ 3 Tài sa²n: 04,01$ $+ $tien($coidiem(diem,%nick))
+      }
+      if (%point.bot == %point.player) {
+        var %bonus2 = $calc(%bonus * 3)
+        ghidiem diem %nick $int($calc($coidiem(diem,%nick) + %bonus2))
+        .timercasinowar $+ $calc($rand(1000000,9999999) + %line) 1 $calc(%line * 2 - 2) describeVC %r 3Player: 4 $+ %nick 3rút ðuoc lá bài:  $+ %labai. [ $+ [ %nick ] ] $+ 3 - Thå´ng sô' tiê`n: 04,01$ $+ $tien(%bonus2) $+  $+ 3 Tài sa²n: 04,01$ $+ $tien($coidiem(diem,%nick))
+      }
+    }
+    if (%darut. [ $+ [ %nick ] ] == $null) {
+      .timercasinowar $+ $calc($rand(1000000,9999999) + %line) 1 $calc(%line * 2 - 2) describeVC %r 3Player: 4 $+ %nick 3mâ´t luot - Thua sô' tiê`n: 04,01$ $+ $tien(%bonus) $+  $+ 3 Tài sa²n: 04,01$ $+ $tien($coidiem(diem,%nick))
+    }
+    inc %line | goto tongketwar
+  }
+  .timercasinowar $+ $rand(10000000,99999999) 1 $calc(%line * 2 - 2) War_End
+}
+
+alias War_End {
+  unset %labai* %point* %post* %nick* %war* %tong* %line*  %darut* %matluot*
+  write -c hethong\CasinoWar.txt
+  .timerchoigame1 1 %quacau choigame
+}

@@ -1,0 +1,316 @@
+alias BaiCaoTo {
+  var %GameMini 1,1 00,04B00,01à00,04i01,01 00,04C00,01à00,04o01,01 00,04T00,01ô00,04´01,01
+  .timerbaicaoto 1 2 describeVC %r 2=-=-=3*4°12*3°4*12°3*2[ $InsertBC(%GameMini) 2]3*12°4*3°12*4°3*2=-=-=
+  .timerbaicaoto1 1 2 set %baicaoto on
+  .timerbaicaoto2 1 2 describeVC %r $InsertSymbol(1,Gõ 8-=[ 11 $+ $InsertBC(!Baicaoto) $+  4<Tìên> 8]=- ðê² tham gia choi 07Bài 07Cào 07Tô´00, các ban có 1140s ðê² ðåt tìên cho ván bài !!!)
+  .timerbaicaoto3 1 42 describeVC %r 11,1 Thòi gian ðåt tìên ðã hê´t !!! Ðåt xong lâý cái tay ra nha !!! khui bài nà !!! 
+  .timerbaicaoto4 1 42 set %baicaoto off
+  .timerbaicaoto5 1 44 BaiCaoTo_Play
+  halt
+}
+on *:TEXT:!BaiCaoTo *:%r: {
+  if (%baicaoto == on) {
+    if ($coidiem(diem,$nick) < $2) { noticeVC $nick 12* $nick không ðu² tiê`n ðåt | halt }
+    else {
+      ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chua Ðång ký , Ðê² ðång ký choi game , 8Gõ 11/msg $me 4!register <pass1> <pass2> | .ignore -u5 $nick }
+      ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) != $null) && ($level($nick) < 3) { noticeVC $nick 4,01 $+ $nick 9,01Chua Login , 13/msg $me !identify <pass> , 9Ðê² choi Games | .ignore -u5 $nick }
+      if ($level($nick) >= 3) && ($ChkBet($nick,$2) == True) {
+        if ($2 isnum) {
+          writeini hethong\BaiCaoTo.txt BaiCaoTo $nick $int($calc($2))
+          ghidiem diem $nick $int($calc($coidiem(diem,$nick) - $2))
+          describeVC %r 12* 9,1 $nick  12ðã ðåt tìên choi Bài Cào Tô´ là: 04,01$ $+ $tien($2)
+          .ignore -u15 $nick
+        }
+        else { noticeVC $nick 12Ban ðåt sai rôì, Gõ 8,1-=[11 !baicaoto 4< $rand(1000,10000) > 8]=- }
+      }
+    }
+  }
+}
+alias BaiCaoTo_Play {
+  if ($lines(hethong\BaiCaoTo.txt) >= 2) {
+    set %lines 2
+    BaiCaoTo_Bot
+  }
+  else {
+    .timerbaicaoto7 1 2 describeVC %r 0,12 Không có ai tham gia choi Bài Cào Tô´. Hen các ban vào lâ`n sau 
+    .timerbaicaoto8 1 %quacau choigame
+  }
+}
+alias BaiCaoTo_Bot {
+  var %lb1 = $dealer(card)
+  var %lb2 = $dealer(card)
+  set %baicaoto. [ $+ [ $me ] ] %lb1 %lb2
+  describeVC %r 0,15*8,1 Bot 0,15*9,1 $me 0,15* 15,0Có $lines(hethong\BaiCaoTo.txt) Gamer tham gia
+  .timerbaibot1 1 2 describeVC %r 3Bài bot:4 $me 3gô`m:13 %baicaoto. [ $+ [ $me ] ] 8,1*
+  .timerbaibot2 1 6 BaiCaoTo_Player
+}
+alias BaiCaoTo_Player {
+  :baiplayer
+  .timerngung off
+  if (%lines <= $lines(hethong\BaiCaoTo.txt)) {
+    var %item = $read(hethong\BaiCaoTo.txt, %lines)
+    var %nick = $uw(%item,1,=)
+    if (%item == $null) || (%nick == $null) { inc %lines | goto baiplayer }
+    BaiCaoTo_ChiaBaiPlayer %nick
+  }
+  else {
+    BaiCaoTo_ChiaBaiBotEnd $me
+  }
+}
+alias BaiCaoTo_ChiaBaiPlayer {
+  var %lb1 = $dealer(card)
+  var %lb2 = $dealer(card)
+  set %baicaoto. [ $+ [ $1 ] ] %lb1 %lb2 
+  describeVC %r 0,15*11,1 Player 0,15*0,1 $1 0,15*
+  .timerchiabaiplayer1 1 1 describeVC %r 3Bài cu²a: 4 $+ $1 3gô`m:13 %baicaoto. [ $+ [ $1 ] ] 8,1*
+  .timerchiabaiplayer2 1 2 describeVC %r 7Gõ12 !to <tìên> 7ðê² tô´ thêm tìên hoåc12 !khongto7 ðê² ngung
+  set %nick.to $1
+  .timerngung1 1 28 BaiCaoTo_KiemTraMatLuot $1
+}
+alias BaiCaoTo_KiemTraMatLuot {
+  unset %nick.to
+  .timerngung1 off
+  set %diembaicaoto. [ $+ [ $1 ] ] Under
+  describeVC %r 12Ðã hê´t thòi gian4 $1 12không làm gì hê´t.12 Ban bi mâ´t luot 
+  inc %lines 1
+  .timerdie 1 3 BaiCaoTo_Player
+}
+alias BaiCaoTo_ChiaBaiPlayerEnd {
+  .timerngung1 off
+  var %lb3 = $dealer(card)
+  var %bai.player = %baicaoto. [ $+ [ $1 ] ]
+  var %lb1 = $uw(%bai.player,1,$chr(32))
+  var %lb2 = $uw(%bai.player,2,$chr(32))
+  set %baicaoto. [ $+ [ $1 ] ] %lb1 %lb2 %lb3
+  var %diem.lb1 = $strip(%lb1)
+  var %diem.lb2 = $strip(%lb2)
+  var %diem.lb3 = $strip(%lb3)
+  if (%diem.lb1 == J) && (%diem.lb2 == J) && (%diem.lb3 == J) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == J) && (%diem.lb2 == J) && (%diem.lb3 == Q) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == J) && (%diem.lb2 == Q) && (%diem.lb3 == J) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == J) && (%diem.lb2 == J) && (%diem.lb3 == K) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == J) && (%diem.lb2 == K) && (%diem.lb3 == J) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == J) && (%diem.lb2 == K) && (%diem.lb3 == Q) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == J) && (%diem.lb2 == Q) && (%diem.lb3 == K) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == J) && (%diem.lb2 == Q) && (%diem.lb3 == Q) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == J) && (%diem.lb2 == K) && (%diem.lb3 == K) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == Q) && (%diem.lb2 == Q) && (%diem.lb3 == Q) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == Q) && (%diem.lb2 == J) && (%diem.lb3 == Q) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == Q) && (%diem.lb2 == Q) && (%diem.lb3 == J) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == Q) && (%diem.lb2 == J) && (%diem.lb3 == K) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == Q) && (%diem.lb2 == K) && (%diem.lb3 == J) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == Q) && (%diem.lb2 == K) && (%diem.lb3 == Q) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == Q) && (%diem.lb2 == Q) && (%diem.lb3 == K) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == Q) && (%diem.lb2 == J) && (%diem.lb3 == J) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == Q) && (%diem.lb2 == K) && (%diem.lb3 == K) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == K) && (%diem.lb2 == K) && (%diem.lb3 == K) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == K) && (%diem.lb2 == J) && (%diem.lb3 == Q) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == K) && (%diem.lb2 == Q) && (%diem.lb3 == J) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == K) && (%diem.lb2 == J) && (%diem.lb3 == K) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == K) && (%diem.lb2 == K) && (%diem.lb3 == J) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == K) && (%diem.lb2 == K) && (%diem.lb3 == Q) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == K) && (%diem.lb2 == Q) && (%diem.lb3 == K) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == K) && (%diem.lb2 == Q) && (%diem.lb3 == Q) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == K) && (%diem.lb2 == J) && (%diem.lb3 == J) { set %diembaicaoto. [ $+ [ $1 ] ] Ba Cào | .timerbaiplayerend 1 3 BaiCaoTo_BaiPlayer $1 | halt }
+  if (%diem.lb1 == A) %diem.lb1 = 1
+  if (%diem.lb2 == A) %diem.lb2 = 1
+  if (%diem.lb3 == A) %diem.lb3 = 1
+  if (%diem.lb1 == J) || (%diem.lb1 == Q) || (%diem.lb1 == K) { %diem.lb1 = 10 }
+  if (%diem.lb2 == J) || (%diem.lb2 == Q) || (%diem.lb2 == K) { %diem.lb2 = 10 }
+  if (%diem.lb3 == J) || (%diem.lb3 == Q) || (%diem.lb3 == K) { %diem.lb3 = 10 }
+  set %diembaicaoto. [ $+ [ $1 ] ] $calc((%diem.lb1 + %diem.lb2 + %diem.lb3) % 10)
+  .timertk 1 3 BaiCaoTo_BaiPlayer $1
+}
+alias BaiCaoTo_BaiPlayer {
+  unset %nick.to
+  var %diem.player
+  if (%diembaicaoto. [ $+ [ $1 ] ] == Ba Cào) { %diem.player1 = Ba Cào }
+  else {
+    var %diem.player = %diembaicaoto. [ $+ [ $1 ] ]
+    if (%diem.player == 0) %diem.player1 = Bù
+    if (%diem.player == 1) %diem.player1 = 1 nút
+    if (%diem.player == 2) %diem.player1 = 2 nút
+    if (%diem.player == 3) %diem.player1 = 3 nút
+    if (%diem.player == 4) %diem.player1 = 4 nút
+    if (%diem.player == 5) %diem.player1 = 5 nút
+    if (%diem.player == 6) %diem.player1 = 6 nút
+    if (%diem.player == 7) %diem.player1 = 7 nút
+    if (%diem.player == 8) %diem.player1 = 8 nút
+    if (%diem.player == 9) %diem.player1 = 9 nút
+  }
+  .timerbaiplayerend1 1 1 describeVC %r 3Bài cu²a: 4 $+ $1 3gô`m:13 %baicaoto. [ $+ [ $1 ] ] 3Ðiê²m:12 %diem.player1
+  .timerngung 1 5 BaiCaoTo_KetThuc
+}
+alias BaiCaoTo_KetThuc {
+  inc %lines 1
+  BaiCaoTo_Player
+}
+alias BaiCaoTo_ChiaBaiBotEnd {
+  describeVC %r 12Chuâ²n bi khui bài cu²a $me
+  if (%lb3.bot) { var %lb3 = $iif($r(0,1) == 0,01,04) $+ %lb3.bot | unset %lb3.bot }
+  else { var %lb3 = $dealer(card) }
+  var %bai.bot = %baicaoto. [ $+ [ $me ] ]
+  var %lb1 = $uw(%bai.bot,1,$chr(32))
+  var %lb2 = $uw(%bai.bot,2,$chr(32))
+  set %baicaoto. [ $+ [ $me ] ] %lb1 %lb2 %lb3
+  var %diem.lb1 = $strip(%lb1)
+  var %diem.lb2 = $strip(%lb2)
+  var %diem.lb3 = $strip(%lb3)
+  if (%diem.lb1 == J) && (%diem.lb2 == J) && (%diem.lb3 == J) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == J) && (%diem.lb2 == J) && (%diem.lb3 == Q) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == J) && (%diem.lb2 == Q) && (%diem.lb3 == J) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == J) && (%diem.lb2 == J) && (%diem.lb3 == K) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == J) && (%diem.lb2 == K) && (%diem.lb3 == J) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == J) && (%diem.lb2 == K) && (%diem.lb3 == Q) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == J) && (%diem.lb2 == Q) && (%diem.lb3 == K) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == J) && (%diem.lb2 == Q) && (%diem.lb3 == Q) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == J) && (%diem.lb2 == K) && (%diem.lb3 == K) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == Q) && (%diem.lb2 == Q) && (%diem.lb3 == Q) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == Q) && (%diem.lb2 == J) && (%diem.lb3 == Q) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == Q) && (%diem.lb2 == Q) && (%diem.lb3 == J) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == Q) && (%diem.lb2 == J) && (%diem.lb3 == K) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == Q) && (%diem.lb2 == K) && (%diem.lb3 == J) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == Q) && (%diem.lb2 == K) && (%diem.lb3 == Q) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == Q) && (%diem.lb2 == Q) && (%diem.lb3 == K) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == Q) && (%diem.lb2 == J) && (%diem.lb3 == J) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == Q) && (%diem.lb2 == K) && (%diem.lb3 == K) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == K) && (%diem.lb2 == K) && (%diem.lb3 == K) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == K) && (%diem.lb2 == J) && (%diem.lb3 == Q) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == K) && (%diem.lb2 == Q) && (%diem.lb3 == J) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == K) && (%diem.lb2 == J) && (%diem.lb3 == K) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == K) && (%diem.lb2 == K) && (%diem.lb3 == J) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == K) && (%diem.lb2 == K) && (%diem.lb3 == Q) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == K) && (%diem.lb2 == Q) && (%diem.lb3 == K) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == K) && (%diem.lb2 == Q) && (%diem.lb3 == Q) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == K) && (%diem.lb2 == J) && (%diem.lb3 == J) { set %diembaicaoto. [ $+ [ $me ] ] Ba Cào | .timerbaibotend 1 3 BaiCaoTo_BaiBot $1 | halt }
+  if (%diem.lb1 == A) %diem.lb1 = 1
+  if (%diem.lb2 == A) %diem.lb2 = 1
+  if (%diem.lb3 == A) %diem.lb3 = 1
+  if (%diem.lb1 == J) || (%diem.lb1 == Q) || (%diem.lb1 == K) { %diem.lb1 = 10 }
+  if (%diem.lb2 == J) || (%diem.lb2 == Q) || (%diem.lb2 == K) { %diem.lb2 = 10 }
+  if (%diem.lb3 == J) || (%diem.lb3 == Q) || (%diem.lb3 == K) { %diem.lb3 = 10 }
+  set %diembaicaoto. [ $+ [ $me ] ] $calc((%diem.lb1 + %diem.lb2 + %diem.lb3) % 10)
+  .timerbaibotend 1 3 BaiCaoTo_BaiBot $1
+}
+alias BaiCaoTo_BaiBot {
+  var %diem.bot
+  if (%diembaicaoto. [ $+ [ $me ] ] == Ba Cào) { %diem.bot1 = Ba Cào }
+  else {
+    var %diem.bot = %diembaicaoto. [ $+ [ $me ] ]
+    if (%diem.bot == 0) %diem.bot1 = Bù
+    if (%diem.bot == 1) %diem.bot1 = 1 nút
+    if (%diem.bot == 2) %diem.bot1 = 2 nút
+    if (%diem.bot == 3) %diem.bot1 = 3 nút
+    if (%diem.bot == 4) %diem.bot1 = 4 nút
+    if (%diem.bot == 5) %diem.bot1 = 5 nút
+    if (%diem.bot == 6) %diem.bot1 = 6 nút
+    if (%diem.bot == 7) %diem.bot1 = 7 nút
+    if (%diem.bot == 8) %diem.bot1 = 8 nút
+    if (%diem.bot == 9) %diem.bot1 = 9 nút
+  }
+  describeVC %r 0,15*8,1 Bot 0,15*9,1 $1 0,15*
+  .timerbaibotend1 1 2 describeVC %r 3Bài Bot:4 $1 3gô`m:13 %baicaoto. [ $+ [ $me ] ] 3Ðiê²m:12 %diem.bot1
+  .timerbaibotend2 1 7 BaiCaoTo_TongKet
+}
+alias BaiCaoTo_TongKet {
+  var %line = 2, %diem.nick, %tthua
+  :tongketbaicaoto
+  if (%line <= $lines(hethong\BaiCaoTo.txt)) {
+    var %item = $read(hethong\BaiCaoTo.txt, %line)
+    var %nick = $uw(%item,1,=)
+    var %tien = $uw(%item,2,=)
+    if (%item == $null) { %inc %line | goto tongketbaicaoto }
+    %diem.nick = %diembaicaoto. [ $+ [ %nick ] ]
+    var %tongket.diem.player
+    if (%diembaicaoto. [ $+ [ %nick ] ] == Under) { goto underdie }
+    if (%diembaicaoto. [ $+ [ %nick ] ] == Ba Cào) { %tongket.diem.player. [ $+ [ %nick ] ] = Ba Cào }
+    else {
+      var %diem.nick = %diembaicaoto. [ $+ [ %nick ] ]
+      if (%diem.nick == 0) %tongket.diem.player. [ $+ [ %nick ] ] = Bù
+      if (%diem.nick == 1) %tongket.diem.player. [ $+ [ %nick ] ] = 1 nút
+      if (%diem.nick == 2) %tongket.diem.player. [ $+ [ %nick ] ] = 2 nút
+      if (%diem.nick == 3) %tongket.diem.player. [ $+ [ %nick ] ] = 3 nút
+      if (%diem.nick == 4) %tongket.diem.player. [ $+ [ %nick ] ] = 4 nút
+      if (%diem.nick == 5) %tongket.diem.player. [ $+ [ %nick ] ] = 5 nút
+      if (%diem.nick == 6) %tongket.diem.player. [ $+ [ %nick ] ] = 6 nút
+      if (%diem.nick == 7) %tongket.diem.player. [ $+ [ %nick ] ] = 7 nút
+      if (%diem.nick == 8) %tongket.diem.player. [ $+ [ %nick ] ] = 8 nút
+      if (%diem.nick == 9) %tongket.diem.player. [ $+ [ %nick ] ] = 9 nút
+    }
+    if (%diembaicaoto. [ $+ [ $me ] ] == Ba Cào) {
+      if (%diem.nick == Ba Cào) {
+        %tthua = Hòa
+        ghidiem diem %nick $int($calc($coidiem(diem,%nick) + %tien))
+      }
+      else { %tthua = Thua }
+    }
+    else {
+      if (%diembaicaoto. [ $+ [ $me ] ] == %diem.nick) {
+        %tthua = Hòa
+        ghidiem diem %nick $int($calc($coidiem(diem,%nick) + %tien))
+      }
+      else {
+        if (%diembaicaoto. [ $+ [ $me ] ] < %diem.nick) || (%diem.nick == Ba Cào) {
+          %tthua = Thå´ng
+          ghidiem diem %nick $int($calc($coidiem(diem,%nick) + $calc(%tien * 2)))
+        }
+        else %tthua = Thua
+      }
+    }
+    :underdie
+    if (%diem.nick != Under) .timertongketbaicaoto $+ $r(1000,2) 1 $calc(%line * 2 - 2) describeVC %r 9,1 9 $+ %nick  12ðuoc: 04 $+ %tongket.diem.player. [ $+ [ %nick ] ] 12 $+ %tthua 4,1$ $+ $tien(%tien) $+ 12 - Tài sa²n: 4,1$ $+ $tien($coidiem(diem,%nick))
+    else .timertongketbaicaoto $+ $r(1000,2) 1 $calc(%line * 2 - 2) describeVC %r 9,1 9 $+ %nick  12bi mâ´t luot thua 4,1$ $+ $tien(%tien) $+ 12 - Tài sa²n: 4,1$ $+ $tien($coidiem(diem,%nick))
+    inc %line | goto tongketbaicaoto
+  }
+  else {
+    describeVC %r 12Ta mang bao tôi lô~i ... 3giò ðây ta không còn chi ... 12Xin hãy tránh xa kiê´p 4,4 ðo² 1,1ðen
+    .timerketthuc2 1 $calc(%line * 2 + %quacau) choigame
+    write -c hethong\BaiCaoTo.txt
+    unset %baicaoto* %line* %diem* %tongket*
+  }
+}
+on *:TEXT:!To *:%r: {
+  if (%nick.to == $nick) {
+    if ($2 > $coidiem(diem,$nick)) { noticeVC $nick 12* $nick không ðu² tiê`n ðåt | halt }
+    else {
+      if ($2 isnum) && ($ChkBet($nick,$2) == True) {
+        var %tien = $readini hethong\BaiCaoTo.txt BaiCaoTo $nick
+        var %tiento = $calc(%tien + $2)
+        writeini hethong\BaiCaoTo.txt BaiCaoTo $nick $int($calc(%tiento))
+        ghidiem diem $nick $int($calc($coidiem(diem,$nick) - $2))
+        describeVC %r 9,1 $nick 12 ðã tô´ thêm tìên choi Bài Cào Tô´ là 4,1$ $+ $tien($calc($2)) $+ 12 Tô²ng tìên choi: 4,1$ $+ $tien(%tiento)
+        .ignore $nick
+        unset %nick.to
+        BaiCaoTo_ChiaBaiPlayerEnd $nick
+        .timerngung1 off
+      }
+      else noticeVC $nick 12Tô´ sai rôì 8,1-=[11 !To 4< $+ $rand(10000,100000) $+ > 8]=-
+    }
+  }
+}
+
+on 1:TEXT:!khongto:%r: {
+  if (%nick.to == $nick) {
+    describeVC %r 9,1 $nick 12 ðã không tô´ thêm tìên nuã
+    .ignore $nick
+    BaiCaoTo_ChiaBaiPlayerEnd $nick
+    .timerngung1 off
+  }
+}
+
+alias BaiCaoTo_TraTien {
+  var %line = 2
+  :backbaicaoto
+  var %item = $read(hethong\BaiCaoTo.txt, %line)
+  var %nick = $uw(%item,1,=)
+  var %tien = $uw(%item,2,=)
+  if (%line <= $lines(hethong\BaiCaoTo.txt)) {
+    if (%item == $null) { inc %line | goto backBaiCaoTo }
+    ghidiem diem $nick $calc($coidiem(diem,$nick) + %tien)
+    inc %line | goto backbaicaoto
+  }
+  else {
+    .timerbbct11 1 5 describeVC %r 12Tìên Bài Cào Tô´ ðã ðuoc tra² lai
+  }
+  .timerababa 1 %quacau choigame
+}

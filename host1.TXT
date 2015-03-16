@@ -1,0 +1,329 @@
+alias host1 {
+  set %CmdChkTop on
+  if $read(BadNick.txt,w,$nick) { noticeVC $nick 4,1Xin lô~i! 0Nick 9 $+ $nick 0ðã bi câ´m choi games. | halt }
+  if ($level($nick) < 3) {
+    ghidiem diem $nick $calc($coidiem(Diem,$nick) + %cauhoi.diem + %luong)
+    ;%tinhgio.giay2 = $calc((($ticks - %tinhgio.batdau) / 1000) - 2))
+    %tinhgio.giay2 = $calc(($ticks - %tinhgio.batdau) / 1000)
+    var %wpm = $calc(($len($1-) * 60) / (%tinhgio.giay2 * 5))
+    ;ghiscore score $nick %wpm %tinhgio.giay2
+    if ($xemwpm(wpm,$nick) < %wpm) { ghiwpm wpm $nick %wpm }
+    if ($xemfast(fast,$nick) > %tinhgio.giay2) && ($xemfast(fast,$nick) != 0) { ghifast fast $nick %tinhgio.giay2 }
+    var %tiê`n = $coidiem(Diem,$nick)
+    if (%tiê`n == $null) { set %tiê`n 0 }
+    if (%tiê`n >= 0) { .set %chucvu Gà Con | .set %luong 0 }
+    if (%tiê`n >= 20000) { .set %chucvu Tân Binh | .set %luong 100 }
+    if (%tiê`n >= 50000) { .set %chucvu Binh Nhì | .set %luong 300 }
+    if (%tiê`n >= 100000) { .set %chucvu Binh Nhâ't | .set %luong 500 }
+    if (%tiê`n >= 1000000) { .set %chucvu Ha Si~ | .set %luong 700 }
+    if (%tiê`n >= 5000000) { .set %chucvu Trung Si~ | .set %luong 1200 }
+    if (%tiê`n >= 9000000) { .set %chucvu Thuong Si~ | .set %luong 1900 }
+    if (%tiê`n >= 19000000) { .set %chucvu Chuâ²n Úy | .set %luong 3300 }
+    if (%tiê`n >= 25000000) { .set %chucvu Thiêú Úy | .set %luong 3900 }
+    if (%tiê`n >= 32000000) { .set %chucvu Trung Úy | .set %luong 3900 }
+    if (%tiê`n >= 37000000) { .set %chucvu Thuong Úy | .set %luong 4400 }
+    if (%tiê`n >= 41000000) { .set %chucvu Ðai Úy | .set %luong 4800 }
+    if (%tiê`n >= 57000000) { .set %chucvu Thiêú Tá | .set %luong 5100 }
+    if (%tiê`n >= 63000000) { .set %chucvu Trung Tá | .set %luong 5800 }
+    if (%tiê`n >= 71000000) { .set %chucvu Thuong Tá | .set %luong 6400 }
+    if (%tiê`n >= 87000000) { .set %chucvu Ðai Tá | .set %luong 7700 }
+    if (%tiê`n >= 110000000) { .set %chucvu Chuâ²n Tuóng | .set %luong 8800 }
+    if (%tiê`n >= 190000000) { .set %chucvu Thiêú Tuóng | .set %luong 9300 }
+    if (%tiê`n >= 260000000) { .set %chucvu Trung Tuóng | .set %luong 10300 }
+    if (%tiê`n >= 310000000) { .set %chucvu Thuong Tuóng | .set %luong 12300 }
+    if (%tiê`n >= 490000000) { .set %chucvu Ðai Tuóng | .set %luong 16100 }
+    if (%tiê`n >= 660000000) { .set %chucvu Thiêú Soái | .set %luong 19600 }
+    if (%tiê`n >= 750000000) { .set %chucvu Nguyên Soái | .set %luong 21000 }
+    if (%tiê`n >= 920000000) { .set %chucvu Ðai Nguyên Soái | .set %luong 24500 }
+    if (%tiê`n >= 1200000000) { .set %chucvu SUPER MAN | .set %luong 27300 }
+    if (%last.winner == $nick) { inc %row }
+    if (%last.winner != $nick) { set %row 1 }
+    if ($r(0,1)=0) { describeVC %r $iif($r(0,1)=0, 3Chúc mùng:4, 3Nguòi thå´ng:4) %chucvu 12 $+ $nick $iif($r(0,1)=0, 3Tra² lòi ðúng:,3Ðáp án:) $+ $mahoa(%dapan1) $+ 3Thòi Gian:12 %tinhgio.giay2 3WPM:12 $mid(%wpm,1,6) 3Sô´ Câu Ðúng Liên Tíêp:12 %row 3Kiê´m Ðuoc: 12$ $+ $tien(%cauhoi.diem) 3Luong: 12$ $+ $tien(%luong) 3Tài sa²n 06$ $+ $tien($coidiem(Diem,$nick)) }
+    else { describeVC %r $iif($r(0,1)=0, 3Tra² lòi ðúng:,3Ðáp án:) $+ $mahoa(%dapan1) $+ $iif($r(0,1)=0, 3Chúc mùng:4, 3Nguòi thå´ng:4) %chucvu 12 $+ $nick 3Thòi Gian:12 %tinhgio.giay2 3WPM:12 $mid(%wpm,1,6) 3Sô´ Câu Ðúng Liên Tíêp:12 %row 3Kiê´m Ðuoc: 12$ $+ $tien(%cauhoi.diem) 3Luong: 12$ $+ $tien(%luong) 3Tài sa²n 06$ $+ $tien($coidiem(Diem,$nick)) }
+    set %last.winner $nick | .timers off | unset %dapan* 
+    if (%host == $null) && ($coidiem(Diem,$nick) >= 0) && ($coidiem(Diem,$nick) < 50000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(20000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 Binh Nhì 13]=-  }
+    if ($coidiem(Diem,$nick) >= 50000) && ($coidiem(Diem,$nick) < 100000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(100000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 Binh Nhâ't 13]=-  }
+    if ($coidiem(Diem,$nick) >= 100000) && ($coidiem(Diem,$nick) < 1000000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(1000000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 Ha Si~ 13]=-  }
+    if ($coidiem(Diem,$nick) >= 1000000) && ($coidiem(Diem,$nick) < 5000000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(5000000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 Trung Si~ 13]=-  }
+    if ($coidiem(Diem,$nick) >= 5000000) && ($coidiem(Diem,$nick) < 9000000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(9000000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 Thuong Si~ 13]=-  }
+    if ($coidiem(Diem,$nick) >= 9000000) && ($coidiem(Diem,$nick) < 19000000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(19000000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 Chuâ²n Úy 13]=-  }
+    if ($coidiem(Diem,$nick) >= 19000000) && ($coidiem(Diem,$nick) < 25000000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(25000000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 Thiêú Úy 13]=-  }
+    if ($coidiem(Diem,$nick) >= 25000000) && ($coidiem(Diem,$nick) < 32000000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(32000000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 Trung Úy 13]=-  }
+    if ($coidiem(Diem,$nick) >= 32000000) && ($coidiem(Diem,$nick) < 37000000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(37000000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 Thuong Úy 13]=-  }
+    if ($coidiem(Diem,$nick) >= 37000000) && ($coidiem(Diem,$nick) < 41000000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(41000000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 Ðai Úy 13]=-  }
+    if ($coidiem(Diem,$nick) >= 41000000) && ($coidiem(Diem,$nick) < 57000000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(57000000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 Thiêú Tá 13]=-  }
+    if ($coidiem(Diem,$nick) >= 57000000) && ($coidiem(Diem,$nick) < 63000000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(63000000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 Trung Tá 13]=-  }
+    if ($coidiem(Diem,$nick) >= 63000000) && ($coidiem(Diem,$nick) < 71000000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(71000000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 Thuong Tá 13]=-  }
+    if ($coidiem(Diem,$nick) >= 71000000) && ($coidiem(Diem,$nick) < 87000000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(87000000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 Ðai Tá 13]=-  }
+    if ($coidiem(Diem,$nick) >= 87000000) && ($coidiem(Diem,$nick) < 110000000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(110000000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 Chuâ²n Tuóng 13]=-  }
+    if ($coidiem(Diem,$nick) >= 110000000) && ($coidiem(Diem,$nick) < 190000000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(190000000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 Thiêú Tuóng 13]=-  }
+    if ($coidiem(Diem,$nick) >= 190000000) && ($coidiem(Diem,$nick) < 260000000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(260000000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 Trung Tuóng 13]=-  }
+    if ($coidiem(Diem,$nick) >= 260000000) && ($coidiem(Diem,$nick) < 310000000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(310000000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 Thuong Tuóng 13]=-  }
+    if ($coidiem(Diem,$nick) >= 310000000) && ($coidiem(Diem,$nick) < 490000000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(490000000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 Ðai Tuóng 13]=-  }
+    if ($coidiem(Diem,$nick) >= 490000000) && ($coidiem(Diem,$nick) < 660000000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(660000000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 Thiêú Soái 13]=-  }
+    if ($coidiem(Diem,$nick) >= 660000000) && ($coidiem(Diem,$nick) < 750000000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(750000000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 Nguyên Soái 13]=-  }
+    if ($coidiem(Diem,$nick) >= 750000000) && ($coidiem(Diem,$nick) < 920000000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(920000000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 Ðai Nguyên Soái 13]=-  }
+    if ($coidiem(Diem,$nick) >= 920000000) && ($coidiem(Diem,$nick) < 1200000000) { .timerchucvu1 1 2 describeVC %r 11,1 Còn 4$ $+ $tien($calc(1200000000 - $coidiem(Diem,$nick))) 8 $+ $nick 11se~ ðuoc lên chúc 13-=[0 SUPER MAN 13]=-  }
+    if (%row == 5) { %rows = %row | set %thuongthem 500000 | .timer 1 1 describeVC %r 3* Xin chúc mùng4 $nick 03ðã tra² lòi 04 [ $+ [ %row ] ] 3Câu thuo²ng thêm 4$50.000 |  ghidiem diem $nick $calc($coidiem(Diem,$nick) + %thuongthem) }
+    if (%row > 5) && ($calc(%rows + 5) == %row) { %rows = %row | set %thuongthem 100000 | .timer 1 1 describeVC %r 3* Xin chúc mùng4 $nick 03ðã tra² lòi 04 [ $+ [ %row ] ] 3Câu thuo²ng thêm 4$ $+ $tien($calc(%row * %thuongthem)) |  ghidiem diem $nick $calc($coidiem(Diem,$nick) + $calc(%row * %thuongthem)) }
+    var %thoigianravongquay = $int($calc($calc(1800 - $int($calc(($ticks - %vongquay) / 1000))) / 60))
+    var %thoigianrasode = $int($calc($calc(3600 - $int($calc(($ticks - %time.sode) / 1000))) / 60))
+    if (%thoigianrasode == 0) { .timers off | .timer 1 %quacau sode | halt }
+    if ($left(%thoigianrasode,1) == $chr(45)) { .timers off | .timer 1 %quacau sode | halt }
+    if (%thoigianravongquay == 0) { .timers off | vongquaymayman | halt }
+    if ($left(%thoigianravongquay,1) == $chr(45)) { .timers off | vongquaymayman | halt }
+    else { .timerquacau1 1 %quacau choigame }
+  }
+  if ($level($nick) >= 3) {
+    var %nhanqua = $calc($gettok($xemphanthuong(phanthuong,$nick),1,32) + 1)
+    ;var %socaunhanqua = $gettok($xemphanthuong(phanthuong,$nick),2,32)
+    var %socaunhanqua = $SetSoCauNhanQua($coidiem(Diem,$nick))
+    if (%nhanqua >= %socaunhanqua) { set %nhanqua %socaunhanqua }
+    var %host = $host(host,$nick)
+    if (%host == $null) { set %host A Little Chick }
+    var %readhost = $read(host.txt)
+    ;var %line = 1
+    ;:checkluong
+    ;if (%line <= $lines(hethong\luong.ini)) {
+    ;  if ($uw($read(hethong\luong.ini,%line),1,=) == $strip(%host)) { var %luong2 = $uw($read(hethong\luong.ini,%line),2,=) }
+    ;  inc %line | goto checkluong
+    ;}
+    ;if (%luong2 == $null) { var %luong2 0 }
+    var %luong2 $ChkBonus($coidiem(Diem,$nick))
+    if (%last.winner == $nick) { inc %row }
+    if (%last.winner != $nick) { set %row 1 }
+    ;%tinhgio.giay2 = $calc((($ticks - %tinhgio.batdau) / 1000) - 2))
+    %tinhgio.giay2 = $calc(($ticks - %tinhgio.batdau) / 1000)
+    writeini -n hethong\socau.ini socau $nick $calc($xemsocau(socau,$nick) + 1)
+    writeini -n hethong\nhanqua.ini phanthuong $nick $calc($gettok($xemphanthuong(phanthuong,$nick),1,32) + 1) %socaunhanqua
+    var %wpm = $calc(($len($1-) * 60) / (%tinhgio.giay2 * 5))
+
+    if ($nick isin $1-) || ($len($1) < 11) || ($1 ison %r) || ($remove($1,$chr(58)) ison %r) { var %wpm = 0 | %tinhgio.giay2 = 111 }
+
+    if ($xemwpm(wpm,$nick) < %wpm) || ($read(HETHONG\wpm.ini,w,$nick $+ =* ) == $null) { ghiwpm wpm $nick %wpm }
+    if ($xemstreak(streak,$nick) < %row) || ($read(HETHONG\streak.ini,w,$nick $+ =* ) == $null) { ghistreak streak $nick %row }
+    if (($xemfast(fast,$nick) != $null) && ($xemfast(fast,$nick) > %tinhgio.giay2)) || ($read(HETHONG\fast.ini,w,$nick $+ =* ) == $null) { ghifast fast $nick %tinhgio.giay2 }
+
+    ;ghiscore score $nick %wpm %tinhgio.giay2
+    if (($1- == %dapan1) || ($1- == %dapan2) || ($1- == %dapan3) || ($1- == $tiengviet(%dapan1)) || ($1- == $unicode(%dapan1)) || ($replace($1-,đ,Đ) == $replace($unicode(%dapan1),đ,Đ)) || ($1- == $tiengviet(%dapan2)) || ($1- == $tiengviet(%dapan3))) && ($remove($1-,y) != $DA.TL($remove($1-,y))) {
+      ghidiem diem $nick $calc($coidiem(Diem,$nick) + (%cauhoi.diem * 3) + %luong2)
+      if ($r(0,1)=0) { describeVC %r $iif($r(0,1)=0, 3Chúc mùng:, 3Nguòi thå´ng:)  $+ %readhost 12 $+ $nick $iif($r(0,1)=0, 3Tra² lòi chính xác:,3Ðáp án chính xác:) $+ $mahoa(%dapan1) $+ 3Thòi Gian:12 %tinhgio.giay2 3WPM:12 $mid(%wpm,1,6) 3Sô´ Câu Ðúng Liên Tíêp:12 %row 3Kiê´m Ðuoc: 12$ $+ $tien($calc(%cauhoi.diem * 3)) 3Luong: 12$ $+ $tien(%luong2) 3Tài sa²n 06$ $+ $tien($coidiem(Diem,$nick)) 3Nhân Quà: 12 [ $+ [ %nhanqua ] $+ ]  / [ $+ [ %socaunhanqua ] ] 12Câu }
+      else { describeVC %r $iif($r(0,1)=0, 3Tra² lòi chính xác:, 3Ðáp án chính xác:) $+ $mahoa(%dapan1) $+ $iif($r(0,1)=0, 3Chúc mùng:, 3Nguòi thå´ng:)  $+ %readhost 12 $+ $nick 3Thòi Gian:12 %tinhgio.giay2 3WPM:12 $mid(%wpm,1,6) 3Sô´ Câu Ðúng Liên Tíêp:12 %row 3Kiê´m Ðuoc: 12$ $+ $tien($calc(%cauhoi.diem * 3)) 3Luong: 12$ $+ $tien(%luong2) 3Tài sa²n 06$ $+ $tien($coidiem(Diem,$nick)) 3Nhân Quà: 12 [ $+ [ %nhanqua ] $+ ]  / [ $+ [ %socaunhanqua ] ] 12Câu }
+    }
+    ;$iif($r(0,1)=0, 3Tra² lòi chính xác:,3Ðáp án chính xác:)
+    ;$iif($r(0,1)=0, 3Chúc mùng:, 3Nguòi thå´ng:)
+    else {
+      ghidiem diem $nick $calc($coidiem(Diem,$nick) + %cauhoi.diem + %luong2)
+      if ($r(0,1)=0) { describeVC %r $iif($r(0,1)=0, 3Chúc mùng:, 3Nguòi thå´ng:)  $+ %readhost 12 $+ $nick $iif($r(0,1)=0, 3Tra² lòi ðúng:,3Ðáp án:) $+ $mahoa(%dapan1) $+ 3Thòi Gian:12 %tinhgio.giay2 3WPM:12 $mid(%wpm,1,6) 3Sô´ Câu Ðúng Liên Tíêp:12 %row 3Kiê´m Ðuoc: 12$ $+ $tien(%cauhoi.diem) 3Luong: 12$ $+ $tien(%luong2) 3Tài sa²n 06$ $+ $tien($coidiem(Diem,$nick)) 3Nhân Quà: 12 [ $+ [ %nhanqua ] $+ ]  / [ $+ [ %socaunhanqua ] ] 12Câu }
+      else { describeVC %r $iif($r(0,1)=0, 3Tra² lòi ðúng:, 3Ðáp án:) $+ $mahoa(%dapan1) $+ $iif($r(0,1)=0, 3Chúc mùng:, 3Nguòi thå´ng:)  $+ %readhost 12 $+ $nick 3Thòi Gian:12 %tinhgio.giay2 3WPM:12 $mid(%wpm,1,6) 3Sô´ Câu Ðúng Liên Tíêp:12 %row 3Kiê´m Ðuoc: 12$ $+ $tien(%cauhoi.diem) 3Luong: 12$ $+ $tien(%luong2) 3Tài sa²n 06$ $+ $tien($coidiem(Diem,$nick)) 3Nhân Quà: 12 [ $+ [ %nhanqua ] $+ ]  / [ $+ [ %socaunhanqua ] ] 12Câu }
+    }
+    set %last.winner $nick | .timers off | unset %dapan*
+    if (%row == 5) { %rows = %row | set %thuongthem 500000 | describeVC %r 3* Xin chúc mùng4 $nick 03ðã tra² lòi 04 [ $+ [ %row ] ] 3Câu thuo²ng thêm 4$500.000 |  ghidiem diem $nick $calc($coidiem(Diem,$nick) + %thuongthem) }
+    if (%row > 5) && ($calc(%rows + 5) == %row) { %rows = %row | set %thuongthem 100000 | describeVC %r 3* Xin chúc mùng4 $nick 03ðã tra² lòi 04 [ $+ [ %row ] ] 3Câu thuo²ng thêm 4$ $+ $tien($calc(%row * %thuongthem)) |  ghidiem diem $nick $calc($coidiem(Diem,$nick) + $calc(%row * %thuongthem)) }
+    if (%nhanqua == %socaunhanqua) {
+      ;writeini hethong\nhanqua.ini phanthuong $nick 0 $calc(%socaunhanqua + 20)
+      writeini hethong\nhanqua.ini phanthuong $nick 0 $SetSoCauNhanQua($coidiem(Diem,$nick))
+      var %phanthuongduocnhan $read(PHANTHUONG.TXT)
+      var %phanthuongduocnhan1 $gettok(%phanthuongduocnhan,1,61) | var %phanthuongduocnhan2 $gettok(%phanthuongduocnhan,2,61)
+      .timer 1 1 describeVC %r 3Chúc Mùng 12 $+ $nick 3- $me ðã chôm tìên quy² cua²4 %r 3ðê² mua tång cho12 $nick 03môt món quà luu niêm !! 
+      .timer 1 2 describeVC %r 12Phâ`n thuo²ng dành cho 13 $+ $nick 12lâ`n này là: 08,01 %phanthuongduocnhan1  12tri giá 09,01 $tien(%phanthuongduocnhan2) $+ $ 
+      .timer 1 3 describeVC $nick 12Phâ`n thuo²ng dành cho 13 $+ $nick 12lâ`n này là: 08,01 %phanthuongduocnhan1  12tri giá 09,01 $tien(%phanthuongduocnhan2) $+ $ 
+      ghidiem diem $nick $calc($coidiem(diem,$nick) + %phanthuongduocnhan2)
+    }
+    var %thoigianravongquay = $int($calc($calc(1800 - $int($calc(($ticks - %vongquay) / 1000))) / 60))
+    var %thoigianrasode = $int($calc($calc(3600 - $int($calc(($ticks - %time.sode) / 1000))) / 60))
+    if (%thoigianrasode == 0) || ($left(%thoigianrasode,1) == $chr(45)) { .timer 1 %quacau sode | halt }
+    if (%thoigianravongquay == 0) || ($left(%thoigianravongquay,1) == $chr(45)) { .timer 1 %quacau vongquaymayman | halt }
+    else { .timerquacau1 1 %quacau choigame }
+    if ($coidiem(Diem,$nick) >= 20000000) && ($coidiem(Diem,$nick) < 50000000) {
+      if ($host(host,$nick) != Wood Axe) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Wood $+ $chr(32) $+ Axe | describeVC %r 9,01Xin chúc mùng4 $nick 9,01lên chúc 11,1-=[8 Wood Axe 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 50000000) && ($coidiem(Diem,$nick) < 100000000) {
+      if ($host(host,$nick) != Double Wood Axe) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Double $+ $chr(32) $+ Wood $+ $chr(32) $+ Axe | describeVC %r 9,01Xin chúc mùng4 $nick 9,01lên chúc 11,1-=[8 Double Wood Axe 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 100000000) && ($coidiem(Diem,$nick) < 1000000000) {
+      if ($host(host,$nick) != Stone Axe) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Stone $+ $chr(32) $+ Axe | describeVC %r 9,01Xin chúc mùng4 $nick 9,01lên chúc 11,1-=[8 Stone Axe 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 1000000000) && ($coidiem(Diem,$nick) < 3000000000) {
+      if ($host(host,$nick) != Double Stone Axe) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Double $+ $chr(32) $+ Stone $+ $chr(32) $+ Axe | describeVC %r 9,01Xin chúc mùng4 $nick 9,01lên chúc 11,1-=[8 Double Stone Axe 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 3000000000) && ($coidiem(Diem,$nick) < 5000000000) {
+      if ($host(host,$nick) != Metal Axe) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Metal $+ $chr(32) $+ Axe | describeVC %r 9,01Xin chúc mùng4 $nick 9,01lên chúc 11,1-=[8 Metal Axe 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 5000000000) && ($coidiem(Diem,$nick) < 7000000000) {
+      if ($host(host,$nick) != Double Metal Axe) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Double $+ $chr(32) $+ Metal $+ $chr(32) $+ Axe | describeVC %r 9,01Xin chúc mùng4 $nick 9,01lên chúc 11,1-=[8 Double Metal Axe 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 7000000000) && ($coidiem(Diem,$nick) < 9000000000) {
+      if ($host(host,$nick) != Silver Axe) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Silver $+ $chr(32) $+ Axe | describeVC %r 9,01Xin chúc mùng4 $nick 9,01lên chúc 11,1-=[8 Silver Axe 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 9000000000) && ($coidiem(Diem,$nick) < 11000000000) {
+      if ($host(host,$nick) != Double Silver Axe) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Double $+ $chr(32) $+ Silver $+ $chr(32) $+ Axe | describeVC %r 9,01Xin chúc mùng4 $nick 9,01lên chúc 11,1-=[8 Double Silver Axe 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 11000000000) && ($coidiem(Diem,$nick) < 19000000000) {
+      if ($host(host,$nick) != Gold Axe) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Gold $+ $chr(32) $+ Axe | describeVC %r 9,01Xin chúc mùng4 $nick 9,01lên chúc 11,1-=[8 Gold Axe 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 19000000000) && ($coidiem(Diem,$nick) < 25000000000) {
+      if ($host(host,$nick) != Double Gold Axe) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Double $+ $chr(32) $+ Gold $+ $chr(32) $+ Axe | describeVC %r 9,01Xin chúc mùng 4 $nick 9,01lên chúc11,1-=[8 Double Gold Axe 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 25000000000) && ($coidiem(Diem,$nick) < 37000000000) {
+      if ($host(host,$nick) != Metal Double Sided Axe) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Metal $+ $chr(32) $+ Double $+ $chr(32) $+ Sided $+ $chr(32) $+ Axe | describeVC %r 9,01Xin chúc mùng4 $nick 9,01lên chúc 11,1-=[8 Metal Double Sided Axe 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 37000000000) && ($coidiem(Diem,$nick) < 41000000000) {
+      if ($host(host,$nick) != Metal Double Sided Axe+) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Metal $+ $chr(32) $+ Double $+ $chr(32) $+ Sided $+ $chr(32) $+ Axe $+ + | describeVC %r 9,01Xin chúc mùng4 $nick 9,01lên chúc 11,1-=[8 Metal Double Sided Axe+ 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 41000000000) && ($coidiem(Diem,$nick) < 57000000000) {
+      if ($host(host,$nick) != Silver Double Sided Axe) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Silver $+ $chr(32) $+ Double $+ $chr(32) $+ Sided $+ $chr(32) $+ Axe | describeVC %r 9,01Xin chúc mùng4 $nick 9,01lên chúc 11,1-=[8 Silver Double Sided Axe 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 57000000000) && ($coidiem(Diem,$nick) < 63000000000) {
+      if ($host(host,$nick) != Silver Double Sided Axe+) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Silver $+ $chr(32) $+ Double $+ $chr(32) $+ Sided $+ $chr(32) $+ Axe $+ + | describeVC %r 9,01Xin chúc mùng4 $nick 9,01lên chúc 11,1-=[8 Silver Double Sided Axe+ 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 63000000000) && ($coidiem(Diem,$nick) < 71000000000) {
+      if ($host(host,$nick) != Gold Double Sided Axe) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Gold $+ $chr(32) $+ Double $+ $chr(32) $+ Sided $+ $chr(32) $+ Axe | describeVC %r 9,01Xin chúc mùng4 $nick 9,01lên chúc 11,1-=[8 Gold Double Sided Axe 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 71000000000) && ($coidiem(Diem,$nick) < 87000000000) {
+      if ($host(host,$nick) != Gold Double Sided Axe+) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Gold $+ $chr(32) $+ Double $+ $chr(32) $+ Sided $+ $chr(32) $+ Axe $+ + | describeVC %r 9,01Xin chúc mùng4 $nick 9,01lên chúc 11,1-=[8 Gold Double Sided Axe+ 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 87000000000) && ($coidiem(Diem,$nick) < 91000000000) {
+      if ($host(host,$nick) != Violet Hole) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Violet $+ $chr(32) $+ Hole | describeVC %r 9,01Xin chúc mùng4 $nick 9,01lên chúc 11,1-=[8 Violet Hole 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 91000000000) && ($coidiem(Diem,$nick) < 110000000000) {
+      if ($host(host,$nick) != Sapphire Hole) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Sapphire $+ $chr(32) $+ Hole | describeVC %r 9,01Xin chúc mùng4 $nick 9,01lên chúc 11,1-=[8 Sapphire Hole 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 110000000000) && ($coidiem(Diem,$nick) < 190000000000) {
+      if ($host(host,$nick) != Red Ruby Hole) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Red $+ $chr(32) $+ Ruby $+ $chr(32) $+ Hole | describeVC %r 9,01Xin chúc mùng4 $nick 9,01lên chúc 11,1-=[8 Red Ruby Hole 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 190000000000) && ($coidiem(Diem,$nick) < 260000000000) {
+      if ($host(host,$nick) != Diamond Hole) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Diamond $+ $chr(32) $+ Hole | describeVC %r 9,01Xin chúc mùng4 $nick 9,01lên chúc 11,1-=[8 Diamond Hole 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 260000000000) && ($coidiem(Diem,$nick) < 310000000000) {
+      if ($host(host,$nick) != Blue Dragon) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Blue $+ $chr(32) $+ Dragon | describeVC %r 9,01Xin chúc mùng4 $nick 9,01lên chúc 11,1-=[8 Blue Dragon 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 310000000000) && ($coidiem(Diem,$nick) < 490000000000) {
+      if ($host(host,$nick) != Red Dragon) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Red $+ $chr(32) $+ Dragon | describeVC %r 9,01Xin chúc mùng4 $nick 9,01lên chúc 11,1-=[8 Red Dragon 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 490000000000) && ($coidiem(Diem,$nick) < 1200000000000) {
+      if ($host(host,$nick) != Sliver Dragon) && (%host isin $read(HETHONG\DefaultHost.txt,1)) {
+        writeini hethong\host.ini host $nick Sliver $+ $chr(32) $+ Dragon | describeVC %r 9,01Xin chúc mùng4 $nick 9,01lên chúc 11,1-=[8 Sliver Dragon 11,1]=- | halt
+      }
+      else { return }
+    }
+    if ($coidiem(Diem,$nick) >= 1200000000000) { return }
+  }
+}
+
+alias SetSoCauNhanQua {
+  ;$1 = Tiê`n
+  if ($1 <= 500000000) { return 20 }
+  elseif ($1 <= 1000000000) { return 40 }
+  elseif ($1 <= 1500000000) { return 60 }
+  elseif ($1 <= 2000000000) { return 80 }
+  elseif ($1 <= 2500000000) { return 100 }
+  elseif ($1 <= 3000000000) { return 120 }
+  elseif ($1 <= 3500000000) { return 140 }
+  elseif ($1 <= 4000000000) { return 160 }
+  elseif ($1 <= 4500000000) { return 180 }
+  elseif ($1 <= 5000000000) { return 200 }
+  elseif ($1 <= 6000000000) { return 220 }
+  elseif ($1 <= 7000000000) { return 240 }
+  elseif ($1 <= 8000000000) { return 260 }
+  elseif ($1 <= 9000000000) { return 280 }
+  elseif ($1 <= 10000000000) { return 300 }
+  else { return 350 }
+}
+alias ChkBonus {
+  if ($1 <= 50000000) { return 1000 }
+  elseif ($1 <= 100000000) { return 3000 }
+  elseif ($1 <= 150000000) { return 5000 }
+  elseif ($1 <= 200000000) { return 7000 }
+  elseif ($1 <= 250000000) { return 10000 }
+  elseif ($1 <= 3000000000) { return 20000 }
+  elseif ($1 <= 3500000000) { return 30000 }
+  elseif ($1 <= 4000000000) { return 40000 }
+  elseif ($1 <= 4500000000) { return 50000 }
+  elseif ($1 <= 5000000000) { return 60000 }
+  elseif ($1 <= 6000000000) { return 70000 }
+  elseif ($1 <= 7000000000) { return 80000 }
+  elseif ($1 <= 8000000000) { return 90000 }
+  elseif ($1 <= 9000000000) { return 100000 }
+  elseif ($1 <= 10000000000) { return 200000 }
+  else { return 300000 }
+
+}
+alias ChkBet {
+  ;$1 = $nick, $2 = sô' bet.
+  var %tmpMinBet %MinBet, %tmpMaxBet $div($coidiem(Diem,$1),2)
+  if ($read(IgnoreNick.txt,w,$1 $+ *) == $null) {
+    if ($2 >= %tmpMinBet) && ($2 <= %tmpMaxBet) && ($2 isnum) { return True }
+    else {
+      if (%tmpMinBet < %tmpMaxBet) { noticeVC $1 Ban không ðåt ðuoc sô´ tiê`n 09,01 $chr(36) $+ $tien($2)  Ban pha²i ðåt tiê`n ít nhâ´t là 09,01 $chr(36) $+ $tien(%tmpMinBet)  và pha²i thâ´p hon 09,01 $chr(36) $+ $tien(%tmpMaxBet)  (1/2 tài sa²n cu²a ban). | .ignore -u5 $nick | return False }
+      else { noticeVC $1 Ban ðã hê´t tiê`n choi các Games mini! Hãy vào Private vói bot gõ 09,01 !tiepmau  ðê² ðuoc tiê´p tê´ nhé. }
+    }
+  }
+  else { noticeVC $1 Xin lô~i! Nick ban không ðuoc choi games! | .ignore -u30 $nick | return False }
+}

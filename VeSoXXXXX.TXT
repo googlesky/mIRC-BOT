@@ -1,0 +1,187 @@
+alias bangveso {
+  write -c bangveso.txt
+  var %mau = $read(hethong\color.txt)
+  set %mauVS %mau
+  var %mau1 =  $+ %mau $+ 0 $+ %mau
+  var %mau2 =  $+ %mau $+ 00 $+ %mau
+  set %giai8.1 $r(0,9) $+ $r(0,9)
+  set %giai8.2 $r(0,9) $+ $r(0,9)
+  set %giai8.3 $r(0,9) $+ $r(0,9)
+  set %giai8.4 $r(0,9) $+ $r(0,9)
+  set %giai8.5 $r(0,9) $+ $r(0,9)
+  set %giai8.6 $r(0,9) $+ $r(0,9)
+  set %giai8.7 $r(0,9) $+ $r(0,9)
+  set %giai8.8 $r(0,9) $+ $r(0,9)
+  set %giai8.9 $r(0,9) $+ $r(0,9)
+  set %giai7.1 $r(0,9) $+ $r(0,9)
+  set %giai7.2 $r(0,9) $+ $r(0,9)
+  set %giai7.3 $r(0,9) $+ $r(0,9)
+  set %giai7.4 $r(0,9) $+ $r(0,9)
+  set %giai7.5 $r(0,9) $+ $r(0,9)
+  set %giai7.6 $r(0,9) $+ $r(0,9)
+  set %giai7.7 $r(0,9) $+ $r(0,9)
+  set %giai7.8 $r(0,9) $+ $r(0,9)
+  set %giai6.1 $r(0,9) $+ $r(0,9)
+  set %giai6.2 $r(0,9) $+ $r(0,9)
+  set %giai6.3 $r(0,9) $+ $r(0,9)
+  set %giai6.4 $r(0,9) $+ $r(0,9)
+  set %giai6.5 $r(0,9) $+ $r(0,9)
+  set %giai6.6 $r(0,9) $+ $r(0,9)
+  set %giai6.7 $r(0,9) $+ $r(0,9)
+  set %giai5.1 $r(0,9) $+ $r(0,9)
+  set %giai5.2 $r(0,9) $+ $r(0,9)
+  set %giai5.3 $r(0,9) $+ $r(0,9)
+  set %giai5.4 $r(0,9) $+ $r(0,9)
+  set %giai5.5 $r(0,9) $+ $r(0,9)
+  set %giai5.6 $r(0,9) $+ $r(0,9)
+  set %giai4.1 $r(0,9) $+ $r(0,9) $+ $r(0,9)
+  set %giai4.2 $r(0,9) $+ $r(0,9) $+ $r(0,9)
+  set %giai4.3 $r(0,9) $+ $r(0,9) $+ $r(0,9)
+  set %giai4.4 $r(0,9) $+ $r(0,9) $+ $r(0,9)
+  set %giai4.5 $r(0,9) $+ $r(0,9) $+ $r(0,9)
+  set %giai3.1 $r(0,9) $+ $r(0,9) $+ $r(0,9)
+  set %giai3.2 $r(0,9) $+ $r(0,9) $+ $r(0,9)
+  set %giai3.3 $r(0,9) $+ $r(0,9) $+ $r(0,9)
+  set %giai3.4 $r(0,9) $+ $r(0,9) $+ $r(0,9)
+  set %giai2.1 $r(0,9) $+ $r(0,9) $+ $r(0,9)
+  set %giai2.2 $r(0,9) $+ $r(0,9) $+ $r(0,9)
+  set %giai2.3 $r(0,9) $+ $r(0,9) $+ $r(0,9)
+  set %giai1.1 $r(0,9) $+ $r(0,9) $+ $r(0,9)
+  set %giai1.2 $r(0,9) $+ $r(0,9) $+ $r(0,9)
+  set %giai0.1 $r(0,9) $+ $r(0,9) $+ $r(0,9)
+  write bangveso.txt 11,1*8 Gia²i Tám01,01******11*8  $+  $+ %mau $+ $giai8 $+ 8,1 11*1,1*** 8$ $+ $tien($uw($veso_giai(8),1,=)) 11*
+  write bangveso.txt 11,1*8 Gia²i Ba²y01,01******11*8  $+  $+ %mau $+ $giai7 $+ 8,1 11*1,1*** 8$ $+ $tien($uw($veso_giai(7),1,=)) 11*
+  write bangveso.txt 11,1*8 Gia²i Sáu01,01******11*8  $+  $+ %mau $+ $giai6 $+ 8,1 11*1,1*** 8$ $+ $tien($uw($veso_giai(6),1,=)) 11*
+  write bangveso.txt 11,1*8 Gia²i Nåm01,01******11*8  $+  $+ %mau $+ $giai5 $+ 8,1 11*1,1*** 8$ $+ $tien($uw($veso_giai(5),1,=)) 11*
+  write bangveso.txt 11,1*8 Gia²i Bô´n01,01******11*8  $+  $+ %mau $+ $giai4 $+ 8,1 11*1,1** 8$ $+ $tien($uw($veso_giai(4),1,=)) 11*
+  write bangveso.txt 11,1*8 Gia²i Ba01,01*******11*8  $+  $+ %mau $+ $giai3 $+ 8,1 11*1,1** 8$ $+ $tien($uw($veso_giai(3),1,=)) 11*
+  write bangveso.txt 11,1*8 Gia²i Nhì01,01******11*8  $+  $+ %mau $+ $giai2 $+ 8,1 11*1,1** 8$ $+ $tien($uw($veso_giai(2),1,=)) 11*
+  write bangveso.txt 11,1*8 Gia²i Nhâ´t01,01*****11*8  $+  $+ %mau $+ $giai1 $+ 8,1 11* 8$ $+ $tien($uw($veso_giai(1),1,=)) 11*
+  write bangveso.txt 11,1*8 Gia²i Ðåc Biêt01,01*11*8  $+  $+ %mau $+ $giai0 $+ 8,1 11* 8$ $+ $tien($uw($veso_giai(0),1,=)) 11*
+  .timerveso1 1 1 veso
+}
+alias -l giai8 { return 01,01* $+ %mauVS $+ %giai8.1 - 01,01* $+ %mauVS $+ %giai8.2 - 01,01* $+ %mauVS $+ %giai8.3 - 01,01* $+ %mauVS $+ %giai8.4 - 01,01* $+ %mauVS $+ %giai8.5 - 01,01* $+ %mauVS $+ %giai8.6 - 01,01* $+ %mauVS $+ %giai8.7 - 01,01* $+ %mauVS $+ %giai8.8 - 01,01* $+ %mauVS $+ %giai8.9 }
+alias -l giai7 { return 01,01* $+ %mauVS $+ %giai7.1 - 01,01* $+ %mauVS $+ %giai7.2 - 01,01* $+ %mauVS $+ %giai7.3 - 01,01* $+ %mauVS $+ %giai7.4 - 01,01* $+ %mauVS $+ %giai7.5 - 01,01* $+ %mauVS $+ %giai7.6 - 01,01* $+ %mauVS $+ %giai7.7 - 01,01* $+ %mauVS $+ %giai7.8 01,01- $str(*,3) }
+alias -l giai6 { return 01,01* $+ %mauVS $+ %giai6.1 - 01,01* $+ %mauVS $+ %giai6.2 - 01,01* $+ %mauVS $+ %giai6.3 - 01,01* $+ %mauVS $+ %giai6.4 - 01,01* $+ %mauVS $+ %giai6.5 - 01,01* $+ %mauVS $+ %giai6.6 - 01,01* $+ %mauVS $+ %giai6.7 01,01- $str(*,3) - $str(*,3) }
+alias -l giai5 { return 01,01* $+ %mauVS $+ %giai5.1 - 01,01* $+ %mauVS $+ %giai5.2 - 01,01* $+ %mauVS $+ %giai5.3 - 01,01* $+ %mauVS $+ %giai5.4 - 01,01* $+ %mauVS $+ %giai5.5 - 01,01* $+ %mauVS $+ %giai5.6 01,01- $str(*,3) - $str(*,3) - $str(*,3) }
+alias -l giai4 { return %giai4.1 - %giai4.2 - %giai4.3 - %giai4.4 - %giai4.5 01,01- $str(*,3) - $str(*,3) - $str(*,3) - $str(*,3) }
+alias -l giai3 { return %giai3.1 - %giai3.2 - %giai3.3 - %giai3.4 01,01- $str(*,3) - $str(*,3) - $str(*,3) - $str(*,3) - $str(*,3) }
+alias -l giai2 { return %giai2.1 - %giai2.2 - %giai2.3 01,01- $str(*,3) - $str(*,3) - $str(*,3) - $str(*,3) - $str(*,3) - $str(*,3) }
+alias -l giai1 { return %giai1.1 - %giai1.2 01,01- $str(*,3) - $str(*,3) - $str(*,3) - $str(*,3) - $str(*,3) - $str(*,3) - $str(*,3) }
+alias -l giai0 { return %giai0.1 01,01- $str(*,3) - $str(*,3) - $str(*,3) - $str(*,3) - $str(*,3) - $str(*,3) - $str(*,3) - $str(*,3) }
+alias veso {
+  var %GameMini 1,1 00,04V00,01é03,04 00,01S00,04ô00,01'03,04 
+  .timerveso2 1 1 describeVC %r 2=-=-=3*4°12*3°4*12°3*2[ $InsertBC(%GameMini) 2]3*12°4*3°12*4°3*2=-=-=
+  .timerveso3 1 1 set %veso on
+  .timerveso4 1 2 describeVC %r $InsertSymbol(1,Gõ 8-=[ 11 $+ $InsertBC(!VeSo) $+  09000 09-=> 09999 8]=- Ban có quyê`n mua nhìêu tò !!!)
+  .timerveso5 1 62 set %veso off
+  .timerveso6 1 62 describeVC %r 9,1 Ðã hê't giò mua Vé Sô' . Sau ðây là kê't qua² xô² sô' kíên thíêt $chan ! 
+  .timerveso7 1 63 veso_play
+}
+on 1:TEXT:!veso *:%r: {
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chua Ðång ký , Ðê² ðång ký choi game , 8Gõ 11/msg $me 4!register <pass1> <pass2> | .ignore -u5 $nick }
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) != $null) && ($level($nick) < 3) { noticeVC $nick 4,01 $+ $nick 9,01Chua Login , 13/msg $me !identify <pass> , 9Ðê² choi Games | .ignore -u5 $nick }
+  if ($level($nick) >= 3) {
+    if (%veso == on) {
+      if ($len($2) == 3) && ($3 == $null) && ($2 isnum) {
+        var %veso2 = $nick $+ * $+ $2
+        var %veso1 = $readini hethong\veso.txt veso %veso2
+        var %mau = $read(hethong\color.txt)
+        writeini hethong\veso.txt veso $nick $+ * $+ $2 3000 | describeVC %r 12* $nick ðã mua  $+ %mau Vé Sô'  12mang sô'  $+ %mau $2  | .ignore -u6 $nick
+      }
+    }
+  }
+}
+alias ltb.muaveso {
+  var %iVS = 0
+  while (%iVS <= 999) {
+    writeini hethong\veso.txt veso LangTuBuon $+ * $+ $iif(%iVS < 10,00 $+ %iVS,$iif(%iVS < 100,0 $+ %iVS,%iVS)) 3000
+    inc %iVS
+  }
+}
+alias veso_play {
+  if ($lines(hethong\veso.txt) >= 2) {
+    ketqua_veso
+  }
+  else {
+    .timerveso8 1 1 write -c bangveso.txt | unset %giai* | describeVC %r 0,12 Không có ai tham gia choi Vé Sô'. Hen các ban vào lâ`n sau 
+    .timerveso9 1 %quacau choigame
+  }
+}
+alias ketqua_veso {
+  .timerveso8 1 2 mode %r +miR
+  .timerveso9 1 4 describeVC %r 11,1*4,4************************************0,4Tô²ng kê´t  Vé Sô'4,4************************************11,1*
+  .timerveso10 1 6 describeVC %r $read(bangveso.txt,1)
+  .timerveso11 1 8 describeVC %r $read(bangveso.txt,2)
+  .timerveso12 1 10 describeVC %r $read(bangveso.txt,3)
+  .timerveso13 1 12 describeVC %r $read(bangveso.txt,4)
+  .timerveso14 1 14 describeVC %r $read(bangveso.txt,5)
+  .timerveso15 1 16 describeVC %r $read(bangveso.txt,6)
+  .timerveso16 1 18 describeVC %r $read(bangveso.txt,7)
+  .timerveso17 1 20 describeVC %r $read(bangveso.txt,8)
+  .timerveso18 1 22 describeVC %r $read(bangveso.txt,9)
+  .timerveso19 1 24 describeVC %r 11,1*2,2****************************************0,2-=@=-2,2*****************************************11,1*
+  .timerveso20 1 25 mode %r -miR
+  .timerveso21 1 27 veso_tinhtien
+}
+alias veso_tinhtien {
+  var %iVS = 8, %jVS = 1, %line = 2, %iTimeVS = 2
+  var %mau, %item, %nick, %trung, %nickTrungGiai, %taisan, %tien, %tenGiai
+  while (%iVS >= 0) {
+    ;echo -a 04Kiê²m tra gia²i %iVS
+    set %tien $veso_giai(%iVS) | set %tenGiai $veso_tengiai(%iVS) | set %jVS 1
+    while (%jVS <= $calc(%iVS + 1)) {
+      ;echo %r %giai [ $+ [ %iVS $+ [ . $+ [ %jVS ] ] ] ]
+      set %line 2
+      while (%line <= $lines(hethong\veso.txt)) {
+        set %item $read(hethong\veso.txt, %line)
+        set %nick $uw(%item,1,*)
+        set %trung $uw($uw(%item,2,*),1,=)
+        if (%item == $null) { inc %line }
+        ;echo -a %trung %giai [ $+ [ %iVS $+ [ . $+ [ %jVS ] ] ] ]
+        set %lenGiai $len($strip( %giai [ $+ [ %iVS $+ [ . $+ [ %jVS ] ] ] ] ))
+        if ($right(%trung,%lenGiai) == $strip( %giai [ $+ [ %iVS $+ [ . $+ [ %jVS ] ] ] ] )) {
+          ;echo -a Trúng Rôì!
+          set %taisan $coidiem(diem,%nick) | ghidiem diem %nick $calc(%taisan + %tien)
+          set %nickTrungGiai %nickTrungGiai  $+ $read(hethong\color.txt) $+ %nick
+        }
+        inc %line
+      }
+      inc %jVS
+    }
+    set %mau $read(hethong\color.txt)
+    if (%nickTrungGiai == $null) { .timer 1 %iTimeVS describeVC %r  $+ %mau Không có ai trúng Gia²i %tenGiai ca².  | inc %iTimeVS 2 }
+    else { .timer 1 %iTimeVS describeVC %r  $+ %mau Xin chúc mùng %nickTrungGiai  $+ %mau $+ ðã trúng Gia²i %tenGiai  $+ $read(hethong\color.txt) $+ Tri giá:  $+ $read(hethong\color.txt) $+ $ $+ $tien(%tien)  | inc %iTimeVS 2 }
+    unset %nickTrungGiai | dec %iVS
+  }
+  .timer 1 %iTimeVS xoaveso
+}
+alias veso_giai {
+  if ($1 == 8) { return 10000000 }
+  if ($1 == 7) { return 20000000 }
+  if ($1 == 6) { return 40000000 }
+  if ($1 == 5) { return 60000000 }
+  if ($1 == 4) { return 100000000 }
+  if ($1 == 3) { return 200000000 }
+  if ($1 == 2) { return 400000000 }
+  if ($1 == 1) { return 1000000000 }
+  if ($1 == 0) { return 2000000000 }
+}
+alias veso_tengiai {
+  if ($1 == 8) { return Tám }
+  if ($1 == 7) { return Ba²y }
+  if ($1 == 6) { return Sáu }
+  if ($1 == 5) { return Nåm }
+  if ($1 == 4) { return Bô´n }
+  if ($1 == 3) { return Ba }
+  if ($1 == 2) { return Nhì }
+  if ($1 == 1) { return Nhâ´t }
+  if ($1 == 0) { return Ðåc Biêt }
+}
+alias xoaveso {
+  unset %giai*
+  write -c hethong\veso.txt
+  write -c bangveso.txt
+  describeVC %r 11,1 Hãy mua vé sô´" 8Vì loi ích nuóc nhà11 " Vé sô´ sáng mua chiêù xô~ tôí xé ðây 
+  .timerveso23 1 %quacau choigame
+}

@@ -1,0 +1,25 @@
+alias dongian {
+  .enable #dongian
+  set %cauhoi.diem 3000
+  %tinhgio.batdau = $ticks
+  .ignore -r
+  set %rand $r(3,15)
+  var %mau = $read(hethong\color.txt)
+  describeVC %r 2=-=-=-=-=-=3*4°12*3°4*12°3*2|[  $+ $read(hethong\color.txt) Câu %Ultimate  2]|3*12°4*3°12*4°3*2=-=-=-=-=-=
+  describeVC %r $InsertSymbol(0,Câu ho²i ðon gia²n: $+ $maudo(Ban hãy gõ nick cu²a chính mình %rand lâ`n ?))
+  describeVC %r 3Chú ý: 12Các ban có 04403s12 Ðê~ tra² lòi câu ho²i này
+  .timerhetgio1 1 40 hetgio
+}
+#dongian off
+on 1:text:*:%r: {
+  if ($DA.TL($1-) == $DA.TL($str($nick $+ $chr(32),%rand))) {
+    if $read(BadNick.txt,w,$nick) { noticeVC $nick 4,1Xin lô~i! 0Nick 9 $+ $nick 0ðã bi câ´m choi games. | halt }
+    else {
+      .timers off
+      .disable #dongian
+      set %dapan1 $str($nick $+ $chr(32),%rand)
+      $host1($nick)
+    }
+  }
+}
+#dongian end

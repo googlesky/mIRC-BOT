@@ -1,0 +1,1 @@
+forfiles -p "C:\Documents and Settings\Administrator\Desktop\Games_HD\BACKUP" -s -m *.* -d 30 -c "cmd /c del @path"

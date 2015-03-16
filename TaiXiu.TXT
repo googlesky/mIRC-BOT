@@ -1,0 +1,131 @@
+alias TaiXiu {
+  var %GameMini 1,1 00,04T00,01à00,04i01,01 00,04X00,01i00,04²00,01u12,04 
+  if (Frosty_Girl143 ison %r) { msgVC Frosty_Girl143 Ðê´n Games Tài Xi?u nè! }
+  .timertaixiu1 1 2 describeVC %r 2=-=-=3*4°12*3°4*12°3*2[ $InsertBC(%GameMini) 2]3*12°4*3°12*4°3*2=-=-=
+  .timertaixiu2 1 4 set %taixiu on
+  .timertaixiu4 1 4 describeVC %r $InsertSymbol(1,Gõ 8-=[ 11 $+ $InsertBC(!TaiXiu) $+  8Tai hoåc 8Xiu hoåc 08111-666(Bão) 4<Tìên> 8]=- ðê² tham gia choi 7Tài 07Xi²u)
+  .timertaixiu6 1 44 set %taixiu off
+  .timertaixiu7 1 46 describeVC %r 8,1 Ðã hê´t giò ðåt tìên - ðåt xong lâ´y cái tay ra nha, chuâ²n bi mo² nè !!! 
+  .timertaixiu9 1 51 Taixiu_Play
+}
+on 1:TEXT:!Taixiu *:%r: {
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chua Ðång ký , Ðê² ðång ký choi game , 8Gõ 11/msg $me 4!register <pass1> <pass2> | .ignore -u5 $nick }
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) != $null) && ($level($nick) < 3) { noticeVC $nick 4,01 $+ $nick 9,01Chua Login , 13/msg $me !identify <pass> , 9Ðê² choi Games | .ignore -u5 $nick }
+  if ($level($nick) >= 3) && ($ChkBet($nick,$3) == True) {
+    if (%taixiu == on) {
+      if ($2 == tai) || ($2 == xiu) || ($2 == 111) || ($2 == 222) || ($2 == 333) || ($2 == 444) || ($2 == 555) || ($2 == 666) {
+        if ($2 != $null) || ($3 != $null) {
+          if ($3 > $coidiem(diem,$nick)) { noticeVC $nick 12* $nick không ðu² tiê`n ðåt | halt }
+          else {
+            if ($3 isnum) {
+              writeini hethong\TaiXiu.txt TaiXiu $nick $+ * $+ $2 $int($calc($3))
+              ghidiem diem $nick $calc($coidiem(diem,$nick) - $int($3))
+              if ($2 == tai) {
+                describeVC %r 12* 8,1 $nick  12ðã ðåt  $+ 04,01 Tài  $+ 12 vói sô´ tìên là: 04,01$ $+ $tien($3)
+              }
+              elseif ($2 == xiu) {
+                describeVC %r 12* 8,1 $nick  12ðã ðåt  $+ 04,01 Xi²u  $+ 12 vói sô´ tìên là: 04,01$ $+ $tien($3)
+              }
+              else {
+                describeVC %r 12* 8,1 $nick  12ðã ðåt bão:  $+ 04,01 $2  $+ 12 vói sô´ tìên là: 04,01$ $+ $tien($3)
+              }
+              .ignore $nick
+            }
+          }
+        }
+        else { noticeVC $nick 12Ban ðåt sai rôì, Gõ 8,1-=[11,1 !Taixiu 8,1Tai 0,1hoåc 8,1Xiu 0,1hoåc 08,01111-666(Bão) 4,1< $+ 4,1 $+ $rand(10000,10000) $+ > 8,1]=- }
+      }
+    }
+  }
+}
+alias TaiXiu_Play {
+  if ($lines(hethong\TaiXiu.txt) >= 2) {
+    TaiXiu_XiNgau
+  }
+  else {
+    .timertaixiu10 1 2 describeVC %r 0,12 Không có ai tham gia choi Tài Xi²u. Hen các ban vào lâ`n sau 
+    .timertaixiu11 1 %quacau choigame
+  }
+}
+alias TaiXiu_XiNgau {
+  var %xingau = 1
+  :doxingau
+  if (%xingau.diem. [ $+ [ %xingau ] ] == $null) { var %xingau.diem = $rand(1,6) }
+  else { var %xingau.diem = %xingau.diem. [ $+ [ %xingau ] ] }
+  if (%xingau <= 3) {
+    set %xingau.diem. [ $+ [ %xingau ] ] %xingau.diem
+    .timertaixiu $+ $calc($rand(10000,99999) + %xingau) 1 $calc(%xingau * 2 - 2) describeVC %r 04,01 Xí ngâ`u 08 $+ %xingau $+ : $+ 4 -=[ $+ 12 %xingau.diem  $+ 4]=-
+    inc %xingau | goto doxingau
+  }
+  .timertaixiu $+ $calc($rand(10000,99999) + %xingau) 1 $calc(%xingau * 2 - 2) TaiXiu_TinhDiem
+}
+alias TaiXiu_TinhDiem {
+  var %taixiu.diem = $calc(%xingau.diem.1 + %xingau.diem.2 + %xingau.diem.3)
+  if (%taixiu.diem <= 10) { set %taixiu.ketqua xiu }
+  if (%taixiu.diem > 10) { set %taixiu.ketqua tai }
+  if (%xingau.diem.1 == 1) && (%xingau.diem.2 == 1) && (%xingau.diem.3 == 1) { set %taixiu.ketqua 111 }
+  if (%xingau.diem.1 == 2) && (%xingau.diem.2 == 2) && (%xingau.diem.3 == 2) { set %taixiu.ketqua 222 }
+  if (%xingau.diem.1 == 3) && (%xingau.diem.2 == 3) && (%xingau.diem.3 == 3) { set %taixiu.ketqua 333 }
+  if (%xingau.diem.1 == 4) && (%xingau.diem.2 == 4) && (%xingau.diem.3 == 4) { set %taixiu.ketqua 444 }
+  if (%xingau.diem.1 == 5) && (%xingau.diem.2 == 5) && (%xingau.diem.3 == 5) { set %taixiu.ketqua 555 }
+  if (%xingau.diem.1 == 6) && (%xingau.diem.2 == 6) && (%xingau.diem.3 == 6) { set %taixiu.ketqua 666 }
+  if (%taixiu.ketqua == tai) {
+    describeVC %r 8,1Kê't qua² Tài Xi²u lâ`n này là: $+ 4,1 Tài 
+  }
+  if (%taixiu.ketqua == xiu) {
+    describeVC %r 8,1Kê't qua² Tài Xi²u lâ`n này là: $+ 4,1 Xi²u 
+  }
+  elseif (%taixiu.ketqua != tai) && (%taixiu.ketqua != xiu) {
+    describeVC %r 8,1Kê't qua² Tài Xi²u lâ`n này là: $+ 4,1 Bão $+ 04,01 %taixiu.ketqua 
+  }
+  .timertaixiuabc 1 3 TaiXiu_TongKet
+}
+alias TaiXiu_TongKet {
+  var %line = 2 %win.nick
+  var %tkTaiXiu = 1
+  :tongkettaixiu
+  if (%line <= $lines(hethong\TaiXiu.txt)) {
+    var %item = $read(hethong\TaiXiu.txt, %line)
+    var %nick = $uw(%item,1,*)
+    var %result = $uw($uw(%item,2,*),1,=)
+    var %bonus = $uw($uw(%item,2,*),2,=)
+    var %taisan = $coidiem(diem,%nick)
+    if (%item == $null) { inc %line | goto tongkettaixiu }
+    if (%result == %taixiu.ketqua) {
+      if (%result == 111) || (%result == 222) || (%result == 333) || (%result == 444) || (%result == 555) || (%result == 666) {
+        var %bonus2 = $calc(%bonus * 30)
+        ghidiem diem %nick $int($calc($coidiem(diem,%nick) + %bonus2))
+        var %taisan = $coidiem(diem,%nick)
+        inc %tkTaiXiu | .timer 1 %tkTaiXiu describeVC %r * 8,1 %color %nick  12ðã ðåt Bão %result 4Thå'ng 12ðuoc sô' tìên 4$ $+ $tien(%bonus2) 12Tài sa²n: 4$ $+ $tien(%taisan)
+      }
+      if (%result == tai) {
+        var %bonus2 = $calc(%bonus * 2)
+        ghidiem diem %nick $int($calc($coidiem(diem,%nick) + %bonus2))
+        var %taisan = $coidiem(diem,%nick)
+        inc %tkTaiXiu | .timer 1 %tkTaiXiu describeVC %r * 8,1 %color %nick  12ðã ðåt $replace(%result,tai,Tài,xiu,Xi²u) 4Thå'ng 12ðuoc sô' tìên 4$ $+ $tien(%bonus2) 12Tài sa²n: 4$ $+ $tien(%taisan)
+      }
+      if (%result == xiu) {
+        var %bonus2 = $calc(%bonus * 2)
+        ghidiem diem %nick $int($calc($coidiem(diem,%nick) + %bonus2))
+        var %taisan = $coidiem(diem,%nick)
+        inc %tkTaiXiu | .timer 1 %tkTaiXiu describeVC %r * 8,1 %color %nick  12ðã ðåt $replace(%result,tai,Tài,xiu,Xi²u) 4Thå'ng 12ðuoc sô' tìên 4$ $+ $tien(%bonus2) 12Tài sa²n: 4$ $+ $tien(%taisan)
+      }
+      if (%win.nick == $null) { %win.nick = %nick }
+      else %win.nick = %win.nick 8***9 %nick
+      ;else %win.nick = %win.nick $+ $chr(32) $+ %nick
+    }
+    else { inc %tkTaiXiu | .timer 1 %tkTaiXiu describeVC %r * 9,1 %nick  3ðã ðåt $iif(%result isnum,Bão) $replace(%result,tai,Tài,xiu,Xi²u) 12Thua 4$ $+ $tien(%bonus) 12Tài sa²n: 4$ $+ $tien(%taisan) }
+    inc %line | goto tongkettaixiu
+  }
+  else {
+    if (%win.nick != $null) { inc %tkTaiXiu 2 | .timertaixiu $+ $calc($rand(1000,9999) + %line) 1 %tkTaiXiu describeVC %r 8,1Xin chúc mùng các ban $+ 9,1 %win.nick  $+ 8,1dda~ trúng Tài Xi²u!!! }
+    else { inc %tkTaiXiu 2 | .timertaixiu $+ $calc($rand(1000,9999) + %line) 1 %tkTaiXiu describeVC %r 8,1Không có ai trúng Tài Xi²u lâ`n này!!! }
+  }
+  inc %tkTaiXiu | .timer 1 %tkTaiXiu TaiXiu_End
+}
+
+alias TaiXiu_End {
+  unset %taixiu* %win.nick %xingau*
+  write -c hethong\TaiXiu.txt
+  .timerchoigame1 1 %quacau choigame
+}

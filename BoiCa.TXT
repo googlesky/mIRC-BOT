@@ -1,0 +1,102 @@
+alias boica {
+  var %GameMini 1,1 00,04B00,01o00,0400,01i03,04 00,01C00,04á01,01 
+  .timerboica1 1 2 describeVC %r 2=-=-=3*4°12*3°4*12°3*2[ $InsertBC(%GameMini) 2]3*12°4*3°12*4°3*2=-=-=
+  .timerboica2 1 2 set %boica on
+  .timerboica3 1 4 describeVC %r $InsertSymbol(1,Gõ 8-=[ 11 $+ $InsertBC(!BoiCa) $+  091 09-=> 0912 4Tìên 8]=- ðê² tham gia Boi Cá. 09Ðåt 091 09ån 0910)
+  .timerboica4 1 5 describeVC %r 3Các sô´ theo Con Cá -> 1: Cá Kèo, 2: Cá Chép, 3: Cá Nòng Noc, 4: Cá Voi, 5: Cá Tre, 6: Cá chim, 7: Cá Kình, 8: Cá Pepsi, 9: Cá Do, 10: Cá Super, 11: Cá Lóc, 12: Cá Hightline
+  .timerboica5 1 44 set %boica off
+  .timerboica6 1 44 describeVC %r 8,1 Thòi gian ðã hê´t, các chú cá ðã såñ sàng vào vi trí xuâ´t phát 
+  .timerboica7 1 45 boica_play
+}
+on 1:TEXT:!boica *:%r: {
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chua Ðång ký , Ðê² ðång ký choi game , 8Gõ 11/msg $me 4!register <pass1> <pass2> | .ignore -u5 $nick }
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) != $null) && ($level($nick) < 3) { noticeVC $nick 4,01 $+ $nick 9,01Chua Login , 13/msg $me !identify <pass> , 9Ðê² choi Games | .ignore -u5 $nick }
+  if ($level($nick) >= 3) && ($ChkBet($nick,$3) == True) {
+    if (%boica == on) {
+      if ($2 <= 12) && ($3 isnum) && ($2 > 0) {
+        if ($3 > $coidiem(diem,$nick)) { noticeVC $nick 12* $nick không ðu² tiê`n ðåt | halt }
+        else {
+          .ignore $nick
+          var %conca = $read(hethong\listboica.txt,$2)
+          var %mau = $read(hethong\color.txt)
+          writeini hethong\boica.txt boica $nick $+ * $+ $remove(%conca,$chr(32)) $int($calc($3))
+          ghidiem diem $nick $calc($coidiem(diem,$nick) - $int($3))
+          describeVC %r 12* $nick ðã ðåt chú  $+ %mau $read(hethong\listboica.txt,$2)  12vói sô´ tiê`n là:  $+ %mau $ $+ $tien($3) 
+        }
+      }
+    }
+  }
+}
+alias boica_play {
+  if ($lines(hethong\boica.txt) >= 2) {
+    boica_xo
+  }
+  else {
+    .timerboica7 1 2 describeVC %r 0,12 Không có ai tham gia choi Boi Cá. Hen các ban vào lâ`n sau 
+    .timerboica8 1 %quacau choigame
+  }
+}
+alias boica_xo {
+  set %c1 $dealer(boica)
+  set %c2 $dealer(boica)
+  set %c3 $dealer(boica)
+  set %c4 $dealer(boica)
+  set %c5 $dealer(boica)
+  set %c6 $dealer(boica)
+  set %c7 $dealer(boica)
+  set %c8 $dealer(boica)
+  set %c9 $dealer(boica)
+  .timerboica9 1 2 describeVC %r 121........4 2........3 3........ 12xuâ´t phát
+  .timerboica10 1 4 describeVC %r $batdau
+  .timerboica11 1 6 describeVC %r $vong2
+  .timerboica12 1 8 describeVC %r $vong3
+  .timerboica13 1 10 describeVC %r $vong4
+  .timerboica14 1 12 describeVC %r $vong5
+  .timerboica15 1 14 describeVC %r $vong6
+  .timerboica16 1 16 describeVC %r $vong7
+  .timerboica17 1 18 describeVC %r $vong8
+  .timerboica18 1 20 describeVC %r $vong9
+  .timerboica19 1 22 describeVC %r $vong10
+  .timerboica20 1 24 describeVC %r $vong11
+  .timerboica21 1 26 describeVC %r $vong12
+  .timerboica22 1 28 describeVC %r $vong13
+  .timerboica23 1 29 boica_tinhtien
+}
+alias boica_tinhtien {
+  var %line = 2
+  :tongketboica
+  if (%line <= $lines(hethong\boica.txt)) {
+    var %item = $read(hethong\boica.txt, %line)
+    var %nick = $uw(%item,1,*)
+    var %trung = $uw($uw(%item,2,*),1,=)
+    var %tien = $uw($uw(%item,2,*),2,=)
+    if (%item == $null) { inc %line | goto tongketboica }
+    if (%trung == $remove(%c9,$chr(32))) {
+      var %tienthuong = $calc(%tien * 10)
+      var %taisan = $coidiem(diem,%nick)
+      var %mau = $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tienthuong) | describeVC %r 4Xin chúc mùng ban: 9,1 -=[ $+ %mau %nick 9]=-  4Ðã trúng Boi Cá .
+    }
+    inc %line | goto tongketboica
+  }
+  else { .timerboica24 1 2 xoaboica }
+}
+alias xoaboica {
+  ;unset %c*
+  write -c hethong\boica.txt
+  describeVC %r 12 Tam Biêt ! Hen Các Ban Vào Vòng Sau Nhé !
+  .timerboica25 1 %quacau choigame
+}
+alias -l batdau { return 6 12Vù+a bå´t ðâ`u chú 3-=[13 %c1 3]=-12 phóng nhanh vê` phiá truóc dâñ ðâù ðoàn cá }
+alias -l vong2 { return 6 05Ðê´n Khu rong rêu 12Chú 3-=[13 %c1 3]=-12 chao luon 1 cái ðã tao ðuoc 1 khoa²ng cách vói ðoàn cá }
+alias -l vong3 { return 6 05Chuâ²n bi qua kho²i khu rong rêu 12Chú 3-=[13 %c2 3]=-12 ðã loi dung lúc chú -=>7 %c1 12bi tiêu cha²y ðang bi mâ't súc nên ðã vuot lên }
+alias -l vong4 { return 6 05Ðê´n 1 con rach nho² và nhiêù lâ`y lôi 12Chú7 %c2 12ðã boi châm lai do ån nhå`m thúc ån nhiê~m cúm gà, nên ðã bi cúm cá . Ngay lâp túc chú 3-=[13 %c3 3]=-12 ðã vuot lên dâ~n ðâ`u }
+alias -l vong5 { return 6 05Khu ðá ngâ`m ðang hiên ra truóc må't các chú cá 12Vì 1 chút lo là, chú7 %c3 12ðã bi chú 3-=[13 %c4 3]=-12 dùng ðôi mang cua² mình boi thât nhanh làm nuo'c phúng tung toé vào må't và ðã vuot qua måt }
+alias -l vong6 { return 6 05Vùa tíên thå²ng vào khu ðá ngâ`m 12Chú 3-=[13 %c5 3]=-12 ðã loi dung lúc chú -=>7 %c4 12bi tiêu cha²y ðang bi mâ't súc nên ðã vuot lên }
+alias -l vong7 { return 5Vùa ra kho²i khu ðá ngâ`m 12Chú 3-=[13 %c5 3]=-12 chao luon 1 cái ðã tao ðuoc 1 khoa²ng cách vói ðoàn cá }
+alias -l vong8 { return 5Ðê´n 1 bò ao nho² 12Do vâ´p pha²i chuóng ngai vât, chú7 %c5 12ðã bi châm lai môt ðoan và tao thòi co cho chú 3-=[13 %c6 3]=-12 vuot lên }
+alias -l vong9 { return 6 05Ðê´n giuã bò ao 12Vì 1 chút lo là, chú7 %c6 12ðã bi chú 3-=[13 %c7 3]=-12 dùng ðôi mang cua² mình boi thât nhanh làm nuo'c phúng tung toé vào må't và ðã vuot qua måt }
+alias -l vong10 { return 6 05Vùa vuot qua kho²i bò ao và så'p boi ra sông lón 12Chú 3-=[13 %c7 3]=-12 vâñ ðang dâñ ðâ`u ðoàn cá }
+alias -l vong11 { return 6 05Trên ðoan ðuòng boi ra sông lón 12Do vâ´p pha²i chuóng ngai vât, chú7 %c7 12ðã bi châm lai môt ðoan và tao thòi co cho chú 3-=[13 %c8 3]=-12 vuot lên }
+alias -l vong12 { return 5Så´p ðê´n ðích là cua² sông ðô~ ra biê²n 12Chú7 %c8 12ðã boi châm lai do ån nhå`m thúc ån nhiê~m cúm gà, nên ðã bi cúm cá . Ngay lâp túc chú 3-=[13 %c9 3]=-12 ðã vuot lên dâ~n ðâ`u }
+alias -l vong13 { return 6 0,1 Kê´t thúc vòng ðua ! Chú Cá vê` ðích ðâ`u tiên là chú -=[11,1 %c9 0,1]=-  }

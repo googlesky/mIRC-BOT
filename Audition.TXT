@@ -1,0 +1,294 @@
+alias audition {
+  .ignore -r
+  .timerau1 1 2 describeVC %r 2=-=-=3*4°12*3°4*12°3*2[ 1,1 0,4A0,1u0,4d0,1i0,4t0,1i0,4o0,1n4,4  2]3*12°4*3°12*4°3*2=-=-=
+  .timerau2 1 3 set %au on
+  .timerau3 1 4 describeVC %r $InsertSymbol(1,Gõ 8-=[ 11 $+ $InsertBC(!Au) $+  09Tìên 8]=- ðê² tham gia trò cho’i Audition !!!)
+  .timerau4 1 44 set %au off
+  .timerau5 1 44 describeVC %r 4Ðã hê´t giò’ ðång ký. 12Chúng ta bå´t ðâ`u cho’i
+  .timerau6 1 45 au_play
+}
+on 1:TEXT:!au *:%r: {
+  if ($level($nick) < 3) { noticeVC $nick 9,1Ban chu’a ðång ký vui lòng 4,1PRIVATE 8,1 $+ $me 9,1gõ 11,1!register 9,1ðê² ðång ký 8,1/msg $me !register <pass> | .ignore -u15 $nick }
+  if ($level($nick) >= 3) && ($ChkBet($nick,$2) == True) {
+    if (%au == on) {
+      if ($2 isnum) {
+        if ($2 > $coidiem(diem,$nick)) { noticeVC $nick 12* $nick không ðu² tiê`n ðåt | halt }
+        else {
+          .ignore $nick
+          set %lv 1
+          writeini hethong\au.txt au $nick $+ * $+ $2 0 0 0 0
+          ghidiem diem $nick $calc($coidiem(diem,$nick) - $int($2))
+          describeVC %r 12* $nick tham gia cho’i  $+ $read(hethong\color.txt) Audition  12vó’i sô´ tiê`n là:  $+ $read(hethong\color.txt) $ $+ $tien($2) 
+        }
+      }
+    }
+  }
+}
+alias au_play {
+  .ignore -r
+  if ($lines(hethong\au.txt) >= 2) {
+    aunick
+  }
+  else {
+    .timerau7 1 2 describeVC %r 0,12 Không có ai tham gia cho’i Audition. Hen các ban vào lâ`n sau 
+    .timerau8 1 %quacau choigame
+  }
+}
+alias tinhgioau {
+  .ignore *@*
+  unset %lvs*
+  if (%lv == 1) {
+    unset %lvs1
+    set %lv1 $calc(%lv1 + 1)
+    if (%lv1 == 1) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv1 == 2) { set %lv 2 | .timertinhgio2 1 4 au_bd }
+  }
+  if (%lv == 2) {
+    unset %lvs2
+    set %lv2 $calc(%lv2 + 1)
+    if (%lv2 == 1) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv2 == 2) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv2 == 3) { set %lv 3 | .timertinhgio2 1 4 au_bd }
+  }
+  if (%lv == 3) {
+    unset %lvs3
+    set %lv3 $calc(%lv3 + 1)
+    if (%lv3 == 1) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv3 == 2) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv3 == 3) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv3 == 4) { set %lv 4 | .timertinhgio2 1 4 au_bd }
+  }
+  if (%lv == 4) {
+    unset %lvs4
+    set %lv4 $calc(%lv4 + 1)
+    if (%lv4 == 1) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv4 == 2) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv4 == 3) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv4 == 4) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv4 == 5) { set %lv 5 | .timertinhgio2 1 4 au_bd }
+  }
+  if (%lv == 5) {
+    unset %lvs5
+    set %lv5 $calc(%lv5 + 1)
+    if (%lv5 == 1) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv5 == 2) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }  
+    if (%lv5 == 3) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }  
+    if (%lv5 == 4) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv5 == 5) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv5 == 6) { set %lv 6 | .timertinhgio2 1 4 au_bd }
+  }
+  if (%lv == 6) {
+    unset %lvs6
+    set %lv6 $calc(%lv6 + 1)
+    if (%lv6 == 1) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv6 == 1) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv6 == 2) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv6 == 3) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv6 == 4) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv6 == 5) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv6 == 6) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv6 == 7) { set %lv 7 | .timertinhgio2 1 4 au_bd }
+  }
+  if (%lv == 7) {
+    unset %lvs7
+    set %lv7 $calc(%lv7 + 1)
+    if (%lv7 == 1) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv7 == 2) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv7 == 3) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv7 == 4) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv7 == 5) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv7 == 6) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv7 == 7) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv7 == 8) { set %lv 8 | .timertinhgio2 1 4 au_bd }
+  }
+  if (%lv == 8) {
+    unset %lvs8
+    set %lv8 $calc(%lv8 + 1)
+    if (%lv8 == 1) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 2 au_bd }
+    if (%lv8 == 2) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 2 au_bd }
+    if (%lv8 == 3) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 2 au_bd }
+    if (%lv8 == 4) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 2 au_bd }
+    if (%lv8 == 5) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 2 au_bd }
+    if (%lv8 == 6) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 2 au_bd }
+    if (%lv8 == 7) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 2 au_bd }
+    if (%lv8 == 8) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv8 == 9) { set %lv 9 | .timertinhgio2 1 4 au_bd }
+  }
+  if (%lv == 9) {
+    unset %lvs9
+    set %lv9 $calc(%lv9 + 1)
+    if (%lv9 == 1) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv9 == 2) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv9 == 3) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv9 == 4) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv9 == 5) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv9 == 6) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv9 == 7) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv9 == 8) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv9 == 9) { describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 au_bd }
+    if (%lv9 == 10) { set %lv 10 | .timertinhgio2 1 4 au_bd }
+  }
+  if (%lv == 10) {
+    unset %fn
+    describeVC %r 4Ðã hê´t thò’i gian thu’c hiên các ðông tác | .timertinhgio2 1 4 tongketau
+  }
+}
+alias tongketau {
+  var %line = 2
+  :autongket
+  if (%line <= $lines(hethong\au.txt)) {
+    var %item = $read(hethong\au.txt, %line)
+    var %nick = $uw(%item,1,*)
+    var %tien = $uw($uw(%item,2,*),1,=)
+    var %pef = $gettok($uw($uw(%item,2,*),2,=),1,32)
+    var %gr = $gettok($uw($uw(%item,2,*),2,=),2,32)
+    var %cool = $gettok($uw($uw(%item,2,*),2,=),3,32)
+    var %miss = $gettok($uw($uw(%item,2,*),2,=),4,32)
+    var %taisan = $coidiem(diem,%nick)
+    var %bonus = $calc(%tien + $calc(%pef * 100000) + $calc(%gr * 10000) + $calc(%cool + 1000))
+    if (%item == $null) { goto auplay }
+    ghidiem diem %nick $calc(%taisan + %bonus)
+    describeVC %r 0,15*8,1 Vu~ công 0,15*4,01 %nick 0,15*9,01Perfect 04 [ $+ [ %pef ] ] 11Great 04 [ $+ [ %gr ] ] 9Cool 04 [ $+ [ %cool ] ] 13Miss 04 [ $+ [ %miss ] ] 0,15*4,01$ $+ $tien(%bonus) 0,15*
+    inc %line | goto autongket
+  }
+  else { .timerxoaau1 1 2 xoaau }
+}
+alias xoaau {
+  unset %lvs* %lv*
+  write -c hethong\au.txt
+  write -c aunick.txt
+  .timergame1 1 %quacau choigame
+}
+
+
+alias au_bd {
+  .ignore -r
+  if (%lv == 1) {
+    set %lvs1 $dealer(au)
+    set %tinhgio $ticks
+    describeVC %r $lv1 | .timertinhgio1 1 15 tinhgioau
+  }
+  if (%lv == 2) {
+    unset %lv1
+    set %lvs2 $dealer(au) $dealer(au)
+    set %tinhgio $ticks
+    describeVC %r $lv2 | .timertinhgio1 1 15 tinhgioau
+  }
+  if (%lv == 3) {
+    unset %lv2
+    set %lvs3 $dealer(au) $dealer(au) $dealer(au)
+    set %tinhgio $ticks
+    describeVC %r $lv3 | .timertinhgio1 1 15 tinhgioau
+  }
+  if (%lv == 4) {
+    unset %lv3
+    set %lvs4 $dealer(au) $dealer(au) $dealer(au) $dealer(au)
+    set %tinhgio $ticks
+    describeVC %r $lv4 | .timertinhgio1 1 15 tinhgioau
+  }
+  if (%lv == 5) {
+    unset %lv4
+    set %lvs5 $dealer(au) $dealer(au) $dealer(au) $dealer(au) $dealer(au)
+    set %tinhgio $ticks
+    describeVC %r $lv5 | .timertinhgio1 1 15 tinhgioau
+  }
+  if (%lv == 6) {
+    unset %lv5
+    set %lvs6 $dealer(au) $dealer(au) $dealer(au) $dealer(au) $dealer(au) $dealer(au)
+    set %tinhgio $ticks
+    describeVC %r $lv6 | .timertinhgio1 1 15 tinhgioau
+  }
+  if (%lv == 7) {
+    unset %lv6
+    set %lvs7 $dealer(au) $dealer(au) $dealer(au) $dealer(au) $dealer(au) $dealer(au) $dealer(au)
+    set %tinhgio $ticks
+    describeVC %r $lv7 | .timertinhgio1 1 15 tinhgioau
+  }
+  if (%lv == 8) {
+    unset %lv7
+    set %lvs8 $dealer(au) $dealer(au) $dealer(au) $dealer(au) $dealer(au) $dealer(au) $dealer(au) $dealer(au)
+    set %tinhgio $ticks
+    describeVC %r $lv8 | .timertinhgio1 1 15 tinhgioau
+  }
+  if (%lv == 9) {
+    unset %lv8
+    set %lvs9 $dealer(au) $dealer(au) $dealer(au) $dealer(au) $dealer(au) $dealer(au) $dealer(au) $dealer(au) $dealer(au)
+    set %tinhgio $ticks
+    describeVC %r $lv9 | .timertinhgio1 1 15 tinhgioau
+  }
+  if (%lv == 10) {
+    unset %lv9
+    set %fn $dealer(au) $dealer(au) $dealer(au) $dealer(au) $dealer(au) $dealer(au) $dealer(au) $dealer(au) $dealer(au) $dealer(au)
+    set %tinhgio $ticks
+    describeVC %r $fn | .timertinhgio1 1 15 tinhgioau
+  }
+}
+
+alias -l lv1 { return 0,15*11,1 DJ 0,15*0,1 $me 0,15* 4LV [ $+ [ %lv ] $+ ] : $mahoa(%lvs1) }
+alias -l lv2 { return 0,15*11,1 DJ 0,15*0,1 $me 0,15* 4LV [ $+ [ %lv ] $+ ] : $mahoa(%lvs2) }
+alias -l lv3 { return 0,15*11,1 DJ 0,15*0,1 $me 0,15* 4LV [ $+ [ %lv ] $+ ] : $mahoa(%lvs3) }
+alias -l lv4 { return 0,15*11,1 DJ 0,15*0,1 $me 0,15* 4LV [ $+ [ %lv ] $+ ] : $mahoa(%lvs4) }
+alias -l lv5 { return 0,15*11,1 DJ 0,15*0,1 $me 0,15* 4LV [ $+ [ %lv ] $+ ] : $mahoa(%lvs5) }
+alias -l lv6 { return 0,15*11,1 DJ 0,15*0,1 $me 0,15* 4LV [ $+ [ %lv ] $+ ] : $mahoa(%lvs6) }
+alias -l lv7 { return 0,15*11,1 DJ 0,15*0,1 $me 0,15* 4LV [ $+ [ %lv ] $+ ] : $mahoa(%lvs7) }
+alias -l lv8 { return 0,15*11,1 DJ 0,15*0,1 $me 0,15* 4LV [ $+ [ %lv ] $+ ] : $mahoa(%lvs8) }
+alias -l lv9 { return 0,15*11,1 DJ 0,15*0,1 $me 0,15* 4LV [ $+ [ %lv ] $+ ] : $mahoa(%lvs9) }
+alias -l fn { return 0,15*11,1 DJ 0,15*0,1 $me 0,15* 4FINISH : $mahoa(%fn) }
+
+alias aunick {
+  var %line = 2
+  :aunick
+  if (%line <= $lines(hethong\au.txt)) {
+    var %item = $read(hethong\au.txt, %line)
+    var %nick = $uw(%item,1,*)
+    if (%item == $null) { goto aunick }
+    write aunick.txt %nick
+    inc %line | goto aunick
+  }
+  else { au_bd }
+}
+
+
+
+on 1:text:*:%r: {
+  if ($read(aunick.txt,w,$nick) != $null) {
+    var %line = 2
+    :auplay
+    if (%line <= $lines(hethong\au.txt)) {
+      var %item = $read(hethong\au.txt, %line)
+      var %nick = $uw(%item,1,*)
+      var %tien = $uw($uw(%item,2,*),1,=)
+      var %pef = $gettok($uw($uw(%item,2,*),2,=),1,32)
+      var %gr = $gettok($uw($uw(%item,2,*),2,=),2,32)
+      var %cool = $gettok($uw($uw(%item,2,*),2,=),3,32)
+      var %miss = $gettok($uw($uw(%item,2,*),2,=),4,32)
+      if (%item == $null) { goto auplay }
+      if ($1- isnum) {
+        if ($1- == %lvs1) || ($1- == $remove(%lvs1,$chr(32))) || ($1- == %lvs2) || ($1- == $remove(%lvs2,$chr(32))) || ($1- == %lvs3) || ($1- == $remove(%lvs3,$chr(32))) || ($1- == %lvs4) || ($1- == $remove(%lvs4,$chr(32))) || ($1- == %lvs5) || ($1- == $remove(%lvs5,$chr(32))) || ($1- == %lvs6) || ($1- == $remove(%lvs6,$chr(32))) || ($1- == %lvs7) || ($1- == $remove(%lvs7,$chr(32))) || ($1- == %lvs8) || ($1- == $remove(%lvs8,$chr(32))) || ($1- == %lvs9) || ($1- == $remove(%lvs9,$chr(32))) || ($1- == %fn) || ($1- == $remove(%fn,$chr(32))) {
+          var %ketthuc = $int($calc((($ticks - %tinhgio) / 1000) - 2))
+          if (%ketthuc >= 1) && (%ketthuc <= 2) {
+            var %pef1 = $calc(%pef + 1)
+            writeini hethong\au.txt au [ [ %nick ] $+ ] * [ $+ [ %tien ] ] %pef1 %gr %cool %miss 
+            set %delay Perfect 
+          }
+          if (%ketthuc >= 3) && (%ketthuc < 5) {
+            var %gr1 = $calc(%gr + 1)
+            writeini hethong\au.txt au [ [ %nick ] $+ ] * [ $+ [ %tien ] ] %pef %gr1 %cool %miss
+            set %delay Great
+          }
+          if (%ketthuc >= 5) {
+            var %cool1 = $calc(%cool + 1)
+            writeini hethong\au.txt au [ [ %nick ] $+ ] * [ $+ [ %tien ] ] %pef %gr %cool1 %miss
+            set %delay Cool
+          }
+          .ignore %nick | describeVC %r 4Vu~ công:12 %nick 13Ðã thu’c hiên Hoàn tâ´t các ðông tác Vu~ Ðao3 %delay | halt
+        }
+        if ($1- != %lvs1) || ($1- != $remove(%lvs1,$chr(32))) || ($1- != %lvs2) || ($1- != $remove(%lvs2,$chr(32))) || ($1- != %lvs3) || ($1- != $remove(%lvs3,$chr(32))) || ($1- != %lvs4) || ($1- != $remove(%lvs4,$chr(32))) || ($1- != %lvs5) || ($1- != $remove(%lvs5,$chr(32))) || ($1- != %lvs6) || ($1- != $remove(%lvs6,$chr(32))) || ($1- != %lvs7) || ($1- != $remove(%lvs7,$chr(32))) || ($1- != %lvs8) || ($1- != $remove(%lvs8,$chr(32))) || ($1- != %lvs9) || ($1- != $remove(%lvs9,$chr(32))) || ($1- != %fn) || ($1- != $remove(%fn,$chr(32))) {
+          var %miss1 = $calc(%miss + 1)
+          writeini hethong\au.txt au [ [ %nick ] $+ ] * [ $+ [ %tien ] ] %pef %gr %cool %miss1
+          .ignore %nick | describeVC %r 4Vu~ công :12 %nick 13Ðã Tru’o’t chân té4 MISS | halt
+        }
+      }
+    }
+  }
+}

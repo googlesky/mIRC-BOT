@@ -1,0 +1,332 @@
+on 1:TEXT:!gamenhom:%r: {
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chua Ðång ký , Ðê² ðång ký choi game , 8Gõ 11/msg $me 4!register <pass1> <pass2> | .ignore -u5 $nick }
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) != $null) && ($level($nick) < 3) { noticeVC $nick 4,01 $+ $nick 9,01Chua Login , 13/msg $me !identify <pass> , 9Ðê² choi Games | .ignore -u5 $nick }
+  if (%gamenhom.dangchoi == on) { noticeVC $nick 3Ðang choi $DenDo(Game Nhóm) 3hoå.c là chua có $DenDo(Game Nhóm)3 bây giò. Ban chò nhé. | .ignore -u20 $nick | .close -m $nick | halt }
+  else {
+    inc %gamenhom.thutu 1
+    writeini -n hethong\GameNhom.ini Gamenhom %gamenhom.thutu $nick
+    describeVC %r 13 $+ $nick 12ðã tham gia trò choi $DenDo(Game Nhóm)
+    .ignore -u40 $nick 
+  }
+}
+on 1:TEXT:!GameNhom.DatCuoc*:%r: {
+  if ($nick == %gamenhom.doitruong.datcuoc) && (%gamenhom.datcuoc == on) && ($ChkBet($nick,$2) == True) {
+    describeVC %r 12Ðôi truo²ng4 %gamenhom.doitruong.datcuoc 12ðã ðåt cuoc ván này là 8,1$ $+ $tien($2)
+    set %gamenhom.giaithuong $2
+    var %iChkGN = 1
+    while (%iChkGN <= %gamenhom.thutu) {
+      if ($ChkBet($coidulieu5(GameNhom,%iChkGN),$2) == False) {
+        .timer 1 1 describeVC %r 12Xin lô~i4 $nick 12!!! Tài sa²n cu²a3 $coidulieu5(GameNhom,%iChkGN) 12không ðu² ðê² tham gia cuoc. Mòi ban ðåt cuoc lai ...
+        .timerdatcuocgamenhom4 1 30 choigamenhom
+        set %iChkGN $calc(%gamenhom.thutu + 1)
+        unset %gamenhom.giaithuong | halt
+      }
+      inc %iChkGN
+    }
+    if (%gamenhom.giaithuong != $null) {
+      .timer 1 3 set %gamenhom.dongy on
+      .timer 1 3 describeVC %r 0,1Ðôi truo²ng4 %gamenhom.doitruong.traloi 0có Ðô`ng ý không? Nêú 4Ðô`ng ý 0gõ: 8!GameNhom.DongY 0nêú 4Không Ðô`ng ý 0gõ: 8!GameNhom.KhongDongY
+      .timer 1 4 describeVC %r 12Ban có 043003s 12ðê² chon. Nêú ban 4Không Ðô`ng ý 12hoåc quá 043003s 12bot se~ tu ðông nhân cuoc là 8,1$ $+ $tien(%gamenhom.tudat)
+      .timerdatcuocgamenhom4 1 33 choigamenhom
+    }
+  }
+  ;else { describeVC %r 5Chi² có Ðôi truo²ng4 %doitruong.datcuoc 5mói ðuoc tham gia ðåt cuoc }
+}
+on 1:TEXT:!GameNhom.*DongY*:%r: {
+  if ($nick == %gamenhom.doitruong.traloi) && (%gamenhom.dongy == on) {
+    if ($1 == !GameNhom.DongY) {
+      .timer 1 1 describeVC %r 12Ðôi truo²ng4 $nick 12ðã 4Ðô`ng ý 12vói sô´ tiê`n cuoc 8,1$ $+ $tien(%gamenhom.giaithuong) $+ 12. Chúng ta se~ bå´t ðâù trong vài giây nuã ...
+      .timerdatcuocgamenhom4 1 5 choigamenhom
+    }
+    elseif ($1 == !GameNhom.KhongDongY) {
+      .timer 1 3 set %gamenhom.giaithuong %gamenhom.tudat
+      .timer 1 1 describeVC %r 12Ðôi truo²ng4 $nick 12ðã 4Không Ðô`ng ý 12vói sô´ tiê`n cuoc 8,1$ $+ $tien(%gamenhom.giaithuong) $+ 12. Chúng ta se~ bå´t ðâù trong vài giây nuã ...
+      .timerdatcuocgamenhom4 1 5 choigamenhom
+    }
+    unset %gamenhom.dongy
+  }
+}
+alias gamenhom.datcuoc {
+  set %gamenhom.doitruong.datcuoc $gettok($gettok(%nhom1,1,32) $gettok(%nhom2,1,32),$r(1,2),32)
+  set %gamenhom.doitruong.traloi $remtok($gettok(%nhom1,1,32) $gettok(%nhom2,1,32),%gamenhom.doitruong.datcuoc,1,32)
+  set %gamenhom.datcuoc on
+  ;set %gamenhom.tudat $r(1,9) $+ $str(0,8)
+  set %gamenhom.tudat $r(1,$left($div($GameNhomDatCuocMax,2),1)) $+ $str(0,$calc($len($div($GameNhomDatCuocMax,2)) - 1))
+  .timerdatcuocgamenhom1 1 1 describeVC %r 12Bot $me se~ chon môt trong hai Ðôi Truo²ng cu²a hai ðôi ( $+ $gettok(%nhom1,1,32) hoåc $gettok(%nhom2,1,32) $+ ) ðê² tham gia Ðåt Cuoc.
+  .timerdatcuocgamenhom2 1 3 describeVC %r 0,1 Ðôi truo²ng ðuoc chon là:9 %gamenhom.doitruong.datcuoc 0Mòi ban gõ 4!GameNhom.DatCuoc 8<sô´ tiê`n> 0ðê² ðåt cuoc.
+  .timerdatcuocgamenhom3 1 4 describeVC %r 12Ban có 043003s 12ðê² ðåt cuoc. Nêú ban không ðåt cuoc, bot se~ tu ðông nhân cuoc là 8,1$ $+ $tien(%gamenhom.tudat)
+  .timerdatcuocgamenhom5 1 5 describeVC %r 12Sô´ tiê`n có thê² ðåt cuoc lón nhâ´t là 8,1$ $+ $tien($div($GameNhomDatCuocMax,2))
+  .timerdatcuocgamenhom4 1 34 choigamenhom
+}
+on 1:text:*:%r: {
+  if (%gamenhom == on) {
+    if ($len($1-) == 0) return
+    ;if (($DA.TL($1-) == $DA.TL(%goiy3)) || ($DA.TL($1-) == $DA.TL(%goiy2)) || ($1- == $unicode(%goiy2)) || ($DA.TL($viqr($1-)) == $DA.TL(%goiy2)) ) && ($DA.TL($1-) != $null ) && (%goiy2 != $null) {
+    if ($lower($1-) == $lower(%goiy2)) && (%goiy2 != $null) {
+      if ( $nick == $coidulieu5(GameNhom,1) || $nick == $coidulieu5(GameNhom,3) || $nick == $coidulieu5(GameNhom,5) || $nick == $coidulieu5(GameNhom,7)   || $nick == $coidulieu5(GameNhom,9)  || $nick == $coidulieu5(GameNhom,11)  || $nick == $coidulieu5(GameNhom,13)   || $nick == $coidulieu5(GameNhom,15)  || $nick == $coidulieu5(GameNhom,17)   || $nick == $coidulieu5(GameNhom,19) ) {
+        inc %nhom1.thang 1
+        ghidiem diem $nick $int($calc($coidiem(diem,$nick) + %averageDiem))
+        .timera1 off
+        ;$iif($r(0,1)=0,3ðáp án ðúng4,3tra² lòi ðúng4)
+        describeVC %r 12Nhóm 1:13 $nick $iif($r(0,1)=0,3ðáp án ðúng4,3tra² lòi ðúng4) %goiy2 12Ðiê²m:4 $tien(%averageDiem) 12Tài sa²n: 4$ $+ $tien($coidiem(diem,$nick)) $+ . 7Kê´t qua²: 4Nhóm 1:13 %nhom1.thang 12-4 Nhóm 2:13 %nhom2.thang
+        unset %gamenhom.tam. %gamenhom.tam %goiy*
+        ;if (%nhom1.thang == %nhom2.thang) describeVC %r Ty² sô´ ðang cân bå`ng. Nhóm nào se~ vuo.t lên truóc. Mòi các ba.n theo dõi tiê´p
+        ;if (%nhom1.thang == 1) && (%nhom2.thang == 0) describeVC %r 3Kho²i ðâ`u 13Nhóm 13 ðã vuo.t lên dâ~n truóc dô´i phuong
+        ;if (%nhom1.thang == 5) describeVC %r 13Nhóm 112 ðã ði ðuo.c nu~a ðuòng rô`i ðâ´y. Cô´ lên nào các ba.n
+        ;if (%nhom1.thang == 8) describeVC %r 13Nhóm 112 còn 2 câu nu~a se~ ha. gu.c 13Nhóm 2. 12Tång tô´c lên nè
+        ;if (%nhom1.thang == 9) describeVC %r 13Nhóm 112 còn vo²n ve.n 1 câu sau cùng là toàn thå´ng. Nhanh lên nào các ba.n
+        .timera2 off
+        .timera4 off
+        .timera3 1 10 choigamenhom
+        if ( %nhom1.thang == 10 ) {
+          .timera3 off
+          .timera4 off
+          describeVC %r 3Xin chúc mùng 13Nhóm 1:4 %nhom1 3ðã thå´ng. Mô~i thành viên trong nhóm ðuo.c thuo²ng 4$ $+ $tien(%gamenhom.giaithuong)
+          unset %goiy3 %goiy2
+          thuongnhom1 | .timers off | .timera3 off | .timera1 off | timera2 off | halt
+          remini hethong\GameNhom.ini Gamenhom
+          halt
+        }
+      }
+      if ( $nick == $coidulieu5(GameNhom,2) || $nick == $coidulieu5(GameNhom,4) || $nick == $coidulieu5(GameNhom,6)   || $nick == $coidulieu5(GameNhom,8)   || $nick == $coidulieu5(GameNhom,10)  || $nick == $coidulieu5(GameNhom,12)  || $nick == $coidulieu5(GameNhom,14)   || $nick == $coidulieu5(GameNhom,16)  || $nick == $coidulieu5(GameNhom,18)   || $nick == $coidulieu5(GameNhom,20)) {  
+        inc %nhom2.thang 1
+        ghidiem diem $nick $int($calc($coidiem(diem,$nick) + %averageDiem))
+        .timera1 off
+        describeVC %r 12Nhóm 2:13 $nick $iif($r(0,1)=0,3ðáp án ðúng4,3tra² lòi ðúng4) %goiy2 12Ðiê²m:4 $tien(%averageDiem) 12Tài sa²n: 4$ $+ $tien($coidiem(diem,$nick)) $+ . 7Kê´t qua²: 4Nhóm 1:13 %nhom1.thang 12-4 Nhóm 2:13 %nhom2.thang
+        unset %gamenhom.tam. %gamenhom.tam %goiy*
+        ;if (%nhom1.thang == %nhom2.thang) describeVC %r Ty² sô´ ðang cân bå`ng. Nhóm nào se~ vuo.t lên truóc. Mòi các ba.n theo dõi tiê´p
+        ;if (%nhom1.thang == 0) && (%nhom2.thang == 1) describeVC %r 3Kho²i ðâ`u 13Nhóm 23 ðã vuo.t lên dâ~n truóc ðô'i phuong
+        ;if (%nhom2.thang == 5) describeVC %r 13Nhóm 212 ðã ði ðuo.c nu~a ðuòng rô`i ðâ´y. Cô´ lên nào các ba.n
+        ;if (%nhom2.thang == 8) describeVC %r 13Nhóm 212 còn 2 câu nu~a se~ ha. gu.c 13Nhóm 1. 12Tång tô´c lên nè
+        ;if (%nhom2.thang == 9) describeVC %r 13Nhóm 212 còn vo²n ve.n 1 câu sau cùng là toàn thå´ng. Nhanh lên nào các ba.n
+        .timera2 off
+        .timera4 off
+        .timera3 1 10 choigamenhom
+        if ( %nhom2.thang == 10 ) {
+          .timera3 off
+          .timera4 off
+          .timer 1 1 describeVC %r 3Xin chúc mùng 13Nhóm 2:4 %nhom2 3ðã thå´ng. Mô~i thành viên trong nhóm ðuo.c thuo²ng 4$ $+ $tien(%gamenhom.giaithuong)
+          unset %goiy3 %goiy2
+          thuongnhom2 | .timers off | .timera3 off | .timera1 off | timera2 off | halt
+          remini hethong\GameNhom.ini Gamenhom
+          halt 
+        }
+      }
+    }
+  }
+}
+alias GameNhom {
+  %gamenhom = on
+  remini hethong\GameNhom.ini Gamenhom 
+  unset %nhom* %gamenhom.*
+  set %gamenhom.dangchoi off | set %gamenhom.. $r(1,10) | %nhom1.thang = 0 | %nhom2.thang = 0
+  describeVC %r 3Tói giò choi $DenDo(Game Nhóm) 3rôì! Các ban có4 40 3giây gõ13 !GameNhom 3ðê² tham gia thi ðâú $DenDo(Game Nhóm)
+  .timergamenhom1 1 40 describeVC %r 12Hê´t giò tham gia $DenDo(Game Nhóm) 12Ban tô² chúc se~ bô´c thåm chia ðôi cho các thành viên
+  .timergamenhom2 1 40 set %gamenhom.dangchoi on
+  .timergamenhom3 1 42 xepgamenhom
+  .timergamenhom4 1 45 kiemtragamenhom
+  ;.timergamenhom5 1 46 chiatien
+  .timergamenhom6 1 48 gamenhom.datcuoc
+}
+alias xepgamenhom {
+  set %gamenhom on
+  if ($lines(hethong\GameNhom.ini) >= 3) {
+    set %nhom1 $coidulieu5(GameNhom,1) $coidulieu5(GameNhom,3) $coidulieu5(GameNhom,5) $coidulieu5(GameNhom,7) $coidulieu5(GameNhom,9) $coidulieu5(GameNhom,11) $coidulieu5(GameNhom,13) $coidulieu5(GameNhom,15) $coidulieu5(GameNhom,17) $coidulieu5(GameNhom,19) 
+    set %nhom2 $coidulieu5(GameNhom,2) $coidulieu5(GameNhom,4) $coidulieu5(GameNhom,6) $coidulieu5(GameNhom,8) $coidulieu5(GameNhom,10) $coidulieu5(GameNhom,12) $coidulieu5(GameNhom,14) $coidulieu5(GameNhom,16) $coidulieu5(GameNhom,18) $coidulieu5(GameNhom,20)
+    ;set %gamenhom.giaithuong $readini(dulieu\tienthuong.ini,TienThuong,%gamenhom..)
+    .timergamenhomx1 1 1 describeVC %r $DenDo(Game Nhóm 1:) 4 %nhom1
+    .timergamenhomx2 1 2 describeVC %r $DenDo(Game Nhóm 2:) 4 %nhom2
+    trudiemgame %gamenhom.giaithuong
+  }
+  else kiemtragamenhom
+}
+alias kiemtragamenhom {
+  if ($lines(hethong\GameNhom.ini) < 3) {
+    .timers off
+    %gamenhom.dangchoi = on
+    describeVC %r 12Không ðu² nguòi tham gia $DenDo(Game Nhóm) 12nên dùng o² ðây
+    remini hethong\GameNhom.ini Gamenhom
+    .timersangcau 1 %quacau choigame
+  }
+}
+alias chiatien {
+  %gamenhom.tongnguoi1 = $numtok(%nhom1,32)
+  %gamenhom.tienthuong1 = $round($calc(%gamenhom.giaithuong / %gamenhom.tongnguoi1),0)
+  %gamenhom.tongnguoi2 = $numtok(%nhom2,32)
+  %gamenhom.tienthuong2 = $round($calc(%gamenhom.giaithuong / %gamenhom.tongnguoi2),0)
+}
+alias choigamenhom {
+  %gamenhom = on
+  ;unset %gamenhom.dongy %gamenhom.datcuoc
+  .ignore -r
+  inc %gamenhom.thutuhoi 1
+  if (%gamenhom.giaithuong == $null) { set %gamenhom.giaithuong %gamenhom.tudat }
+  if (%gamenhom.dongy != $null) || (%gamenhom.datcuoc != $null) {
+    describeVC %r 12Hai nhóm se~ thi ðâú trong4 20 12câu Nhóm nào tra² lòi 0410 12câu truóc se~ chiê´n thå´ng
+    describeVC %r 12Sô´ tiê`n cuoc cu²a ván này là 8,1$ $+ $tien(%gamenhom.giaithuong) $+ 12.
+    unset %gamenhom.dongy %gamenhom.datcuoc
+  }
+
+  ;inc %cauhoi.thutuhoi 1
+  ;if ($coidulieu(Chung,Cauhoitudong) == 0) { inc %cauhoi.thutuhoi 1 | %cauhoi.tam = $read -l $+ %cauhoi.thutuhoi cauhoi\gamenhom.ini }
+  ;else { %cauhoi.thutuhoi = $r(1,$lines(cauhoi\gamenhom.ini)) | %cauhoi.tam = $read -l $+ %cauhoi.thutuhoi cauhoi\gamenhom.ini }
+  set %cauhoi.tam $read(cauhoi\gamenhom.ini)
+
+  %cauhoi. = $uw(%cauhoi.tam,1,*)
+
+  if (%gamenhom.thutuhoi >= 21 ) { nghichoi | halt }
+
+  if (%nhom1 == $null) && (%nhom2 == $null) { 
+    describeVC %r 3Không có ai tham gia $DenDo(Game Nhóm) 3ca² nên dùng cuôc choi o² ðây
+    .timera1 off | .timera2 off | .timers off | unset %cauhoi. %cauhoi.tam %goiy*
+    .timertieptuc 1 %quacau choigame | halt
+  }
+  if (%nhom1 == $null) { 
+    describeVC %r 13Nhóm 1 3không có ai ca² nên dùng cuôc choi o² ðây
+    .timera1 off | .timera2 off | .timers off | unset %cauhoi. %cauhoi.tam %goiy*
+    remini hethong\GameNhom.ini Gamenhom
+    .timertieptuc 1 %quacau choigame | halt
+  }
+  if (%nhom2 == $null) { 
+    describeVC %r 13Nhóm 2 3không có ai ca² nên dùng cuôc choi o² ðây
+    .timera1 off | .timera2 off | .timers off | unset %cauhoi. %cauhoi.tam %goiy*
+    remini hethong\GameNhom.ini Gamenhom
+    .timertieptuc 1 %quacau choigame | halt
+  }
+  describeVC %r 2=-=-=-=-=-=3¤412¤34¤123¤2[ $DenDo(Game Nhóm) 12Câu 04 $+ %gamenhom.thutuhoi 2]3¤124¤312¤43¤2=-=-=-=-=-=
+  %cauhoi.sehoi = $DenDo(Game Nhóm) $+ $InsertSymbol(0,$replace(%cauhoi.,_,*)))
+  describeVC %r %cauhoi.sehoi
+  %goiy2 = $uw(%cauhoi.tam,2,*)
+  %goiy3 = $uw(%cauhoi.tam,3,*)
+  ;notice %r.master 4Ðáp án:12 %goiy2 $+($chr(40),%goiy3,$chr(41))
+  notice %r.master 4Ðáp án:12 %goiy2
+
+  %goiy = $replace($uw(%cauhoi.tam,2,*),a,*,b,*,c,*,d,*,e,*,f,*,g,*,h,*,i,*,j,*,k,*,l,*,m,*,n,*,o,*,p,*,q,*,r,*,s,*,t,*,u,*,v,*,w,*,x,*,y,*,z,*,1,*,2,*,3,*,4,*,5,*,6,*,7,*,8,*,9,*,0,*) 
+  %goiy.2 = $replace(%goiy2,b,*,c,*,d,*,f,*,g,*,h,*,j,*,k,*,l,*,m,*,n,*,p,*,q,*,r,*,s,*,t,*,v,*,w,*,x,*,y,*,z,*,1,*,2,*,3,*,4,*,5,*,6,*,7,*,8,*,9,*,0,*) 
+  %goiy.3 = $left(%goiy2,3)
+  .timera1 1 3 describeVC %r 3Các ban có 0430s 3Ðê² tra² lòi câu ho²i này
+  .timera4 1 45 hetgio
+}
+alias hetgio {
+  describeVC %r 13Hê´t giò. Chúng ta sang câu kê´ tiê´p nhé
+  .timera5 1 %quacau choigamenhom
+  unset %gamenhom.tam. %gamenhom.tam %goiy*
+}
+alias nghichoi {
+  %gamenhom.dangchoi = on
+  describeVC %r 3Hê´t 20 câu! Không có nhóm nào thå´ng nên du`ng o² ðây...
+  .timertieptuc 1 %quacau choigame | halt
+}
+alias thuongnhom1 {
+  %diem.cosan1 = $coidiem(Diem,$coidulieu5(GameNhom,1)) | inc %diem.cosan1 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,1) %diem.cosan1
+  %diem.cosan2 = $coidiem(Diem,$coidulieu5(GameNhom,2)) | dec %diem.cosan2 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,2) %diem.cosan2
+  if ($coidulieu5(GameNhom,3) == $null) { goto tieptuc }
+  else { %diem.cosan3 = $coidiem(Diem,$coidulieu5(GameNhom,3)) | inc %diem.cosan3 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,3) %diem.cosan3 }
+  if ($coidulieu5(GameNhom,4) == $null) { goto tieptuc }
+  else { %diem.cosan4 = $coidiem(Diem,$coidulieu5(GameNhom,4)) | dec %diem.cosan4 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,4) %diem.cosan4 }
+  if ($coidulieu5(GameNhom,5) == $null) { goto tieptuc }
+  else { %diem.cosan5 = $coidiem(Diem,$coidulieu5(GameNhom,5)) | inc %diem.cosan5 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,5) %diem.cosan5 }
+  if ($coidulieu5(GameNhom,6) == $null) { goto tieptuc }
+  else { %diem.cosan6 = $coidiem(Diem,$coidulieu5(GameNhom,6)) | dec %diem.cosan6 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,6) %diem.cosan6 }
+  if ($coidulieu5(GameNhom,7) == $null) { goto tieptuc }
+  else { %diem.cosan7 = $coidiem(Diem,$coidulieu5(GameNhom,7)) | inc %diem.cosan7 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,7) %diem.cosan7 }
+  if ($coidulieu5(GameNhom,8) == $null) { goto tieptuc }
+  else { %diem.cosan8 = $coidiem(Diem,$coidulieu5(GameNhom,8)) | dec %diem.cosan4 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,8) %diem.cosan8 }
+  if ($coidulieu5(GameNhom,9) == $null) { goto tieptuc }
+  else { %diem.cosan9 = $coidiem(Diem,$coidulieu5(GameNhom,9)) | inc %diem.cosan9 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,9) %diem.cosan9 }
+  if ($coidulieu5(GameNhom,10) == $null) { goto tieptuc }
+  else { %diem.cosan10 = $coidiem(Diem,$coidulieu5(GameNhom,10)) | dec %diem.cosan10 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,10) %diem.cosan10 }
+  if ($coidulieu5(GameNhom,11) == $null) { goto tieptuc }
+  else { %diem.cosan11 = $coidiem(Diem,$coidulieu5(GameNhom,11)) | inc %diem.cosan11 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,11) %diem.cosan11 }
+  if ($coidulieu5(GameNhom,12) == $null) { goto tieptuc }
+  else { %diem.cosan12 = $coidiem(Diem,$coidulieu5(GameNhom,12)) | dec %diem.cosan12 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,12) %diem.cosan12 }
+  if ($coidulieu5(GameNhom,13) == $null) { goto tieptuc }
+  else { %diem.cosan13 = $coidiem(Diem,$coidulieu5(GameNhom,13)) | inc %diem.cosan13 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,13) %diem.cosan13 }
+  if ($coidulieu5(GameNhom,14) == $null) { goto tieptuc }
+  else { %diem.cosan14 = $coidiem(Diem,$coidulieu5(GameNhom,14)) | dec %diem.cosan14 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,14) %diem.cosan14 }
+  if ($coidulieu5(GameNhom,15) == $null) { goto tieptuc }
+  else { %diem.cosan15 = $coidiem(Diem,$coidulieu5(GameNhom,15)) | inc %diem.cosan15 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,15) %diem.cosan15 }
+  if ($coidulieu5(GameNhom,16) == $null) { goto tieptuc }
+  else { %diem.cosan16 = $coidiem(Diem,$coidulieu5(GameNhom,16)) | dec %diem.cosan16 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,16) %diem.cosan16 }
+  if ($coidulieu5(GameNhom,17) == $null) { goto tieptuc }
+  else { %diem.cosan17 = $coidiem(Diem,$coidulieu5(GameNhom,17)) | inc %diem.cosan17 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,17) %diem.cosan17 }
+  if ($coidulieu5(GameNhom,18) == $null) { goto tieptuc }
+  else { %diem.cosan18 = $coidiem(Diem,$coidulieu5(GameNhom,18)) | dec %diem.cosan18 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,18) %diem.cosan18 }
+  if ($coidulieu5(GameNhom,19) == $null) { goto tieptuc }
+  else { %diem.cosan19 = $coidiem(Diem,$coidulieu5(GameNhom,19)) | inc %diem.cosan19 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,19) %diem.cosan19 }
+  if ($coidulieu5(GameNhom,20) == $null) { goto tieptuc }
+  else { %diem.cosan20 = $coidiem(Diem,$coidulieu5(GameNhom,20)) | dec %diem.cosan20 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,20) %diem.cosan20 }
+  :tieptuc
+  set %gamenhom off | unset %nhom* %gamenhom.tienthuong* %gamenhom.tongnguoi* %goiy*
+  remini hethong\gamenhom.ini Gamenhom
+  %gamenhom.dangchoi = on
+  .timertieptuc 1 %quacau choigame | halt
+}
+alias thuongnhom2 {
+  %diem.cosan2 = $coidiem(Diem,$coidulieu5(GameNhom,2)) | inc %diem.cosan2 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,2) %diem.cosan2
+  %diem.cosan1 = $coidiem(Diem,$coidulieu5(GameNhom,1)) | dec %diem.cosan1 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,1) %diem.cosan1
+  if ($coidulieu5(GameNhom,4) == $null) { goto tieptuc }
+  else { %diem.cosan4 = $coidiem(Diem,$coidulieu5(GameNhom,4)) | inc %diem.cosan4 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,4) %diem.cosan4 }
+  if ($coidulieu5(GameNhom,3) == $null) { goto tieptuc }
+  else { %diem.cosan3 = $coidiem(Diem,$coidulieu5(GameNhom,3)) | dec %diem.cosan3 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,3) %diem.cosan3 }
+  if ($coidulieu5(GameNhom,6) == $null) { goto tieptuc }
+  else { %diem.cosan6 = $coidiem(Diem,$coidulieu5(GameNhom,6)) | inc %diem.cosan6 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,6) %diem.cosan6 }
+  if ($coidulieu5(GameNhom,5) == $null) { goto tieptuc }
+  else { %diem.cosan5 = $coidiem(Diem,$coidulieu5(GameNhom,5)) | dec %diem.cosan5 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,5) %diem.cosan5 }
+  if ($coidulieu5(GameNhom,8) == $null) { goto tieptuc }
+  else { %diem.cosan8 = $coidiem(Diem,$coidulieu5(GameNhom,8)) | inc %diem.cosan8 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,8) %diem.cosan8 }
+  if ($coidulieu5(GameNhom,7) == $null) { goto tieptuc }
+  else { %diem.cosan7 = $coidiem(Diem,$coidulieu5(GameNhom,7)) | dec %diem.cosan7 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,7) %diem.cosan7 }
+  if ($coidulieu5(GameNhom,10) == $null) { goto tieptuc }
+  else { %diem.cosan10 = $coidiem(Diem,$coidulieu5(GameNhom,10)) | inc %diem.cosan10 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,10) %diem.cosan10 }
+  if ($coidulieu5(GameNhom,9) == $null) { goto tieptuc }
+  else { %diem.cosan9 = $coidiem(Diem,$coidulieu5(GameNhom,9)) | dec %diem.cosan9 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,9) %diem.cosan9 }
+  if ($coidulieu5(GameNhom,12) == $null) { goto tieptuc }
+  else { %diem.cosan12 = $coidiem(Diem,$coidulieu5(GameNhom,12)) | inc %diem.cosan12 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,12) %diem.cosan12 }
+  if ($coidulieu5(GameNhom,11) == $null) { goto tieptuc }
+  else { %diem.cosan11 = $coidiem(Diem,$coidulieu5(GameNhom,11)) | dec %diem.cosan11 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,11) %diem.cosan3 }
+  if ($coidulieu5(GameNhom,14) == $null) { goto tieptuc }
+  else { %diem.cosan14 = $coidiem(Diem,$coidulieu5(GameNhom,14)) | inc %diem.cosan14 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,14) %diem.cosan14 }
+  if ($coidulieu5(GameNhom,13) == $null) { goto tieptuc }
+  else { %diem.cosan13 = $coidiem(Diem,$coidulieu5(GameNhom,13)) | dec %diem.cosan13 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,13) %diem.cosan13 }
+  if ($coidulieu5(GameNhom,16) == $null) { goto tieptuc }
+  else { %diem.cosan16 = $coidiem(Diem,$coidulieu5(GameNhom,16)) | inc %diem.cosan16 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,16) %diem.cosan16 }
+  if ($coidulieu5(GameNhom,15) == $null) { goto tieptuc }
+  else { %diem.cosan15 = $coidiem(Diem,$coidulieu5(GameNhom,15)) | dec %diem.cosan15 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,15) %diem.cosan15 }
+  if ($coidulieu5(GameNhom,18) == $null) { goto tieptuc }
+  else { %diem.cosan18 = $coidiem(Diem,$coidulieu5(GameNhom,18)) | inc %diem.cosan18 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,18) %diem.cosan18 }
+  if ($coidulieu5(GameNhom,17) == $null) { goto tieptuc }
+  else { %diem.cosan17 = $coidiem(Diem,$coidulieu5(GameNhom,17)) | dec %diem.cosan17 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,17) %diem.cosan17 }
+  if ($coidulieu5(GameNhom,20) == $null) { goto tieptuc }
+  else { %diem.cosan20 = $coidiem(Diem,$coidulieu5(GameNhom,20)) | inc %diem.cosan20 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,20) %diem.cosan20 }
+  if ($coidulieu5(GameNhom,19) == $null) { goto tieptuc }
+  else { %diem.cosan19 = $coidiem(Diem,$coidulieu5(GameNhom,19)) | dec %diem.cosan19 %gamenhom.giaithuong | ghidiem Diem $coidulieu5(GameNhom,19) %diem.cosan19 }
+  :tieptuc
+  set %gamenhom off | unset %nhom* %gamenhom.tienthuong* %gamenhom.tongnguoi* %goiy*
+  remini hethong\gamenhom.ini Gamenhom
+  %gamenhom.dangchoi = on
+  .timertieptuc 1 %quacau choigame | halt
+}
+alias GameNhomDatCuocMax {
+  var %iDCM = 1, %nDCM = $lines(hethong\GameNhom.ini), %xDCM = $null
+  while (%iDCM <= $calc(%nDCM - 1)) {
+    ;echo %r Player %iDCM $+ : $coidulieu5(GameNhom,%iDCM) $coidiem(Diem,$coidulieu5(GameNhom,%iDCM))
+    set %xDCM %xDCM $iif($coidiem(Diem,$coidulieu5(GameNhom,%iDCM)) != $null, $coidiem(Diem,$coidulieu5(GameNhom,%iDCM)), 0)
+    inc %iDCM
+  }
+  set %xDCM $sorttok(%xDCM,32,n)
+  ;echo %r %xDCM
+  return $gettok(%xDCM,1,32)
+}
+alias DenDo {
+  var %iDD = 1, %nDD = $calc($len($1) + 1), %tempDD = 00 $+ $chr(44) $+ $iif($r(0,1) == 0,01,04) $+ $chr(160)
+  if (%tempDD == 00,01 $+ $chr(160)) { set %mDD1 00,04 | set %mDD0 00,01 }
+  else { set %mDD1 00,01 | set %mDD0 00,04 }
+  while (%iDD <= %nDD) {
+    if ($mid($1,%iDD,1) == $chr(32)) || ($mid($1,%iDD,1) == $null) { set %tempDD %tempDD $+ %mDD [ $+ [ $mod(%iDD,2) ] ] $+ $chr(160) }
+    else { set %tempDD %tempDD $+ %mDD [ $+ [ $mod(%iDD,2) ] ] $+ $mid($1,%iDD,1) }
+    inc %iDD
+  }
+  unset %mDD*
+  return $replace(%tempDD,$chr(160),$chr(32)) 
+}

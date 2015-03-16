@@ -1,0 +1,95 @@
+alias santhu {
+  var %GameMini 01,01 00,04S00,01å00,04n01,01 00,04T00,01h00,04ú01,01 
+  .timersanthu1 1 2 describeVC %r 2=-=-=3*4°12*3°4*12°3*2[ $InsertBC(%GameMini) 2]3*12°4*3°12*4°3*2=-=-=
+  .timersanthu2 1 2 set %santhu on
+  .timersanthu3 1 4 describeVC %r $InsertSymbol(1,Gõ 8-=[ 11 $+ $InsertBC(!SanThu) $+  Cún - Gâ'u - Cá Heo - Tho² - MaBu - Nai - ô'c Sên - Chim Cánh Cut - Nhím - Lång Quång - Dê'Nhu²i - ê²nh uong 4<Tìên> 8]=- ðê² tham gia sån thú. 8Chú 8ý:0 Ban có quyê`n ðång ký hê't 12 con !!!)
+  .timersanthu5 1 44 set %santhu off
+  .timersanthu6 1 44 describeVC %r 12Ðã hê't thòi gian, chúng ta bå't ðâ`u ði sån
+  .timersanthu7 1 45 santhu_play
+}
+;$replace(,cun,Cún,gau,Gâ'u,caheo,Cá Heo,tho,Tho²,mabu,MaBu,nai,Nai,ocsen,ô'c Sên,chimcanhcut,Chim Cánh Cut,nhim,Nhím,langquang,Lång Quång,denhui,Dê'Nhu²i,enhuong,ê²nh uong)
+on 1:TEXT:!santhu *:%r: {
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chua Ðång ký , Ðê² ðång ký choi game , 8Gõ 11/msg $me 4!register <pass1> <pass2> | .ignore -u5 $nick }
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) != $null) && ($level($nick) < 3) { noticeVC $nick 4,01 $+ $nick 9,01Chua Login , 13/msg $me !identify <pass> , 9Ðê² choi Games | .ignore -u5 $nick }
+  if ($level($nick) >= 3) && ($ChkBet($nick,$3) == True) {
+    if (%santhu == on) {
+      var %conthu = $read(hethong\listsanthu.txt,w,$2)
+      if (%conthu != $null) {
+        if ($3 > $coidiem(diem,$nick)) { noticeVC $nick 12* $nick không ðu² tiê`n ðåt | halt }
+        else {
+          if ($3 isnum) {
+            var %santhu2 = $nick $+ * $+ $2
+            var %santhu1 = $readini hethong\santhu.txt santhu %santhu2
+            if (%santhu1 == $null) {
+              writeini hethong\santhu.txt santhu $nick $+ * $+ $2 $int($calc($3))
+              ghidiem diem $nick $calc($coidiem(diem,$nick) - $int($3))
+              describeVC %r 12* $nick ðã ðång ký sån con  $+ $read(hethong\color.txt) $replace($2,cun,Cún,gau,Gâ'u,caheo,Cá Heo,tho,Tho²,mabu,MaBu,nai,Nai,ocsen,ô'c Sên,chimcanhcut,Chim Cánh Cut,nhim,Nhím,langquang,Lång Quång,denhui,Dê'Nhu²i,enhuong,ê²nh uong)  12vói sô' tìên là:  $+ $read(hethong\color.txt) $ $+ $tien($3) 
+            }
+            if (%santhu1 != $null) { describeVC %r 4 $+ $nick 12Ban ðã ðåt con  $+ $read(hethong\color.txt) $replace($2,cun,Cún,gau,Gâ'u,caheo,Cá Heo,tho,Tho²,mabu,MaBu,nai,Nai,ocsen,ô'c Sên,chimcanhcut,Chim Cánh Cut,nhim,Nhím,langquang,Lång Quång,denhui,Dê'Nhu²i,enhuong,ê²nh uong)  12rôì }
+          }
+        }
+      }
+    }      
+  }
+}
+alias santhu_play {
+  if ($lines(hethong\santhu.txt) >= 2) {
+    santhu_xo
+  }
+  else {
+    .timersanthu7 1 2 describeVC %r 0,12 Không có ai tham gia choi Sån Thú. Hen các ban vào lâ`n sau 
+    .timersanthu8 1 %quacau choigame
+  }
+}
+alias santhu_xo {
+  set %santhu_trung1 $rand(1,12) | set %santhu_trung3 $rand(1,12) | set %santhu_trung2 $rand(1,12)
+  set %st1 $read(hethong\listsanthu.txt,%santhu_trung1) | set %st2 $read(hethong\listsanthu.txt,%santhu_trung2) | set %st3 $read(hethong\listsanthu.txt,%santhu_trung3)
+  .timersanthu9 1 2 describeVC %r 13 3 Con thú bi sån o² vòng này là....
+  .timersanthu10 1 3 describeVC %r 12Con thú bi sån thú4 1 12là con 0,1 -=[8 $replace(%st1,cun,Cún,gau,Gâ'u,caheo,Cá Heo,tho,Tho²,mabu,MaBu,nai,Nai,ocsen,ô'c Sên,chimcanhcut,Chim Cánh Cut,nhim,Nhím,langquang,Lång Quång,denhui,Dê'Nhu²i,enhuong,ê²nh uong) 0]=- 
+  .timersanthu11 1 4 describeVC %r 12Con thú bi sån thú4 2 12là con 0,1 -=[8 $replace(%st2,cun,Cún,gau,Gâ'u,caheo,Cá Heo,tho,Tho²,mabu,MaBu,nai,Nai,ocsen,ô'c Sên,chimcanhcut,Chim Cánh Cut,nhim,Nhím,langquang,Lång Quång,denhui,Dê'Nhu²i,enhuong,ê²nh uong) 0]=- 
+  .timersanthu12 1 6 describeVC %r 12Con thú bi sån thú4 3 12là con 0,1 -=[8 $replace(%st3,cun,Cún,gau,Gâ'u,caheo,Cá Heo,tho,Tho²,mabu,MaBu,nai,Nai,ocsen,ô'c Sên,chimcanhcut,Chim Cánh Cut,nhim,Nhím,langquang,Lång Quång,denhui,Dê'Nhu²i,enhuong,ê²nh uong) 0]=- 
+  .timersanthu13 1 7 santhu_tinhtien
+}
+alias santhu_tinhtien {
+  var %line = 2
+  var %iTTsanthu = 1
+  var %color = $read(hethong\color.txt)
+  :tongketsanthu
+  if (%line <= $lines(hethong\santhu.txt)) {
+    var %item = $read(hethong\santhu.txt, %line)
+    var %nick = $uw(%item,1,*)
+    var %trung = $uw($uw(%item,2,*),1,=)
+    var %tien = $uw($uw(%item,2,*),2,=)
+    if (%item == $null) { inc %line | goto tongketsanthu }
+    ;if (%trung == %st1) || (%trung == %st2) || (%trung == %st3) {
+    if (%trung == %st1) {
+      var %tienthuong = $calc(%tien * 4)
+      var %taisan = $coidiem(diem,%nick)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tienthuong)
+      .timer 1 %iTTsanthu describeVC %r 8,1 Xin chúc mùng ban:9,1 %nick 8,1Ðã sån ðuoc con thú mà ban múôn !  
+      inc %iTTsanthu
+    }
+    if (%trung == %st2) {
+      var %tienthuong = $calc(%tien * 4)
+      var %taisan = $coidiem(diem,%nick)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tienthuong)
+      .timer 1 %iTTsanthu describeVC %r 8,1 Xin chúc mùng ban:9,1 %nick 8,1Ðã sån ðuoc con thú mà ban múôn !  
+      inc %iTTsanthu
+    }
+    if (%trung == %st3) {
+      var %tienthuong = $calc(%tien * 4)
+      var %taisan = $coidiem(diem,%nick)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tienthuong)
+      .timer 1 %iTTsanthu describeVC %r 8,1 Xin chúc mùng ban:9,1 %nick 8,1Ðã sån ðuoc con thú mà ban múôn !  
+      inc %iTTsanthu
+    }
+    inc %line | goto tongketsanthu
+  }
+  else { .timer 1 %iTTsanthu xoasanthu } 
+}
+alias xoasanthu {
+  unset %st* %santhu_trung*
+  write -c hethong\santhu.txt
+  describeVC %r 12Tam Biêt ! Hen Các Ban Vào Vòng Sau Nhé !
+  .timersanthu19 1 %quacau choigame
+}

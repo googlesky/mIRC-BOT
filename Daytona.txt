@@ -1,0 +1,524 @@
+on *:TEXT:*:%r: {
+  if ($1 == !daytona) || ($1 = !xuatphat) || ($1 = !butpha) || ($1 = !phai) || ($1 = !trai) || ($1 = !bocdau) || ($1 = !tangtoc) || ($1 = !giamtoc) || ($1 = !dung) || ($1 = !thaylop) {
+    if ($level($nick) < 3) { return }
+    if (%dt.run = load) {
+      if ($1 = !daytona) {
+        .ignore -u20 $nick
+        .describeVC %r 12 $+ $nick 4Ðã Ðång Ký Trò Cho’i 4-12=4[9,1 Daytona 4]12=4- Vó’i Sô´ Tiê`n 04,01 $ $+ $tien(%MinBet) 
+        ghidiem Diem $nick $calc($coidiem(Diem,$nick) - %MinBet)
+        inc %dt.tt
+        set %dt.tv [ $+ [ %dt.tt ] ] $nick
+        set %dt. [ $+ [ $nick ] ] 1
+        set %dt.nick %dt.nick $nick
+      }
+    }
+    else {
+      if ($nick isin %dt.nick) {
+        if (%dt.run = xuatphat) {
+          if ($1 = !xuatphat) { inc %tt.dt | xuatphat $nick $1 }
+        }
+        if (%dt.run = butpha) {
+          if ($1 = !butpha) { inc %tt.dt | butpha $nick }
+        }
+        if (%dt.run = dua) {
+          if ($1 = !phai) || ($1 = !trai) || ($1 = !bocdau) || ($1 = !tangtoc) || ($1 = !giamtoc) || ($1 = !dung) { DuaDt $nick $1 }
+        }
+        if (%dt.run = thaylop) {
+          if ($1 = !thaylop) { inc %tt.dt | thaylop $nick }
+        }
+      }
+    }
+    ;if (%daytona != off) { describeVC $nick 12Chu’a Có Cuô.c Ðua Nào Trong Lúc Này Hoå.c Ban Không Tham Gia | halt }
+  }
+}
+
+alias daytona {
+  unset %dt.*
+  set %dt.run load
+  .timer1 1 2 describeVC %r  13=-=-=-=-=3¤4’12¤3’4¤12’3¤2[ 1,1 00,03D00,01A00,03Y00,01T00,03O0,1N00,03A1,1  2]3¤12’4¤3’12¤4’3¤13=-=-=-=-=
+  .timer2 1 3 describeVC %r 0,1 Gõ 8-=[11 !Daytona09,01 8]=- 00,01ðê² tham gia Ðua Xe Daytona 
+  ;.timer3 1 4 describeVC %r Ký hiê.u: 04) <=- !Pha²i; 04( <=- !Trái; 04¤ <=- !Bô´cÐâù; 04| <=- !Tångtô´c; 04~ <=- !Gia²mTô´c; 04# <=- !Dù’ng
+  .timer3 1 4 describeVC %r Ký hiê.u: 04) <=- !Pha²i; 04( <=- !Trái; 04* <=- !Bô´cÐâù; 04| <=- !Tångtô´c; 04~ <=- !Gia²mTô´c; 04# <=- !Dù’ng
+  .timer4 1 30 ktra.dtn
+  .timer5 1 30 set %chang 1
+  .timer6 1 30 set %dt.run off
+  .timer7 1 30 ignore -r
+  .timer8 1 30 describeVC %r 12Ðã hê´t tho’`i gian Ðång ký!12 Các tay Ðua tham gia hãy chuâ²n bi. tinh thâ`n Ðê² Ðua cho tô´t !
+  ;.timer9 1 31 .timerdt 1 $rand(5,8) xuat.phat
+
+}
+alias ktra.dtn {
+  if (%dt.tt == $null) { .timer 1 1 end.dtn }
+  else { .timerdt 1 $rand(5,8) xuat.phat }
+}
+alias xuat.phat {
+  set %tt.dt 0
+  set %dt 1
+  set %dt.run xuatphat
+  set %tm.xp $ticks
+  describeVC %r 043....032....121.... 13 Xuâ´t Phát 
+  ;.timerxp1 1 10 ignore *
+  .timerxp 1 10 end.xp
+}
+alias xuatphat {
+  ignore $1
+  if (%tt.dt < %dt.tt) {
+    set %xp.dt. [ $+ [ %tt.dt ] ] $1
+    set %xp.tt [ $+ [ %tt.dt ] ] $1
+    set %tm.xp [ $+ [ $1 ] ] $round($calc(($ticks - %tm.xp) / 1000),1)
+    set %dt.tm [ $+ [ $1 ] ] %tm.xp [ $+ [ $1 ] ]
+  }
+  if (%tt.dt = %dt.tt) { 
+    set %xp.dt. [ $+ [ %tt.dt ] ] $1
+    set %xp.tt [ $+ [ %tt.dt ] ] $1
+    set %tm.xp [ $+ [ $1 ] ] $round($calc(($ticks - %tm.xp) / 1000),1)
+    set %dt.tm [ $+ [ $1 ] ] %tm.xp [ $+ [ $1 ] ]
+    ignore * | .timerxp* off | end.xp 
+  }
+}
+alias end.xp {
+  if (%dt <= %tt.dt) {
+    /tb.xp
+  }
+  else { .timertb off | set %dt $calc(%dt - 1) | .timer 1 2 tk.xp }
+}
+
+alias tb.xp {
+  if (%dt = 1) {
+    describeVC %r 12Wow, 04 $+ %xp.tt1 12xuâ´t phát râ´t tô´t o’² vi. trí 01 $+ 1st 03Thò’i 03Gian: 04 $+ %tm.xp [ $+ [ %xp.tt1 ] ] $+ s 03Tô²ng 03Thò’i 03Gian: 04 $+ %dt.tm [ $+ [ %xp.tt1 ] ] $+ s
+    set %dt.nickb %xp.tt1
+    inc %dt
+    .timertb 1 3 end.xp
+  }
+  else {
+    describeVC %r 04 $+ %xp.tt [ $+ [ %dt ] ] 12xê´p vi. trí thú’: 01 $+ $ord(%dt) 03Thò’i 03Gian: 04 $+ %tm.xp [ $+ [ %xp.tt [ $+ [ %dt ] ] ] ] $+ s 03Tô²ng 03Thò’i 03Gian: 04 $+ %dt.tm [ $+ [ %xp.tt [ $+ [ %dt ] ] ] ] $+ s
+    set %dt.nickb %dt.nickb %xp.tt [ $+ [ %dt ] ]
+    inc %dt
+    .timertb 1 3 end.xp
+  }
+}
+
+alias tk.xp {
+  if (%dt = %dt.tt) {
+    set %tp.run off
+    describeVC %r Tâ´t ca² các tay Ðua tham gia Ðê`u Ðã xuâ´t phát râ´t tô´t ! Hãy chuâ²n bi. tinh thâ`n Ðê² bu’o’´c vào chå.ng Ðua Ðâ`u tiên !
+    unset %dt.nickb
+    .timer 1 10 /chang1
+  }
+  if (%dt < %dt.tt) {
+    xp.loai
+    describeVC %r 04 $+ %nick.loai 12Ðã bi. loa.i kho²i cuô.c Ðua. Các tay Ðua còn la.i hãy chuâ²n bi. bu’o’´c vào chå.ng Ðua Ðâ`u tiên !
+    set %dt.nick %dt.nickb
+    unset %dt.nickb
+    .timer 1 10 /chang1
+  }
+}
+alias xp.loai {
+  if (%pmh <= %dt.tt) {
+    inc %pmh
+    xp.loai1
+  }
+}
+alias xp.loai1 {
+  if (%dt.tv [ $+ [ %pmh ] ] !isin %dt.nickb) {
+    set %nick.loai %nick.loai %dt.tv [ $+ [ %pmh ] ]
+    xp.loai
+  }
+  else { xp.loai }
+}
+alias chang1 {
+  var %i = 1 
+  while (%i < 7) {
+    ;set %c.dt [ $+ [ %i ] ] $read(daytonaSymbol.txt,$rand(1,4))
+    set %c.dt [ $+ [ %i ] ] $read(daytonaSymbol.txt)
+    inc %i
+  }
+
+  describeVC %r 15,14*0,1 Chå.ng Xuâ´t Phát: 15,14* 130Km -> 10Km 
+  .timer 1 3 /chang.1
+}
+alias chang.1 {
+  if (%dt.nick = $null) { End.DTN }
+  else {
+    ignore -r
+    unset %nick.loai
+    set %pmh 0
+    set %fn 0
+    set %dt.run dua
+    set %dt.tt %dt
+    set %tm.xp $ticks
+    set %mauDaytona  $+ $read(mautext.txt) | set %mauDaytona  $+ 12
+    describeVC %r 03Ðoa.n 03Ðu’ò’ng 03Các 03Ba.n 03Pha²i 03Vu’o’.t 03Qua 03O’² 03Chå.ng 03Ðua 03Ðâ`u 03Tiên 03Là : $str( $+ $chr(32),$r(1,4)) $InsertSymbol(0,%mauDaytona $+ %c.dt1 %mauDaytona $+ %c.dt2 %mauDaytona $+ %c.dt3 %mauDaytona $+ %c.dt4 %mauDaytona $+ %c.dt5 %mauDaytona $+ %c.dt6)
+    .timerhet1 1 30 ignore *
+    .timerhet 1 30 end.chang
+  }
+}
+alias DuaDt {
+  echo %r $sc.dt($2) %c.dt [ $+ [ $calc(%dua.tt. [ $+ [ $1 ] ] + 1) ] ]
+
+  if ($sc.dt($2) = %c.dt [ $+ [ $calc(%dua.tt. [ $+ [ $1 ] ] + 1) ] ]) {
+    if (%dua.tt. [ $+ [ $1 ] ] = $null) {
+      set %dua.tt. [ $+ [ $1 ] ] 1
+    }
+    else {
+      if (%dua.tt. [ $+ [ $1 ] ] < 6) {
+        inc %dua.tt. [ $+ [ $1 ] ]
+      }
+      if (%dua.tt. [ $+ [ $1 ] ] = 6) {
+        ignore $1
+        inc %fn
+        finish $1
+      }
+    }
+  }
+  else {
+    ignore $1
+    inc %l
+    loai $1 
+  }
+}
+alias finish {
+  if (%fn < %dt.tt) {
+    ignore $1
+    set %dt.fn [ $+ [ %fn ] ] $1
+    set %c.tm [ $+ [ $1 ] ] $round($calc(($ticks - %tm.xp) / 1000),1)
+    set %dt.tm [ $+ [ $1 ] ] $calc( %dt.tm [ $+ [ $1 ] ] + %c.tm [ $+ [ $1 ] ] )
+    set %dt.nickb %dt.nickb %dt.fn [ $+ [ %fn ] ]
+    set %nick.loaib $remove(%nick.loaib,$1)
+    if (%fn = 1) { describeVC %r 12Wow, 04 $+ $1 12vu’o’.t qua râ´t nhanh o’² vi. trí 01 $+ 1st 03Thò’i Gian: 04 $+ %c.tm [ $+ [ $1 ] ] $+ s 03Tô²ng 03Thò’i 03Gian: 04 $+ %dt.tm [ $+ [ $1 ] ] $+ s }
+    if (%fn > 1) { describeVC %r 4 $+ $1 12xê´p vi. trí thú’: 01 $+ $ord(%fn) 03Thò’i 03Gian:4 %c.tm [ $+ [ $1 ] ] $+ s 03Tô²ng 03Thò’i 03Gian:4 %dt.tm [ $+ [ $1 ] ] $+ s }
+  }
+  if (%fn = %dt.tt) {
+    set %dt.fn [ $+ [ %fn ] ] $1
+    set %c.tm [ $+ [ $1 ] ] $round($calc(($ticks - %tm.xp) / 1000),1)
+    set %dt.tm [ $+ [ $1 ] ] $calc( %dt.tm [ $+ [ $1 ] ] + %c.tm [ $+ [ $1 ] ] )
+    set %dt.nickb %dt.nickb %dt.fn [ $+ [ %fn ] ]
+    set %nick.loaib $remove(%nick.loaib,$1)
+    if (%fn = 1) { describeVC %r 12Wow, 04 $+ $1 12vu’o’.t qua râ´t nhanh o’² vi. trí 01 $+ 1st 03Thò’i 03Gian: 04 $+ %c.tm [ $+ [ $1 ] ] $+ s 03Tô²ng 03Thò’i 03Gian: 04 $+ %dt.tm [ $+ [ $1 ] ] $+ s }
+    if (%fn > 1) { describeVC %r 04 $+ $1 12xê´p vi. trí thú’: 01 $+ $ord(%fn) 03Thò’i 03Gian: 04 $+ %c.tm [ $+ [ $1 ] ] $+ s 03Tô²ng 03Thò’i 03Gian:4 %dt.tm [ $+ [ $1 ] ] $+ s }
+    ignore *
+    end.chang
+  }
+}
+
+alias loai {
+  if (%l <= %dt.tt) {
+    set %dt.loai [ $+ [ %l ] ] $1
+    tb.loai $1
+  }
+}
+alias tb.loai { describeVC %r $read(tbdtn.txt) }
+alias end.chang {
+  .timerhet* off
+  if (%fn = %dt.tt) { 
+    set %tp.run off
+    describeVC %r Tâ´t ca² các tay Ðua Ðê`u Ðã vu’o’.t qua chå.ng Ðua râ´t xuâ´t så´c. Hãy chuâ²n bi. bu’o’´c vào chå.ng Ðua tiê´p theo !
+    unset %dt.nickb
+    unset %dua.tt*
+    unset %nick.loaib
+    unset %l
+    inc %chang
+    if (%chang = 6) { .timer 1 10 /thay.lop } 
+    if (%chang = 11) { .timer 1 10 /vedich }
+    if (%chang != 6) && (%chang != 11) { .timer 1 10 /changn }
+  }
+  if (%fn < %dt.tt) {
+    c.loai
+    describeVC %r 04 $+ $iif(%chang = 1,%nick.loai,%nick.loaib) 3Ðã 03bi. 03loa.i 03kho²i 03cuô.c 03Ðua. 03Các 03tay 03Ðua 03còn 03la.i 03hãy 03chuâ²n 03bi. 03bu’o’´c 03vào 03chå.ng 03Ðua 03tiê´p 03theo !
+    set %dt.nick %dt.nickb
+    unset %dt.nickb
+    unset %nick.loaib
+    unset %dua.tt*
+    unset %l
+    inc %chang
+    if (%chang = 6) { .timer 1 10 /thay.lop } 
+    if (%chang = 11) { .timer 1 10 /vedich }
+    if (%chang != 6) && (%chang != 11) { .timer 1 10 /changn }
+  }
+  if (%fn = $null) { END.DTN }
+}
+
+alias c.loai {
+  if (%pmh <= %dt.tt) {
+    inc %pmh
+    c.loai1
+  }
+}
+alias c.loai1 {
+  if (%xp.dt. [ $+ [ %pmh ] ] !isin %dt.nickb) {
+    set %nick.loai %nick.loai %xp.dt. [ $+ [ %pmh ] ]
+    c.loai
+  }
+  else { c.loai }
+}
+
+alias changn {
+  var %i = 1 
+  while (%i < 7) {
+    set %c.dt [ $+ [ %i ] ] $read(daytonaSymbol.txt)
+    inc %i
+  }
+  describeVC %r 15,14*0,1 Chå.ng $iif(%chang < 6,%chang,$calc(%chang - 1)) 15,14*8,1 $km.dt 15,14*
+  .timer 1 3 /chang.n
+}
+
+alias chang.n {
+  if (%dt.nick = $null) { End.DTN }
+  else {
+    ignore -r
+    unset %nick.loai
+    set %pmh 0
+    set %dt.run dua
+    if (%fn != $null) { set %dt.tt %fn }
+    if (%fn = $null) { set %dt.tt %dt }
+    set %tm.xp $ticks
+    unset %fn
+    set %nick.loaib %dt.nick
+    set %mauDaytona  $+ $read(mautext.txt)
+    describeVC %r Ðoa.n Ðu’o’`ng các ba.n pha²i vu’o’.t qua o’² chå.ng Ðua thú’ $iif(%chang < 6,%chang,$calc(%chang - 1)) là : $str( $+ $chr(32) $+ 12,$r(1,4)) $InsertSymbol(0,%mauDaytona $+ %c.dt1 %mauDaytona $+ %c.dt2 %mauDaytona $+ %c.dt3 %mauDaytona $+ %c.dt4 %mauDaytona $+ %c.dt5 %mauDaytona $+ %c.dt6)
+    .timerhet1 1 30 ignore *
+    .timerhet 1 30 end.chang
+  }
+}
+alias thay.lop {
+  ignore -r
+  set %tt.dt 0
+  set %dt 1
+  set %dt.run thaylop
+  set %tm.xp $ticks
+  set %nick.loaib %dt.nick
+  set %dt.tt %fn
+  describeVC %r $InsertSymbol(0,04Các 04ba.n 04Ðã 04vu’o’.t 04qua 04nu’²a 04chå.ng 04Ðua 04rô`i! 04Hãy 12thay lô´p 04Ðê² 04bu’o’´c 04vào 04nu’²a 04chå.ng 04Ðua 04cuô´i !)
+  .timerxp1 1 10 ignore *
+  .timerxp 1 10 end.tl
+}
+alias thaylop {
+  ignore $1
+  if (%tt.dt < %dt.tt) {
+    set %xp.dt. [ $+ [ %tt.dt ] ] $1
+    set %xp.tt [ $+ [ %tt.dt ] ] $1
+    set %tm.xp [ $+ [ $1 ] ] $round($calc(($ticks - %tm.xp) / 1000),1)
+    set %dt.tm [ $+ [ $1 ] ] $calc( %dt.tm [ $+ [ $1 ] ] + %tm.xp [ $+ [ $1 ] ] )
+    set %nick.loaib $remove(%nick.loaib,$1)
+  }
+  if (%tt.dt = %dt.tt) { 
+    set %xp.dt. [ $+ [ %tt.dt ] ] $1
+    set %xp.tt [ $+ [ %tt.dt ] ] $1
+    set %tm.xp [ $+ [ $1 ] ] $round($calc(($ticks - %tm.xp) / 1000),1)
+    set %dt.tm [ $+ [ $1 ] ] $calc( %dt.tm [ $+ [ $1 ] ] + %tm.xp [ $+ [ $1 ] ] )
+    set %nick.loaib $remove(%nick.loaib,$1)
+    ignore * | .timerxp* off | end.tl 
+  }
+}
+alias end.tl {
+  if (%dt <= %tt.dt) {
+    /tb.tl
+  }
+  else { .timertb off | set %dt $calc(%dt - 1) | .timer 1 2 tk.tl }
+}
+alias tb.tl {
+  if (%dt = 1) { 
+    describeVC %r 12Wow, 04 $+ %xp.tt1 12thay lô´p râ´t nhanh o’² vi. trí 01 $+ 1st 03Thò’i 03Gian: 04 $+ %tm.xp [ $+ [ %xp.tt1 ] ] $+ s 03Tô²ng 03Thò’i 03Gian: 04 $+ %dt.tm [ $+ [ %xp.tt1 ] ] $+ s
+    set %dt.nickb %xp.tt1
+    inc %dt
+    .timertb 1 3 end.tl
+  }
+  else {
+    describeVC %r 04 $+ %xp.tt [ $+ [ %dt ] ] 12xê´p vi. trí thú’: 01 $+ $ord(%dt) 03Thò’i 03Gian: 04 $+ %tm.xp [ $+ [ %xp.tt [ $+ [ %dt ] ] ] ] $+ s 03Tô²ng 03Thò’i 03Gian:4 %dt.tm [ $+ [ %xp.tt [ $+ [ %dt ] ] ] ] $+ s
+    set %dt.nickb %dt.nickb %xp.tt [ $+ [ %dt ] ]
+    inc %dt
+    .timertb 1 3 end.tl
+  }
+}
+alias tk.tl {
+  if (%dt = %dt.tt) { 
+    set %tp.run off
+    describeVC %r Tâ´t ca² các tay Ðua tham gia Ðê`u Ðã thay lô´p ! Hãy chuâ²n bi. tinh thâ`n Ðê² bu’o’´c vào chå.ng Ðua tiê´p theo !
+    unset %dt.nickb
+    inc %chang
+    .timer 1 10 /changn
+  }
+  if (%dt < %dt.tt) {
+    if (%nick.loaib) { describeVC %r 4 $+ %nick.loaib 3Ðã 03bi. 03loa.i 03kho²i 03cuô.c 03Ðua. 03Các 03tay 03Ðua 03còn 03la.i 03hãy 03chuâ²n 03bi. 03bu’o’´c 03vào 03chå.ng 03Ðua 03tiê´p 03theo ! }
+    set %dt.nick %dt.nickb
+    unset %dt.nickb
+    inc %chang
+    .timer 1 10 /changn
+  }
+}
+
+alias vedich {
+  ignore -r
+  unset %xp.tt*
+  set %tt.dt 0
+  set %dt 1
+  set %dt.run butpha
+  set %tm.xp $ticks
+  set %dt.tt %fn 
+  set %nick.loaib %dt.nick
+  describeVC %r 04Chi² 04còn 04la.i 03 $+ 10Km 04cuô´i 04cùng, 04các 04tay 04Ðua 04hãy 12bú’t 12phá 4Ðê² 04Vê` 04Ðích 04nào !
+  .timerxp1 1 10 ignore *
+  .timerxp 1 10 end.vd
+}
+alias butpha {
+  ignore $1
+  if (%tt.dt < %dt.tt) {
+    set %xp.dt. [ $+ [ %tt.dt ] ] $1
+    set %xp.tt [ $+ [ %tt.dt ] ] $1
+    set %tm.xp [ $+ [ $1 ] ] $round($calc(($ticks - %tm.xp) / 1000),1)
+    set %dt.tm [ $+ [ $1 ] ] $calc( %dt.tm [ $+ [ $1 ] ] + %tm.xp [ $+ [ $1 ] ] )
+    set %nick.loaib $remove(%nick.loaib,$1)
+  }
+  if (%tt.dt = %dt.tt) { 
+    set %xp.dt. [ $+ [ %tt.dt ] ] $1
+    set %xp.tt [ $+ [ %tt.dt ] ] $1
+    set %tm.xp [ $+ [ $1 ] ] $round($calc(($ticks - %tm.xp) / 1000),1)
+    set %dt.tm [ $+ [ $1 ] ] $calc( %dt.tm [ $+ [ $1 ] ] + %tm.xp [ $+ [ $1 ] ] )
+    set %nick.loaib $remove(%nick.loaib,$1)
+    ignore * | .timerxp* off | end.vd 
+  }
+}
+alias end.vd {
+  if (%dt <= %tt.dt) {
+    /tb.vd
+  }
+  else { .timertb off | set %dt $calc(%dt - 1) | .timer 1 2 tk.vd }
+}
+alias tb.vd {
+  if (%dt = 1) { 
+    describeVC %r 12Wow, 04 $+ %xp.tt1 12Vê` Ðích râ´t nhanh o’² vi. trí 01 $+ 1st 03Thò’i 03Gian: 04 $+ %tm.xp [ $+ [ %xp.tt1 ] ] $+ s 03Tô²ng 03Thò’i 03Gian:4 %dt.tm [ $+ [ %xp.tt1 ] ] $+ s
+    set %dt.nickb %xp.tt1
+    inc %dt
+    .timertb 1 3 end.vd
+  }
+  else {
+    describeVC %r 04 $+ %xp.tt [ $+ [ %dt ] ] 12xê´p vi. trí thú’: 01 $+ $ord(%dt) 03Thò’i 03Gian:4 %tm.xp [ $+ [ %xp.tt [ $+ [ %dt ] ] ] ] $+ s 03Tô²ng 03Thò’i 03Gian:4 %dt.tm [ $+ [ %xp.tt [ $+ [ %dt ] ] ] ] $+ s
+    set %dt.nickb %dt.nickb %xp.tt [ $+ [ %dt ] ]
+    inc %dt
+    .timertb 1 3 end.vd
+  }
+}
+alias tk.vd {
+  if (%dt = %dt.tt) { 
+    set %tp.run off
+    set %tk 1
+    describeVC %r Tâ´t ca² các tay Ðua tham gia Ðê`u Ðã vê` Ðích ! Hãy chò’ BGK Ðu’a ra kê´t qua² chung cuô.c !
+    unset %dt.nickb
+    inc %chang
+    .timer 1 5 /chungcuoc
+    .timer 1 8 describeVC %r 13 Tô²ng kê´t vòng Ðua 9,1 Daytona 
+    .timer 1 12 /tk.dtn
+  }
+  if (%dt < %dt.tt) {
+    set %tk 1
+    describeVC %r 4 $+ %nick.loaib 12Ðã bi. loa.i kho²i cuô.c Ðua. Các tay Ðua còn la.i Hãy chò’ BGK Ðu’a ra kê´t qua² chung cuô.c !
+    set %dt.nick %dt.nickb
+    unset %dt.nickb
+    inc %chang
+    .timer 1 5 /chungcuoc
+    .timer 1 8 describeVC %r 13 Tô²ng kê´t vòng Ðua9,1 Daytona 
+    .timer 1 12 /tk.dtn
+  }
+}
+alias end.dtn {
+  describeVC %r 12Râ´t tiê´c, tâ´t ca² các tay Ðua Ðê`u Ðã bi. loai. Chúc các tay Ðua thành công ho’n o’² lâ`n sau !
+  /Het.dtn
+}
+alias chungcuoc {
+  set %cc 0
+  set %cc2 1
+  nick.dt
+}
+alias nick.dt {
+  if (%cc < %dt.tt) {
+    if (%cc2 <= %dt.tt) {
+      inc %cc
+      sosanh
+    }
+    else { halt }
+  }
+  if (%cc = %dt.tt) {
+    sethang %xp.tt [ $+ [ %cc2 ] ]
+    set %cc 1
+    inc %cc2
+    sosanh
+  }
+}
+alias sosanh {
+  if (%cc1 = %cc2) { nick.dt }
+  else {
+    if (%dt.tm [ $+ [ %xp.tt [ $+ [ %cc2 ] ] ] ] > %dt.tm [ $+ [ %xp.tt [ $+ [ %cc ] ] ] ]) {
+      inc %hang. [ $+ [ %xp.tt [ $+ [ %cc2 ] ] ] ]
+      nick.dt
+    }
+    else { nick.dt }
+  }
+}
+alias sethang {
+  if (%hang. [ $+ [ $1 ] ] = $null) { set %hang1 $1 }
+  else { set %hang [ $+ [ $calc(%hang. [ $+ [ $1 ] ] + 1) ] ] $1 }
+}
+alias tk.dtn {
+  if (%tk <= %dt.tt) {
+    /player
+  }
+  else { tongket.dtn }
+}
+alias player {
+  echo %r %tk && %hang [ $+ [ %tk ] ] && %dt.tm %dt.tm [ $+ [ %xp.tt [ $+ [ %dt ] ] ] ]
+  ;congdiem %hang [ $+ [ %tk ] ] $remove($dt.money(%hang [ $+ [ %tk ] ]),$chr(46))  <=- kô có alias
+  ;describeVC %r 3Tay Ðua:4 %hang [ $+ [ %tk ] ] 3Thò’i Gian:4 %dt.tm %dt.tm [ $+ [ %xp.tt [ $+ [ %dt ] ] ] ] $+ s 3Xê´p Ha.ng:4 $ord(%tk) 3Tiê`n Thu’o’²ng:12 $dt.money(%hang [ $+ [ %tk ] ]) $+ 3$
+  describeVC %r 03Tay 03Ðua: 4 $+ %hang [ $+ [ %tk ] ] 03Thò’i 03Gian: 04 $+ %dt.tm [ $+ [ %hang [ $+ [ %tk ] ] ] ] $+ s 03Xê´p 03Ha.ng: 04 $+ $ord(%tk) 03Tiê`n 03Thu’o’²ng:12 $dt.money(%hang [ $+ [ %tk ] ]) $+ 03$
+  if (%hang [ $+ [ %tk ] ] != $null) { ghidiem Diem %hang [ $+ [ %tk ] ] $calc($coidiem(Diem,%hang [ $+ [ %tk ] ]) + $remove($dt.money(%hang [ $+ [ %tk ] ]),$chr(46))) }
+  else { describeVC %r LangTuBuon o’i! Không hiê.n nick }
+  inc %tk
+  .timer 1 3 /tk.dtn
+}
+alias dt.money {
+  if (%hang. [ $+ [ $1 ] ] = $null) { return 1.000.000.000 }
+  else {
+    if (%hang. [ $+ [ $1 ] ] = 1) { return 700.000.000 }
+    if (%hang. [ $+ [ $1 ] ] = 2) { return 500.000.000 }
+    if (%hang. [ $+ [ $1 ] ] = 3) { return 300.000.000 }
+    if (%hang. [ $+ [ $1 ] ] = 4) { return 100.000.000 }
+    else { return 0 }
+  }
+}
+alias tongket.dtn {
+  describeVC %r 12Các tay Ðua xê´p ha.ng không cao hãy cô´ gå´ng ho’n o’² lâ`n sau nhé !
+  /het.dtn
+}
+alias het.dtn {
+  unset %*dt*
+  unset %*xp*
+  unset %dua.tt*
+  unset %hang*
+  unset %l
+  unset %c.tm* | unset %chang
+  set %dt.tt 0
+  set %dt.run off
+  set %pmh 0
+  ignore -r
+  unset %nick.loai
+  unset %l
+  .timer 1 %quacau choigame
+}
+alias km.dt {
+  if (%chang = 2) { return 10km -> 20km }
+  if (%chang = 3) { return 20km -> 30km }
+  if (%chang = 4) { return 30km -> 40km }
+  if (%chang = 5) { return 40km -> 50km }
+  if (%chang = 7) { return 50km -> 60km }
+  if (%chang = 8) { return 60km -> 70km }
+  if (%chang = 9) { return 70km -> 80km }
+  if (%chang = 10) { return 80km -> 90km }
+}
+alias sc.dt {
+  if ($1 = !phai) { return $chr(41) }
+  if ($1 = !trai) { return $chr(40) }
+  ;if ($1 = !bocdau) { return $chr(164) }
+  if ($1 = !bocdau) { return $chr(42) }
+  if ($1 = !tangtoc) { return $chr(124) }
+  if ($1 = !giamtoc) { return $chr(126) }
+  if ($1 = !dung) { return $chr(35) }
+}

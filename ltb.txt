@@ -1,0 +1,407 @@
+﻿uw { return $gettok($1,$2,$asc($3)) }
+uset { unset %chkDroneBL* }
+gLTB { .timers off | unset %dapan* | timer 1 1 $1- }
+LoadRegNick { os modunload ns_operonly_register }
+unLoadRegNick { os modload ns_operonly_register }
+OperGameUnicode { if ($network == HDVNBits) { oper LangTuBuon ltb111 | os set superadmin on | os set logchan on } }
+rhtk { rmtkl K *@* }
+um { os umode $1 -aoghklnprtwACDEJKNOPRSTZW }
+sz { os szline add +0 $1 $+ .* 3Ƹ̵̡4Ӝ̵̨̄3Ʒ }
+F5 { os szline add +0 $gettok($address($$1,4),2,64) 3Ƹ̵̡4Ӝ̵̨̄3Ʒ }
+;tiengviet { return $replace($1,dd,ð,<<,«,>>,»,:l,· ·,a*,än,*','*,*`,`*,+','+,+`,`+,u*,u,u+,u,*~,~*,+~,~+,a',á,al,al,e',é,i',í,o',ó,o1,o1,u',ú,y',ý,'i,í,'u,ú,'y,ý,a`,à,e`,è,i`,ì,o`,ò,u`,ù,`i,ì,`u,ù,a~,ã,o~,õ,~a,ã,~o,õ,~n,ñ,o*,o,õ*,õ,o+,o,õ+,õ,ú*,ú,ú+,ú,ù*,ù,ù+,ù,ó*,ó,ò*,ò,ó+,ó,ò+,ò,a?,a²,ä?,ä²,e?,e²,i?,i²,o?,o²,u?,u²,y?,y²,?,²,°?,²,-d,Ð,a $+ $chr(40),å,'t,t´,o^,ô,o6,ô,a^,â,a6,â,e^,ê,e6,ê,å?,å²,ô?,ô²,u?,u²,y?,y²,i?,i²,â?,â²,ê?,ê²,',´,:P,:Þ,1/2,½,1/4,¼,3/4,¾,a.,a,ô.,ô,o.,o,å.,å,ð.c,ðc,u.,u,o.,o,â.,â,awj,å,i.,i,e.,e,ê.,ê,yj,y,uwj,u,owj,o,u.,u) }
+tiengviet { return $replace($1,dd,ð,<<,«,>>,»,:l,· ·,a*,än,*','*,*`,`*,+','+,+`,`+,u*,u,u+,u,*~,~*,+~,~+,a',á,al,al,e',é,i',í,o',ó,o1,o1,u',ú,y',ý,'i,í,'u,ú,'y,ý,a`,à,e`,è,i`,ì,o`,ò,u`,ù,`i,ì,`u,ù,a~,ã,o~,õ,~a,ã,~o,õ,~n,ñ,o*,o,õ*,õ,o+,o,õ+,õ,ú*,ú,ú+,ú,ù*,ù,ù+,ù,ó*,ó,ò*,ò,ó+,ó,ò+,ò,a?,a²,ä?,ä²,e?,e²,i?,i²,o?,o²,u?,u²,y?,y²,?,²,°?,²,-d,Ð,a $+ $chr(40),å,o^,ô,o6,ô,a^,â,a6,â,e^,ê,e6,ê,å?,å²,ô?,ô²,u?,u²,y?,y²,i?,i²,â?,â²,ê?,ê²,',´,a.,a,ô.,ô,o.,o,å.,å,ð.c,ðc,u.,u,o.,o,â.,â,awj,å,i.,i,e.,e,ê.,ê,yj,y,uwj,u,owj,o,u.,u) }
+unicode {
+  var %unicode = $replace($1-,´,',¤,*,a~,ã,a^,â,a',á,a`,à,e^,ê,e',é,e`,è,i',í,i`,ì,o',ó,o`,ò,o~,õ,o^,ô,u',ú,u`,ù,y',ý,á,á,à,à,a?,ả,ã,ã,a.,ạ,a $+ $chr(40) $+ ',ắ,a $+ $chr(40) $+ `,ằ,a $+ $chr(40) $+ ?,ẳ,a $+ $chr(40) $+ ~,ẵ,awj,ặ,a $+ $chr(40) $+ j,ặ,a $+ $chr(40) $+ .,ặ,a $+ $chr(40),ă,â',ấ,â`,ầ,â?,ẩ,â~,ẫ,â.,ậ,â,â,é,é,è,è,e?,ẻ,e~,ẽ,e.,ẹ,ê',ế,ê`,ề,ê?,ể,ê~,ễ,ê.,ệ,ê,ê,ò+,ờ,o+?,ở,õ+,o+~,o+~,ỡ,ó+,ớ,o+,ơ,ơ`,ờ,ơ.,ợ,ơ',ớ,owj,ợ,ó,ó,ò,ò,o?,ỏ,õ,õ,o.,ọ,ô',ố,ô`,ồ,ô?,ổ,ô~,ỗ,ô.,ộ,ô,ô,í,í,ì,ì,i?,ỉ,i~,ĩ,i.,ị,ú+,ứ,ù+,ừ,u+?,ử,u+~,ữ,u+,ư,ư`,ừ,ư.,ự,ư',ứ,uwj,ự,ú,ú,ù,ù,u?,ủ,u~,ũ,u.,ụ,ý,ý,y`,ỳ,y?,ỷ,y~,ỹ,y~,ỵ,y.,ỵ,dd,đ,-D,Đ,Ð,Đ)
+  return %unicode
+}
+/rh { os akill clear | os szline clear | rehash | rehash dns | rehash dynconf | rehash throttles | rehash tklines | rehash akills | rehash ip }
+;a^,â,a',á,a`,à,e^,ê,e',é,e`,è,i',í,i`,ì,o',ó,o`,ò,o^,ô,u',ú,u`,ù,y',ý,
+;describeVC {
+;  var %RoomNick = $gettok($1-,1,32), %txtText = $gettok($1-,2-,32)
+;  if ($server == irc.vuichat.net) || (Jolly.GeekShed.net) {
+;    var %txtUni = $unicode($ReverseDA(%txtText)), %txtVC = $left(%txtUni,6) $+ 
+;    :GotoBrokenLine
+;    if ($BrokenLine(%txtUni) > 0) {
+;      describe %RoomNick  $+ $gettok(%txtUni,1- $+ $BrokenLine(%txtUni),3)
+;      if ($BrokenLine( $+ %txtVC $+ $gettok(%txtUni,$calc($BrokenLine(%txtUni) + 1) $+ -,3)) > 0) {
+;        set %txtUni  $+ %txtVC $+ $gettok(%txtUni,$calc($BrokenLine(%txtUni) + 1) $+ -,3)
+;        goto GotoBrokenLine
+;      }
+;      else describe %RoomNick  $+ %txtVC $+ $gettok(%txtUni,$calc($BrokenLine(%txtUni) + 1) $+ -,3)
+;    }
+;    else { describe %RoomNick $unicode($ReverseDA(%txtText)) }
+;  }
+;  else { describe %RoomNick $tiengviet(%txtText) }
+;}
+describeVC {
+  var %RoomNick = $gettok($1-,1,32), %txtText = $gettok($1-,2-,32)
+  if ($server == irc.vuichat.net) || (Jolly.GeekShed.net) { describe %RoomNick $unicode($ReverseDA(%txtText)) }
+  else { describe %RoomNick $tiengviet(%txtText) }
+}
+msgVC {
+  var %RoomNick = $gettok($1-,1,32), %txtText = $gettok($1-,2-,32)
+  if ($server == irc.vuichat.net) || (Jolly.GeekShed.net) { msg %RoomNick $unicode($ReverseDA(%txtText)) }
+  else { msg %RoomNick $tiengviet(%txtText) }
+}
+
+noticeVC {
+  var %RoomNick = $gettok($1-,1,32), %txtText = $gettok($1-,2-,32)
+  if ($server == irc.vuichat.net) || (Jolly.GeekShed.net) { notice %RoomNick $unicode($ReverseDA(%txtText)) }
+  else { notice %RoomNick $tiengviet(%txtText) }
+}
+BrokenLine {
+  var %iBLi = 3, %nBLi = $numtok($1-,3)
+  while (%iBLi <= %nBLi) {
+    if ($len($gettok($1-,1- $+ %iBLi,3)) >= 433) && ((00* iswm $gettok($1-,$calc(%iBLi + 1),3)) || (01* iswm $gettok($1-,$calc(%iBLi + 1),3)) || (0,00* iswm $gettok($1-,$calc(%iBLi + 1),3))) { return %iBLi | halt }
+    inc %iBLi
+  }
+}
+VIQR {
+  var %VIQR = $replace($1-,á,a',à,a`,ả,a?,ã,a~,ạ,a.,â,a^,ấ,a^',ầ,a^`,ẩ,a^?,ẫ,a^~,ậ,a^.,ă,a $+ $chr(40),ắ,a $+ $chr(40) $+ ',ằ,a $+ $chr(40) $+ `,ẳ,a $+ $chr(40) $+ ?,ẵ,a $+ $chr(40) $+ ~,ặ,a $+ $chr(40) $+ .,é,e',è,e`,ẻ,e?,ẽ,e~,ẹ,e.,ê,e^,ế,e^',ề,e^`,ể,e^?,ễ,e^~,ệ,e^.,í,i',ì,i`,ỉ,i?,ĩ,i~,ị,i.,ó,o',ò,o`,ỏ,o?,õ,o~,ọ,o.,ô,o^,ố,o^',ồ,o^`,ổ,o^?,ỗ,o^~,ộ,o^.,ơ,o+,ớ,o+',ờ,o+`,ở,o+?,ỡ,o+~,ợ,o+.,ú,u',ù,u`,ủ,u?,ũ,u~,ụ,u.,ư,u+,ứ,u+',ừ,u+`,ử,u+?,ữ,u+~,ự,u+.,ý,y',ỳ,y`,ỷ,y?,ỹ,y~,ỵ,y.,ñ,~n)
+  var %VIQR = $replacecs(%VIQR,Á,a',À,a`,Ả,a?,Ã,a~,Ạ,a.,Â,a^,Ấ,a^',Ầ,a^`,Ẩ,a^?,Ẫ,a^~,Ậ,a^.,Ă,a $+ $chr(40),Ắ,a $+ $chr(40) $+ ',Ằ,a $+ $chr(40) $+ `,Ẳ,a $+ $chr(40) $+ ?,Ã,a $+ $chr(40) $+ ~,Ặ,a $+ $chr(40) $+ .,É,e',È,e`,Ẻ,e?,Ẽ,e~,Ẹ,e.,Ê,e^,Ế,e^',Ề,e^`,Ể,e^?,Ễ,e^~,Ệ,e^.,Í,i',Ì,i`,Ỉ,i?,Ĩ,i~,Ị,i.,Ó,o',Ò,o`,Ỏ,o?,Õ,o~,Ọ,o.,Ô,o^,Ố,o^',Ồ,o^`,Ổ,o^?,Ỗ,o^~,Ộ,o^.,Ơ,o+,Ớ,o+',Ờ,o+`,Ở,o+?,Ỡ,o+~,Ợ,o+.,Ú,u',Ù,u`,Ủ,u?,Ũ,u~,Ụ,u.,Ư,u+,Ứ,u+',Ừ,u+`,Ử,u+?,Ữ,u+~,Ự,u+.,Ý,y',Ỳ,y`,Ỷ,y?,Ỹ,y~,Ỵ,y.,đ,dd,Đ,-D)
+  return $replace(%VIQR,$chr(160),$chr(32))
+}
+
+DA.TL { return $replace($remove($1,~,´,`,',²,?,.,^,:,,*,+,$chr(2),$chr(31),$chr(40),$chr(44)),-d,d,dd,d,$chr(160),$chr(32),â,a,å,a,å,a,á,a,à,a,ã,a,ê,e,é,e,è,e,ô,o,õ,o,ó,o,ò,o,í,i,ì,i,ý,y,y,i,ú,u,ù,u,ý,y,Ð,d,ð,d,ñ,n) }
+ReverseDA {
+  ;á à a ã a å å â â é è e ê ê i í ì ô ô ò ó õ ú ù u ý y ð Ð ²
+  return $replace($1,°,$,$chr(160),$chr(32),Â,A^,Ê,E^,Ô,O^,Á,A',À,A`,É,E',È,E`,Ó,O',Ò,O`,Í,I',Ì,I`,Ú,U',Ù,U`,Ý,Y',âý,â´y,ôì,ô`i,ôí,ô´i,ìê,iê`,íê,iê´,iã,i~a,âù,â`u,âú,â´u,êù,ê`u,êú,ê´u,úô,uô´,ùô,uô`,á,a',à,a`,a,a.,ã,a~,å,a $+ $chr(40) $+ .,å,a $+ $chr(40) $+ ,ä,a $+ $chr(40),â,a^.,â,a^,é,e',è,e`,e,e.,ê,e^.,ê,e^,i,i.,í,i',ì,i`,o,o+.,o,o.,ô,o^.,ô,o^,ò,o`,ó,o',õ,o~,ú,u',ù,u`,u,u+.,u,u.,ý,y',y,y.,ñ,~n,ð,dd,Ð,-D,,+,²,?,`+,+`,'+,+',+a~,+~a,+a?,+?a,+i`,+`i,´,')
+}
+
+rep { return $replace($1,-d,-*,dd,-*,a,*,b,*,ê,*,ý,*,à,*,ã,*,ñ,*,ò,*,â,*,ó,*,ô,*,à,*,ð,*,o,*,u,*,á,*,c,*,d,*,e,*,f,*,g,*,h,*,i,*,j,*,k,*,l,*,m,*,n,*,o,*,p,*,q,*,r,*,s,*,t,*,u,*,v,*,w,*,x,*,y,*,z,*,1,*,2,*,3,*,4,*,5,*,6,*,7,*,8,*,9,*,0,*) }
+khoidonggame {
+  DonAccRac
+  write -c Gamer\login.txt
+  write -c listgame.txt
+  write -c hethong\rss.txt
+  write listgame.txt sode
+  .enable #LoDe
+  set %mayman $me
+  set %time.sode $ticks
+  set %vongquay $ticks
+  unset %dapan* %cauhoiphu %row %dapan* %quangcao %delay %listgame
+  set %r $readini(hethong\hethong.ini,Thongtin,room)
+  set %r.master $readini(hethong\hethong.ini,Thongtin,roomMaster)
+  set %quacau $readini(hethong\hethong.ini,Thongtin,quacau)
+  set %MinBet $readini(hethong\hethong.ini,Thongtin,minbet)
+  set %MinReg $readini(hethong\hethong.ini,Thongtin,minreg)
+  set %averageDiem $readini(hethong\hethong.ini,Thongtin,averageDiem)
+  set %chkIPgamer $readini(hethong\hethong.ini,Thongtin,chkIPgamer)
+  set %CallGame $readini(hethong\hethong.ini,Thongtin,CallGame)
+  set %ListSRA $readini(hethong\hethong.ini,Thongtin,ListSRA)
+  unset %Ultimate
+  .join %r $+ , $+ %r.master
+  .rlevel 3 | cs clear %r voices
+  auser 3 $iif(LangTuBuon ison %r,LangTuBuon,LaNgTu)
+  ;auser 3 *
+  writeini -n Gamer\LoginDate.ini LoginDate LangTuBuon $date | writeini -n Gamer\LoginDate.ini LoginDate LaNgTu $date
+  query LangTuBuon | query LaNgTu | query vuichat | write -c rss_link.txt | RssReader
+  describeVC %r 12L4O13A7D14I7N6G 12Sô´ câu ho²i thuòng 04 $+ $lines(cauhoi\cauhoi.ini) 12Câu; Hãy chon giá ðúng 04 $+ $lines(cauhoi\ChonGiaDung.txt) 12Câu; Nô´t nhac vui 04 $+ $lines(cauhoi\notnhacvui.ini) 12Câu; Xê´p tên Bài hát 04 $+ $lines(cauhoi\SXTBH.txt) 12Câu; Tù vung 04 $+ $lines(cauhoi\tienganh.ini) 12Câu; Chiê´c nón kì diêu 04 $+ $lines(cauhoi\chiecnon.ini) 12Câu; Trúc xanh 04 $+ $lines(cauhoi\cadao0.txt) 12Câu; Chung Súc 04 $+ $lines(cauhoi\chungsuc.txt) 12Câu!
+  .timerkhoidong 1 %quacau choigame
+}
+choigame {
+  var %rand = $rand(1,$lines(cauhoi\cauhoi.ini)), %iDelay = 0
+  if (%quangcaophu == 30) { set %quangcaophu 1 | inc %iDelay 2 | .timer 1 %iDelay describeVC %r $read(quangcao.txt) }
+  if (%quangcao == 25) { set %quangcao 1 | inc %iDelay 2 | .timer 1 %iDelay describeVC %r $InsertSymbol(1,$read(hethong\quangcao.txt)) }
+  if ($mod(%quangcao,7) == 0) {
+    var %iRSS = $r(1,$lines(hethong\rss.txt))
+    if ($read(hethong\rss.txt,%iRSS) != $null) {
+      .inc %iDelay 2 | .timer 1 %iDelay msg %r 4,1 NEWS: ♥♥♥ 13 $replace($remove($read(hethong\rss.txt,%iRSS),www.),&quot;,",http://,4♥♥♥ 10 http://)
+      write -dl $+ %iRSS hethong\rss.txt
+    }
+    else { RssReader }
+  }
+  if (%delay == 12) { set %delay 1 | msgVC %r $InsertSymbol(1,Sô´ Nguòi tham gia Trò Choi 09Vòng 09Quay 09May 09Må´n 08Hiên 08Tai 08Là 04 $+ $lines(hethong\mayman.ini) 08Nguòi! 13Vòng 13Quay 13May 13Må´n 13Lâ`n 13Truóc 08-=[ %mayman 08]=-) }
+  inc %cauhoiphu
+  inc %Ultimate
+  inc %quangcao
+  inc %delay
+  inc %listgame
+  inc %quangcaophu
+  set %vq off | set %sode off | set %cadobongda off
+  .ignore -r | set %CmdChkTop off
+  unset %nvc %i %lo* %dapan* %linedalay*
+  if (%MasterCallXD == on) { set -u420 %MasterCallXD off | .timer 1 %iDelay xidach }
+  if (%cauhoiphu == 5) { set %cauhoiphu 1
+    if ($lines(game.txt) >= 1) { var %gamephuNo = $r(1,$lines(game.txt)) | set %gamephu $read(game.txt,%gamephuNo) | write -dl $+ %gamephuNo game.txt } | else { copy -o STORE\game.txt game.txt | var %gamephuNo = $r(1,$lines(game.txt)) | set %gamephu $read(game.txt,%gamephuNo) | write -dl $+ %gamephuNo game.txt }
+    ;echo -s $chr(91) $+ $asctime(HH:nn:ss) $+ $chr(93) Ðê´n giò Game Phu: %gamephu
+    set %GameXiDach Off | inc %iDelay 2 | .timer 1 %iDelay %gamephu | halt
+  }
+  if (%listgame >= 11) { set %listgame 1
+    .disable #LoDe
+    if ($lines(listgame.txt) >= 1) { var %gamechinhNo = $r(1,$lines(listgame.txt)) | set %gamechinh $read(listgame.txt,%gamechinhNo) | write -dl $+ %gamechinhNo listgame.txt } | else { copy -o STORE\listgame.txt listgame.txt | var %gamechinhNo = $r(1,$lines(listgame.txt)) | set %gamechinh $read(listgame.txt,%gamechinhNo) | write -dl $+ %gamechinhNo listgame.txt }
+    ;echo -s $chr(91) $+ $asctime(HH:nn:ss) $+ $chr(93) Ðê´n giò Game Chính: %gamechinh
+    set %GameXiDach Off | inc %iDelay 2 | .timer 1 %iDelay %gamechinh | halt
+  }
+  .enable #LoDe
+  %cauhoi.duocchon = $read(cauhoi\cauhoi.ini,%rand)
+  inc %iDelay 2 | .timer 1 %iDelay describeVC %r 2=-=-=-=-=-=3*4°12*3°4*12°3*2|[  $+ $read(hethong\color.txt) Câu %Ultimate  2]|3*12°4*3°12*4°3*2=-=-=-=-=-=
+  %cauhoi.sehoi = $InsertSymbol(0,$replace($uw(%cauhoi.duocchon,1,*),_,$chr(3) $+ $chr(48) $+ $chr(52) $+ $chr(42)))
+  inc %iDelay 1 | .timer 1 %iDelay describeVC %r $tiengviet(%cauhoi.sehoi) | %dapan1 = $ReverseDA($uw(%cauhoi.duocchon,2,*))
+  inc %iDelay 1 | .timer 1 %iDelay cauhoi
+}
+cauhoi {
+  AHLag
+  if (%ProtectOn != $null) { inc %ProtectOn }
+  if (%ProtectOn = 3) {
+    ;mode $me -R+aP
+    .enable #ProtectLTB
+  }
+  if (%ProtectOn >= 7) {
+    os modunload ns_register_group_operonly
+    unset %ProtectOn
+  }
+  set %r.master $readini(hethong\hethong.ini,Thongtin,roomMaster)
+  if (Kill ison %r) { set %r.master %r.master $+ ,Kill }
+  if (Kill-AR ison %r) { set %r.master %r.master $+ ,Kill-AR }
+  if (vuichat ison %r) { set %r.master %r.master $+ ,vuichat }
+  set %GameXiDach On
+  %tinhgio.batdau = $ticks
+  %cauhoi.diem = $r($div(%averageDiem,2),%averageDiem)
+  %hint = $replace(%dapan1,a,*,b,*,c,*,d,*,e,*,f,*,g,*,h,*,i,*,j,*,k,*,l,*,m,*,n,*,o,*,p,*,q,*,r,*,s,*,t,*,u,*,v,*,w,*,x,*,y,*,z,*,1,*,2,*,3,*,4,*,5,*,6,*,7,*,8,*,9,*,0,*)
+  LTBHint 0 $int($calc($len($unicode(%dapan1)) / 10)) $unicode(%dapan1)
+  LTBHint 1 $int($calc($len($unicode(%dapan1)) / 3)) $unicode(%dapan1)
+  LTBHint 3 $int($calc($len($unicode(%dapan1)) / 2)) $unicode(%dapan1)
+  if (%cauhoi.diem >= 6000000) { describe %r 3Hint 1:04 %hint0 $unicode($ReverseDA(3Câu Ho²i Ðåc Biêt: 04$ $+ $tien(%cauhoi.diem))) }
+  else { describe %r 3Hint 1:04 %hint0 $unicode($ReverseDA(3Tiê`n: 04$ $+ $tien(%cauhoi.diem))) }
+  set %avg 45 | .noticeVC %r.master 4Ðáp án: %dapan1
+  .timercauhoi1 1 $round($calc(%avg * 1 / 3 - %iDelay),0) GoiY2
+  .timercauhoi2 1 $round($calc(%avg * 2 / 3 - %iDelay),0) GoiY3
+  .timercauhoi3 1 $calc(%avg - %iDelay) hetgio
+}
+GoiY2 { %cauhoi.diem = $round($calc(%cauhoi.diem / 2),0) | set %avg $round($calc(%avg * 2 / 3),0) | describe %r 3Hint 2:4 %hint1 $unicode($ReverseDA(3Còn04 %avg $+ s 3& 04$ $+ $tien(%cauhoi.diem) )) }
+GoiY3 { %cauhoi.diem = $round($calc(%cauhoi.diem / 2),0) | set %avg $round($calc(%avg / 2),0) | describe %r 3Hint 3:4 %hint3 $+ $right(%hint1,- $+ $len(%hint3)) $unicode($ReverseDA(3Còn04 %avg $+ s 3& 04$ $+ $tien(%cauhoi.diem) )) }
+
+hetgio {
+  unset %row %rand %chongia
+  set %CmdChkTop on
+  describeVC %r 12Hê´t thòi gian suy nghi~! Bot03 $me 12xin chon câu ho²i kê´ tíêp... | unset %dapan*
+  var %thoigianravongquay = $int($calc($calc(1800 - $int($calc(($ticks - %vongquay) / 1000))) / 60))
+  var %thoigianrasode = $int($calc($calc(3600 - $int($calc(($ticks - %time.sode) / 1000))) / 60))
+  if (%thoigianrasode == 0) { .timers off | .timer 1 %quacau sode | halt }
+  if ($left(%thoigianrasode,1) == $chr(45)) { .timers off | .timer 1 %quacau sode | halt }
+  if (%thoigianravongquay == 0) { .timers off | vongquaymayman | halt }
+  if ($left(%thoigianravongquay,1) == $chr(45)) { .timers off | vongquaymayman | halt }
+  else { .timerquacau1 1 %quacau choigame }
+}
+mahoa {
+  var %d $iif($2,$2,32)
+  var %t 0
+  var %l $null
+  while (%t < $iif($2 == abc,$len($1),$numtok($1,%d))) {
+    inc %t
+    %te = $iif($2 == abc,$len($1),$gettok($1,%t,%d))
+    :cloop
+    if ($read(mahoa.txt) != %c) { var %c $ifmatch }
+    else { goto cloop }
+    var %l = %l $+ %c $+ $iif(%te == $chr(32),$chr(160),%te)
+  }
+  ;return $replace(%l,a*,å,*','*,*`,`*,+','+,+`,`+,u*,u,u+,u,*~,~*,+~,~+,a',á,al,al,e',é,i',í,o',ó,o1,o1,u',ú,y',ý,'i,í,'u,ú,'y,ý,a`,à,e`,è,i`,ì,o`,ò,u`,ù,`i,ì,`u,ù,a~,ã,o~,õ,~a,ã,~o,õ,~n,ñ,o*,o,õ*,õ,o+,o,õ+,õ,ú*,ú,ú+,ú,ù*,ù,ù+,ù,ó*,ó,ò*,ò,ó+,ó,ò+,ò,a?,a²,å?,å²,e?,e²,i?,i²,o?,o²,u?,u²,y?,y²,?,²,°?,²,-d,Ð,dd,ð,a $+ $chr(40),å,'t,t´,o^,ô,o6,ô,a^,â,a6,â,e^,ê,e6,ê,å?,å²,ô?,ô²,u?,u²,y?,y²,i?,i²,â?,â²,ê?,ê²,',´,:P,:Þ,1/2,½,1/4,¼,3/4,¾,a.,a,ô.,ô,o.,o,å.,å,ð.c,ðc,u.,u,o.,o,â.,â,awj,å,i.,i,e.,e,ê.,ê,yj,y,uwj,u,owj,o,u.,u) $+ $read(mahoa.txt)
+  return $replace(%l,a*,å,*','*,*`,`*,+','+,+`,`+,u*,u,u+,u,*~,~*,+~,~+,a',á,al,al,e',é,i',í,o',ó,o1,o1,u',ú,y',ý,'i,í,'u,ú,'y,ý,a`,à,e`,è,i`,ì,o`,ò,u`,ù,`i,ì,`u,ù,a~,ã,o~,õ,~a,ã,~o,õ,~n,ñ,o*,o,õ*,õ,o+,o,õ+,õ,ú*,ú,ú+,ú,ù*,ù,ù+,ù,ó*,ó,ò*,ò,ó+,ó,ò+,ò,a?,a²,å?,å²,e?,e²,i?,i²,o?,o²,u?,u²,y?,y²,?,²,°?,²,-d,Ð,dd,ð,a $+ $chr(40),å,o^,ô,o6,ô,a^,â,a6,â,e^,ê,e6,ê,å?,å²,ô?,ô²,u?,u²,y?,y²,i?,i²,â?,â²,ê?,ê²,',´,:P,:Þ,a.,a,ô.,ô,o.,o,å.,å,ð.c,ðc,u.,u,o.,o,â.,â,awj,å,i.,i,e.,e,ê.,ê,yj,y,uwj,u,owj,o,u.,u) $+ $read(mahoa.txt)
+}
+maudo {
+  var %d $iif($2,$2,32)
+  var %t 0
+  var %l $null
+  while (%t < $iif($2 == abc,$len($1),$numtok($1,%d))) {
+    inc %t
+    %te = $iif($2 == abc,$len($1),$gettok($1,%t,%d))
+    :cloop
+    if ($read(maudo.txt) != %c) { var %c $ifmatch }
+    else { goto cloop }
+    var %l = %l $+ %c $+ $iif(%te == $chr(32),$chr(160),%te)
+  }
+  ;return $replace(%l,a*,å,*','*,*`,`*,+','+,+`,`+,u*,u,u+,u,*~,~*,+~,~+,a',á,al,al,e',é,i',í,o',ó,o1,o1,u',ú,y',ý,'i,í,'u,ú,'y,ý,a`,à,e`,è,i`,ì,o`,ò,u`,ù,`i,ì,`u,ù,a~,ã,o~,õ,~a,ã,~o,õ,~n,ñ,o*,o,õ*,õ,o+,o,õ+,õ,ú*,ú,ú+,ú,ù*,ù,ù+,ù,ó*,ó,ò*,ò,ó+,ó,ò+,ò,a?,a²,å?,å²,e?,e²,i?,i²,o?,o²,u?,u²,y?,y²,?,²,°?,²,-d,Ð,dd,ð,a $+ $chr(40),å,o^,ô,o6,ô,a^,â,a6,â,e^,ê,e6,ê,å?,å²,ô?,ô²,u?,u²,y?,y²,i?,i²,â?,â²,ê?,ê²,',´,:P,:Þ,1/2,½,1/4,¼,3/4,¾,a.,a,ô.,ô,o.,o,å.,å,ð.c,ðc,u.,u,o.,o,â.,â,awj,å,i.,i,e.,e,ê.,ê,yj,y,uwj,u,owj,o,u.,u) $+ $read(mahoa.txt)
+  return $replace(%l,a*,å,*','*,*`,`*,+','+,+`,`+,u*,u,u+,u,*~,~*,+~,~+,a',á,al,al,e',é,i',í,o',ó,o1,o1,u',ú,y',ý,'i,í,'u,ú,'y,ý,a`,à,e`,è,i`,ì,o`,ò,u`,ù,`i,ì,`u,ù,a~,ã,o~,õ,~a,ã,~o,õ,~n,ñ,o*,o,õ*,õ,o+,o,õ+,õ,ú*,ú,ú+,ú,ù*,ù,ù+,ù,ó*,ó,ò*,ò,ó+,ó,ò+,ò,a?,a²,å?,å²,e?,e²,i?,i²,o?,o²,u?,u²,y?,y²,?,²,°?,²,-d,Ð,dd,ð,a $+ $chr(40),å,o^,ô,o6,ô,a^,â,a6,â,e^,ê,e6,ê,å?,å²,ô?,ô²,u?,u²,y?,y²,i?,i²,â?,â²,ê?,ê²,',´,:P,:Þ,a.,a,ô.,ô,o.,o,å.,å,ð.c,ðc,u.,u,o.,o,â.,â,awj,å,i.,i,e.,e,ê.,ê,yj,y,uwj,u,owj,o,u.,u) $+ $read(mahoa.txt)
+}
+login {
+  ;echo -a 4 %IP.nick - $read(Gamer\login.txt,w,%IP. [ $+ [ %nick ] ])
+  if (%chkIPgamer == on) {
+    if (($read(Gamer\login.txt,w,%IP. [ $+ [ %nick ] ]) == $null) || ($gettok($read(Gamer\login.txt,w,%IP. [ $+ [ %nick ] ]),2,32) == %nick)) {
+      var %mk = $gettok($readini(hethong\login.ini,dangnhap,%nick),1,32)
+      var %mk2 = $gettok($readini(hethong\login.ini,dangnhap,%nick),2,32)
+      if (%mk == $null) { describeVC %r.master $nick %nick 12Ban Chua Ðång Ký Account Hãy Gõ 12!Register <PassWord> 4Ðê² Ðång Ký | halt }
+      if (%mk == %mk1) || (%mk2 == %mk1) {
+        ;mode %r +v %nick
+        write Gamer\login.txt $remove(%IP. [ $+ [ %nick ] ],$chr(42)) %nick $date
+        if (%mk == %mk1) { .auser 3 %nick | describeVC %r.master %nick 9,01 Ban Ðã ðång nhâp ðúng mât khâ²u câ´p 1.  | .unset %nick }
+        if (%mk2 == %mk1) { .auser 9 %nick | describeVC %r.master %nick 9,01 Ban Ðã ðång nhâp ðúng mât khâ²u câ´p 2.  | .unset %nick }
+      }
+      else { msgVC %r.master %nick 9,01 Password Sai - Ban Hãy Nhâp Lai  | .unset %nick }
+    }
+    else { msgVC %r.master %nick 9,1 Xin lô~i! Ðã có nguòi su² dung IP cu²a ban ( $+ $read(Gamer\login.txt,w,%IP. [ $+ [ %nick ] ]) $+ ) ðê² ðång nhâp $me rô`i  | unset %IP. [ $+ [ %nick ] ] }
+  }
+  else {
+    var %mk = $gettok($readini(hethong\login.ini,dangnhap,%nick),1,32)
+    var %mk2 = $gettok($readini(hethong\login.ini,dangnhap,%nick),2,32)
+    if (%mk == $null) { describeVC %r.master $nick %nick 12Ban Chua Ðång Ký Account Hãy Gõ 12!Register <PassWord> 4Ðê² Ðång Ký | halt }
+    if (%mk == %mk1) || (%mk2 == %mk1) {
+      ;mode %r +v %nick
+      write Gamer\login.txt $remove(%IP. [ $+ [ %nick ] ],$chr(42)) %nick | unset %IP. [ $+ [ %nick ] ]
+      writeini -n Gamer\LoginDate.ini LoginDate %nick $date
+      if (%mk == %mk1) { .auser 3 %nick | describeVC %r.master %nick 9,01 Ban Ðã ðång nhâp ðúng mât khâ²u câ´p 1.  | .unset %nick }
+      if (%mk2 == %mk1) { .auser 9 %nick | describeVC %r.master %nick 9,01 Ban Ðã ðång nhâp ðúng mât khâ²u câ´p 2.  | .unset %nick }
+    }
+    else { msgVC %r.master %nick 9,01 Password Sai - Ban Hãy Nhâp Lai  | .unset %nick }
+  }
+  unset %IP.*
+}
+createlogindate {
+  ;Ngày 01/05/12
+  var %iL = 2, %nL = $lines(HeThong\diem.ini)
+  while (%iL <= %nL) {
+    if ($readini(Gamer\LoginDate.ini, LoginDate, $nick) == $null) {  writeini -n Gamer\LoginDate.ini LoginDate $gettok($read(HeThong\diem.ini,%iL),1,61) 15/11/2012 }
+    ;$date
+    inc %iL
+  }
+  echo 4 OK!
+}
+xemdangnhap { .return $readini hethong\login.ini $1 $2 $3 }
+xemsocau { .return $readini hethong\socau.ini $1 $2 $3 }
+xemchucvu { .return $readini hethong\chucvu.ini $1 $2 $3 }
+chucvu { .return $readini hethong\setchucvu.ini $1 $2 $3 }
+xemphanthuong { .return $readini hethong\nhanqua.ini $1 $2 $3 }
+mayman { .return $readini hethong\mayman.ini $1 $2 $3 }
+xemncv { .return $readini hethong\ncv.ini $1 $2 $3 }
+ghidiem { .writeini -n hethong\diem.ini $1 $2 $3 }
+coidiem { .return $readini HETHONG\diem.ini $1 $2 $3 }
+ghiwpm { .writeini -n hethong\WPM.ini $1 $2 $3 }
+xemwpm { .return $readini hethong\WPM.ini $1 $2 $3 }
+ghifast { .writeini -n hethong\fast.ini $1 $2 $3 }
+xemfast { .return $readini hethong\fast.ini $1 $2 $3 }
+ghistreak { .writeini -n hethong\streak.ini $1 $2 $3 }
+xemstreak { .return $readini hethong\streak.ini $1 $2 $3 }
+coidulieu { .return $readini hethong\hethong.ini $1 $2 $3 }
+coidulieu5 { .return $readini hethong\GameNhom.ini $1 $2 $3 }
+host { .return $readini hethong\host.ini $1 $2 $3 }
+tien {
+  var %mn = $gettok($1,1,46)
+  var %mn.chia = $int($calc($calc($len(%mn) - 1) / 3))
+  var %mn.du = $calc($len(%mn) - $calc(%mn.chia * 3))
+  if (%mn.du != 0) { 
+    var %mn.return = $left(%mn,%mn.du) 
+  var %mn.2 = $right(%mn,$calc($len(%mn) - %mn.du)) }
+  var %i = 1
+  while (%i <= %mn.chia) {
+    var %mn.return = %mn.return $+ . $+ $right($left(%mn.2,$calc(%i * 3)),3)
+    inc %i
+  }
+  return %mn.return
+}
+tien1 {
+  var %mn = $gettok($1,1,46)
+  var %mn.chia = $int($calc($calc($len(%mn) - 1) / 3))
+  var %mn.du = $calc($len(%mn) - $calc(%mn.chia * 3))
+  if (%mn.du != 0) { 
+    var %mn.return = $left(%mn,%mn.du) 
+  var %mn.2 = $right(%mn,$calc($len(%mn) - %mn.du)) }
+  var %i = 1
+  while (%i <= %mn.chia) {
+    var %mn.return = %mn.return $+ . $+ $right($left(%mn.2,$calc(%i * 3)),3)
+    inc %i
+  }
+  return $chr(36) $+ %mn.return
+}
+check.tien { return $remove($1,$chr(46)) }
+
+DonAccRac {
+  var %fRac = HETHONG\diem.ini, %iRac = 2, %nRac = $lines(%fRac)
+  while (%iRac <= %nRac) {
+    var %diemRac = $calc(%MinReg / 100)
+    if ($gettok($read(%fRac,%iRac),2,61) < %diemRac) {
+      msgVC %r Xóa ðiê²m $read(%fRac,%iRac) vì tài sa²n < $tien(%diemRac)
+      if ($readini(Gamer\LoginDate.ini,LoginDate,$gettok($read(%fRac,%iRac),1,61)) != $null) { remini Gamer\LoginDate.ini LoginDate $gettok($read(%fRac,%iRac),1,61) }
+      if ($readini(HETHONG\login.ini,DangNhap,$gettok($read(%fRac,%iRac),1,61)) != $null) { remini HETHONG\login.ini DangNhap $gettok($read(%fRac,%iRac),1,61) }
+      if ($readini(HETHONG\socau.ini,socau,$gettok($read(%fRac,%iRac),1,61)) != $null) { remini HETHONG\socau.ini socau $gettok($read(%fRac,%iRac),1,61) }
+      if ($readini(HETHONG\nhanqua.ini,phanthuong,$gettok($read(%fRac,%iRac),1,61)) != $null) { remini HETHONG\nhanqua.ini phanthuong $gettok($read(%fRac,%iRac),1,61) }
+      ;if ($readini(HETHONG\host.ini,host,$gettok($read(%fRac,%iRac),1,61)) != $null) { remini HETHONG\host.ini host $gettok($read(%fRac,%iRac),1,61) }
+      if ($readini(HETHONG\streak.ini,streak,$gettok($read(%fRac,%iRac),1,61)) != $null) { remini HETHONG\streak.ini streak $gettok($read(%fRac,%iRac),1,61) }
+      if ($readini(HETHONG\WPM.ini,streak,$gettok($read(%fRac,%iRac),1,61)) != $null) { remini HETHONG\WPM.ini streak $gettok($read(%fRac,%iRac),1,61) }
+      if ($readini(HETHONG\fast.ini,streak,$gettok($read(%fRac,%iRac),1,61)) != $null) { remini HETHONG\fast.ini streak $gettok($read(%fRac,%iRac),1,61) }
+      remini %fRac diem $gettok($read(%fRac,%iRac),1,61)
+    }
+    else { inc %iRac }
+  }
+  set %fRac Gamer\LoginDate.ini | set %iRac 2 | set %nRac $lines(%fRac)
+  while (%iRac <= %nRac) {
+    if ($calc(($ctime($date) - $ctime($gettok($read(%fRac,%iRac),2,61)))/86400) >= 21) && ($gettok($read(%fRac,%iRac),2,61) != $null) {
+      msgVC %r Xóa ðiê²m vì không login: $read(%fRac,%iRac)
+      if ($readini(HETHONG\diem.ini,diem,$gettok($read(%fRac,%iRac),1,61)) != $null) { remini HETHONG\diem.ini diem $gettok($read(%fRac,%iRac),1,61) }
+      if ($readini(HETHONG\login.ini,DangNhap,$gettok($read(%fRac,%iRac),1,61)) != $null) { remini HETHONG\login.ini DangNhap $gettok($read(%fRac,%iRac),1,61) }
+      if ($readini(HETHONG\socau.ini,socau,$gettok($read(%fRac,%iRac),1,61)) != $null) { remini HETHONG\socau.ini socau $gettok($read(%fRac,%iRac),1,61) }
+      if ($readini(HETHONG\nhanqua.ini,phanthuong,$gettok($read(%fRac,%iRac),1,61)) != $null) { remini HETHONG\nhanqua.ini phanthuong $gettok($read(%fRac,%iRac),1,61) }
+      if ($readini(HETHONG\host.ini,host,$gettok($read(%fRac,%iRac),1,61)) != $null) { remini HETHONG\host.ini host $gettok($read(%fRac,%iRac),1,61) }
+      if ($readini(HETHONG\streak.ini,streak,$gettok($read(%fRac,%iRac),1,61)) != $null) { remini HETHONG\streak.ini streak $gettok($read(%fRac,%iRac),1,61) }
+      if ($readini(HETHONG\WPM.ini,streak,$gettok($read(%fRac,%iRac),1,61)) != $null) { remini HETHONG\WPM.ini streak $gettok($read(%fRac,%iRac),1,61) }
+      if ($readini(HETHONG\fast.ini,streak,$gettok($read(%fRac,%iRac),1,61)) != $null) { remini HETHONG\fast.ini streak $gettok($read(%fRac,%iRac),1,61) }
+      remini %fRac LoginDate $gettok($read(%fRac,%iRac),1,61)
+    }
+    else { inc %iRac }
+  }
+  copy HETHONG\diem.ini $replace($+(BACKUP\diem-,$date,--,$time,.ini),:,-,/,-)
+  .msgVC %r.master Backup Done! $replace($+(BACKUP\diem-,$date,--,$time,.ini),:,-,/,-)
+}
+LTBHint {
+  ;$1: Hint0, Hint1, Hint3; $2: sô' ký tu. hiê.n; $2: text
+  var %iLTBHint 1, %nLTBHint $len($3-), %sLTBHint 0, %LTB_Hint
+  var %LTB__ /~´`'²?.+ ^(*-_ $+ $chr(160) $+ $chr(32)
+  while (%iLTBHint <= %nLTBHint) {
+    if ($mid($3-,%iLTBHint,1) !isin %LTB__) {
+      if ($r(0,1) == 1) && (%sLTBHint < $2) { set %LTB_Hint %LTB_Hint $+ $mid($3-,%iLTBHint,1) | inc %sLTBHint }
+      else { set %LTB_Hint %LTB_Hint $+ $chr(42) }
+    }
+    else {
+      if ($mid($3-,%iLTBHint,1) != $chr(32)) && ($mid($3-,%iLTBHint,1) != $chr(160)) { set %LTB_Hint %LTB_Hint $+ $mid($3-,%iLTBHint,1) }
+      else { set %LTB_Hint %LTB_Hint $+ $chr(160) }
+    }
+    inc %iLTBHint
+  }
+  set %hint [ $+ [ $1 ] ] $replace(%LTB_Hint,$chr(160),$chr(32))
+  ;echo #thienthan $1 $2 %LTB_Hint
+}
+
+;Mã hóa Ðen Trå´ng
+InsertSymbol {
+  if ($1 == 0) { set %MauSymboL1 12 | set %MauSymboL2 00 | set %MauSymboL3 00 | set %MauSymboL4 01 }
+  else { set %MauSymboL1 00 | set %MauSymboL2 01 | set %MauSymboL3 12 | set %MauSymboL4 00 }
+  if ($r(0,1) == 1) { set %itxt3 %MauSymboL1 $+ $chr(44) $+ %MauSymboL2 $2- }
+  else { set %itxt3 %MauSymboL1 $+ $chr(44) $+ %MauSymboL2 $+ $2- }
+  ;if ($r(0,1) == 1) { set %itxt3 %MauSymboL3 $+ $chr(44) $+ %MauSymboL4 $+ %itxt3 }
+  :ReplaceSPACE
+  ISymbol %itxt3
+  if ( $chr(32) isin %itxt3 ) { goto ReplaceSPACE }
+  ;else { unset %itxt1 | unset %itxt2 | return %itxt3 $+  $+ %MauSymboL2 $+ $read(Symbol.txt) | unset %MauSymboL* }
+  else { unset %itxt1 | unset %itxt2 | return %itxt3 $+ $iif($r(0,1) == 0, $+ %MauSymboL2 $+ $read(Symbol.txt)) | unset %MauSymboL* }
+}
+ISymbol {
+  set %itxt1 $1 | set %itxt2 $2 | set %itxt4 $3-
+  if ( !isin %itxt2) && ($remove(%itxt2,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z) == $null) {
+    var %iiTxt = $r(1,$len(%itxt2))
+    var %iiiTxt = $calc($len(%itxt2) - %iiTxt)
+    set %itxt2 $left(%itxt2,%iiTxt) $+ %MauSymboL3 $+ $chr(44) $+ %MauSymboL4 $+ %MauSymboL1 $+ $chr(44) $+ %MauSymboL2 $+ $right(%itxt2,%iiiTxt)
+  }
+  ;if (%itxt2 != $null) { set %itxt3 %itxt1 $+  $+ %MauSymboL2 $+ $read(Symbol.txt) $+ %MauSymboL1 $+ %itxt2 %itxt4 }
+  if (%itxt2 != $null) { set %itxt3 %itxt1 $+ $gettok(00 12 04 03,$r(1,4),32) $+  $+ %MauSymboL2 $+ $read(Symbol.txt) $+ %MauSymboL1 $+ %itxt2 %itxt4 }
+}
+InsertBC {
+  var %txtBC = $replace($1-,$chr(32),$chr(160)), %txtBC1 = $null, %iBC = 1, %nBC = $len(%txtBC), %rBCR. = $null
+  while (%iBC <= %nBC) {
+    set %rBCR. $r(0,2)
+    if (%rBCR. > 0) && ($mid(%txtBC,%iBC,1) isin !abcdefghijklmnopqrstuvwxyz) { set %txtBC1 %txtBC1 $+  $+ $mid(%txtBC,%iBC,1) }
+    ;elseif (%rBCR. = 2) { set %txtBC1 %txtBC1 $+  $+ $mid(%txtBC,%iBC,1) }
+    else { set %txtBC1 %txtBC1 $+ $mid(%txtBC,%iBC,1) }
+    inc %iBC
+  }
+  return $replace(%txtBC1,$chr(160),$chr(32))
+}
+
+LoadClient {
+  set %TempClient $read(ListNick.txt)
+  os client add %TempClient %TempClient $server %TempClient
+  os client join %TempClient #VietNam | os client join %TempClient #Games
+}
+F1 { identify 123456 | os set superadmin on }
+
+;Khai báo hàm DIV/MOD $div($1,$2) $mod($1,$2)
+div { return $int($calc($1 / $2)) }
+mod return $calc($1 % $2)

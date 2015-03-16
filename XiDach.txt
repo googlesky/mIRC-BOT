@@ -1,0 +1,363 @@
+on 1:TEXT:!xidach *:%r: { 
+  if (%blackjack != off) { noticeVC $nick Xì Dách: Ðang choi hoåc chua ðê´n giò... | .ignore -u3 $nick | halt }
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chua Ðång ký , Ðê² ðång ký choi game , 8Gõ 11/msg $me 4!register <pass1> <pass2> | .ignore -u5 $nick }
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) != $null) && ($level($nick) < 3) { noticeVC $nick 4,01 $+ $nick 9,01Chua Login , 13/msg $me !identify <pass> , 9Ðê² choi Games | .ignore -u5 $nick }
+  if ($level($nick) >= 3) && ($ChkBet($nick,$2) == True) {
+    if ($2 == $null) || ($2 <= 0) || ($2 !isnum) { noticeVC $nick Ba.n ðå.t không ðúng rôì thu~ la.i ði | halt }
+    %tien.cosan = $coidiem(Diem,$nick)
+    if (%tien.cosan < $2) || (%tien.cosan == $null) { noticeVC $nick Ba.n không có ðu² tiê`n ðê² choi | halt }
+    if ($istok(%nicks.blackjack,$nick,32) == $True) { noticeVC $nick Ba.n ðã ðåt cuoc rôì | halt }
+    else {
+      set -u1 %cobac $nick
+      inc %blackjack.thutu 1
+      set %nicks.blackjack %nicks.blackjack  $+ $nick
+      set %nick.blackjack [ $+ [ %blackjack.thutu ] ] $nick
+      set %nick.tiendat [ $+ [ %blackjack.thutu ] ] $2
+      describeVC %r 3-=[8,1 %cobac 3]=- 12ðã ðå.t 4Xì Dách 12vói sô' tiê`n là 04,01$ $+ $tien($2) $+ $iif($2 >= 500000000000, 12Ðai gia quá ^_^)
+      .ignore $nick
+    }
+  }
+}
+
+on 1:TEXT:!keo*:%r: {
+  if (%blackjackplay != on) { noticeVC $nick Xì Dách: Ðang choi hoåc chua ðê´n giò... | .ignore -u3 $nick | halt }
+  if ($nick == %nick.blackjack [ $+ [ %currentplayer ] ]) { .timerblackjack off | keoblackjack $nick | inc %solankeo }
+}
+
+on 1:TEXT:!ngung*:%r: {
+  if (%blackjackplay != on) { noticeVC $nick Xì Dách: Ðang choi hoåc chua ðê´n giò... | .ignore -u3 $nick | halt }
+  if ($nick == %nick.blackjack [ $+ [ %currentplayer ] ]) { .ignore $nick | .timer 1 1 describeVC %r 03 $+ $nick 4Ðã ngung kéo tói luot nguòi khác... | ngungblackjack $nick | .timerblackjack off } 
+}
+
+
+alias xidach {
+  unset %bobai %score.* %nick.blackjack* %cards.* %nick.tiendat* %blackjack.thutu %currentplayer %blackjack.nickwins %nicks.blackjack
+  ;2.3.4.5.6.7.8.9.10.J.Q.K.A.2.3.4.5.6.7.8.9.10.J.Q.K.A.2.3.4.5.6.7.8.9.10.J.Q.K.A.2.3.4.5.6.7.8.9.10.J.Q.K.A
+  set %bobai 2.3.4.5.6.7.8.9.10.J.Q.K.A.2.3.4.5.6.7.8.9.10.J.Q.K.A.2.3.4.5.6.7.8.9.10.J.Q.K.A.2.3.4.5.6.7.8.9.10.J.Q.K.A
+  ;set %bobai A.K.A.K.A.K.A.K.A.K.A.K.A.K.A.K.A.K.A.K.A.K.A.K.A.K.A.K.A.K.A.K.A.K.A.K.A.K.A.K.A.K.A.K.A.K.A.K.A.K
+
+  batdaublackjack cai
+  .timers off | ignore -r | .disable #LoDe
+  .timer 1 2 set %blackjack off
+  var %GameMini 1,1 00,03X00,01ì03,03 00,01D00,03á00,01c00,03h01,01 
+  describeVC %r 2=-=-=-=-=-=3*4$12*3$4*12$3*2|[ $InsertBC(%GameMini) 2]|3*12$4*3$12*4$3*2=-=-=-=-=-=
+  .timerblackjack1 1 1 describeVC %r $InsertSymbol(1,0Gõ 8-=[ 11 $+ $InsertBC(!XiDach) $+  04<Tìên> 8]=- 0ðê² 0tham 0gia 0cò 0bac! Choi nhanh ke²o 4Công 4An bå´t... Mô~i ngu+òi chi² có 25s thôi nhé!!!)
+  .timer 1 2 describeVC %r $InsertSymbol(0,3Chú 3ý: 4Xì 4Bàng: Ðuoc nhân 5; 4Xì 4Dách + 4Ngu~ 4Linh: Ðuoc nhân 2; 4Tam 4Thâ´t 04(777): Ðuoc nhân 7. Chúc các ban may må´n!)
+
+  .timerblackjack2 1 40 describeVC %r 4Thòi gian ðå.t tiê`n ðã hê´t !!! Ðå.t xong lâý cái tay ra nha !!! Bå´t ðâù chia bài !!!
+  .timerblackjack3 1 40 ignore -r
+  .timerblackjack4 1 3 noticeVC $iif(LangTuBuon ison %r,LangTuBuon) $+ , $+ $iif(LaNgTu ison %r,LaNgTu) $+ , $+ $iif(DrKhoQua ison %r,DrKhoQua) $+ , $+ $iif(DrKhoQua-AR ison %r,DrKhoQua-AR) $+ , $+ $iif(vuichat ison %r,vuichat) 4Bài cu²a BOT: %score.cai 3 %cards.cai
+  .timerblackjack5 1 40 set %blackjack on
+  .timerblackjack6 1 41 kiemtrablackjack
+  .timerblackjack7 1 43 set %blackjackplay on
+  .timerblackjack8 1 43 startgameblackjack
+}
+alias kiemtrablackjack {
+  if (%nick.blackjack1 == $null) || (%nick.tiendat1 == $null) { unset %bobai %score.* %nick.blackjack* %cards.* %nick.tiendat* %blackjack.thutu %currentplayer %blackjack.nickwins %nicks.blackjack %solankeo
+    set %blackjackplay off
+    .timers off
+    describeVC %r 4Không có Gamer nào choi nên ván này ðuo.c dùng la.i!
+    .timergamez 1 %quacau choigame
+    .enable #LoDe
+  }
+  else { return }
+}
+alias startgameblackjack {
+  describeVC %r 3Bài cu²a 4Bot3:7 $gettok(%cards.cai,1,32) 4*
+  set %currentplayer 1
+  .timer 1 1 describeVC %r 0,14¤8,1 Player 0,14¤0,4¤9,1 9,1 $+ %nick.blackjack1 0,4¤04,01 08$ $+ $tien(%nick.tiendat1) 
+  .timer 1 1 batdaublackjack %nick.blackjack1
+}
+alias batdaublackjack {
+  set %solankeo 0
+  var %sobai = $numtok(%bobai,46)
+  if (%sobai == 0) { set %bobai 2.3.4.5.6.7.8.9.10.J.Q.K.A.2.3.4.5.6.7.8.9.10.J.Q.K.A.2.3.4.5.6.7.8.9.10.J.Q.K.A.2.3.4.5.6.7.8.9.10.J.Q.K.A | var %sobai = $numtok(%bobai,46) }
+  var %i = $r(1,%sobai)
+  var %temp = $gettok(%bobai,%i,46)
+  %bobai = $deltok(%bobai,%i,46)
+  var %sobai = $numtok(%bobai,46)
+  if (%sobai == 0) { set %bobai 2.3.4.5.6.7.8.9.10.J.Q.K.A.2.3.4.5.6.7.8.9.10.J.Q.K.A.2.3.4.5.6.7.8.9.10.J.Q.K.A.2.3.4.5.6.7.8.9.10.J.Q.K.A | var %sobai = $numtok(%bobai,46) }
+  var %i = $r(1,%sobai)
+  var %temp = %temp $gettok(%bobai,%i,46)
+  %bobai = $deltok(%bobai,%i,46)
+  var %sobai = $numtok(%bobai,46)
+  if (%sobai == 0) { set %bobai 2.3.4.5.6.7.8.9.10.J.Q.K.A.2.3.4.5.6.7.8.9.10.J.Q.K.A.2.3.4.5.6.7.8.9.10.J.Q.K.A.2.3.4.5.6.7.8.9.10.J.Q.K.A | var %sobai = $numtok(%bobai,46) }
+  set %cards. [ $+ [ $1 ] ] %temp
+  set %score. [ $+ [ $1 ] ] $tinhdiemblackjack(%temp)
+
+  var %sodiem = %score. [ $+ [ $1 ] ]
+  if ($1 == cai) && (%sodiem < 17) { inc %solankeo | keoblackjack cai }
+  ;$mahoa(12Ðuo.c -=> $mahoa(12Ðuo.c0 $+ $r(a,z)
+  ;$mahoa(12Ðuo.c0 $+ $r(a,z) -=> $mahoa($iif($r(0,1)=0,Ðuo.c,Ban Ðuo.c) 
+  ;$InsertSymbol(1,04 $+ $replace(%sodiem,$chr(32),$chr(32) $+ 04)) -=> $InsertSymbol(1,$iif($r(0,1) == 0,01 $+ $r(0,9)) $+ 04 $+ $replace(%sodiem,$chr(32),$chr(32) $+ 04) $+ $iif($r(0,1) == 0,01 $+ $r(0,9)))
+  if ((%sodiem >= 21) || (%sodiem == Xì Dách) || (%sodiem == Xì Bàng)) && ($1 != cai) {
+    ;.timer 1 1 describeVC %r 12Bài Cu²a $InsertSymbol(1,03 $+ $1) $+  12Là:4 %temp $mahoa(12Ðuo.c0 $+ $r(a,z) $InsertSymbol(1,04 $+ $replace(%sodiem,$chr(32),$chr(32) $+ 04)) $+  12Ðiê²m)
+    .timer 1 1 describeVC %r 12Bài Là:4 %temp $mahoa(12Ðuo.c0 $+ $r(a,z) $InsertSymbol(1,04 $+ $replace(%sodiem,$chr(32),$chr(32) $+ 04)))
+    .timer 1 2 describeVC %r 12Xin chúc mùng ban! 4Ð15ô~ 4M15uòi 12hôm nay chia bài Ðen thê´ nhi²?
+  }
+  elseif ((%sodiem < 21) && (%sodiem != Xì Dách) && (%sodiem != Xì Bàng)) && ($1 != cai) {
+    .timer 1 1 describeVC %r 12Bài Là:4 %temp $mahoa(12Ðuo.c0 $+ $r(a,z) $InsertSymbol(1,$iif($r(0,1) == 0,01 $+ $r(0,9)) $+ 04 $+ $replace(%sodiem,$chr(32),$chr(32) $+ 04) $+ $iif($r(0,1) == 0,01 $+ $r(0,9))) $+  12Ðiê²m)
+    .timerblackjack1 1 2 describeVC %r 12Ba.n Có Thê²4 !ngung 12Nê´u Thâ´y Ðã Ðu² Ðiê²m Hoå.c4 !keo 12Nê´u Thâ´y Bài Chua Ðu² Ðiê²m
+    .timerblackjack 1 25 blackjacktimeout $1 | goto end
+  }
+  if (%currentplayer < %blackjack.thutu) && ($1 != cai) {
+    set %solankeo 0
+    if (%sodiem != 21) && (%sodiem != Xì Dách) && (%sodiem != Xì Bàng) {
+      .timer 1 1 describeVC %r 12Bài Là:4 %temp $mahoa(12Ðuo.c0 $+ $r(a,z) $InsertSymbol(1,$iif($r(0,1) == 0,01 $+ $r(0,9)) $+ 04 $+ $replace(%sodiem,$chr(32),$chr(32) $+ 04) $+ $iif($r(0,1) == 0,01 $+ $r(0,9))) $+  12Ðiê²m)
+      .timerblackjack1 1 2 describeVC %r 12Ba.n Có Thê²4 !ngung 12Nê´u Thâ´y Ðã Ðu² Ðiê²m Hoå.c4 !keo 12Nê´u Thâ´y Bài Chua Ðu² Ðiê²m
+    }
+    ;else { .timerblackjack1 1 2 describeVC %r Câ`n viê't zì nhi?? }
+    elseif (%sodiem < 21) || (%sodiem == Xì Dách) || (%sodiem == Xì Bàng) { .timerblackjack1 1 3 describeVC %r 0,14¤8,1 Player 0,14¤0,4¤9,1 9,1 $+ %nick.blackjack [ $+ [ $calc(%currentplayer + 1) ] ] 0,4¤04,01 08$ $+ $tien(%nick.tiendat [ $+ [ $calc(%currentplayer + 1) ] ])  }
+    .timerblackjack9 1 3 batdaublackjack %nick.blackjack [ $+ [ $calc(%currentplayer + 1) ] ]
+    .timer 1 3 set %currentplayer $calc(%currentplayer + 1)
+  }
+  elseif (%currentplayer >= %blackjack.thutu) && ($1 != cai) && (%blackjack.thutu != $null) {
+    .timer 1 3 tinhdiemchungcuoc
+  }
+  :end
+}
+alias blackjacktimeout {
+  set %score. [ $+ [ $1 ] ] 0
+  .ignore $1
+  describeVC %r 12Hê´t thòi gian.3 $1 12bi mâ´t luot!
+  if (%currentplayer < %blackjack.thutu) {
+    set %solankeo 0
+    .timerblackjack8 1 2 describeVC %r 0,14¤8,1 Player 0,14¤0,4¤9,1 9,1 $+ %nick.blackjack [ $+ [ $calc(%currentplayer + 1) ] ] 0,4¤04,01 08$ $+ $tien(%nick.tiendat [ $+ [ $calc(%currentplayer + 1) ] ]) 
+    .timerblackjack9 1 3 batdaublackjack %nick.blackjack [ $+ [ $calc(%currentplayer + 1) ] ]
+    .timer 1 3 set %currentplayer $calc(%currentplayer + 1)
+  }
+  else {
+    .timer 1 3 tinhdiemchungcuoc
+  }
+}
+alias ngungblackjack {
+  if (%currentplayer < %blackjack.thutu) {
+    set %solankeo 0
+    .timerblackjack8 1 2 describeVC %r 0,14¤8,1 Player 0,14¤0,4¤9,1 9,1 $+ %nick.blackjack [ $+ [ $calc(%currentplayer + 1) ] ] 0,4¤04,01 08$ $+ $tien(%nick.tiendat [ $+ [ $calc(%currentplayer + 1) ] ]) 
+    .timerblackjack9 1 3 batdaublackjack %nick.blackjack [ $+ [ $calc(%currentplayer + 1) ] ]
+    .timer 1 3 set %currentplayer $calc(%currentplayer + 1)
+  }
+  else {
+    .timer 1 3 tinhdiemchungcuoc
+  }
+}
+alias keoblackjack { 
+  var %sobai = $numtok(%bobai,46)
+  if (%sobai == 0) { set %bobai 2.3.4.5.6.7.8.9.10.J.Q.K.A.2.3.4.5.6.7.8.9.10.J.Q.K.A.2.3.4.5.6.7.8.9.10.J.Q.K.A.2.3.4.5.6.7.8.9.10.J.Q.K.A | var %sobai = $numtok(%bobai,46) }
+  var %i = $r(1,%sobai)
+  %cards. [ $+ [ $1 ] ] = %cards. [ $+ [ $1 ] ] $gettok(%bobai,%i,46)
+
+  var %temp = %cards. [ $+ [ $1 ] ]
+  %bobai = $deltok(%bobai,%i,46)
+  var %sobai = $numtok(%bobai,46)
+  if (%sobai == 0) { set %bobai 2.3.4.5.6.7.8.9.10.J.Q.K.A.2.3.4.5.6.7.8.9.10.J.Q.K.A.2.3.4.5.6.7.8.9.10.J.Q.K.A.2.3.4.5.6.7.8.9.10.J.Q.K.A | var %sobai = $numtok(%bobai,46) }
+  %score. [ $+ [ $1 ] ] = $tinhdiemblackjack(%temp)
+  var %sodiem = %score. [ $+ [ $1 ] ]
+
+  if ($1 == cai) && (%sodiem < 17) && (%solankeo < 3) { tieptuckeo }
+  ;if ((%sodiem = 21) && ($1 != cai)) || (%solankeo == 3) { .timer 1 1 describeVC %r 12Bài Là:4 %temp $mahoa(12Ðuo.c0 $+ $r(a,z) $InsertSymbol(1,$iif($r(0,1) == 0,01 $+ $r(0,9)) $+ 04 $+ $replace(%sodiem,$chr(32),$chr(32) $+ 04) $+ $iif($r(0,1) == 0,01 $+ $r(0,9))) $+  12Ðiê²m) | goto hichichic }
+  if (((%sodiem = Tam Thâ´t) || (%sodiem = Ngu~ Linh) || (%sodiem = Xì Dách) || (%sodiem = Xì Bàng)) && ($1 != cai)) || (%solankeo == 3) { .timer 1 1 describeVC %r 12Bài Là:4 %temp $mahoa(12Ðuo.c0 $+ $r(a,z) $InsertSymbol(1,$iif($r(0,1) == 0,01 $+ $r(0,9)) $+ 04 $+ $replace(%sodiem,$chr(32),$chr(32) $+ 04) $+ $iif($r(0,1) == 0,01 $+ $r(0,9)))) | .timer 1 2 describeVC %r 12Bài 03 $+ $1 12ðo² thê´. Xin chúc mùng ban! | goto hichichic }
+  if ((%sodiem > 21) && ($1 != cai)) || (%solankeo == 3) { .ignore $1 | .timer 1 1 describeVC %r 12Bài Là:4 %temp $mahoa(12Ðuo.c0 $+ $r(a,z) $InsertSymbol(1,$iif($r(0,1) == 0,01 $+ $r(0,9)) $+ 04 $+ $replace(%sodiem,$chr(32),$chr(32) $+ 04) $+ $iif($r(0,1) == 0,01 $+ $r(0,9))) $+  12Ðiê²m) | .timer 1 2 describeVC %r $iif($numtok(%temp,32) >= 5,12Chúc mùng. Ban ðuoc Ngu~ Luôn nhé!,12Ba.n ðã bi. 4BURSTED 12ba.n không ðuo.c kéo nuã) }
+  else if (%sodiem <= 21) && ($1 != cai) { .timer 1 1 describeVC %r 12Bài Là:4 %temp $mahoa(12Ðuo.c0 $+ $r(a,z) $InsertSymbol(1,$iif($r(0,1) == 0,01 $+ $r(0,9)) $+ 04 $+ $replace(%sodiem,$chr(32),$chr(32) $+ 04) $+ $iif($r(0,1) == 0,01 $+ $r(0,9))) $+  12Ðiê²m) | .timerblackjack1 1 2 describeVC %r 12Ba.n Có Thê²4 !ngung 12Nê´u Thâ´y Ðã Ðu² Ðiê²m Hoå.c4 !keo 12Nê´u Thâ´y Bài Chua Ðu² Ðiê²m
+    .timerblackjack 1 25 blackjacktimeout $1 | goto end
+  }
+  :hichichic
+  if (%currentplayer < %blackjack.thutu) && ($1 != cai) {
+    set %solankeo 0
+    .timerblackjack8 1 2 describeVC %r 0,14¤8,1 Player 0,14¤0,4¤9,1 9,1 $+ %nick.blackjack [ $+ [ $calc(%currentplayer + 1) ] ] 0,4¤04,01 08$ $+ $tien(%nick.tiendat [ $+ [ $calc(%currentplayer + 1) ] ]) 
+    .timerblackjack9 1 3 batdaublackjack %nick.blackjack [ $+ [ $calc(%currentplayer + 1) ] ]
+    .timer 1 3 set %currentplayer $calc(%currentplayer + 1)
+  }
+  else if (%currentplayer >= %blackjack.thutu) && ($1 != cai) {
+    .timer 1 3 tinhdiemchungcuoc
+  }
+  :end
+}
+alias tieptuckeo { inc %solankeo | keoblackjack cai }
+
+alias tinhdiemblackjack {
+  var %i = $numtok($1-,32)
+  var %x = 1
+  var %sodiem = 0
+  var %aces = 0
+  while (%x <= %i) {
+    var %z = $gettok($1-,%x,32) 
+    if (%z == J) || (%z == Q) || (%z == K) { var %sodiem = %sodiem + 10 | goto next }
+    if (%z == A) { var %n = $calc(%sodiem + 11)
+      if (%i == 2) { 
+        if (%n > 21) { var %sodiem = %sodiem + 10 | goto next }
+        else  { var %sodiem = %sodiem + 11 | goto next }
+      }
+      else {
+        var %sodiem = %sodiem + 11 | inc %aces 1 | goto next
+      }
+    }
+    else var %sodiem = %sodiem + %z
+    :next 
+    %x = %x + 1
+  }
+  if (%sodiem > 21) && (%aces > 0) {
+    while (%sodiem > 21) && (%aces > 0) {
+      ;var %sodiem = %sodiem - 10
+      ;dec %aces 1
+      if ($calc(%sodiem - 1) > 21) { set %sodiem %sodiem - 10 | dec %aces 1 }
+      else { set %sodiem %sodiem - 1 | dec %aces 1 }
+    }
+  }
+  if (%i == 5) && (%sodiem <= 21) { set %sodiem Ngu~ Linh }
+  if (%i == 2) && (%sodiem = 21) { set %sodiem Xì Dách }
+  if ($1- == 7 7 7) { set %sodiem Tam Thâ´t }
+  if ($1- == A A) { set %sodiem Xì Bàng }
+  return %sodiem
+}
+
+alias tinhdiemchungcuoc {
+  unset %currentplayer %solankeo
+  var %i = 1, %x = $calc($numtok(%cards.cai,32) * 6)
+  while (%i <= %blackjack.thutu) {
+    var %nick = %nick.blackjack [ $+ [ %i ] ]
+    var %score = %score. [ $+ [ %nick ] ]
+    if (%score == Xì Bàng) { set %score1 21 }
+    elseif (%score == Xì Dách) { set %score1 20.9 }
+    elseif (%score == Ngu~ Linh) { set %score1 20.7 }
+    elseif (%score == 21) || (%score == Tam Thâ´t) { set %score1 20.5 }
+    else { set %score1 %score }
+
+    if (%score.cai == Xì Bàng) { set %score.cai1 21 }
+    elseif (%score.cai == Xì Dách) { set %score.cai1 20.9 }
+    elseif (%score.cai == Ngu~ Linh) { set %score.cai1 20.7 }
+    elseif (%score.cai == 21) || (%score.cai == Tam Thâ´t) { set %score.cai1 20.5 }
+    else { set %score.cai1 %score.cai }
+
+    var %tiendat = %nick.tiendat [ $+ [ %i ] ]
+    if (%score1 === 0) {
+      ghidiem Diem %nick $calc($coidiem(Diem,%nick) - %tiendat)
+      .timerblackjack $+ %i 1 %x describeVC %r 4 $+ %nick 12Mâ´t luot 03Thua 04,01$ $+ $tien(%tiendat) $+  12Tài Sa²n 04,01$ $+ $tien($coidiem(Diem,%nick))
+      inc %x 2
+      goto next1
+    }
+    if (%score1 < 16) {
+      ghidiem Diem %nick $calc($coidiem(Diem,%nick) - (%tiendat * 2))
+      .timerblackjack $+ %i 1 %x describeVC %r 4 $+ %nick 12Ðuo.c 08,01 %score  12Ðiê²m (Chua ðu² tâ²y 16 - Ban bi Phat gâ´p ðôi) 03Thua 04,01$ $+ $tien($calc(%tiendat * 2)) $+  12Tài Sa²n 04,01$ $+ $tien($coidiem(Diem,%nick))
+      inc %x 2
+      goto next1
+    }
+    if (%score1 > %score.cai1) && (%score1 <= 21) && (%score1 >= 16) && (%score.cai1 <= 21) {
+      set %blackjack.nickwins %blackjack.nickwins  $+ $r(2,14) $+ %nick
+      if (%score == Xì Bàng) || (%score == Xì Dách) || (%score == Ngu~ Linh) || (%score == Tam Thâ´t) {
+        if (%score == Xì Bàng) {
+          ghidiem Diem %nick $calc($coidiem(Diem,%nick) + (%tiendat * 5))
+          .timerblackjack $+ %i 1 %x describeVC %r 4 $+ %nick 12Ðuo.c 08,01 %score  04Thå´ng 04,01$ $+ $tien($calc(%tiendat * 5)) $+  12Tài Sa²n 04,01$ $+ $tien($coidiem(Diem,%nick)) $+  Ban ðuoc nhân Nåm sô´ tiê`n ðåt cuoc
+        }
+        elseif (%score == Tam Thâ´t) {
+          ghidiem Diem %nick $calc($coidiem(Diem,%nick) + (%tiendat * 7))
+          .timerblackjack $+ %i 1 %x describeVC %r 4 $+ %nick 12Ðuo.c 08,01 %score  04Thå´ng 04,01$ $+ $tien($calc(%tiendat * 7)) $+  12Tài Sa²n 04,01$ $+ $tien($coidiem(Diem,%nick)) $+  Ban ðuoc nhân Ba²y sô´ tiê`n ðåt cuoc
+        }
+        else {
+          ghidiem Diem %nick $calc($coidiem(Diem,%nick) + (%tiendat * 2))
+          .timerblackjack $+ %i 1 %x describeVC %r 4 $+ %nick 12Ðuo.c 08,01 %score  04Thå´ng 04,01$ $+ $tien($calc(%tiendat * 2)) $+  12Tài Sa²n 04,01$ $+ $tien($coidiem(Diem,%nick)) $+  Ban ðuoc nhân Ðôi sô´ tiê`n ðåt cuoc
+        }
+      }
+      else {
+        ghidiem Diem %nick $calc($coidiem(Diem,%nick) + %tiendat)
+        .timerblackjack $+ %i 1 %x describeVC %r 4 $+ %nick 12Ðuo.c 08,01 %score  12Ðiê²m 04Thå´ng 04,01$ $+ $tien(%tiendat) $+  12Tài Sa²n 04,01$ $+ $tien($coidiem(Diem,%nick))
+      }
+      inc %x 2
+    }
+    if (%score1 < %score.cai1) && (%score1 <= 21) && (%score.cai1 > 21) {
+      set %blackjack.nickwins %blackjack.nickwins  $+ $r(2,14) $+ %nick
+      if (%score == Xì Bàng) || (%score == Xì Dách) || (%score == Ngu~ Linh) || (%score == Tam Thâ´t) {
+        if (%score == Xì Bàng) {
+          ghidiem Diem %nick $calc($coidiem(Diem,%nick) + (%tiendat * 5))
+          .timerblackjack $+ %i 1 %x describeVC %r 4 $+ %nick 12Ðuo.c 08,01 %score  04Thå´ng 04,01$ $+ $tien($calc(%tiendat * 5)) $+  12Tài Sa²n 04,01$ $+ $tien($coidiem(Diem,%nick)) $+  Ban ðuoc nhân Nåm sô´ tiê`n ðåt cuoc
+        }
+        elseif (%score == Tam Thâ´t) {
+          ghidiem Diem %nick $calc($coidiem(Diem,%nick) + (%tiendat * 7))
+          .timerblackjack $+ %i 1 %x describeVC %r 4 $+ %nick 12Ðuo.c 08,01 %score  04Thå´ng 04,01$ $+ $tien($calc(%tiendat * 7)) $+  12Tài Sa²n 04,01$ $+ $tien($coidiem(Diem,%nick)) $+  Ban ðuoc nhân Ba²y sô´ tiê`n ðåt cuoc
+        }
+        else {
+          ghidiem Diem %nick $calc($coidiem(Diem,%nick) + (%tiendat * 2))
+          .timerblackjack $+ %i 1 %x describeVC %r 4 $+ %nick 12Ðuo.c 08,01 %score  04Thå´ng 04,01$ $+ $tien($calc(%tiendat * 2)) $+  12Tài Sa²n 04,01$ $+ $tien($coidiem(Diem,%nick)) $+  Ban ðuoc nhân Ðôi sô´ tiê`n ðåt cuoc
+        }
+      }
+      else {
+        ghidiem Diem %nick $calc($coidiem(Diem,%nick) + %tiendat)
+        .timerblackjack $+ %i 1 %x describeVC %r 4 $+ %nick 12Ðuo.c 08,01 %score  12Ðiê²m 04Thå´ng 04,01$ $+ $tien(%tiendat) $+  12Tài Sa²n 04,01$ $+ $tien($coidiem(Diem,%nick))
+      }
+      inc %x 2
+    }
+    if (%score1 > 21) && (%score.cai1 <= 21) {
+      if (%score1 > 27) {
+        ghidiem Diem %nick $calc($coidiem(Diem,%nick) - (%tiendat * 2))
+        .timerblackjack $+ %i 1 %x describeVC %r 4 $+ %nick 12Ðuo.c 08,01 %score  12Ðiê²m (Lón hon 27 - Ban bi Phat gâ´p ðôi) 03Thua 04,01$ $+ $tien($calc(%tiendat * 2)) $+  12Tài Sa²n 04,01$ $+ $tien($coidiem(Diem,%nick))
+      }
+      else {
+        ghidiem Diem %nick $calc($coidiem(Diem,%nick) - %tiendat)
+        .timerblackjack $+ %i 1 %x describeVC %r 4 $+ %nick 12Ðuo.c 08,01 %score  12Ðiê²m 03Thua 04,01$ $+ $tien(%tiendat) $+  12Tài Sa²n 04,01$ $+ $tien($coidiem(Diem,%nick))
+      }
+      inc %x 2
+    }
+    if (%score1 < %score.cai1) && (%score1 <= 21) && (%score.cai1 <= 21) {
+      ghidiem Diem %nick $calc($coidiem(Diem,%nick) - %tiendat)
+      .timerblackjack $+ %i 1 %x describeVC %r 4 $+ %nick 12Ðuo.c 08,01 %score  12Ðiê²m 03Thua 04,01$ $+ $tien(%tiendat) $+  12Tài Sa²n 04,01$ $+ $tien($coidiem(Diem,%nick))
+      inc %x 2
+    }
+    if (%score1 > 21) && (%score.cai1 > 21) {
+      if (%score1 > 27) {
+        ghidiem Diem %nick $calc($coidiem(Diem,%nick) - (%tiendat * 2))
+        .timerblackjack $+ %i 1 %x describeVC %r 4 $+ %nick 12Ðuo.c 08,01 %score  12Ðiê²m (Lón hon 27 - Ban bi Phat gâ´p ðôi) 03Thua 04,01$ $+ $tien($calc(%tiendat * 2)) $+  12Tài Sa²n 04,01$ $+ $tien($coidiem(Diem,%nick))
+      }
+      else {
+        .timerblackjack $+ %i 1 %x describeVC %r 4 $+ %nick 12Ðuo.c 08,01 %score  12Ðiê²m 13Hòa 12Tài Sa²n 04,01$ $+ $tien($coidiem(Diem,%nick))
+        inc %x 2
+      }
+    }
+    if (%score1 = %score.cai1) {
+      .timerblackjack $+ %i 1 %x describeVC %r 4 $+ %nick 12Ðuo.c 08,01 %score  12Ðiê²m 13Hòa 12Tài Sa²n 04,01$ $+ $tien($coidiem(Diem,%nick))
+      inc %x 2
+    }
+    :next1
+    inc %i
+  }
+  ShowBaiXiDachBOT
+  if (%blackjack.nickwins != $null) { .timer 1 %x describeVC %r 3Ðê´m tiê`n tra² cho các nick ðã thå´ng là:4 %blackjack.nickwins }
+  else if (%blackjack.nickwins == $null) && (%score.cai1 <= 21) { .timer 1 %x describeVC %r 12Ván này không ai thå´ng 4BOT12 ca² chi² có thua vói hòa mà thôi, Cái hô´t sòng nha }
+  else if (%blackjack.nickwins == $null) && (%score.cai1 > 21) { .timer 1 %x describeVC %r 12HeHe ca² ðám cùng bi 4BURSTED }
+  inc %x 2
+  .timerblackjack14 1 %x describeVC %r 12Ta Mang Bao Tô.i Lô~i ¤ Nguòi Oi Ta Ðâu Còn Chi ¤¤¤ Xin Hãy Tránh Xa Kiê´p 1,4 Ðo² 4,1 Ðen 
+  inc %x 2
+
+  ;if (%blackjack.nickwins != $null) { .timerblackjack11 1 2 describeVC %r 0,14¤11,1Bot0,14¤0,4¤9,1 $+ $me $+ 0,4¤ | .timerblackjack12 1 3 describeVC %r 3Bài Cu²a4 Bot3:7 %cards.cai 3Ðiê²m:7 %score.cai | .timerblackjack13 1 5 describeVC %r 3Các nick ðã thå´ng là:4 %blackjack.nickwins | .timerblackjack14 1 %x describeVC %r 12Ta Mang Bao Tô.i Lô~i Nguòi Oi Ta Ðâu Còn Chi ... Xin Hãy Tránh Xa Kiê´p 1,4 Ðo² 4,1 Ðen  }
+  ;else if (%blackjack.nickwins == $null) && (%score.cai <= 21) { .timerblackjack11 1 2 describeVC %r 0,14¤11,1Bot0,14¤0,4¤9,1 $+ $me $+ 0,4¤ | .timerblackjack12 1 3 describeVC %r 3Bài Cu²a4 Bot3:7 %cards.cai 3Ðiê²m:4 %score.cai | .timerblackjack13 1 5 describeVC %r 12Ván này không ai thå´ng 4Bot12 ca² chi² có thua voi hòa mà thôi, Cái hô't sòng nha! Ca²m on moi nguòi ðã u²ng hô. Hehe | .timerblackjack14 1 %x describeVC %r 12Ta Mang Bao Tô.i Lô~i Nguòi Oi Ta Ðâu Còn Chi ... Xin Hãy Tránh Xa Kiê´p 1,4 Ðo² 4,1 Ðen  }
+  ;else if (%blackjack.nickwins == $null) && (%score.cai > 21) { .timerblackjack11 1 2 describeVC %r 0,14¤11,1Bot0,14¤0,4¤9,1 $+ $me $+ 0,4¤ | .timerblackjack12 1 3 describeVC %r 3Bài Cu²a4 Bot3:7 %cards.cai 3Ðiê²m:4 %score.cai | .timerblackjack13 1 5 describeVC %r 12HeHe ca² ðám cùng bi 4BURSTED | .timerblackjack14 1 %x describeVC %r 12Ta Mang Bao Tô.i Lô~i Nguòi Oi Ta Ðâu Còn Chi ... Xin Hãy Tránh Xa Kiê´p 1,4 Ðo² 4,1 Ðen  }
+  unset %bobai %score* %nick.blackjack* %cards.* %nick.tiendat* %blackjack.thutu %currentplayer %blackjack.nickwins %nicks.blackjack
+  set %blackjackplay off
+  .timergamez 1 $calc(%x + %quacau) choigame
+  .enable #LoDe
+}
+alias ShowBaiXiDachBOT {
+  var %xSXD 0
+  ;inc %xSXD 2 3 5 7 9
+  .timerblackjack11 1 %xSXD describeVC %r 0,14¤11,1Bot0,14¤0,4¤9,1 $+ $me $+ 0,4¤ | inc %xSXD 3
+  if ($numtok(%cards.cai,32) == 2) { .timer 1 %xSXD describeVC %r 3Bài Cu²a4 Bot3:7 %cards.cai 12Ðuo.c 08,01 %score.cai  12Ðiê²m | inc %xSXD 3
+  .timer 1 %xSXD describeVC %r 12Bot ðu² tâ²y rôì, ngu gì kéo nuã! Khui bài thôi | inc %xSXD 3 }
+  elseif ($numtok(%cards.cai,32) == 3) { .timer 1 %xSXD describeVC %r 3Bài Cu²a4 Bot3:7 $gettok(%cards.cai,1-2,32) 12Ðuo.c 08,01 $tinhdiemblackjack($gettok(%cards.cai,1-2,32))  12Ðiê²m | inc %xSXD 3
+    .timer 1 %xSXD describeVC %r 12Bot chua ðu² tâ²y! Kéo thêm 1 cây nuã nhé... | inc %xSXD 3 | .timer 1 %xSXD describeVC %r 3Bài Cu²a4 Bot3:7 %cards.cai 12Ðuo.c 08,01 %score.cai  12Ðiê²m | inc %xSXD 3
+    if (%score.cai > 21) && (%score.cai isnum) { .timer 1 %xSXD describeVC %r 12Bot quá tuô²i rôì! ^_^ | inc %xSXD 3 }
+    elseif (%cards.cai == 777) { .timer 1 %xSXD describeVC %r 12Sao không ai trúng Tam Thâ´t mà vào Bot thê´ này ? }
+    else { .timer 1 %xSXD describeVC %r 12Bot ðu² tâ²y rôì, ngu gì kéo nuã! Khui bài thôi | inc %xSXD 3 }
+  }
+  elseif ($numtok(%cards.cai,32) == 4) { .timer 1 %xSXD describeVC %r 3Bài Cu²a4 Bot3:7 $gettok(%cards.cai,1-2,32) 12Ðuo.c 08,01 $tinhdiemblackjack($gettok(%cards.cai,1-2,32))  12Ðiê²m | inc %xSXD 3
+    .timer 1 %xSXD describeVC %r 12Bot chua ðu² tâ²y! Kéo thêm 1 cây nuã nhé... | inc %xSXD 3 | .timer 1 %xSXD describeVC %r 3Bài Cu²a4 Bot3:7 $gettok(%cards.cai,1-3,32) 12Ðuo.c 08,01 $tinhdiemblackjack($gettok(%cards.cai,1-3,32))  12Ðiê²m | inc %xSXD 3
+    .timer 1 %xSXD describeVC %r 12Bot chua ðu² tâ²y! Kéo thêm 1 cây nuã nhé... | inc %xSXD 3 | .timer 1 %xSXD describeVC %r 3Bài Cu²a4 Bot3:7 %cards.cai 12Ðuo.c 08,01 %score.cai  12Ðiê²m | inc %xSXD 3
+    if (%score.cai > 21) { .timer 1 %xSXD describeVC %r 12Bot quá tuô²i rôì! ^_^ | inc %xSXD 3 }
+    else { .timer 1 %xSXD describeVC %r 12Bot ðu² tâ²y rôì, ngu gì kéo nuã! Khui bài thôi | inc %xSXD 3 }
+  }
+  elseif ($numtok(%cards.cai,32) == 5) { .timer 1 %xSXD describeVC %r 3Bài Cu²a4 Bot3:7 $gettok(%cards.cai,1-2,32) 12Ðuo.c 08,01 $tinhdiemblackjack($gettok(%cards.cai,1-2,32))  12Ðiê²m | inc %xSXD 3
+    .timer 1 %xSXD describeVC %r 12Bot chua ðu² tâ²y! Kéo thêm 1 cây nuã nhé... | inc %xSXD 3 | .timer 1 %xSXD describeVC %r 3Bài Cu²a4 Bot3:7 $gettok(%cards.cai,1-3,32) 12Ðuo.c 08,01 $tinhdiemblackjack($gettok(%cards.cai,1-3,32))  12Ðiê²m | inc %xSXD 3
+    .timer 1 %xSXD describeVC %r 12Bot chua ðu² tâ²y! Kéo thêm 1 cây nuã nhé... | inc %xSXD 3 | .timer 1 %xSXD describeVC %r 3Bài Cu²a4 Bot3:7 $gettok(%cards.cai,1-4,32) 12Ðuo.c 08,01 $tinhdiemblackjack($gettok(%cards.cai,1-4,32))  12Ðiê²m | inc %xSXD 3
+    .timer 1 %xSXD describeVC %r 12Bot chua ðu² tâ²y! Kéo thêm 1 cây nuã nhé... | inc %xSXD 3 | .timer 1 %xSXD describeVC %r 3Bài Cu²a4 Bot3:7 %cards.cai 12Ðuo.c 08,01 %score.cai  12Ðiê²m | inc %xSXD 3
+    if (%score.cai == Ngu~ Linh) { .timer 1 %xSXD describeVC %r 12Bot Ngu~ Linh rôì nhé. Gom sòng thôi ^_^ | inc %xSXD 3 }
+    else { .timer 1 %xSXD describeVC %r 12Bot Ngu~ Luôn rôì! | inc %xSXD 3 }
+  }
+}

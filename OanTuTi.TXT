@@ -1,0 +1,215 @@
+alias oantuti {
+  var %GameMini 1,1 00,04O00,01å00,04²00,01n03,04 00,01T00,04ù01,01 00,04T00,01ì03,04 
+  .timeroantuti1 1 2 describeVC %r 2=-=-=3*4°12*3°4*12°3*2[ $InsertBC(%GameMini) 2]3*12°4*3°12*4°3*2=-=-=
+  .timeroantuti2 1 3 set %oantuti on
+  ;.timeroantuti3 1 4 describeVC %r 0,1 Gõ 8-=[11 !TuTi09,01 Tìên 8]=- 0,1ðê² tham gia trò choi Oä²n Tù Tì !!! 
+  .timeroantuti3 1 4 describeVC %r $InsertSymbol(1,Gõ 8-=[ 11 $+ $InsertBC(!TuTi) $+  09Tìên 8]=- ðê² tham gia trò choi Oå²n Tù Tì !!!)
+  .timeroantuti4 1 44 set %oantuti off
+  .timeroantuti5 1 44 describeVC %r 4Ðã hê´t giò ðång ký. 12Chúng ta bå´t ðâ`u choi
+  .timeroantuti6 1 45 oantuti_play
+}
+on 1:TEXT:!tuti *:%r: {
+  if (%oantuti == on) {
+    var %taisan = $coidiem(diem,$nick)
+    var %dangky = $gettok($readini(hethong\login.ini,dangnhap,$nick),1,32)
+    if ($2 !isnum) { ignore -u5 $nick | noticeVC $nick 0,1 Ban Ðåt sai tiê`n rôì4,1 Gõ 8-=[11 !TuTi09,01 <Tìên> 8]=-  | halt }
+    ;if (%dangky == $null) { ignore -u10 $nick | noticeVC $nick 9,1 Ban Chua Ðång Ký Account Hãy8 Gõ 0!Register <PassWord> <PassRecover> 9Ðê² Ðång Ký | halt }
+    ;if ($level($nick) < 3) { ignore -u10 $nick | noticeVC $nick 0,1 Ban chua ðång nhâp, Ðê² Ðång nhâp4 Gõ 8-=>7 !Identify <PassWord> 8<=-  | halt }
+    if ($2 > 0) && ($2 > %taisan) { ignore -u10 $nick | noticeVC $nick 3* $nick 2làm gì có ðu² tiê`n mà ðåt 4$ $+ $tien($2) | halt }
+    if ($2 <= 0) { return }
+    if ($3 != $null) { return }
+    if ($2 < %MinBet) { ignore -u5 $nick | noticeVC $nick 0,1 Sô´ tiê`n tôí thiê²u ðê² tham gia choi4 Oå²n Tù Tì0 là 9$ $+ $tien(%MinBet)  | halt }
+    else {
+      var %nick = $readini hethong\oantuti.txt tuti $nick
+      if (%nick == $null) && ($ChkBet($nick,$2) == True) {
+        set %line 2
+        ghidiem diem $nick $calc($coidiem(diem,$nick) - $2)
+        writeini hethong\oantuti.txt tuti $nick $int($calc($2)) $int($calc($2))
+        describeVC %r 4* $nick 12tham gia choi 9,01 Oå²n Tù Tì  12vói sô´ tiê`n là: 4$ $+ $tien($2)
+      }
+      if (%nick != $null) { ignore -u5 $nick | noticeVC $nick 4* $nick 2Ðã Ðång ký rôì !! }
+    }
+  }
+}
+alias oantuti_play {
+  if ($lines(hethong\oantuti.txt) >= 2) {
+    oantuti_ra
+  }
+  else {
+    .timeroantuti7 1 2 describeVC %r 9,1 Không có ai tham gia choi 8Oä²n Tù Tì 9Hen các ban vào lâ`n sau 
+    .timeroantuti8 1 %quacau choigame
+  }
+}
+alias oantuti_ra {
+  unset %bua %keo %bao
+  var %tien = $gettok($uw($read(hethong\oantuti.txt,%line),2,=),1,32)
+  var %nick = $uw($read(hethong\oantuti.txt,%line),1,=)
+  var %win = $gettok($uw($read(hethong\oantuti.txt,%line),2,=),2,32)
+  if (%nick != $null) {
+    .timer 1 1 describeVC %r 0,15*08,01 Player 0,15*09,01 %nick 0,15*
+    .timer 1 2 describeVC %r 7Gõ12 !Ra 3<04Bao 3$4 Kéo 3$4 Búa3> 7ðê² choi! 12Tô²ng Tiê`n: 4$ $+ $tien(%win)
+    .timer 1 3 enable #player_ra
+    .timer 1 23 khongchiura
+  }
+  if (%nick == $null) { .timertongketoantuti1 1 2 tongketoantuti }
+}
+alias tongketoantuti {
+  unset %bua %bao %keo %line
+  write -c hethong\oantuti.txt
+  describeVC %r 8,1 Cuôc choi cu²a chúng ta kê´t thúc tai ðây! Hen gåp lai các ban vào lâ`n sau !!! 
+  .timergame1 1 %quacau choigame
+}
+
+alias khongchiura {
+  var %nick = $uw($read(hethong\oantuti.txt,%line),1,=)
+  describeVC %r 12* %nick Ðã không tham gia . Ðê´n luot nguòi khác
+  set %line $calc(%line + 1)
+  .timerra $+ $calc($rand(1000000,9999999) + %line) 1 $calc(%line * 2 - 2) oantuti_ra
+}
+#player_ra off
+on *:TEXT:!ra *:%r: {
+  var %nick = $uw($read(hethong\oantuti.txt,%line),1,=)
+  if (%nick == $nick) {
+    .timers off
+    if ($2 == bua) {
+      .set %bua 3
+      .disable #player_ra | describeVC %r 4*12 %nick 7ra cái 3-=[13 Búa 3]=-
+      ;.timerbotrabua $+ $calc($rand(1000000,9999999) + %line) 1 $calc(%line * 2 - 2) playbot
+      .timerbotrabua $+ $calc($rand(1000000,9999999) + %line) 1 3 playbot
+    }
+    if ($2 == bao) {
+      .set %bao 1
+      .disable #player_ra | describeVC %r 4*12 %nick 7ra cái 3-=[13 Bao 3]=-
+      ;.timerbotrabao $+ $calc($rand(1000000,9999999) + %line) 1 $calc(%line * 2 - 2) playbot
+      .timerbotrabao $+ $calc($rand(1000000,9999999) + %line) 1 3 playbot
+    }
+    if ($2 == keo) {
+      .set %keo 2
+      .disable #player_ra | describeVC %r 4*12 %nick 7ra cái 3-=[13 Kéo 3]=-
+      ;.timerbotrakeo $+ $calc($rand(1000000,9999999) + %line) 1 $calc(%line * 2 - 2) playbot
+      .timerbotrakeo $+ $calc($rand(1000000,9999999) + %line) 1 3 playbot
+    }
+  }
+}
+#player_ra end
+#choitiep_tuti off
+on *:TEXT:!choitiep:%r: {
+  var %nick = $uw($read(hethong\oantuti.txt,%line),1,=)
+  if (%nick == $nick) {
+    .disable #ngungchoi_tuti
+    unset %bua %bao %keo %ott*
+    .timers off
+    .disable #choitiep_tuti | describeVC %r 4* %nick 12ðã tiê´p tuc choi
+    ;.timerplra $+ $calc($rand(1000000,9999999) + %line) 1 $calc(%line * 2 - 2) oantuti_ra
+    .timerplra $+ $calc($rand(1000000,9999999) + %line) 1 3 oantuti_ra
+  }
+}
+#choitiep_tuti end
+#ngungchoi_tuti off
+on *:TEXT:!ngungchoi:%r: {
+  var %tien = $gettok($uw($read(hethong\oantuti.txt,%line),2,=),1,32)
+  var %nick = $uw($read(hethong\oantuti.txt,%line),1,=)
+  var %win = $gettok($uw($read(hethong\oantuti.txt,%line),2,=),2,32)
+  var %taisan = $coidiem(diem,%nick)
+  if (%nick == $nick) {
+    .disable #choitiep_tuti
+    unset %bua %bao %keo %ott*
+    .timers off
+    ghidiem diem %nick $calc(%taisan + %win)
+    .disable #ngungchoi_tuti | describeVC %r 4* %nick 2ðã quyê´t ðinh dùng cuôc choi ðê² ba²o toàn 3sô´ tiê`n: 4$ $+ $tien(%win)
+    set %line $calc(%line + 1)
+    .timerplra $+ $calc($rand(1000000,9999999) + %line) 1 $calc(%line * 2 - 2) oantuti_ra
+  }
+}
+#ngungchoi_tuti end
+alias -l bao { return 0,15*11,01 BOT 0,15*15,01 $me 0,15* 7ra cái: 3-=[13 Bao 3]=- }
+alias -l bua { return 0,15*11,01 BOT 0,15*15,01 $me 0,15* 7ra cái: 3-=[13 Búa 3]=- }
+alias -l keo { return 0,15*11,01 BOT 0,15*15,01 $me 0,15* 7ra cái: 3-=[13 Kéo 3]=- }
+
+alias playbot {
+  var %ottbot = $r(1,3)
+  var %tien = $gettok($uw($read(hethong\oantuti.txt,%line),2,=),1,32)
+  var %nick = $uw($read(hethong\oantuti.txt,%line),1,=)
+  var %win = $gettok($uw($read(hethong\oantuti.txt,%line),2,=),2,32)
+  if (%ottbot == 1) {
+    if (%bao == 1) {
+      .enable #choitiep_tuti
+      .enable #ngungchoi_tuti
+      describeVC %r $bao
+      describeVC %r 4* %nick 12ðã Hoà. Ban 12gõ13 !choitiep 7ðê² tiê´p tuc choi hoåc3 !ngungchoi 2ðê² ba²o toàn sô´ tiê`n. 12Tô²ng Tiê`n: 4$ $+ $tien(%win)
+      .timertutitieptuc1 1 20 khongchiura
+    }
+    if (%keo == 2) {
+      .enable #choitiep_tuti
+      .enable #ngungchoi_tuti
+      var %tienthang = $calc(%win + %tien)
+      writeini -n hethong\oantuti.txt tuti %nick %tien %tienthang
+      describeVC %r $bao
+      describeVC %r 4* %nick 12ðã Thå´ng. Ban 12gõ13 !choitiep 7ðê² tiê´p tuc choi hoåc3 !ngungchoi 2ðê² ba²o toàn sô´ tiê`n. 12Tô²ng Tiê`n: 4$ $+ $tien(%tienthang)
+      .timertutitieptuc1 1 20 khongchiura
+    }
+    if (%bua == 3) {
+      describeVC %r $bao
+      if (%win == %tien) { var %tienthua = 0 }
+      else { var %tienthua = $calc(%tien / (%win / %tien)) }
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tienthua)
+      describeVC %r 4* %nick 12ðã Thua! Và ban se~ dùng lai tai ðây 3Tô²ng Tiê`n: 4$ $+ $tien(%tienthua)
+      set %line $calc(%line + 1)
+      .timerthua $+ $calc($rand(1000000,9999999) + %line) 1 $calc(%line * 2 - 2) oantuti_ra
+    }
+  }
+  if (%ottbot == 2) {
+    if (%bao == 1) {
+      describeVC %r $keo
+      if (%win == %tien) { var %tienthua = 0 }
+      else { var %tienthua = $calc(%tien / (%win / %tien)) }
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tienthua)
+      describeVC %r 4* %nick 12ðã Thua! Và ban se~ dùng lai tai ðây 3Tô²ng Tiê`n: 4$ $+ $tien(%tienthua)
+      set %line $calc(%line + 1)
+      .timerthua $+ $calc($rand(1000000,9999999) + %line) 1 $calc(%line * 2 - 2) oantuti_ra
+    }
+    if (%keo == 2) {
+      .enable #choitiep_tuti
+      .enable #ngungchoi_tuti
+      describeVC %r $keo
+      describeVC %r 4* %nick 12ðã Hoà. Ban 12gõ13 !choitiep 7ðê² tiê´p tuc choi hoåc3 !ngungchoi 2ðê² ba²o toàn sô´ tiê`n. 12Tô²ng Tiê`n: 4$ $+ $tien(%win)
+      .timertutitieptuc1 1 20 khongchiura
+    }
+    if (%bua == 3) {
+      .enable #choitiep_tuti
+      .enable #ngungchoi_tuti
+      var %tienthang = $calc(%win + %tien)
+      writeini -n hethong\oantuti.txt tuti %nick %tien %tienthang
+      describeVC %r $keo
+      describeVC %r 4* %nick 12ðã Thå´ng. Ban 12gõ13 !choitiep 7ðê² tiê´p tuc choi hoåc3 !ngungchoi 2ðê² ba²o toàn sô´ tiê`n. 12Tô²ng Tiê`n: 4$ $+ $tien(%tienthang)
+      .timertutitieptuc1 1 20 khongchiura
+    }
+  }
+  if (%ottbot == 3) {
+    if (%bao == 1) {
+      .enable #choitiep_tuti
+      .enable #ngungchoi_tuti
+      var %tienthang = $calc(%win + %tien)
+      writeini -n hethong\oantuti.txt tuti %nick %tien %tienthang
+      describeVC %r $bua 
+      describeVC %r 4* %nick 12ðã Thå´ng. Ban 12gõ13 !choitiep 7ðê² tiê´p tuc choi hoåc3 !ngungchoi 2ðê² ba²o toàn sô´ tiê`n. 12Tô²ng Tiê`n: 4$ $+ $tien(%tienthang)
+      .timertutitieptuc1 1 20 khongchiura
+    }
+    if (%keo == 2) {
+      describeVC %r $bua
+      if (%win == %tien) { var %tienthua = 0 }
+      else { var %tienthua = $calc(%tien / (%win / %tien)) }
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tienthua)
+      describeVC %r 4* %nick 12ðã Thua! Và ban se~ dùng lai tai ðây 3Tô²ng Tiê`n: 4$ $+ $tien(%tienthua)
+      set %line $calc(%line + 1)
+      .timerthua $+ $calc($rand(1000000,9999999) + %line) 1 $calc(%line * 2 - 2) oantuti_ra
+    }
+    if (%bua == 3) {
+      .enable #choitiep_tuti
+      .enable #ngungchoi_tuti
+      describeVC %r $bua
+      describeVC %r 4* %nick 12ðã Hoà. Ban 12gõ13 !choitiep 7ðê² tiê´p tuc choi hoåc3 !ngungchoi 2ðê² ba²o toàn sô´ tiê`n. 12Tô²ng Tiê`n: 4$ $+ $tien(%win)
+      .timertutitieptuc1 1 20 khongchiura
+    }
+  }
+}

@@ -1,0 +1,199 @@
+on *:TEXT:*:%r: {
+  if ($1 = !banbia) {
+    if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chu’a Ðång ký , Ðê² ðång ký cho’i game , 8Gõ 11/msg $me 4!register <pass1> <pass2> | .ignore -u5 $nick }
+    if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) != $null) && ($level($nick) < 3) { noticeVC $nick 4,01 $+ $nick 9,01Chu’a Login , 13/msg $me !identify <pass> , 9Ðê² cho’i Games | .ignore -u5 $nick }
+    if ($level($nick) >= 3) {
+      if (%banbia_tiendat > $coidiem(diem,$nick)) { noticeVC $nick 12* $nick không ðu² tiê`n ðåt | halt }
+      if (%banbia_tiendat < $coidiem(diem,$nick)) && (%banbia_tiendat isnum) {
+        if (%banbiastart == on) {
+          .ignore $nick
+          describeVC %r 12* $nick vù’a ðång ký tham gia 4,4 0,1B4,4 0,1å0,4´0,1n4,4 0,1B4,4 0,1i4,4 0,1a4,4 
+          writeini hethong\banbia.ini money $nick %banbia_tiendat
+          writeini hethong\banbia.ini $nick diem 0
+          writeini hethong\banbia.ini $nick miss 0
+          ;ghidiem diem $nick $int($calc($coidiem(diem,$nick) - %banbia_tiendat))
+          set %bc.nick %bc.nick $nick
+        }
+      }
+    }
+  }
+  if (%bc.run = run) {
+    if ($1 = !ban) { banbia $nick $2 }
+  }
+}
+alias banbia {
+  ;echo %r %bc.red.list %bc.red.list2
+  if ($istok(%bc.nick,$1,32)) {
+    var %bc.diem $readini(hethong\banbia.ini,$1,diem)
+    var %bc.miss $readini(hethong\banbia.ini,$1,miss)
+    if ($istok(%bc.red.list,$2,45)) {
+      writeini hethong\banbia.ini $1 diem $calc(%bc.diem + 1)
+      set %bc.red.list $remtok(%bc.red.list,$2,45)
+      ;set %bc.red.list $deltok(%bc.red.list,$findtok(%bc.red.list,$2,45),45)
+      var %bc.diem $readini(hethong\banbia.ini,$1,diem)
+      ;describeVC %r 0,15*8,1 $1 0,15* 12ðã ha Bia sô´ 0,15*4,1 $2 0,15* 12- Tô²ng ðiê²m:0,15*4,1 %bc.diem 0,15* 12ðiê²m - Miss:0,15*11,1 %bc.miss 0,15* 12lâ`n
+      describeVC %r 0,15*8,1 $1 0,15* 12ðã ha Bia sô´ 0,15*4,1 $2 0,15* 12- Tô²ng ðiê²m:0,15*4,1 %bc.diem 0,15* 12ðiê²m - Miss:0,15*11,1 %bc.miss 0,15* 12lâ`n
+      if (%bc.red.list == $null) { BC.End.Battle.Good }
+    }
+    else {
+      ;if (!$istok(%bc.red.list2,$2,45)) {
+      if (!$istok(%bc.red.list,$2,45)) {
+        writeini hethong\banbia.ini $1 diem $calc(%bc.diem - 2)
+        writeini hethong\banbia.ini $1 miss $calc(%bc.miss + 1)
+        var %bc.diem $readini(hethong\banbia.ini,$1,diem)
+        var %bc.miss $readini(hethong\banbia.ini,$1,miss)
+        if (%bc.miss == 3) { BC.Loai $1 }
+        ;else { describeVC %r 0,15*8,1 $1 0,15* 12Ðã bå´n miss - Ban bi trù’ 2 ðiê²m - Tô²ng ðiê²m 0,15*4,1 %bc.diem 0,15* 12ðiê²m - Miss 0*11,1 %bc.miss 0,15* 12Lâ`n
+        else { describeVC %r 0,15*8,1 $1 0,15* 12Ðã bå´n miss - Ban bi trù’ 2 ðiê²m - Tô²ng ðiê²m 0,15*4,1 %bc.diem 0,15* 12ðiê²m - Miss 0*11,1 %bc.miss 0,15* 12Lâ`n
+        }
+      }
+    }
+  }
+}
+alias banbia_bd {
+  set %banbiastart on
+  set %banbia_tiendat $calc($r(2,5) * 1000000000)
+  var %GameMini 1,1 00,04B00,01å´00,04n01,01 00,04B00,01i00,04a01,01 
+  .timerbanbia1 1 2 describeVC %r 2=-=-=3*4°12*3°4*12°3*2[ $InsertBC(%GameMini) 2]3*12°4*3°12*4°3*2=-=-=
+  .timerbanbia2 1 3 describeVC %r $InsertSymbol(1,Gõ 8-=[ 11 $+ $InsertBC(!Banbia) $+  8]=- ðê² tham gia cho’i 07Bå´n 07bia00, các ban có 1140s ðê² tham gia! 9Sô´ 9tiê`n 9ðê² 9tham 9gia 9ván 9này 9là 13$ $+ $tien(%banbia_tiendat) )
+  .timerbanbia3 1 40 bc.start
+}
+alias BC.Start {
+  if ($numtok(%bc.nick,32) < 3) { describeVC %r 0,12 Không ðu² ngu’ò’i tham gia cho’i Bå´n Bia . Hen các ban vào lâ`n sau  | .timerqua1 1 2 BC.End }
+  else {
+    set %bc.battle 0
+    set %bc.run off
+    set %banbiastart off
+    set %BC.Mau 07-07
+    var %iBBi 1
+    while (%iBBi <= $numtok(%bc.nick,32)) {
+      ghidiem diem $gettok(%bc.nick,%iBBi,32) $int($calc($coidiem(diem,$gettok(%bc.nick,%iBBi,32)) - %banbia_tiendat))
+      inc %iBBi
+    }
+    describeVC %r 0,12 Ðã hê´t thò’i gian ðång ký , moi ngu’ò’i chuâ²n bi bå´t ðâù 
+    .timer 1 2 describeVC %r 13Cách cho’i: 3Các tay súng se bå´n các Bia 4màu ðo²3 Gõ:12 !Bå´n 4<Sô´> 3Ví du:12 !Ban 5 3nê´u Bia4 sô´ 5 3có màu ðo². Nê´u 7bå´n miss 3se~ bi. 14Trù’ 2 ðiê²m.3 Ai bå´n miss7 3 lâ`n 3se~ bi.14 loa.i kho²i cuô.c cho’i.
+    .timer 1 12 BC.Load
+  }
+}
+
+alias BC.Load {
+  set %BC.list 1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18-19-20
+  unset %bc.red.list
+  unset %bc.display
+  inc %bc.battle
+  .ignore -r
+  BC.Check
+}
+alias BC.Check {
+  if (%bc.battle <= 3) { BC.Battle }
+  else { BC.TK }
+}
+
+alias BC.Battle {
+  set %bc.red 1
+  set %bc.red.num $rand(3,8)
+  while (%bc.red <= %bc.red.num) {
+    set %bc.red.rand $gettok(%BC.list,$rand(1,$numtok(%BC.list,45)),45)
+    set %bc.red.list %bc.red.list $+ $iif(%bc.red.list = $null,,-) $+ %bc.red.rand
+    set %BC.list $remtok(%BC.list,%bc.red.rand,45)
+    inc %bc.red
+  }
+  set %bc.red.list2 %bc.red.list
+  BC.Display
+}
+
+alias BC.Display {
+  set %bc.i 1
+  while (%bc.i <= 20) {
+    set %bc.display %bc.display $bc.mau(%bc.i)
+    inc %bc.i
+  }
+  BC.Play
+}
+
+alias BC.Play {
+  describeVC %r 15,14*8,1 Lu’o’t bå´n thú’ %bc.battle 0- Hãy så~n sàng ... 15,14*
+  .timer 1 3 describeVC %r $InsertSymbol(0,%bc.display)
+  .timer 1 3 set %bc.run run
+  .timerbc 1 33 BC.End.Battle.Timeout
+}
+
+alias -l bc.mau { 
+  if ($istok(%bc.red.list,$1,45)) { return 04 $+ $1 }
+  else { return  $+ $gettok(%BC.Mau,$rand(1,2),45) $+ $1 }
+}
+alias BC.End.Battle.Good { 
+  set %bc.run off
+  .timerbc off
+  if (%bc.battle == 3) { 
+    .timer 1 2 describeVC %r 12Good ! Tâ´t ca² các Bia muc tiêu  ðê`u ðã bi. bå´n ha. Hãy chò’4 $me 12tô²ng kê´t ðiê²m cu²a các tay súng. 
+    .timer 1 6 BC.Load 
+  }
+  else {
+    .timer 1 2 describeVC %r 12Good ! Tâ´t ca² các  Bia muc tiêu ðê`u ðã bi. bå´n ha - Hãy chuâ²n bi. qua lu’o’t bå´n tiê´p theo !
+    .timer 1 8 BC.Load
+  }
+}
+alias BC.End.Battle.Timeout { 
+  set %bc.run off 
+  if (%bc.battle == 3) { 
+    describeVC %r 12Thò’i gian cu²a lu’o’t bå´n cuô´i ðã hê´t. Hãy chò’4 $me 12tô²ng kê´t ðiê²m cu²a các tay súng. 
+    .timer 1 4 BC.Load 
+  }
+  else { 
+    .timer 1 2 describeVC %r 12Thò’i gian cu²a lu’o’t bå´n ðã hê´t. Hãy chuâ²n bi. qua lu’o’t bå´n tiê´p theo ! 
+    .timer 1 8 BC.Load
+  }
+}
+
+alias BC.Loai {
+  describeVC %r 4 $+ $1 3ðã bå´n miss12 3 lâ`n 7- Ban ðã bi loai !
+  set %bc.nick $remtok(%bc.nick,$1,32)
+  if (%bc.nick == $null) { 
+    describeVC %r 4Tâ´t ca² các tay súng ðê`u ðã bi loai, trò cho’i ðc dù’ng tai ðây !
+    BC.End
+  }
+}
+
+alias BC.TK {
+  var %i = 1
+  while (%i <= $numtok(%bc.nick,32)) {
+    set %bc.xh.diem %bc.xh.diem $iif($istok($readini(hethong\banbia.ini,$gettok(%bc.nick,%i,32),diem),%bc.xh.diem,32),$calc($readini(hethong\banbia.ini,$gettok(%bc.nick,%i,32),diem) + 0.1),$readini(hethong\banbia.ini,$gettok(%bc.nick,%i,32),diem))
+    writeini hethong\banbia.ini xephang $gettok(%bc.xh.diem,%i,32) $gettok(%bc.nick,%i,32)
+    inc %i
+  }
+  set %bc.xh.diem $sorttok(%bc.xh.diem,32,nr)
+  set %bc.xh.i 1
+  if ($numtok(%bc.nick,32) > 4) { set %bc.soluong 4 }
+  else { set %bc.soluong $numtok(%bc.nick,32) }
+  describeVC %r 8,1 Tô²ng kê´t trò cho’i9 Bå´n Bia 
+  .timer 1 2 BC.TK.Check
+
+}
+alias BC.TK.Check {
+  if (%bc.xh.i <= %bc.soluong) {
+    var %bc.xh.gamer = $readini(hethong\banbia.ini,xephang,$gettok(%bc.xh.diem,%bc.xh.i,32))
+    var %bc.money = $readini(hethong\banbia.ini,money,%bc.xh.gamer)
+    var %bc.xh.x = $calc($calc($numtok(%bc.nick,32) + 1) - %bc.xh.i)
+    if (%bc.xh.x = 1) { var %bc.xh.x = 1.5 }
+    var %bc.bonus = $calc(%bc.money * %bc.xh.x)
+    if ($int($gettok(%bc.xh.diem,%bc.xh.i,32)) > 0) { describeVC %r 3Tay súng:12 %bc.xh.gamer 3Tô²ng ðiê²m:4 $int($gettok(%bc.xh.diem,%bc.xh.i,32)) 3Xê´p hang:7 $ord(%bc.xh.i) 3Tiê`n Thu’o’²ng: 4$ $+ $tien(%bc.bonus) | ghidiem diem %bc.xh.gamer $calc($coidiem(diem,%bc.xh.gamer) + %bc.bonus) }
+    else { describeVC %r 3Tay súng:12 %bc.xh.gamer 3Tô²ng ðiê²m:4 Ðan xit 3Xê´p hang:7 Không có 3Tiê`n Thu’o’²ng: 4$ $+ $tien(0) }
+    .timer 1 1 inc %bc.xh.i
+    .timer 1 2 BC.TK.Check 
+  }
+  else {
+    describeVC %r 4,1Hen gåp lai các ban , Chúc ban may må´n ho’n o’² lâ`n sau
+    BC.End
+  }
+}
+
+alias BC.End {
+  set %banbiastart off
+  write -c hethong\banbia.ini
+  .timers off
+  unset %bc.*
+  remove hethong\banbia.ini
+  set %bc.run load
+  .timer 1 %quacau choigame
+}

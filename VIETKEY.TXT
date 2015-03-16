@@ -1,0 +1,481 @@
+#Input on
+on *:input:*: {
+  if (/* !iswm $1) && (!* !iswm $1) && ($active != Status Window) && ($server) {
+    msgVC $active $1- | halt
+  }
+  else {
+    if (/me* iswm $1) {
+      describeVC $active $replace($2-,$chr(42),$chr(43)) | halt
+    }
+  }
+}
+#Input end
+
+on 1:text:*:%r: {
+  if ($1 == !mayman) {
+    ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chua Ðång ký , Ðê² ðång ký choi game , 8Gõ 11/msg $me 4!register <pass1> <pass2>  | .ignore -u5 $nick }
+    ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) != $null) && ($level($nick) < 3) { noticeVC $nick 4,01 $nick 9,01Chua Login , 13/msg $me !identify <pass> , 9Ðê² choi Games  | .ignore -u5 $nick }
+    if ($level($nick) >= 3) {
+      if (%vq == on) { return }
+      if (%vq == off) {
+        if ($mayman($me,$nick) == $nick) { .ignore -u15 $nick | .noticeVC $nick 08,1 Ban ðã ðång ký tham gia Vòng quay May Må´n rôì!  }
+        else { writeini hethong\mayman.ini $me $nick $nick | .noticeVC $nick 8,1 Ban ðã ðång ký 4,1Vòng Quay May Må´n 8,1Chúc ban se~ là nguòi may må´n o² vòng quay này  }
+      }
+    }
+  }
+  if ($1 == !last) && ($level($nick) >= 3) { .ignore -u5 $nick | noticeVC $nick 04Ký tu cuôí : 03 $+ $right(%dapan1,1) (2Bạn sẽ bị bot phớt lờ trong4 5s2 vì bạn đã dùng lệnh này) }
+  if ($1 == !hint) && ($level($nick) >= 3) {
+    if (%chongia == on) { .ignore -u3 $nick | noticeVC $nick Ðang Games Hãy Chon Giá Ðúng không ðuoc su² dung !hint (2Bạn sẽ bị bot phớt lờ trong4 3s2 vì bạn đã dùng lệnh này) }
+    else { LTBHint 2 $int($calc($len(%dapan1) / $r(2,4))) %dapan1 | .ignore -u5 $nick | notice $nick 4Hint:03 %hint2 (2Bạn sẽ bị bot phớt lờ trong4 5s2 vì bạn đã dùng lệnh này) }
+  }
+  if ($1 == !buyhost) && ($level($nick) >= 3) {
+    if ($2 != $null) && ($len($2-) <= 35) {
+      if ($coidiem(diem,$nick) >= 10000000000) { ghidiem diem $nick $calc($coidiem(diem,$nick) - 10000000000) | writeini hethong\host.ini host $nick $tiengviet($2-) | describeVC %r 3Ban04 $nick 3ðã mua thành công HOST GAME: 11,01 $tiengviet($2-)  vói sô´ tiê`n 09,01 $chr(36) $+ $tien(10000000000)  }
+      else { noticeVC $nick 11,1Còn thiêú 4,01$ $+ $tien($calc(10000000000 - $coidiem(diem,$nick))) 11,1Ban se~ mua ðuoc host | .ignore -u15 $nick }
+    }
+    else { noticeVC $nick 11,1Mua cái gì vâ.y , ignore 15s vì cái tô.i khôn quá ^^ | .ignore -u15 $nick }
+  }
+
+  ;Event New year
+  if ($1 == !nhanqua) && ($level($nick) >= 3) {
+    ;if ( $read(hethong\nhanqua.txt,ns,$nick) > 0 ) { noticeVC $nick 11,1Bạn đã nhận quà rồi. Chúc mừng năm mới - An Lành- Hạnh Phúc }
+    ;else { 
+    ;var %TienNhanQua = $rand(1,20000000000)
+    ;write hethong\nhanqua.txt $nick %TienNhanQua | noticeVC $nick 11,1Bạn đã nhận 04,1$ $+ $tien(%TienNhanQua) 11,1 làm quà tặng. Chúc mừng năm mới - An Lành- Hạnh Phúc | .ignore -u15 $nick
+    ;ghidiem diem $nick $calc($coidiem(diem,$nick) + %TienNhanQua )
+    ;timerNhanQua 1 3 noticeVC $nick 11,1ignore 15s vì đã nhận quà ^^ 
+    ; noticeVC $nick 0,04Event đã kết thúc. Cám ơn bạn đã quan tâm
+    ;}
+    noticeVC $nick 0,04Event đã kết thúc. Cám ơn bạn đã quan tâm
+  }
+  if ($1 == !tiepmau) {
+    ;LaNgTu 1 17/11/2001
+    var %maxTiepMau = $calc(%MinReg / 10)
+;    if ($coidiem(diem,$nick) >= %maxTiepMau) { msgVC $nick 0,1 Ban không ðu² ðiêù kiên ðê² 4Tiê´p Máu0! Ðiêù kiên ðê² 4Tiê´p Máu0 là 8Tài sa²n0 cu²a ban pha²i nho² hon09,01 $chr(36) $+ $tien(%maxTiepMau) 0và ban chi² ðuoc tiê´p máu 3 lâ`n/ngày. Tài sa²n hiên tai cu²a ban là09,01 $chr(36) $+ $tien($coidiem(diem,$nick))  | ignore -pu111 $nick }
+    if ($coidiem(diem,$nick) >= %maxTiepMau) { noticeVC $nick 0,1 Ban không ðu² ðiêù kiên ðê² 4Tiê´p Máu0! Ðiêù kiên ðê² 4Tiê´p Máu0 là 8Tài sa²n0 cu²a ban pha²i nho² hon09,01 $chr(36) $+ $tien(%maxTiepMau) 0và ban chi² ðuoc tiê´p máu 3 lâ`n/ngày. Tài sa²n hiên tai cu²a ban là09,01 $chr(36) $+ $tien($coidiem(diem,$nick))  | ignore -pu111 $nick }
+    elseif ($ulevel = 3) {
+      var %iTiepMau $read(HETHONG\tiepmau.txt,s,$nick)
+      ;echo %r %iTiepMau <
+      if ($gettok(%iTiepMau,2,32) != $date) { write -ds $+ $nick HETHONG\tiepmau.txt | unset %iTiepMau }
+;      if ($gettok(%iTiepMau,1,32) >= 3) { msgVC $nick 0,1 Ban ðã su² dung hê´t sô´ lâ`n 4Tiê´p Máu0 trong môt ngày. Ngày mai 4Tiê´p Máu0 nhé ban.  | .ignore -pu 15 }
+      if ($gettok(%iTiepMau,1,32) >= 3) { noticeVC $nick 0,1 Ban ðã su² dung hê´t sô´ lâ`n 4Tiê´p Máu0 trong môt ngày. Ngày mai 4Tiê´p Máu0 nhé ban.  | .ignore -pu 15 }
+      else {
+        write -ds $+ $nick HETHONG\tiepmau.txt
+        write HETHONG\tiepmau.txt $nick $calc($gettok(%iTiepMau,1,32) + 1) $date
+        ghidiem diem $nick $calc($coidiem(diem,$nick) + %maxTiepMau)
+;        msgVC $nick 0,1 Ðã 4Tiê´p Máu0 thành công. Ban ðã tiê´p máu lâ`n thú8 $calc($gettok(%iTiepMau,1,32) + 1) 0trong ngày. Tài sa²n hiên tai cu²a ban là09,01 $chr(36) $+ $tien($coidiem(diem,$nick)) 
+        noticeVC $nick 0,1 Ðã 4Tiê´p Máu0 thành công. Ban ðã tiê´p máu lâ`n thú8 $calc($gettok(%iTiepMau,1,32) + 1) 0trong ngày. Tài sa²n hiên tai cu²a ban là09,01 $chr(36) $+ $tien($coidiem(diem,$nick)) 
+        .ignore -pu15 $nick
+      }
+    }
+  }
+  if ($1 == !taisan) && ($level($nick) >= 3) {
+    if ($level($nick) < 3) { return }    
+    if ($2 == $null) {
+      var %host = $host(host,$nick) | if (%host == $null) { set %host Nick chua ðång ký }
+      var %n.socau = $xemsocau(socau,$nick) | if (%n.socau == $null) { set %n.socau 0 }
+      var %n.taisan = $coidiem(diem,$nick) | if (%n.taisan == $null) { set %n.taisan 0 }
+      var %n.lastlogin = $readini(Gamer\LoginDate.ini, LoginDate, $nick) | if (%n.lastlogin == $null) { set %n.lastlogin Không xác ðinh }
+      if ($gettok($read(HETHONG\tiepmau.txt,s,$nick),2,32) != $date) { var %n.tiepmau = 0 }
+      else { var %n.tiepmau = $gettok($read(HETHONG\tiepmau.txt,s,$nick),1,32) }
+      noticeVC $nick  $+ $read(hethong\color.txt) $tiengviet(%host) 8,1 $+ $nick 13,1Sô´ câu tra² lòi ðúng: 8,01 $+ %n.socau 4,01Tài sa²n: 8,01$ $+ $tien(%n.taisan) 9,1Check time:13,01 $time(h:nn:ss) $+ 9,1s 13Đã Tíêp máu:8 %n.tiepmau 13lần 
+;      if ($nick != LangTuBuon) && ($nick != LaNgTu) { .ignore -u15 $nick }
+    } 
+    else {
+      var %host = $host(host,$2) | if (%host == $null) { set %host Nick chua ðång ký }
+      var %n.socau = $xemsocau(socau,$2) | if (%n.socau == $null) { set %n.socau 0 }
+      var %n.taisan = $coidiem(diem,$2) | if (%n.taisan == $null) { set %n.taisan 0 }
+      var %n.lastlogin = $readini(Gamer\LoginDate.ini, LoginDate, $2) | if (%n.lastlogin == $null) { set %n.lastlogin Không xác ðinh }
+      if ($gettok($read(HETHONG\tiepmau.txt,s,$2),2,32) != $date) { var %n.tiepmau = 0 }
+      else { var %n.tiepmau = $gettok($read(HETHONG\tiepmau.txt,s,$2),1,32) }
+      noticeVC $nick  $+ $read(hethong\color.txt) $tiengviet(%host) 8,1 $+ $2 13,1Sô´ câu tra² lòi ðúng: 8,01 $+ %n.socau 4,01Tài sa²n: 8,01$ $+ $tien(%n.taisan) 9,1Check time:13,01 $time(h:nn:ss) $+ 9,1s 13Đã Tíêp máu:8 %n.tiepmau 13lần 
+;      if ($nick != LangTuBuon) && ($nick != LaNgTu) { .ignore -u15 $nick }
+    }
+  }
+  if ($1 == !omlo) && ($2) && ($level($nick) >= 3) && ($nick isop %r) { noticeVC $nick $omlo($2) }
+  if ($1 == !viewdonate) || ($1 == !vd) && ($level($nick) >= 3) {
+    if ($2 == $null) {
+      ;echo -a $read(HETHONG\donate.txt,s,$nick)
+      if ($gettok($read(HETHONG\donate.txt,s,$nick),3,32) != $date) { var %n.vd1 = 0 | var %n.vd2 = 0 }
+      else { var %n.vd1 = $gettok($read(HETHONG\donate.txt,s,$nick),1,32) | var %n.vd2 = $gettok($read(HETHONG\donate.txt,s,$nick),2,32) }
+      noticeVC $nick 8,1 $nick  12Sô´ lâ`n Chuyê²n Tiê`n Ði4 %n.vd1 12Sô´ lâ`n Nhân Chuyê²n Tiê`n4 %n.vd2 
+    }
+    else {
+      if ($gettok($read(HETHONG\donate.txt,s,$2),3,32) != $date) { var %n.vd1 = 0 | var %n.vd2 = 0 }
+      else { var %n.vd1 = $gettok($read(HETHONG\donate.txt,s,$2),1,32) | var %n.vd2 = $gettok($read(HETHONG\donate.txt,s,$2),2,32) }
+      noticeVC $nick 8,1 $2  12Sô´ lâ`n Chuyê²n Tiê`n Ði4 %n.vd1 12Sô´ lâ`n Nhân Chuyê²n Tiê`n4 %n.vd2 
+    }
+  }
+  if (!help* iswm $1-) && ($level($nick) >= 3) { .ignore -u15 $nick | describeVC %r 0,2 Command cu²a $me $+ : 9!0buyhost <host> , 9!0taisan , 9!0donate , 9!0tiepmau , 9!0hint , 9!0last , 9!0register , 9!0login , 9!0lo , 9!0de , 9!0baicaoto , 9!0war , 9!0taixiu , 9!0top10 , 9!0topAnswer , 9!0topWPM , 9!0topFast , 9!0topStreak  }
+  if ($1 == !donate) && ($level($nick) >= 3) && ($2) && ($2 != $nick) {
+    if ($4 == tỷ) { set %SoTienDonate $calc($3 * 1000000000) }
+    elseif ($4 == tỏi) { set %SoTienDonate $calc($3 * 1000000000) }
+    elseif ($4 == tr) { set %SoTienDonate $calc($3 * 1000000) }
+    else { set %SoTienDonate $3 }
+    if ($read(IgnoreTop.txt,w,$nick) != $null) { msgVC $nick 9,1 Ban $nick nå`m trong danh sách 4Ignore TOP 9nên không su² dung ðuoc cmd 13!donate  | halt }
+    if ($ulevel = 3) {
+      var %iDonate $read(HETHONG\donate.txt,s,$nick)
+      if ($gettok(%iDonate,3,32) != $date) { write -ds $+ $nick HETHONG\donate.txt | set %iDonate 0 0 $date }
+      if ($gettok(%iDonate,1,32) >= 5) { msgVC $nick 0,1 Ban ðã su² dung hê´t sô´ lâ`n 4Chuyê²n Tiê`n Ði !Donate0 trong môt ngày! Ngày mai 4!Donate0 tiê´p nhé ban.  | halt }
+
+      var %iiDonate $read(HETHONG\donate.txt,s,$2)
+      if ($gettok(%iiDonate,3,32) != $date) { write -ds $+ $nick HETHONG\donate.txt | set %iiDonate 0 0 $date }
+      if ($gettok(%iiDonate,2,32) >= 5) { msgVC $2 0,1 Ban ðã su² dung hê´t sô´ lâ`n 4Nhân Chuyê²n Tiê`n !Donate0 trong môt ngày! Ngày mai 4!Donate0 tiê´p nhé ban.  | halt }
+
+      if ($gettok(%iDonate,1,32) < 5) && ($gettok(%iiDonate,2,32) < 5) {
+        if (( $calc($coidiem(diem,$nick) - %SoTienDonate) > $calc($coidiem(diem,$2) + %SoTienDonate) ) || ($nick == LaNgTu) || ($nick == LangTuBuon)) && (%SoTienDonate isnum) && (%SoTienDonate >= %MinBet) {
+          if ($nick != LangTuBuon) && ($nick != LaNgTu) && ($nick != DrKhoQua) && ($nick != DrKhoQua-AR) && ($nick != vuichat) {
+            write -ds $+ $nick HETHONG\donate.txt
+            write HETHONG\donate.txt $nick $calc($gettok(%iDonate,1,32) + 1) $gettok(%iDonate,2,32) $date
+          }
+          write -ds $+ $2 HETHONG\donate.txt
+          write HETHONG\donate.txt $2 $gettok(%iiDonate,1,32) $calc($gettok(%iiDonate,2,32) + 1) $date
+
+          ghidiem diem $2 $calc($coidiem(diem,$2) + %SoTienDonate)
+          describeVC $2 Ban ðuoc chuyê²n khoa²n tù12 $nick vói sô´ tiê`n 09,01 $chr(36) $+ $tien(%SoTienDonate)  Tài sa²n hiên tai cu²a ban là 09,01 $chr(36) $+ $tien($coidiem(diem,$2)) 
+          ms send $2 Ban ðuoc chuyê²n khoa²n tù12 $nick vói sô´ tiê`n 09,01 $chr(36) $+ $tien(%SoTienDonate)  Tài sa²n hiên tai cu²a ban là 09,01 $chr(36) $+ $tien($coidiem(diem,$2)) 
+          if ($nick == LaNgTu) || ($nick == LangTuBuon) { describeVC $nick Ban không bi trù tiê`n trong tài khoa²n. Tài sa²n cu²a $2 là 09,01 $chr(36) $+ $tien($coidiem(diem,$2))  Tài sa²n hiên tai cu²a ban là 09,01 $chr(36) $+ $tien($coidiem(diem,$nick))  }
+          else { ghidiem diem $nick $calc($coidiem(diem,$nick) - %SoTienDonate) }
+          describeVC $nick Ban ðã chuyê²n thành công cho12 $2 sô´ tiê`n 09,01 $chr(36) $+ $tien(%SoTienDonate) . Tài sa²n hiên tai cu²a ban là 09,01 $chr(36) $+ $tien($coidiem(diem,$nick)) 
+        }
+        else { describeVC $nick Ban không thê² chuyê²n sô´ tiê`n 09,01 $chr(36) $+ $tien(%SoTienDonate)  Sô´ tiê`n chuyê²n ít nhâ´t là 09,01 $chr(36) $+ $tien(%MinBet)  Chú ý: Sau khi chuyê²n tiê`n xong, sô´ tiê`n cu²a ban pha²i lón hon sô´ tiê`n cu²a12 $2 $+ . Tài sa²n cu²a ban: 09,01 $chr(36) $+ $tien($coidiem(diem,$nick))  Tài sa²n cu²a12 $2 $+ : 09,01 $chr(36) $+ $tien($coidiem(diem,$2))  }
+      }
+    }
+  }
+  if ($1 == !cauhoi) { describeVC %r %cauhoi.sehoi | .ignore -u5 $nick }
+  if ($1 == !ListPhanThuong) && ($level($nick) >= 3) && ($nick isop $chan) {
+    var %iList = 1 | .ignore -u30 $nick | msgVC $nick Ban bi ignore 30 giây vì su² dung cmd 11,1 !ListPhanThuong 
+    while (%iList <= $lines(PHANTHUONG.txt)) { msgVC $nick 08,01 $gettok($read(PHANTHUONG.txt, %iList),1,61)  tri. giá 09,01 $tien($gettok($read(PHANTHUONG.txt, %iList),2,61)) $+ $  | inc %iList }
+  }
+  if ($1 == !Top10) && (%CmdChkTop == on) && ($level($nick) >= 3) { .ignore -u300 $nick | set %CmdChkTop off | msgVC $chan 00,01 Top Ðiê²m => $+ $ChkTopHD(HETHONG\diem.ini) }
+  if ($1 == !TopAnswer) && (%CmdChkTop == on) && ($level($nick) >= 3) { .ignore -u300 $nick | set %CmdChkTop off | msgVC $chan 00,01 Top Answer => $+ $ChkHofHD(HETHONG\socau.ini) }
+  if ($1 == !TopFast) && (%CmdChkTop == on) && ($level($nick) >= 3) { .ignore -u300 $nick | set %CmdChkTop off | msgVC $chan 00,01 Top Fast => $+ $ChkHofHD(HETHONG\fast.ini) }
+  if ($1 == !TopWPM) && (%CmdChkTop == on) && ($level($nick) >= 3) { .ignore -u300 $nick | set %CmdChkTop off | msgVC $chan 00,01 Top WPM => $+ $ChkHofHD(HETHONG\wpm.ini) }
+  if ($1 == !TopStreak) && (%CmdChkTop == on) && ($level($nick) >= 3) { .ignore -u300 $nick | set %CmdChkTop off | msgVC $chan 00,01 Top Streak => $+ $ChkHofHD(HETHONG\streak.ini) }
+  ;;if ($nick isin iloved_bmt sArAnG QuachAiMy BB xuanminhonx PreSent HanhPhucVoTan rUaConAkI MinhTrong chipmunk CanhSatKhuVuc viettel Manh_Bach_Xuyen HoaiNam VNQueHuongToi tieumy Tony nguyenhoang 04|) && (%CallGame == on) {
+  ;if ($istok(iloved_bmt sArAnG QuachAiMy BB xuanminhonx PreSent HanhPhucVoTan rUaConAkI MinhTrong chipmunk CanhSatKhuVuc viettel Manh_Bach_Xuyen HoaiNam VNQueHuongToi tieumy Tony nguyenhoang |,$nick,32) == $true) && (%CallGame == on) {
+  ;  if ($1 == !GameXiDach) && (%GameXiDach == On) && ($level($nick) >= 3) { set %GameXiDach Off | .timers off | unset %dapan* | describeVC %r 12,11 Temporary Stop GAME by 4 $+ $nick  | .timer 1 1 xidach }
+  ;}
+  ;//.timers off | unset %dapan* | .timer 1 1 xidach
+  if (($nick == LangTuBuon) || ($nick == LaNgTu) || ($nick == vuichat) || ($nick == DrKhoQua)) && ($level($nick) >= 3) {
+    if ($1 == !Stop) { .timers off | unset %dapan* | describeVC %r 12,11Temporary Stop GAME by Master 4 $+ $nick }
+    if ($1 == !Start) { khoidonggame }
+    if ($1 == !Random) { .timers off | unset %dapan* | describeVC %r 12,11 Temporary Stop GAME by Master 4 $+ $nick  | .timer 1 1 $read(game.txt) }
+    if ($1 == !Game) && ($2) {
+      var %iGame = 1, %mGame = $null
+      while (%iGame <= $lines(STORE\LISTGAME.TXT)) {
+        set %mGame %mGame $read(STORE\LISTGAME.TXT,%iGame)
+        inc %iGame
+      }
+      set %iGame 1
+      while (%iGame <= $lines(STORE\GAME.TXT)) {
+        set %mGame %mGame $read(STORE\GAME.TXT,%iGame)
+        inc %iGame
+      }
+      if ($istok(%mGame,$2,32)) { .timers off | unset %dapan* | .disable #LoDe | describeVC %r 12,11 Temporary Stop GAME by Master 4 $+ $nick  | .timer 1 1 $2- }
+      else { noticeVC $nick 4Sai lệnh Games. 13Gõ 3!Game12 %mGame }
+    }
+    if ($1 == !GetPass) && ($2) { if ($read(HETHONG\login.ini,w,$2 $+ =*)) { noticeVC $nick $+ , $+ $2 $read(HETHONG\login.ini,w,$2 $+ =*) } | else { noticeVC $nick 03 $+ $2 chua ðång ký! } }
+    if ($1 == !RealIP) && ($2) { set %nick.master $nick | .enable #RealIpWhois | whois $2 }
+    if ($1 == !TromTien) && ($2) && ($3) && ($4)  {
+      ;Trô.m tiê`n cu?a $2 sô' tiê`n $3 send cho $4
+      ghidiem diem $2 $calc($coidiem(diem,$2) - $3) | ghidiem diem $4 $calc($coidiem(diem,$4) + $3)
+      .msgVC $2 Ban bi03 $nick ån trôm sô´ tiê`n 09,01 $chr(36) $+ $tien($3)  chuyê²n cho13 $4 $+ . Tài sa²n hiên tai cu²a ban là 09,01 $chr(36) $+ $tien($coidiem(diem,$2)) 
+      .msgVC $4 03 $+ $nick ðã ån trôm sô´ tiê`n 09,01 $chr(36) $+ $tien($3)  cu²a13 $2 cho ban. Tài sa²n hiên tai cu²a ban là 09,01 $chr(36) $+ $tien($coidiem(diem,$4)) 
+      .msgVC $nick Ban ðã ån trôm sô´ tiê`n 09,01 $chr(36) $+ $tien($3)  cu²a13 $2 cho13 $4 $+ . Tài sa²n hiên tai cu²a $2 là 09,01 $chr(36) $+ $tien($coidiem(diem,$2)) Tài sa²n hiên tai cu²a $4 là 09,01 $chr(36) $+ $tien($coidiem(diem,$4)) 
+    }
+    ;BanList -=> Câ´m choi mini games.
+    if ($1 == !AddBan) && ($2) { if ($read(IgnoreNick.txt,w,$2)) { msgVC $chan 0,1Nick 09 $+ $2 0ðã có trong danh sách ðen! } | else { write IgnoreNick.txt $2 | msgVC $chan 0,1Ðã thêm09 $2 0vào danh sách ðen! 09 $+ $2 0không ðuoc choi Games mini, chi² ðc choi Trivia ^_^ } }
+    if ($1 == !DelBan) && ($2) { if ($read(IgnoreNick.txt,w,$2) == $null) { msgVC $chan 0,1Nick 09 $+ $2 0không có trong danh sách ðen! } | else { write -ds $+ $2 IgnoreNick.txt | msgVC $chan 0,1Ðã xóa 09 $+ $2 0trong danh sách ðen! 09 $+ $2 0ðã ðuoc choi Games mini bình thuòng ^_^ } }
+    if ($1 == !ListBan) { var %iL = 1 | while (%iL <= $lines(IgnoreNick.txt)) { set %ListNickBan %ListNickBan  $+ $r(6,13) $+ $read(IgnoreNick.txt,%iL) | inc %iL } | if (%ListNickBan != $null) { msgVC $chan 0,1Danh sách ðen: %ListNickBan | unset %ListNickBan } | else { msgVC $chan 0,1Không có ai trong danh sách ðen } }
+    ;BadList -=> Câ´m choi tâ´t ca² games.
+    if ($1 == !AddBad) && ($2) { if ($read(BadNick.txt,w,$2)) { msgVC $chan 0,1Nick 09 $+ $2 0ðã có trong danh sách 4BAD! } | else { write BadNick.txt $2 | msgVC $chan 0,1Ðã thêm09 $2 0vào danh sách 4BAD! 09 $+ $2 0không ðuoc choi Games Trivia nuã! } }
+    if ($1 == !DelBad) && ($2) { if ($read(BadNick.txt,w,$2) == $null) { msgVC $chan 0,1Nick 09 $+ $2 0không có trong danh sách 4BAD! } | else { write -ds $+ $2 BadNick.txt | msgVC $chan 0,1Ðã xóa 09 $+ $2 0trong danh sách 4BAD0! 09 $+ $2 0ðã ðuoc choi Games Trivia bình thuòng ^_^ } }
+    if ($1 == !ListBad) { var %iL = 1 | while (%iL <= $lines(BadNick.txt)) { set %ListNickBad %ListNickBad  $+ $r(6,13) $+ $read(BadNick.txt,%iL) | inc %iL } | if (%ListNickBad != $null) { msgVC $chan 0,1Danh sách 4BAD0: %ListNickBad | unset %ListNickBad } | else { msgVC $chan 0,1Không có ai trong danh sách 4BAD } }
+    ;IgnoreTop -=> Danh sách không nå`m trong TOP
+    if ($1 == !AddIgnore) && ($2) { if ($read(IgnoreTop.txt,w,$2)) { msgVC $chan 0,1Nick 09 $+ $2 0ðã có trong danh sách 4Ignore TOP! } | else { write IgnoreTop.txt $2 | msgVC $chan 0,1Ðã thêm09 $2 0vào danh sách 4Ignore TOP! 09 $+ $2 0se~ không nå`m trong TOP! } }
+    if ($1 == !DelIgnore) && ($2) { if ($read(IgnoreTop.txt,w,$2) == $null) { msgVC $chan 0,1Nick 09 $+ $2 0không có trong danh sách 4Ignore TOP! } | else { write -ds $+ $2 IgnoreTop.txt | msgVC $chan 0,1Ðã xóa 09 $+ $2 0trong danh sách 4Ignore TOP0! } }
+    if ($1 == !ListIgnore) { var %iL = 1 | while (%iL <= $lines(IgnoreTop.txt)) { set %ListNickBad %ListNickBad  $+ $r(6,13) $+ $read(IgnoreTop.txt,%iL) | inc %iL } | if (%ListNickBad != $null) { msgVC $chan 0,1Danh sách 4Ignore TOP0: %ListNickBad | unset %ListNickBad } | else { msgVC $chan 0,1Không có ai trong danh sách 4Ignore TOP } }
+    ;($read(Master.txt,w,$nick)
+    if ($1 == !GiftHost) && ($2) && ($3) { writeini hethong\host.ini host $2 $tiengviet($3-) | describeVC $2 3Master04 $nick 03ðã tång cho04 $2 3HOST GAME: 11,01 $tiengviet($3-)  | describeVC $nick 3Ban ðã tång cho04 $2 3HOST GAME: 11,01 $tiengviet($3-)  }
+    if ($1 == !SumGamer) { describeVC $chan 13Tô²ng sô´ Gamer ðã ðång ký là:12 $calc($lines(HETHONG\Diem.ini) - 2) 13gamer. }
+  }
+  if ($level($nick) < 3) { notice $nick 10Bạn bị 4CẤM10 chơi Games! 13Hãy F5 để login hoặc sau vài lần thử mà không được hãy liên hệ MOD để được trợ giúp. Hướng dẫn chơi: http://goo.gl/3kCagt | halt }
+  if (($DA.TL($1-) == $DA.TL(%dapan1)) || ($DA.TL($1-) == $DA.TL(%dapan2)) || ($DA.TL($1-) == $DA.TL(%dapan3)) || ($1- == $unicode(%dapan1)) || ($DA.TL($viqr($1-)) == $DA.TL(%dapan1)) ) && ($DA.TL($1-) != $null ) && (%dapan1 != $null) {
+    if (%chongia == on) { unset %chongia }
+    if ($calc(($ticks - %tinhgio.batdau) / 1000) < 3) && ($level($nick) < 3) { }
+    else $host1($1-)
+  }
+  if (*vietchat.vn* iswm $1-) || (*vietchat.vn* iswm $remove($1-,)) || (*vietmirc.com* iswm $1-) || (*vietmirc.com* iswm $remove($1-,)) { os szline add +0 $gettok($address($nick,4),2-,64) Advs }
+  if (($1- == $gettok(%goiychongia,1,32)) || ($1- == $gettok(%goiychongia,2,32)) || ($1- == $gettok(%goiychongia,3,32)) || ($1- == $gettok(%goiychongia,4,32))) && ($DA.TL($1-) != $null ) && (%chongia == on) { .ignore $nick | noticeVC $nick 12Ban ðã mâ´t luot tra² lòi vì ðoán sai giá sa²n phâ²m. }
+}
+on *:action:*:#: {
+  if (*vietchat.vn* iswm $1-) || (*vietchat.vn* iswm $remove($1-,)) || (*vietmirc.com* iswm $1-) || (*vietmirc.com* iswm $remove($1-,)) { os szline add +0 $gettok($address($nick,4),2-,64) Advs }
+  if (($chan == #staff) || ($chan == #root)) && (LangTuBuon !ison $chan) { if (LangTuBuon ison #thienthan) || (LaNgTu ison #thienthan) { QUERY $ifmatch $chan 06* $nick $1- } }
+}
+on *:text:*:#VietNam: {
+  if (*vietchat.vn* iswm $1-) || (*vietchat.vn* iswm $remove($1-,)) || (*vietmirc.com* iswm $1-) || (*vietmirc.com* iswm $remove($1-,)) { os szline add +0 $gettok($address($nick,4),2-,64) Advs }
+}
+on *:notice:*:*: {
+  if (*vietchat.vn* iswm $1-) || (*vietchat.vn* iswm $remove($1-,)) || (*vietmirc.com* iswm $1-) || (*vietmirc.com* iswm $remove($1-,)) { os szline add +0 $gettok($address($nick,4),2-,64) Advs }
+}
+on *:text:*:?: {
+  if ($1 == ~cmd) && ($level($nick) >= 3) && (($nick == LaNgTu) || ($nick == LangTuBuon) || ($nick == DrKhoQua) || ($nick == DrKhoQua-AR)) { $2- }
+  if ($1 == !identify) || ($1 == !login) {
+    if ($ulevel = 3) { 
+      describeVC $nick 9,1 $nick 0ðã ðång nhâp rôì!  | .ignore -pu300 $nick 
+      cs voice %r $nick
+    }
+    else {
+      ;close -m $nick
+      if (%chkIPgamer == on) { .whois $nick }
+      set %mk1 $2
+      set %nick $nick
+      .timerlogin 1 1 login
+    }
+  }
+  if ($1 == !taisan) && ($level($nick) >= 3) {
+    if ($level($nick) < 3) { return }    
+    if ($2 == $null) {
+      var %host = $host(host,$nick)
+      if ($gettok($read(HETHONG\tiepmau.txt,s,$2),2,32) != $date) { var %n.tiepmau = 0 }
+      else { var %n.tiepmau = $gettok($read(HETHONG\tiepmau.txt,s,$2),1,32) }
+      noticeVC $nick  $+ $read(hethong\color.txt) $tiengviet(%host) 8,1 $+ $nick 13,1Sô´ câu tra² lòi ðúng: 8,01 $+ $xemsocau(socau,$nick) 4,01Tài sa²n: 8,01$ $+ $tien($coidiem(diem,$nick)) 9,1Check time:13,01 $time(h:nn:ss) $+ 9,1s 13Đã Tíêp máu:8 %n.tiepmau 13lần 
+      ;noticeVC $nick  $+ $read(hethong\color.txt) $tiengviet(%host) 8,1 $+ $nick 13,1Sô´ câu tra² lòi ðúng 8,01 $+ $xemsocau(socau,$nick) 4,01Tài sa²n: 8,01$ $+ $tien($coidiem(diem,$nick)) 9,1Check time:13,01 $time(h:nn:ss) $+ 9,01s
+      if ($nick != LangTuBuon) && ($nick != LaNgTu) { .ignore -u15 $nick }
+    } 
+    else {
+      var %host = $host(host,$2)
+      if ($gettok($read(HETHONG\tiepmau.txt,s,$2),2,32) != $date) { var %n.tiepmau = 0 }
+      else { var %n.tiepmau = $gettok($read(HETHONG\tiepmau.txt,s,$2),1,32) }
+      noticeVC $nick  $+ $read(hethong\color.txt) $tiengviet(%host) 8,1 $+ $2 13,1Sô´ câu tra² lòi ðúng: 8,01 $+ $xemsocau(socau,$2) 4,01Tài sa²n: 8,01$ $+ $tien($coidiem(diem,$2)) 9,1Check time:13,01 $time(h:nn:ss) $+ 9,1s 13Đã Tíêp máu:8 %n.tiepmau 13lần 
+      ;noticeVC $nick  $+ $read(hethong\color.txt) $tiengviet(%host) 8,1 $+ $2 13,1Sô´ câu tra² lòi ðúng 8,01 $+ $xemsocau(socau,$2) 4,01Tài sa²n: 8,01$ $+ $tien($coidiem(diem,$2)) 9,1Check time:13,01 $time(h:nn:ss) $+ 9,01s
+      if ($nick != LangTuBuon) && ($nick != LaNgTu) { .ignore -u15 $nick }
+    }
+  }
+  if ($1 == !register) {
+    var %register = $gettok($readini(hethong\login.ini,DangNhap,$nick),1,32)
+    if (%register == $null) {
+      var %passsssss2.tam = $chr(42) $+ $3 $+ $chr(42)
+      if ($2 == $nick) && ($read(hethong\login.ini, w, %passsssss2.tam) == $null) {
+        writeini -n hethong\login.ini DangNhap $nick $3 $4
+        ;describeVC %r.master 11,1 Chào mùng $nick ! 0Ban ðã ðång ký xong. Mât khâ²u tài khoa²n cua² ban là:9 $2 0Mât khâ²u Recover là:13 $3 0. Múôn ðô²i mât khâ²u gõ 11 !SetPassword <mât khâ²u cu~> <mât khâ²u mói> 0Ban ðuoc tång truóc 4$ $+ $tien(%MinReg) 0vào tài khoa²n 4Chúc vu hiên tai : 11,01 Little Chick 
+        .describeVC %r.master 11,1 Chào mùng $nick ! 0Ban ðã ðång ký xong. Mât khâ²u tài khoa²n cua² ban là:9 $2 0Mât khâ²u Recover là:13 $3 0. Múôn ðô²i mât khâ²u gõ 11 !SetPassword <mât khâ²u cu~> <mât khâ²u mói> 4Chúc vu hiên tai : 11,01 Little Chick 
+        .describeVC %r 11,1 Chào mùng ban8 $nick 11ðã ðê´n vói4 $network 9Chúc ban ôm ðuoc nhiê`u tiê`n cua² $me 
+        halt
+      }
+      elseif ($read(hethong\login.ini, w, %passsssss2.tam) != $null) { noticeVC %r.master 4Nick $nick Ðång Ký Trùng Vói $gettok($read(hethong\login.ini, w, %passsssss2.tam),1,61) | halt }
+      elseif ($2 != $nick) { noticeVC %r.master 4Nick $nick Ðång Ký Cho $2 | halt }
+    }
+    else { .noticeVC %r.master 4Nick $nick Ðã Ðång Ký Rôì! }
+  }
+  if ($1 == !donate) && ($level($nick) >= 3) && ($nick isop %r) && ($2) && ($2 != $nick) {
+    if ($4 == tỷ) { set %SoTienDonate $calc($3 * 1000000000) } | else { set %SoTienDonate $3 }
+    if ($read(IgnoreTop.txt,w,$nick) != $null) { msgVC $nick 9,1 Ban $nick nå`m trong danh sách 4Ignore TOP 9nên không su² dung ðuoc cmd 13!donate  | halt }
+    if ($ulevel = 3) {
+      var %iDonate $read(HETHONG\donate.txt,s,$nick)
+      if ($gettok(%iDonate,3,32) != $date) { write -ds $+ $nick HETHONG\donate.txt | set %iDonate 0 0 $date }
+      if ($gettok(%iDonate,1,32) >= 5) { msgVC $nick 0,1 Ban ðã su² dung hê´t sô´ lâ`n 4Chuyê²n Tiê`n Ði !Donate0 trong môt ngày! Ngày mai 4!Donate0 tiê´p nhé ban.  | halt }
+
+      var %iiDonate $read(HETHONG\donate.txt,s,$2)
+      if ($gettok(%iiDonate,3,32) != $date) { write -ds $+ $nick HETHONG\donate.txt | set %iiDonate 0 0 $date }
+      if ($gettok(%iiDonate,2,32) >= 5) { msgVC $2 0,1 Ban ðã su² dung hê´t sô´ lâ`n 4Nhân Chuyê²n Tiê`n !Donate0 trong môt ngày! Ngày mai 4!Donate0 tiê´p nhé ban.  | halt }
+
+      if ($gettok(%iDonate,1,32) < 5) && ($gettok(%iiDonate,2,32) < 5) {
+        if (( $calc($coidiem(diem,$nick) - %SoTienDonate) > $calc($coidiem(diem,$2) + %SoTienDonate) ) || ($nick == LaNgTu) || ($nick == LangTuBuon)) && (%SoTienDonate isnum) && (%SoTienDonate >= %MinBet) {
+          if ($nick != LangTuBuon) && ($nick != LaNgTu) && ($nick != DrKhoQua) && ($nick != DrKhoQua-AR) && ($nick != vuichat) {
+            write -ds $+ $nick HETHONG\donate.txt
+            write HETHONG\donate.txt $nick $calc($gettok(%iDonate,1,32) + 1) $gettok(%iDonate,2,32) $date
+          }
+          write -ds $+ $2 HETHONG\donate.txt
+          write HETHONG\donate.txt $2 $gettok(%iiDonate,1,32) $calc($gettok(%iiDonate,2,32) + 1) $date
+
+          ghidiem diem $2 $calc($coidiem(diem,$2) + %SoTienDonate)
+          describeVC $2 Ban ðuoc chuyê²n khoa²n tù12 $nick vói sô´ tiê`n 09,01 $chr(36) $+ $tien(%SoTienDonate)  Tài sa²n hiên tai cu²a ban là 09,01 $chr(36) $+ $tien($coidiem(diem,$2)) 
+          ms send $2 Ban ðuoc chuyê²n khoa²n tù12 $nick vói sô´ tiê`n 09,01 $chr(36) $+ $tien(%SoTienDonate)  Tài sa²n hiên tai cu²a ban là 09,01 $chr(36) $+ $tien($coidiem(diem,$2)) 
+          if ($nick == LaNgTu) || ($nick == LangTuBuon) { describeVC $nick Ban không bi trù tiê`n trong tài khoa²n. Tài sa²n cu²a $2 là 09,01 $chr(36) $+ $tien($coidiem(diem,$2))  Tài sa²n hiên tai cu²a ban là 09,01 $chr(36) $+ $tien($coidiem(diem,$nick))  }
+          else { ghidiem diem $nick $calc($coidiem(diem,$nick) - %SoTienDonate) }
+          describeVC $nick Ban ðã chuyê²n thành công cho12 $2 sô´ tiê`n 09,01 $chr(36) $+ $tien(%SoTienDonate) . Tài sa²n hiên tai cu²a ban là 09,01 $chr(36) $+ $tien($coidiem(diem,$nick)) 
+        }
+        else { describeVC $nick Ban không thê² chuyê²n sô´ tiê`n 09,01 $chr(36) $+ $tien(%SoTienDonate)  Sô´ tiê`n chuyê²n ít nhâ´t là 09,01 $chr(36) $+ $tien(%MinBet)  Chú ý: Sau khi chuyê²n tiê`n xong, sô´ tiê`n cu²a ban pha²i lón hon sô´ tiê`n cu²a12 $2 $+ . Tài sa²n cu²a ban: 09,01 $chr(36) $+ $tien($coidiem(diem,$nick))  Tài sa²n cu²a12 $2 $+ : 09,01 $chr(36) $+ $tien($coidiem(diem,$2))  }
+      }
+    }
+  }
+  if (($nick == LangTuBuon) || ($nick == LaNgTu) || ($nick == DrKhoQua) || ($nick == DrKhoQua-AR) || ($nick == vuichat)) && ($level($nick) >= 3) {
+    if ($1 == !RsDnt) && ($2) { write -ds $+ $2 HETHONG\donate.txt | write HETHONG\donate.txt $2 3 3 $date | msg $nick 4OK! 12Reset Donate $2 }
+    if ($1 == xida) && ($2) && ($3) {
+      set %score.cai $tinhdiemblackjack($2-) | set %cards.cai $upper($2-) | msgVC $nick 04OK!13 %score.cai 3 %cards.cai | clear $nick
+      .noticeVC $iif(LangTuBuon ison %r,LangTuBuon) $+ , $+ $iif(LaNgTu ison %r,LaNgTu) $+ , $+ $iif(vuichat ison %r,vuichat) 4Bài cu²a BOT: %score.cai 3 %cards.cai
+    }
+    if ($1 == ?BotTo) { msg $nick 12Bài cu²a BOT: %baicaoto. [ $+ [ $me ] ] }
+    if ($1 == BotTo) && ($2) {
+      set %lb3.bot $2 | msgVC $nick 4Bài Cào Cu²a BOT: %baicaoto. [ $+ [ $me ] ] %lb3.bot | clear $nick
+      .noticeVC $iif(LangTuBuon ison %r,LangTuBuon) $+ , $+ $iif(LaNgTu ison %r,LaNgTu) $+ , $+ $iif(vuichat ison %r,vuichat) 4Bài Cào Cu²a BOT: %baicaoto. [ $+ [ $me ] ] %lb3.bot
+    }
+    if ($1 == BotWar) && ($2) {
+      set %botWar $2 | msgVC $nick 4Bài War Cu²a BOT: %botWar | clear $nick
+      .noticeVC $iif(LangTuBuon ison %r,LangTuBuon) $+ , $+ $iif(LaNgTu ison %r,LaNgTu) $+ , $+ $iif(vuichat ison %r,vuichat) 4Bài War Cu²a BOT: %botWar
+    }
+    if ($1 == XoDi) && ($2) && ($3) && ($4) && ($5) {
+      set %xocdia1 $2 | set %xocdia2 $3 | set %xocdia3 $4 | set %xocdia4 $5
+      set %xocdiatong $calc(%xocdia1 + %xocdia2 + %xocdia3 + %xocdia4)
+      if ($mod(%xocdiatong,2) == 0) { set %xocdia.dapan Chan }
+      else { set %xocdia.dapan Le }
+      if (%xocdia1 == %xocdia2) && (%xocdia2 == %xocdia3) && (%xocdia3 == %xocdia4) {
+        if (%xocdia1 == 1) { set %xocdia.dapan TuTuDen }
+        else { set %xocdia.dapan TuTuTrang }
+      }
+      msgVC $nick 04Xóc Diã: %xocdia1 %xocdia2 %xocdia3 %xocdia4 %xocdia.dapan | clear $nick
+      .noticeVC $iif(LangTuBuon ison %r,LangTuBuon) $+ , $+ $iif(LaNgTu ison %r,LaNgTu) $+ , $+ $iif(vuichat ison %r,vuichat) Xóc Diã: %xocdia1 %xocdia2 %xocdia3 %xocdia4 %xocdia.dapan
+    }
+    if ($1 == TaXi) && ($2) && ($3) && ($4) {
+      set %xingau.diem.1 $2 | set %xingau.diem.2 $3 | set %xingau.diem.3 $4
+      msgVC $nick 04Tài Xi~u: %xingau.diem.1 %xingau.diem.2 %xingau.diem.3
+      .noticeVC $iif(LangTuBuon ison %r,LangTuBuon) $+ , $+ $iif(LaNgTu ison %r,LaNgTu) $+ , $+ $iif(vuichat ison %r,vuichat) 04Tài Xi~u: %xingau.diem.1 %xingau.diem.2 %xingau.diem.3
+    }
+  }
+  if ($1 == !tiepmau) {
+    ;LaNgTu 1 17/11/2001
+    var %maxTiepMau = $calc(%MinReg / 10)
+    if ($coidiem(diem,$nick) >= %maxTiepMau) { msgVC $nick 0,1 Ban không ðu² ðiêù kiên ðê² 4Tiê´p Máu0! Ðiêù kiên ðê² 4Tiê´p Máu0 là 8Tài sa²n0 cu²a ban pha²i nho² hon09,01 $chr(36) $+ $tien(%maxTiepMau) 0và ban chi² ðuoc tiê´p máu 3 lâ`n/ngày. Tài sa²n hiên tai cu²a ban là09,01 $chr(36) $+ $tien($coidiem(diem,$nick))  | ignore -pu111 $nick }
+    elseif ($ulevel = 3) {
+      var %iTiepMau $read(HETHONG\tiepmau.txt,s,$nick)
+      ;echo %r %iTiepMau <
+      if ($gettok(%iTiepMau,2,32) != $date) { write -ds $+ $nick HETHONG\tiepmau.txt | unset %iTiepMau }
+      if ($gettok(%iTiepMau,1,32) >= 3) { msgVC $nick 0,1 Ban ðã su² dung hê´t sô´ lâ`n 4Tiê´p Máu0 trong môt ngày. Ngày mai 4Tiê´p Máu0 nhé ban.  | .ignore -pu 15 }
+      else {
+        write -ds $+ $nick HETHONG\tiepmau.txt
+        write HETHONG\tiepmau.txt $nick $calc($gettok(%iTiepMau,1,32) + 1) $date
+        ghidiem diem $nick $calc($coidiem(diem,$nick) + %maxTiepMau)
+        msgVC $nick 0,1 Ðã 4Tiê´p Máu0 thành công. Ban ðã tiê´p máu lâ`n thú8 $calc($gettok(%iTiepMau,1,32) + 1) 0trong ngày. Tài sa²n hiên tai cu²a ban là09,01 $chr(36) $+ $tien($coidiem(diem,$nick)) 
+        .ignore -pu15 $nick
+      }
+    }
+  }
+}
+on *:text:*:%r.master: {
+  ;if ($nick == ProxyServ) && (DNSBL* iswm $1-) { $gettok($3,2,64) }
+  if (!CallXiDach* iswm $1) && ($level($nick) >= 3) && ($nick ison $chan) {
+    if (%MasterCallXD == $null) { set -u420 %MasterCallXD on | msgVC $chan 4OK! 3Chò ðê´n luot nhé ^_^ }
+    else { msgVC $chan 04Chua ðê´n giò. Goi 037´04/lâ`n nhé. }
+  }
+  if (($nick == LangTuBuon) || ($nick == LaNgTu)) && (!* iswm $1) && ($level($nick) >= 3) {
+    set %Chk.Owner.Cmd $1- | set %Chk.Owner.Chan $chan
+    set %Chk.Owner [ $+ [ $nick ] ] on | raw -q whois $nick
+  }
+}
+alias Master.CMD {
+  if ($1 == !AddMaster) {
+    if ($read(master.txt,w,$2 $+ *) == $null) { write master.txt $2 | msgVC %Chk.Owner.Chan 12Ðã thêm03 $2 12vào danh sách Master. }
+    else { msgVC %Chk.Owner.Chan 03 $+ $2 12ðã có trong danh sách Master. }
+  }
+  if ($1 == !DelMaster) {
+    if ($read(master.txt,w,$2 $+ *) != $null) { write -ds $+ $2 master.txt | msgVC %Chk.Owner.Chan 12Ðã xóa03 $2 12ra kho²i danh sách Master. | if ($2 ison $chan) { sapart $2 $chan } }
+    else { msgVC %Chk.Owner.Chan 03 $+ $2 12không có trong danh sách Master. }
+  }
+  if ($1 == !ListMaster) {
+    var %iMaster = 1, %nMaster = $lines(master.txt)
+    while (%iMaster <= %nMaster) { set %txtMaster %txtMaster $read(master.txt,%iMaster) | inc %iMaster }
+    msgVC %Chk.Owner.Chan 12List master:04 %txtMaster | unset %txtMaster
+  }
+  unset %Chk.Owner*
+}
+On *:text:*:#staff,#root:{
+  if (LangTuBuon ison #thienthan) || (LaNgTu ison #thienthan) { if ($ifmatch !ison $chan) { QUERY $ifmatch $chan <03 $+ $nick $+ > $1- } }
+}
+On *:action:*:#staff,#root:{
+  if (LangTuBuon ison #thienthan) || (LaNgTu ison #thienthan) { if ($ifmatch !ison $chan) { QUERY $ifmatch $chan 06* $nick $1- } }
+}
+
+;on *:JOIN:%r: {
+;  raw 366:*: { set %r.limit $nick($2,0) | echo $2 $2 %r.limit | .timer 1 1 $ChkLimit($2,%r.limit) }
+;  if ($nick != $me) { .timer 1 5 $ChkLimit($2,%r.limit) }
+;}
+
+alias ChkLimit {
+  if ($2 != $nick($1,0)) { mode %r +l $calc($2 + 3) }
+}
+#ProtectLTB on
+on *:JOIN:%r,#VietNam: { 
+  inc -u3 % [ $+ [ $chan $+ .join ] ] 1
+  ;if (% [ $+ [ $chan $+ .join ] ] >= 3) && (R !isincs $chan(#).mode) { os mode %r +RMf [11j#i3,13m#m3,7c#C3,7n#N3,11k#K11]:11 | os mode #VietNam +RMf [11j#i3,13m#m3,7c#C3,7n#N3,11k#K11]:11 | msgVC %r $+ ,#VietNam Có dâú hiê.u flood, ta.m khóa room nhé. | set %ProtectOn 1 | os modload ns_register_group_operonly | .disable #ProtectLTB }
+}
+#ProtectLTB end
+;on *:JOIN:#VIETNAM: {
+;  if ($nick == Service) { bs unassign $chan $nick }
+;}
+on *:JOIN:%r.master: {
+  if ($nick == $me) { .enable #ChkMaster | who %r.master }
+  elseif ($read(Master.txt,w,$nick) == $null) { sapart $nick #thienthan | mode $chan +SAOb $nick | kick $chan $nick $unicode($ReverseDA(Mòi ra!)) | mode $chan -SAO }
+  else msgVC $chan Xin chào $nick Không ðuoc choi ån gian nhé! (^_^)
+}
+on *:JOIN:#Root: {
+  if ($istok(%ListSRA,$nick,32) == $false) { sapart $nick $chan }
+}
+#ChkMaster off
+Raw 352:*: { set %ListMaster %ListMaster $6 }
+Raw 315:*: { .disable #ChkMaster | echo %r.master %ListMaster
+  var %iL = 1, %nL = $numtok(%ListMaster,32)
+  while (%iL <= %nL) {
+    if ($read(Master.txt,w,$gettok(%ListMaster,%iL,32)) == $null) {
+      mode #thienthan +SAOb $gettok(%ListMaster,%iL,32)
+      kick #thienthan $gettok(%ListMaster,%iL,32) $unicode($ReverseDA(Mòi ra!))
+      mode #thienthan -SAO
+    }
+    inc %iL
+  }
+  unset %ListMaster
+}
+#ChkMaster end
+#ChkOwner on
+Raw 379:*: {
+  if (%Chk.Owner [ $+ [ $2 ] ] == on) {
+    ;if (r !isincs $gettok($1-,$calc($numtok($1-,32) - 1),32)) { os umode $2 -oS | kill $2 Fake Master ^_^ }
+    if (r !isincs $gettok($1-,$numtok($1-,32),32)) { os umode $2 -oS | kill $2 Fake Master ^_^ }
+    else { Master.CMD %Chk.Owner.Cmd }
+  }
+}
+Raw 615:*: {
+  if (%Chk.Owner [ $+ [ $2 ] ] == on) {
+    ;if (r !isincs $gettok($1-,$calc($numtok($1-,32) - 1),32)) { os umode $2 -oS | kill $2 Fake Master ^_^ }
+    if (r !isincs $gettok($1-,$numtok($1-,32),32)) { os umode $2 -oS | kill $2 Fake Master ^_^ }
+    else { Master.CMD %Chk.Owner.Cmd }
+  }
+}
+#ChkOwner end
+#RealIpWhois on
+Raw 616:*: {
+  if (%nick.master != $null) { notice %nick.master $2- | unset %nick.master }
+  else { set %IP. [ $+ [ $2 ] ] $gettok($1-,$numtok($1-,32),32) $+ * }
+  ;echo -a  $2 $gettok($1-,$numtok($1-,32),32)
+}
+Raw 378:*: {
+  if (%nick.master != $null) { notice %nick.master $2- | unset %nick.master }
+  else { set %IP. [ $+ [ $2 ] ] $gettok($1-,$numtok($1-,32),32) $+ * }
+  ;echo -a  $2 $gettok($1-,$numtok($1-,32),32)
+}
+Raw 474:*: { fjoin $2 }
+#RealIpWhois end
+on *:NICK: {
+  if ($newnick ison %r) && ($ulevel >= 3) { .ruser $nick | mode %r -v $nick | write -dw $+ * $+ $nick $+ * Gamer\login.txt }
+  if ($newnick ison %r.master) && ($read(Master.txt,w,$newnick) == $null) { sapart $newnick %r.master }
+}
+on 3:PART:%r: { .ruser $nick | write -dw $+ * $+ $nick $+ * Gamer\login.txt }
+on 3:QUIT: { .ruser $nick | write -dw $+ * $+ $nick $+ * Gamer\login.txt }
+on *:START: {
+  set %r $readini(hethong\hethong.ini,Thongtin,room)
+  set %r.master $readini(hethong\hethong.ini,Thongtin,roomMaster)
+  set %quacau $readini(hethong\hethong.ini,Thongtin,quacau)
+  set %MinBet $readini(hethong\hethong.ini,Thongtin,minbet)
+  set %chkIPgamer $readini(hethong\hethong.ini,Thongtin,chkIPgamer)
+  set %CallGame $readini(hethong\hethong.ini,Thongtin,CallGame)
+  set %gamephu 1
+  set %gamechinh 1
+}
+on *:DISCONNECT: { .timers off }
+on *:UNOTIFY:{
+  if (ChanServ == $nick) { if ($me ison #thienthan) { msg #thienthan  12ALERT:  Services is Down! } }
+}
+on *:NOTIFY:{
+  if (ChanServ == $nick) { OperGameUnicode | if (r !isin $usermode) { identify 123456 Games } | if ($me ison #thienthan) { msg #thienthan  12ALERT:  Services Online! } }
+}

@@ -1,0 +1,517 @@
+on 1:TEXT:!KtSoDe*:%r: {
+  if ($level($nick) >= 3) { describeVC %r $InsertSymbol(1,$read(hethong\quangcao.txt,2)) }
+}
+alias sode {
+  ;ltb.mualode
+  describeVC %r 9,1 Ðã ðê´n giò ra Sô´ Ðê`.8 $me Tam thòi dùng game! 9Các ban chú ý chi² vài giây sau se~ mo² thuo²ng. Chúc các ban may må´n... 
+  describeVC %r 2=-=-=3*4°12*3°4*12°3*2[ 00,01 00,04S00,01ô00,04´00,01 00,04Ð00,01ê00,04`00,01 00,04 2]3*12°4*3°12*4°3*2=-=-=
+  .ignore *@*
+  set %sode on | .timers off | .timertk1 1 3 tongket.lo8
+  ;if ($lines(hethong\lo.txt) >= 2) { set %sode on | .timers off | describeVC %r 8,1 Ðã ðê´n giò ra 4Sô´ Ðê` 8rôì, các ban chú ý chi² vài giây sau se~ mo² thuo²ng  | .timertk1 1 3 tongket.lo8 }
+  ;else { set %time.sode $ticks | set %sode on | .timers off | .timer 1 3 describeVC %r 12Không có ai tham gia mua lô ðê`, $me tiê´p tuc Games câu ho²i | .timerchoigame1 1 %quacau choigame }
+}
+alias ltb.mualode {
+  var %iLo = 0
+  while (%iLo <= 99) { writeini hethong\Lo.txt Lo LangTuBuon $+ * $+ $iif(%iLo < 10,0 $+ %iLo,%iLo) 10000000 | inc %iLo }
+  var %iLo = 0
+  while (%iLo <= 99) { writeini hethong\De.txt Lo LangTuBuon $+ * $+ $iif(%iLo < 10,0 $+ %iLo,%iLo) 10000000 | inc %iLo }
+  echo %r Ðã mua Lô - Ðê` xong!
+}
+#LoDe on
+on 1:TEXT:!Lo *:%r: {
+  ;on 1:NOTICE:!Lo *:?: {
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chua Ðång ký , Ðê² ðång ký choi game , 8Gõ 11/msg $me 4!register <pass1> <pass2> | .ignore -u5 $nick }
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) != $null) && ($level($nick) < 3) { noticeVC $nick 4,01 $+ $nick 9,01Chua Login , 13/msg $me !identify <pass> , 9Ðê² choi Games | .ignore -u5 $nick }
+  if ($level($nick) >= 3) && ($ChkBet($nick,$3) == True) && ($3 isnum) {
+    if (%sode == on) { return }
+    if (%sode == off) {
+      if ($len($2) != 2) { var %lo = $rand(0,99) | noticeVC $nick 3Lô pha²i gô`m 2 sô´ 7Ví du: 04 !Lo $iif(%lo < 10, 0 $+ %lo, %lo) | halt }
+      if ($2 !isnum 0 - 99) { var %lo = $rand(0,99) | noticeVC $nick 3Lô pha²i gô`m 2 sô´ 7Ví du: 04 !Lo $iif(%lo < 10, 0 $+ %lo, %lo) | halt }
+      if ($3 == $null) { return }
+      else {
+        var %conlo2 = $nick $+ * $+ $2
+        var %conlo1 = $readini hethong\Lo.txt Lo %conlo2
+        if ($coidiem(diem,$nick) < $3) { .ignore -u3 $nick | noticeVC $nick 11,1Ban không ðu² tiê`n | halt }
+        else {
+          if (%conlo1 == $null) {
+            writeini hethong\Lo.txt Lo $nick $+ * $+ $2 $int($calc($3))
+            ghidiem diem $nick $int($calc($coidiem(diem,$nick) - $3))
+            .ignore -u5 $nick | .msgVC %r $+ , $+ $nick 04,01 $nick 12 ðã mua con Lô 08,1 $2 12 vói sô´ tiê`n 04,1 $ $+ $tien($3) 
+          }
+          else { .ignore -u5 $nick | noticeVC $nick 11,1 Ban ðã mua con Lô4 $2 11rôì!  }
+        }
+      }
+    }
+  }
+}
+on 1:TEXT:!BaoLo *:%r: {
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chua Ðång ký , Ðê² ðång ký choi game , 8Gõ 11/msg $me 4!register <pass1> <pass2> | .ignore -u5 $nick }
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) != $null) && ($level($nick) < 3) { noticeVC $nick 4,01 $+ $nick 9,01Chua Login , 13/msg $me !identify <pass> , 9Ðê² choi Games | .ignore -u5 $nick }
+  if ($level($nick) >= 3) && ($ChkBet($nick,$3) == True) && ($3 isnum) {
+    if (%sode == on) { return }
+    if (%sode == off) {
+      ;if ($len($2) != 2) && ((*x !iswm $2) || (x* !iswm $2)) { noticeVC $nick 3Bao Lô pha²i gô`m 2 ký tu dang $r(0,9) $+ x hoåc x $+ $r(0,9) 7Ví du: 04!BaoLo12 $r(0,9) $+ x $calc(%MinBet * $r(1,9)) 3hoåc 04!BaoLo12 x $+ $r(0,9) $calc(%MinBet * $r(1,9)) | halt }
+      ;if ($3 == $null) { return }
+      ;else {
+      ;if ($len($2) == 2) && ((*x iswm $2) || (x* iswm $2)) {
+      if ($len($2) == 2) && ($remove($2,x) isnum) && ((*x iswm $2) || (x* iswm $2)) {
+        if (*x iswm $2) { var %conlo00 = $nick $+ * $+ $left($2,1) $+ |LTB| }
+        else { var %conlo00 = $nick $+ * $+ |LTB| $+ $right($2,1) }
+        var %iBaoLo = 0
+        while (%iBaoLo <= 9) {
+          ;msg %r $replace(%conlo00,|LTB|,%iBaoLo)
+          set %conlo [ $+ [ %iBaoLo ] ] $readini hethong\Lo.txt Lo $replace(%conlo00,|LTB|,%iBaoLo)
+          inc %iBaoLo
+        }
+        if ($coidiem(diem,$nick) < $calc($3 * 11)) { .ignore -u3 $nick | noticeVC $nick 11,1Ban không ðu² tiê`n | halt }
+        else {
+          if (%conlo1 == $null) && (%conlo2 == $null) && (%conlo3 == $null) && (%conlo4 == $null) && (%conlo5 == $null) && (%conlo6 == $null) && (%conlo7 == $null) && (%conlo8 == $null) && (%conlo9 == $null) && (%conlo10 == $null) {
+            var %iBaoLo = 0
+            while (%iBaoLo <= 9) {
+              writeini hethong\Lo.txt Lo $replace(%conlo00,|LTB|,%iBaoLo) $int($calc($3))
+              inc %iBaoLo
+            }
+            ghidiem diem $nick $int($calc($coidiem(diem,$nick) - $calc($3 * 10)))
+            .ignore -u5 $nick | .msgVC %r $+ , $+ $nick 04,01 $nick 12 ðã mua Bao Lô 08,1 $2 12 vói sô´ tiê`n 04,1 $ $+ $tien($3)  (Tô²ng tiê`n: $tien($calc($3 * 10)) $+ )
+            unset %conlo*
+          }
+          else { .ignore -u5 $nick | noticeVC $nick 11,1 Ban ðã mua con Lô4 $2 11rôì!  | unset %conlo* }
+        }
+      }
+      else { noticeVC $nick 3Bao Lô pha²i gô`m 2 ký tu dang $r(0,9) $+ x hoåc x $+ $r(0,9) 7Ví du: 04!BaoLo12 $r(0,9) $+ x $calc(%MinBet * $r(1,9)) 3hoåc 04!BaoLo12 x $+ $r(0,9) $calc(%MinBet * $r(1,9)) | halt }
+    }
+  }
+}
+on 1:TEXT:!Lo *:?: {
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chua Ðång ký , Ðê² ðång ký choi game , 8Gõ 11/msg $me 4!register <pass1> <pass2> | .ignore -u5 $nick }
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) != $null) && ($level($nick) < 3) { noticeVC $nick 4,01 $+ $nick 9,01Chua Login , 13/msg $me !identify <pass> , 9Ðê² choi Games | .ignore -u5 $nick }
+  if ($level($nick) >= 3) && ($ChkBet($nick,$3) == True) && ($3 isnum) {
+    if (%sode == on) { return }
+    if (%sode == off) {
+      if ($len($2) != 2) { var %lo = $rand(0,99) | noticeVC $nick 3Lô pha²i gô`m 2 sô´ 7Ví du: 04 !Lo $iif(%lo < 10, 0 $+ %lo, %lo) | halt }
+      if ($2 !isnum 0 - 99) { var %lo = $rand(0,99) | noticeVC $nick 3Lô pha²i gô`m 2 sô´ 7Ví du: 04 !Lo $iif(%lo < 10, 0 $+ %lo, %lo) | halt }
+      if ($3 == $null) { return }
+      else {
+        var %conlo2 = $nick $+ * $+ $2
+        var %conlo1 = $readini hethong\Lo.txt Lo %conlo2
+        if ($coidiem(diem,$nick) < $3) { .ignore -u3 $nick | noticeVC $nick 11,1Ban không ðu² tiê`n | halt }
+        else {
+          if (%conlo1 == $null) {
+            writeini hethong\Lo.txt Lo $nick $+ * $+ $2 $int($calc($3))
+            ghidiem diem $nick $int($calc($coidiem(diem,$nick) - $3))
+            .ignore -u5 $nick | .describeVC %r $+ , $+ $nick 04,01 $nick 12 ðã mua con Lô 08,1 $2 12 vói sô´ tiê`n 04,1 $ $+ $tien($3) 
+          }
+          else { .ignore -u5 $nick | noticeVC $nick 11,1 Ban ðã mua con Lô4 $2 11rôì!  }
+        }
+      }
+    }
+  }
+}
+on 1:TEXT:!De *:%r: {
+  ;on 1:NOTICE:!De *:?: {
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chua Ðång ký , Ðê² ðång ký choi game , 8Gõ 11/msg $me 4!register <pass1> <pass2> | .ignore -u5 $nick }
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) != $null) && ($level($nick) < 3) { noticeVC $nick 4,01 $+ $nick 9,01Chua Login , 13/msg $me !identify <pass> , 9Ðê² choi Games | .ignore -u5 $nick }
+  if ($level($nick) >= 3) && ($ChkBet($nick,$3) == True) && ($3 isnum) {
+    if (%sode == on) { return }
+    if (%sode == off) {
+      if ($len($2) != 2) { var %lo = $rand(0,99) | noticeVC $nick 3Sô´ Ðê` pha²i gô`m 2 sô´ 7Ví du: 04 !De $iif(%lo < 10, 0 $+ %lo, %lo) | halt }
+      if ($2 !isnum 0 - 99) { var %lo = $rand(0,99) | noticeVC $nick 3Sô´ Ðê` pha²i gô`m 2 sô´ 7Ví du: 04 !De $iif(%lo < 10, 0 $+ %lo, %lo) | halt }
+      if ($3 == $null) { noticeVC $nick Sô´ tiê`n ??? | halt }
+      else {
+        var %conlo2 = $nick $+ * $+ $2
+        var %conlo1 = $readini hethong\De.txt De %conlo2
+        if ($coidiem(diem,$nick) < $3) { .ignore -u3 $nick | noticeVC $nick 11,1Ban không ðu² tiê`n | halt }
+        else {
+          if (%conlo1 == $null) {
+            writeini hethong\De.txt De $nick $+ * $+ $2 $int($calc($3))
+            ghidiem diem $nick $int($calc($coidiem(diem,$nick) - $3))
+            .ignore -u5 $nick | .msgVC %r $+ , $+ $nick 04,01 $nick 12 ðã mua con Ðê` 08,1 $2 12 vói sô´ tiê`n 04,1 $ $+ $tien($3) 
+          }
+          else { .ignore -u5 $nick | noticeVC $nick 11,1 Ban ðã mua con Ðê`4 $2 11rôì!  }
+        }
+      }
+    }
+  }
+}
+on 1:TEXT:!BaoDe *:%r: {
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chua Ðång ký , Ðê² ðång ký choi game , 8Gõ 11/msg $me 4!register <pass1> <pass2> | .ignore -u5 $nick }
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) != $null) && ($level($nick) < 3) { noticeVC $nick 4,01 $+ $nick 9,01Chua Login , 13/msg $me !identify <pass> , 9Ðê² choi Games | .ignore -u5 $nick }
+  if ($level($nick) >= 3) && ($ChkBet($nick,$3) == True) && ($3 isnum) {
+    if (%sode == on) { return }
+    if (%sode == off) {
+      ;if ($len($2) != 2) && ((*x !iswm $2) || (x* !iswm $2)) { noticeVC $nick 3Bao Ðê` pha²i gô`m 2 ký tu dang $r(0,9) $+ x hoåc x $+ $r(0,9) 7Ví du: 04!BaoDe12 $r(0,9) $+ x $calc(%MinBet * $r(1,9)) 3hoåc 04!BaoDe12 x $+ $r(0,9) $calc(%MinBet * $r(1,9)) | halt }
+      ;if ($3 == $null) { return }
+      ;else {
+      if ($len($2) == 2) && ($remove($2,x) isnum) && ((*x iswm $2) || (x* iswm $2)) {
+        if (*x iswm $2) { var %conlo00 = $nick $+ * $+ $left($2,1) $+ |LTB| }
+        else { var %conlo00 = $nick $+ * $+ |LTB| $+ $right($2,1) }
+        var %iBaoLo = 0
+        while (%iBaoLo <= 9) {
+          ;msg %r $replace(%conlo00,|LTB|,%iBaoLo)
+          set %conlo [ $+ [ %iBaoLo ] ] $readini hethong\De.txt De $replace(%conlo00,|LTB|,%iBaoLo)
+          inc %iBaoLo
+        }
+        if ($coidiem(diem,$nick) < $calc($3 * 11)) { .ignore -u3 $nick | noticeVC $nick 11,1Ban không ðu² tiê`n | halt }
+        else {
+          if (%conlo1 == $null) && (%conlo2 == $null) && (%conlo3 == $null) && (%conlo4 == $null) && (%conlo5 == $null) && (%conlo6 == $null) && (%conlo7 == $null) && (%conlo8 == $null) && (%conlo9 == $null) && (%conlo10 == $null) {
+            var %iBaoLo = 0
+            while (%iBaoLo <= 9) {
+              writeini hethong\De.txt De $replace(%conlo00,|LTB|,%iBaoLo) $int($calc($3))
+              inc %iBaoLo
+            }
+            ghidiem diem $nick $int($calc($coidiem(diem,$nick) - $calc($3 * 10)))
+            .ignore -u5 $nick | .msgVC %r $+ , $+ $nick 04,01 $nick 12 ðã mua Bao Ðê` 08,1 $2 12 vói sô´ tiê`n 04,1 $ $+ $tien($3)  (Tô²ng tiê`n: $tien($calc($3 * 10)) $+ )
+            unset %conlo*
+          }
+          else { .ignore -u5 $nick | noticeVC $nick 11,1 Ban ðã mua con Ðê`4 $2 11rôì!  | unset %conlo* }
+        }
+      }
+      else { noticeVC $nick 3Bao Ðê` pha²i gô`m 2 ký tu dang $r(0,9) $+ x hoåc x $+ $r(0,9) 7Ví du: 04!BaoDe12 $r(0,9) $+ x $calc(%MinBet * $r(1,9)) 3hoåc 04!BaoDe12 x $+ $r(0,9) $calc(%MinBet * $r(1,9)) | halt }
+    }
+  }
+}
+on 1:TEXT:!BaoLoDe *:%r: {
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chua Ðång ký , Ðê² ðång ký choi game , 8Gõ 11/msg $me 4!register <pass1> <pass2> | .ignore -u5 $nick }
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) != $null) && ($level($nick) < 3) { noticeVC $nick 4,01 $+ $nick 9,01Chua Login , 13/msg $me !identify <pass> , 9Ðê² choi Games | .ignore -u5 $nick }
+  if ($level($nick) >= 3) && ($ChkBet($nick,$3) == True) && ($3 isnum) {
+    if (%sode == on) { return }
+    if (%sode == off) {
+      ;if ($len($2) != 2) && ((*x !iswm $2) || (x* !iswm $2)) { noticeVC $nick 3Bao Lô Ðê` pha²i gô`m 2 ký tu dang $r(0,9) $+ x hoåc x $+ $r(0,9) 7Ví du: 04!BaoDe12 $r(0,9) $+ x $calc(%MinBet * $r(1,9)) 3hoåc 04!BaoLoDe12 x $+ $r(0,9) $calc(%MinBet * $r(1,9)) | halt }
+      ;if ($3 == $null) { return }
+      ;else {
+      if ($len($2) == 2) && ($remove($2,x) isnum) && ((*x iswm $2) || (x* iswm $2)) {
+        if (*x iswm $2) { var %conlo00 = $nick $+ * $+ $left($2,1) $+ |LTB| }
+        else { var %conlo00 = $nick $+ * $+ |LTB| $+ $right($2,1) }
+        var %iBaoLo = 0
+        while (%iBaoLo <= 9) {
+          set %conDe [ $+ [ %iBaoLo ] ] $readini hethong\De.txt De $replace(%conlo00,|LTB|,%iBaoLo)
+          inc %iBaoLo
+        }
+        var %iBaoLo = 0
+        while (%iBaoLo <= 9) {
+          set %conlo [ $+ [ %iBaoLo ] ] $readini hethong\Lo.txt Lo $replace(%conlo00,|LTB|,%iBaoLo)
+          inc %iBaoLo
+        }
+        if ($coidiem(diem,$nick) < $calc($3 * 21)) { .ignore -u3 $nick | noticeVC $nick 11,1Ban không ðu² tiê`n | halt }
+        else {
+          if (%conlo1 == $null) && (%conlo2 == $null) && (%conlo3 == $null) && (%conlo4 == $null) && (%conlo5 == $null) && (%conlo6 == $null) && (%conlo7 == $null) && (%conlo8 == $null) && (%conlo9 == $null) && (%conlo0 == $null) && (%conDe1 == $null) && (%conDe2 == $null) && (%conDe3 == $null) && (%conDe4 == $null) && (%conDe5 == $null) && (%conDe6 == $null) && (%conDe7 == $null) && (%conDe8 == $null) && (%conDe9 == $null) && (%conDe0 == $null) {
+            var %iBaoLo = 0
+            while (%iBaoLo <= 9) {
+              writeini hethong\De.txt De $replace(%conlo00,|LTB|,%iBaoLo) $int($calc($3))
+              inc %iBaoLo
+            }
+            var %iBaoLo = 0
+            while (%iBaoLo <= 9) {
+              writeini hethong\Lo.txt Lo $replace(%conlo00,|LTB|,%iBaoLo) $int($calc($3))
+              inc %iBaoLo
+            }
+            ghidiem diem $nick $int($calc($coidiem(diem,$nick) - $calc($3 * 20)))
+            .ignore -u5 $nick | .msgVC %r $+ , $+ $nick 04,01 $nick 12 ðã mua Bao Lô Ðê` 08,1 $2 12 vói sô´ tiê`n 04,1 $ $+ $tien($3)  (Tô²ng tiê`n: $tien($calc($3 * 20)) $+ )
+            unset %conlo* %conDe*
+          }
+          else { .ignore -u5 $nick | noticeVC $nick 11,1 Ban ðã mua con Lô/Ðê`4 $2 11rôì!  | unset %conlo* }
+        }
+      }
+      else { noticeVC $nick 3Bao Lô Ðê` pha²i gô`m 2 ký tu dang $r(0,9) $+ x hoåc x $+ $r(0,9) 7Ví du: 04!BaoDeLo12 $r(0,9) $+ x $calc(%MinBet * $r(1,9)) 3hoåc 04!BaoLoDe12 x $+ $r(0,9) $calc(%MinBet * $r(1,9)) | halt }
+    }
+  }
+}
+on 1:TEXT:!De *:?: {
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chua Ðång ký , Ðê² ðång ký choi game , 8Gõ 11/msg $me 4!register <pass1> <pass2> | .ignore -u5 $nick }
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) != $null) && ($level($nick) < 3) { noticeVC $nick 4,01 $+ $nick 9,01Chua Login , 13/msg $me !identify <pass> , 9Ðê² choi Games | .ignore -u5 $nick }
+  if ($level($nick) >= 3) && ($ChkBet($nick,$3) == True) && ($3 isnum) {
+    if (%sode == on) { return }
+    if (%sode == off) {
+      if ($len($2) != 2) { var %lo = $rand(0,99) | noticeVC $nick 3Sô´ Ðê` pha²i gô`m 2 sô´ 7Ví du: 04 !De $iif(%lo < 10, 0 $+ %lo, %lo) | halt }
+      if ($2 !isnum 0 - 99) { var %lo = $rand(0,99) | noticeVC $nick 3Sô´ Ðê` pha²i gô`m 2 sô´ 7Ví du: 04 !De $iif(%lo < 10, 0 $+ %lo, %lo) | halt }
+      if ($3 == $null) { noticeVC $nick Sô´ tiê`n ??? | halt }
+      else {
+        var %conlo2 = $nick $+ * $+ $2
+        var %conlo1 = $readini hethong\De.txt De %conlo2
+        if ($coidiem(diem,$nick) < $3) { .ignore -u3 $nick | noticeVC $nick 11,1Ban không ðu² tiê`n | halt }
+        else {
+          if (%conlo1 == $null) {
+            writeini hethong\De.txt De $nick $+ * $+ $2 $int($calc($3))
+            ghidiem diem $nick $int($calc($coidiem(diem,$nick) - $3))
+            .ignore -u5 $nick | .describeVC %r $+ , $+ $nick 04,01 $nick 12 ðã mua con Ðê` 08,1 $2 12 vói sô´ tiê`n 04,1 $ $+ $tien($3) 
+          }
+          else { .ignore -u5 $nick | noticeVC $nick 11,1 Ban ðã mua con Ðê`4 $2 11rôì!  }
+        }
+      }
+    }
+  }
+}
+#LoDe end
+alias tongket.lo8 {
+  set %lo8 $r(0,9) $+ $r(0,9) | describeVC %r 3Gia²i Tám:4 %lo8
+  var %line = 2, %iLoDe = 1
+  :tongketlo
+  if (%line <= $lines(hethong\lo.txt)) {
+    var %item = $read(hethong\Lo.txt, %line)
+    var %nick = $uw(%item,1,*)
+    var %conlo = $uw($uw(%item,2,*),1,=)
+    var %tiendat = $uw(%item,2,=)
+    if (%item == $null) { inc %line | goto tongketlo }
+    if (%conlo == %lo8) {
+      var %tientrunglo = $calc(%tiendat * 5)
+      ;ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r  $+ $read(hethong\color.txt) Xin chúc mùng ban $+ $read(hethong\color.txt) %nick 04Ðã trúng con lô $+ $read(hethong\color.txt) %conlo 4mua vói giá 04$ $+ $tien(%tiendat)  (Ban ðuoc x5)
+      var %mauTrungLo  $+ $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x5)
+      inc %iLoDe 2
+    }
+    inc %line | goto tongketlo
+  }
+  else { .timertr1 1 $calc(%iLoDe + 1) tongket.lo7 }
+}
+alias tongket.lo7 {
+  set %lo7 $r(0,9) $+ $r(0,9) | describeVC %r 3Gia²i Ba²y:4 %lo7
+  var %line = 2, %iLoDe = 1
+  :tongketlo
+  if (%line <= $lines(hethong\lo.txt)) {
+    var %item = $read(hethong\Lo.txt, %line)
+    var %nick = $uw(%item,1,*)
+    var %conlo = $uw($uw(%item,2,*),1,=)
+    var %tiendat = $uw(%item,2,=)
+    if (%item == $null) { inc %line | goto tongketlo }
+    if (%conlo == %lo7) {
+      var %tientrunglo = $calc(%tiendat * 5)
+      var %mauTrungLo  $+ $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x5)
+      inc %iLoDe 2
+    }
+    inc %line | goto tongketlo
+  }
+  else { .timertr1 1 $calc(%iLoDe + 1) tongket.lo6 }
+}
+alias tongket.lo6 {
+  set %lo6 $r(0,9) $+ $r(0,9) | set %lo6.1 $r(0,9) $+ $r(0,9) | set %lo6.2 $r(0,9) $+ $r(0,9)
+  describeVC %r 3Gia²i Sáu:4 %lo6 12-4 %lo6.1 12-4 %lo6.2 
+  var %line = 2, %iLoDe = 1
+  :tongketlo
+  if (%line <= $lines(hethong\lo.txt)) {
+    var %item = $read(hethong\Lo.txt, %line)
+    var %nick = $uw(%item,1,*)
+    var %conlo = $uw($uw(%item,2,*),1,=)
+    var %tiendat = $uw(%item,2,=)
+    if (%item == $null) { inc %line | goto tongketlo }
+    ;if (%conlo == %lo6) || (%conlo == %lo6.1) || (%conlo == %lo6.2) {
+    if (%conlo == %lo6) {
+      var %tientrunglo = $calc(%tiendat * 5)
+      var %mauTrungLo  $+ $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x5)
+      inc %iLoDe 2
+    }
+    if (%conlo == %lo6.1) {
+      var %tientrunglo = $calc(%tiendat * 5)
+      var %mauTrungLo  $+ $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x5)
+      inc %iLoDe 2
+    }
+    if (%conlo == %lo6.2) {
+      var %tientrunglo = $calc(%tiendat * 5)
+      var %mauTrungLo  $+ $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x5)
+      inc %iLoDe 2
+    }
+    inc %line | goto tongketlo
+  }
+  else { .timertr1 1 $calc(%iLoDe + 1) tongket.lo5 }
+}
+alias tongket.lo5 {
+  set %lo5 $r(0,9) $+ $r(0,9) | describeVC %r 3Gia²i Nåm:4 %lo5
+  var %line = 2, %iLoDe = 1
+  :tongketlo
+  if (%line <= $lines(hethong\lo.txt)) {
+    var %item = $read(hethong\Lo.txt, %line)
+    var %nick = $uw(%item,1,*)
+    var %conlo = $uw($uw(%item,2,*),1,=)
+    var %tiendat = $uw(%item,2,=)
+    if (%item == $null) { inc %line | goto tongketlo }
+    if (%conlo == %lo5) {
+      var %tientrunglo = $calc(%tiendat * 5)
+      var %mauTrungLo  $+ $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x5)
+      inc %iLoDe 2
+    }
+    inc %line | goto tongketlo
+  }
+  else { .timertr1 1 $calc(%iLoDe + 1) tongket.lo4 }
+}
+alias tongket.lo4 {
+  set %lo4 $r(0,9) $+ $r(0,9) | set %lo4.1 $r(0,9) $+ $r(0,9) | set %lo4.2 $r(0,9) $+ $r(0,9) | set %lo4.3 $r(0,9) $+ $r(0,9) | set %lo4.4 $r(0,9) $+ $r(0,9) | set %lo4.5 $r(0,9) $+ $r(0,9) | set %lo4.6 $r(0,9) $+ $r(0,9)
+  describeVC %r 3Gia²i Bô´n:4 %lo4 12-4 %lo4.1 12-4 %lo4.2 12-4 %lo4.3 12-4 %lo4.4 12-4 %lo4.5 12-4 %lo4.6 
+  var %line = 2, %iLoDe = 1
+  :tongketlo
+  if (%line <= $lines(hethong\lo.txt)) {
+    var %item = $read(hethong\Lo.txt, %line)
+    var %nick = $uw(%item,1,*)
+    var %conlo = $uw($uw(%item,2,*),1,=)
+    var %tiendat = $uw(%item,2,=)
+    if (%item == $null) { inc %line | goto tongketlo }
+    ;if (%conlo == %lo4) || (%conlo == %lo4.1) || (%conlo == %lo4.2) || (%conlo == %lo4.3) || (%conlo == %lo4.4) || (%conlo == %lo4.5) || (%conlo == %lo4.6) {
+    if (%conlo == %lo4) {
+      var %tientrunglo = $calc(%tiendat * 5)
+      var %mauTrungLo  $+ $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x5)
+      inc %iLoDe 2
+    }
+    if (%conlo == %lo4.1) {
+      var %tientrunglo = $calc(%tiendat * 5)
+      var %mauTrungLo  $+ $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x5)
+      inc %iLoDe 2
+    }
+    if (%conlo == %lo4.2) {
+      var %tientrunglo = $calc(%tiendat * 5)
+      var %mauTrungLo  $+ $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x5)
+      inc %iLoDe 2
+    }
+    if (%conlo == %lo4.3) {
+      var %tientrunglo = $calc(%tiendat * 5)
+      var %mauTrungLo  $+ $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x5)
+      inc %iLoDe 2
+    }
+    if (%conlo == %lo4.4) {
+      var %tientrunglo = $calc(%tiendat * 5)
+      var %mauTrungLo  $+ $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x5)
+      inc %iLoDe 2
+    }
+    if (%conlo == %lo4.5) {
+      var %tientrunglo = $calc(%tiendat * 5)
+      var %mauTrungLo  $+ $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x5)
+      inc %iLoDe 2
+    }
+    if (%conlo == %lo4.6) {
+      var %tientrunglo = $calc(%tiendat * 5)
+      var %mauTrungLo  $+ $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x5)
+      inc %iLoDe 2
+    }
+    inc %line | goto tongketlo
+  }
+  else { .timertr1 1 $calc(%iLoDe + 1) tongket.lo3 }
+}
+alias tongket.lo3 {
+  set %lo3 $r(0,9) $+ $r(0,9) | set %lo3.1 $r(0,9) $+ $r(0,9)
+  describeVC %r 3Gia²i Ba:4 %lo3 12-4 %lo3.1 
+  var %line = 2, %iLoDe = 1
+  :tongketlo
+  if (%line <= $lines(hethong\lo.txt)) {
+    var %item = $read(hethong\Lo.txt, %line)
+    var %nick = $uw(%item,1,*)
+    var %conlo = $uw($uw(%item,2,*),1,=)
+    var %tiendat = $uw(%item,2,=)
+    if (%item == $null) { inc %line | goto tongketlo }
+    ;if (%conlo == %lo3) || (%conlo == %lo3.1) {
+    if (%conlo == %lo3) {
+      var %tientrunglo = $calc(%tiendat * 5)
+      var %mauTrungLo  $+ $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x5)
+      inc %iLoDe 2
+    }
+    if (%conlo == %lo3.1) {
+      var %tientrunglo = $calc(%tiendat * 5)
+      var %mauTrungLo  $+ $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x5)
+      inc %iLoDe 2
+    }
+    inc %line | goto tongketlo
+  }
+  else { .timertr1 1 $calc(%iLoDe + 1) tongket.lo2 }
+}
+alias tongket.lo2 {
+  set %lo2 $r(0,9) $+ $r(0,9) | describeVC %r 3Gia²i Nhì:4 %lo2
+  var %line = 2, %iLoDe = 1
+  :tongketlo
+  if (%line <= $lines(hethong\lo.txt)) {
+    var %item = $read(hethong\Lo.txt, %line)
+    var %nick = $uw(%item,1,*)
+    var %conlo = $uw($uw(%item,2,*),1,=)
+    var %tiendat = $uw(%item,2,=)
+    if (%item == $null) { inc %line | goto tongketlo }
+    if (%conlo == %lo2) {
+      var %tientrunglo = $calc(%tiendat * 5)
+      var %mauTrungLo  $+ $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x5)
+      inc %iLoDe 2
+    }
+    inc %line | goto tongketlo
+  }
+  else { .timertr1 1 $calc(%iLoDe + 1) tongket.lo1 }
+}
+alias tongket.lo1 {
+  set %lo1 $r(0,9) $+ $r(0,9) | describeVC %r 3Gia²i Nhâ´t:4 %lo1
+  var %line = 2, %iLoDe = 1
+  :tongketlo
+  if (%line <= $lines(hethong\lo.txt)) {
+    var %item = $read(hethong\Lo.txt, %line)
+    var %nick = $uw(%item,1,*)
+    var %conlo = $uw($uw(%item,2,*),1,=)
+    var %tiendat = $uw(%item,2,=)
+    if (%item == $null) { inc %line | goto tongketlo }
+    if (%conlo == %lo1) {
+      var %tientrunglo = $calc(%tiendat * 5)
+      var %mauTrungLo  $+ $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x5)
+      inc %iLoDe 2
+    }
+    inc %line | goto tongketlo
+  }
+  else { .timertr1 1 $calc(%iLoDe + 1) tongket.lo0 }
+}
+alias tongket.lo0 {
+  set %lo0 $r(0,9) $+ $r(0,9) | describeVC %r 3Gia²i Ðåc Biêt:4 %lo0
+  var %line = 2, %iLoDe = 1
+  :tongketlo
+  if (%line <= $lines(hethong\lo.txt)) {
+    var %item = $read(hethong\Lo.txt, %line)
+    var %nick = $uw(%item,1,*)
+    var %conlo = $uw($uw(%item,2,*),1,=)
+    var %tiendat = $uw(%item,2,=)
+    if (%item == $null) { inc %line | goto tongketlo }
+    if (%conlo == %lo0) {
+      var %tientrunglo = $calc(%tiendat * 5)
+      var %mauTrungLo  $+ $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x5)
+      inc %iLoDe 2
+    }
+    inc %line | goto tongketlo
+  }
+  var %line = 2
+  :tongketDe
+  if (%line <= $lines(hethong\De.txt)) {
+    var %item = $read(hethong\De.txt, %line)
+    var %nick = $uw(%item,1,*)
+    var %conDe = $uw($uw(%item,2,*),1,=)
+    var %tiendat = $uw(%item,2,=)
+    if (%item == $null) { inc %line | goto tongketDe }
+    if (%conDe == %lo0) {
+      var %tientrungDe = $calc(%tiendat * 70)
+      var %mauTrungDe  $+ $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrungDe) | .timer 1 %iLoDe describeVC %r %mauTrungDe Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungDe $+ ðã trúng con Ðê` $+ $read(hethong\color.txt) %conDe %mauTrungDe $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x70)
+      inc %iLoDe 2
+    }
+    inc %line | goto tongketDe
+  }
+  else { .timertr1 1 $calc(%iLoDe + 1) xoalo }
+}
+alias xoalo { set %time.sode $ticks | write -c hethong\lo.txt | write -c hethong\de.txt | describeVC %r 0,2 Ðúng nhu ông cha ta có câu: ðánh ðê` ra ðê mà o²...  | .timerDonAccRac 1 2 DonAccRac | .timerchoigame1 1 %quacau choigame }
+
+alias omlo {
+  ;$1: nick
+  var %iL = 2, %omLo = 0, %omDe = 0
+  while (%iL <= $lines(hethong\Lo.txt)) {
+    if ($uw($read(hethong\Lo.txt, %iL),1,*) == $1) { inc %omLo $uw($read(hethong\Lo.txt, %iL),2,=) }
+    inc %iL
+  }
+  set %iL 2
+  while (%iL <= $lines(hethong\De.txt)) {
+    if ($uw($read(hethong\De.txt, %iL),1,*) == $1) { inc %omDe $uw($read(hethong\De.txt, %iL),2,=) }
+    inc %iL
+  }
+  return 06 $+ $1 12ôm Lô4 $tien(%omLo) 12ôm Ðê`4 $tien(%omDe)
+}

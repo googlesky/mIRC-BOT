@@ -1,0 +1,86 @@
+alias xocdia {
+  set %xocdia.danh off
+  set %xocdia.chan Chan | set %xocdia.Le Le
+  set %xocdia1 $rand(1,2) | set %xocdia2 $rand(1,2) | set %xocdia3 $rand(1,2) | set %xocdia4 $rand(1,2)
+  set %xocdiatong $calc(%xocdia1 + %xocdia2 + %xocdia3 + %xocdia4)
+  if ($mod(%xocdiatong,2) == 0) { set %xocdia.dapan Chan }
+  else { set %xocdia.dapan Le }
+  if (%xocdia1 == %xocdia2) && (%xocdia2 == %xocdia3) && (%xocdia3 == %xocdia4) {
+    if (%xocdia1 == 1) { set %xocdia.dapan TuTuDen }
+    else { set %xocdia.dapan TuTuTrang }
+  }
+  describeVC %r 2=-=-=3¤412¤34¤123¤2[ $DenDo(Xóc Diã) 2]3¤124¤312¤43¤2=-=-=
+  .timerxocdia1 1 1 describeVC %r $InsertSymbol(1,Gõ -=[ 4!XocDia 7Chan hoåc 7Le hoåc 7TuTuTrang hoåc 7TuTuDen 3<Tiê`n> 7]=- ðê² choi Xóc Diã)
+  .timerxocdia2 1 41 describeVC %r 4Hê´t Giò Ðå.t Rút Tay Ra Nè Khui $DenDo(Xóc Diã)
+  .timerxocdia3 1 41 set %xocdia.danh on
+  .timerxocdia4 1 46 kiemtraxocdia
+  .timerxocdia5 1 3 noticeVC $iif(LangTuBuon ison %r,LangTuBuon) $+ , $+ $iif(LaNgTu ison %r,LaNgTu) $+ , $+ $iif(DrKhoQua ison %r,DrKhoQua) $+ , $+ $iif(DrKhoQua-AR ison %r,DrKhoQua-AR) $+ , $+ $iif(vuichat ison %r,vuichat) Xóc Diã: %xocdia1 %xocdia2 %xocdia3 %xocdia4 %xocdia.dapan
+}
+;$replace(,Chan,Chåñ,Le,Le~,TuTuTrang,TúTu²Trå´ng,TuTuDen,TúTu²Ðen)
+on 1:TEXT:!xocdia*:%r: {
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chua Ðång ký , Ðê² ðång ký choi game , 8Gõ 11/msg $me 4!register <pass1> <pass2> | .ignore -u5 $nick }
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) != $null) && ($level($nick) < 3) { noticeVC $nick 4,01 $+ $nick 9,01Chua Login , 13/msg $me !identify <pass> , 9Ðê² choi Games | .ignore -u5 $nick }
+  if (%xocdia.danh == on) || (%xocdia.danh == $null) { noticeVC $nick 12Ðang Không Có Trò $DenDo(Xóc Diã) 12Trong Lúc Này Hoå.c Ðang Choi | halt }
+  if ($2 == $null) || ($3 == $null) || ($3 !isnum) { noticeVC $nick 12Type Sai 4!XocDia 12Chan 7hoåc 12Le 7hoåc 12TuTuTrang 7hoåc 12TuTuDen 3<Tiê`n> | halt }
+  if ($3 <= 0) { noticeVC $nick Ðåt sai tiê`n rôì kung | halt }
+  if ($level($nick) >= 3) && ($ChkBet($nick,$3) == True) {
+    if ($2 == Chan) || ($2 == Le) || ($2 == TuTuTrang) || ($2 == TuTuDen) {
+      writeini -n hethong\xocdia.ini XocDia $+($nick,*,$2) $int($calc($3))
+      ghidiem diem $nick $calc($coidiem(diem,$nick) - $int($3))
+      describeVC %r 12 $+ $nick 3Ðã Ðåt $DenDo(Xóc Diã) 3Là 4-=[ 0,1 $replace($2,Chan,Chåñ,Le,Le~,TuTuTrang,TúTu²Trå´ng,TuTuDen,TúTu²Ðen)  4]=- 3Vói Sô´ Tiê`n Là 4-=[ 0,1 0$ $+ $tien($3)  4]=-
+      .ignore $nick
+    }
+    else { noticeVC $nick Ban ðã ðåt sai rôì 4!XocDia 12Chan 7hoåc 12Le 7hoåc 12TuTuTrang 7hoåc 12TuTuDen 3<Tiê`n> | halt }
+  }
+}
+
+alias kiemtraxocdia {
+  if ($lines(hethong\xocdia.ini) == 0) {
+    .timers off
+    describeVC %r 12Không Ai Choi Xóc Diã Nên Dùng Ta.i Ðây ...
+    .timergamez 1 %quacau choigame
+  }
+  else { xocdia_play }
+}
+alias xocdia_play {
+  .timerxocdia6 1 2 describeVC %r $DenDo(Xóc Diã) 4Lâ`n 0314: 4 -=[ $+ 12 %xocdia1  $+ 4]=-
+  .timerxocdia7 1 3 describeVC %r $DenDo(Xóc Diã) 4Lâ`n 0324: 4 -=[ $+ 12 %xocdia2  $+ 4]=-
+  .timerxocdia8 1 4 describeVC %r $DenDo(Xóc Diã) 4Lâ`n 0334: 4 -=[ $+ 12 %xocdia3  $+ 4]=-
+  .timerxocdia9 1 5 describeVC %r $DenDo(Xóc Diã) 4Lâ`n 0344: 4 -=[ $+ 12 %xocdia4  $+ 4]=-
+  .timerxocdia10 1 6 describeVC %r 3Kê't qua² $DenDo(Xóc Diã) $+ 3 lâ`n này là: 3-=[ 13,1 $replace(%xocdia.dapan,Chan,Chåñ,Le,Le~,TuTuTrang,TúTu²Trå´ng,TuTuDen,TúTu²Ðen)  3]=- 
+  .timerxocdia12 1 7 xocdia_tinhtien
+}
+
+alias xocdia_tinhtien {
+  var %line = 2, %tkXocDia = 1
+  var %color = $read(hethong\color.txt)
+  var %color1 = $read(hethong\color.txt)
+  :tongketxocdia
+  if (%line <= $lines(hethong\xocdia.ini)) {
+    var %item = $read(hethong\xocdia.ini, %line)
+    var %nick = $uw(%item,1,*)
+    var %trung = $uw($uw(%item,2,*),1,=)
+    var %tien = $uw($uw(%item,2,*),2,=)
+    if (%item == $null) { inc %line | goto tongketboica }
+    if (%trung == %xocdia.dapan) {
+      if (%xocdia.dapan == TuTuTrang) || (%xocdia.dapan == TuTuDen) { var %tienthuong = $calc(%tien * 10) }
+      else { var %tienthuong = $calc(%tien * 2) }
+      var %taisan = $coidiem(diem,%nick)
+      var %mau = $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tienthuong)
+      inc %tkXocDia | .timer 1 %tkXocDia describeVC %r 12Xin chúc mùng  $+ %color %nick  12ðã chon $replace(%trung,Chan,Chåñ,Le,Le~,TuTuTrang,TúTu²Trå´ng,TuTuDen,TúTu²Ðen) 04Thå´ng:  $+ %color $+ $ $+ $+ $tien(%tienthuong)  12Tài sa²n:  $+ %color $+ $ $+ $tien($coidiem(diem,%nick)) 
+      ;describeVC %r 4Xin chúc mùng ban: 9,1 -=[ $+ %mau %nick 9]=-  4Ðã trúng Xóc Diã.
+    }
+    else {
+      inc %tkXocDia | .timer 1 %tkXocDia describeVC %r 03Chia bùôn vói  $+ %color1 %nick  03ðã chon $replace(%trung,Chan,Chåñ,Le,Le~,TuTuTrang,TúTu²Trå´ng,TuTuDen,TúTu²Ðen) 03Thua:  $+ %color1 $+ $ $+ $+ $tien(%tien)  03Tài sa²n:  $+ %color1 $+ $ $+ $tien($coidiem(diem,%nick)) 
+    }
+    inc %line | goto tongketxocdia
+  }
+  else { inc %tkXocDia 2 | .timerboica24 1 %tkXocDia xoaxocdia }
+}
+alias xoaxocdia {
+  write -c hethong\xocdia.ini
+  describeVC %r 12Tam Biêt ! Hen Các Ban Vào Vòng Sau Nhé !
+  .timerboica25 1 %quacau choigame
+
+}

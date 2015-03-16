@@ -1,0 +1,99 @@
+alias baucua {
+  var %GameMini 01,01 00,04B00,01â00,04ù01,01 00,04C00,01u00,04a01,01 
+  .timerbaucua1 1 2 describeVC %r 2=-=-=3*4°12*3°4*12°3*2[ $InsertBC(%GameMini) 2]3*12°4*3°12*4°3*2=-=-=
+  .timerbaucua2 1 2 set %baucua on
+  .timerbaucua3 1 4 describeVC %r $InsertSymbol(1,Gõ 8-=[ 11 $+ $InsertBC(!BauCua) $+  08Bâù 08Cua 08Cá 08Tôm 08Nai 08Gà 08Dê 08Bò 08Cop 04<Tìên> 8]=- ðê² tham gia Bâù Cua! 09Ban 09có 09quyê`n 09ðång 09ký 09hê't 099 09con)
+  .timerbaucua4 1 44 set %baucua off
+  .timerbaucua5 1 44 describeVC %r 0,1 Ðã hê't thòi gian, chúng ta bå't ðâ`u xô'c bâ`u cua nghen (^_^) 
+  .timerbaucua6 1 45 baucua_play
+}
+;$replace(,bau,Bâù,cua,Cua,ca,Cá,tom,Tôm,nai,Nai,ga,Gà,de,Dê,bo,Bò,cop,Cop)
+on 1:TEXT:!baucua *:%r: {
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chua Ðång ký , Ðê² ðång ký choi game , 8Gõ 11/msg $me 4!register <pass1> <pass2> | .ignore -u5 $nick }
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) != $null) && ($level($nick) < 3) { noticeVC $nick 4,01 $+ $nick 9,01Chua Login , 13/msg $me !identify <pass> , 9Ðê² choi Games | .ignore -u5 $nick }
+  if ($level($nick) >= 3) && ($ChkBet($nick,$3) == True) {
+    if (%baucua == on) {
+      var %listbaucua = $read(hethong\listbaucua.txt,w,$2)
+      if (%listbaucua != $null) {
+        if ($3 > $coidiem(diem,$nick)) { noticeVC $nick 12* $nick không ðu² tiê`n ðåt | halt }
+        else {
+          if ($3 isnum) {
+            var %baucua2 = $nick $+ * $+ $2
+            var %baucua1 = $readini hethong\baucua.txt baucua %baucua2
+            if (%baucua1 == $null) {
+              var %mau = $read(hethong\color.txt)
+              writeini hethong\baucua.txt baucua $nick $+ * $+ $2 $int($calc($3))
+              ghidiem diem $nick $int($calc($coidiem(diem,$nick) - $3)) | describeVC %r 12* $nick Ðã tham gia Bâù Cua vói con:  $+ %mau $replace($2,bau,Bâù,cua,Cua,ca,Cá,tom,Tôm,nai,Nai,ga,Gà,de,Dê,bo,Bò,cop,Cop)  12Tìên:  $+ %mau $ $+ $tien($3) 
+            }
+            if (%baucua1 != $null) { describeVC %r 12Ban ðã ðåt con  $+ $read(hethong\color.txt) $replace($2,bau,Bâù,cua,Cua,ca,Cá,tom,Tôm,nai,Nai,ga,Gà,de,Dê,bo,Bò,cop,Cop)  12rôì }
+          }
+        }
+      }
+    }
+  }
+}
+alias baucua_play {
+  if ($lines(hethong\baucua.txt) >= 2) {
+    baucua_xo
+  }
+  else {
+    .timerbaucua7 1 2 describeVC %r 0,12 Không có ai tham gia choi Bâù Cua. Hen các ban vào lâ`n sau 
+    .timerbaucua8 1 %quacau choigame
+  }
+}
+alias baucua_xo {
+  set %baucua_trung1 $rand(1,9) | set %baucua_trung2 $rand(1,9) | set %baucua_trung3 $rand(1,9)
+  set %bc1 $read(hethong\listbaucua.txt,%baucua_trung1)
+  set %bc2 $read(hethong\listbaucua.txt,%baucua_trung2)
+  set %bc3 $read(hethong\listbaucua.txt,%baucua_trung3)
+  .timerbaucua9 1 2 describeVC %r 12L4o3c 5c6o10c 2l9o4c 7c13o12c 15l3o2c 10c5o6c 3.12.4.5.7.
+  .timerbaucua10 1 4 describeVC %r 12Xí ngâù thú4 1 12là con 0,1 -=[8 $replace(%bc1,bau,Bâù,cua,Cua,ca,Cá,tom,Tôm,nai,Nai,ga,Gà,de,Dê,bo,Bò,cop,Cop) 0]=- 
+  .timerbaucua11 1 6 describeVC %r 12Xí ngâù thú4 2 12là con 0,1 -=[8 $replace(%bc2,bau,Bâù,cua,Cua,ca,Cá,tom,Tôm,nai,Nai,ga,Gà,de,Dê,bo,Bò,cop,Cop) 0]=- 
+  .timerbaucua12 1 8 describeVC %r 12Xí ngâù thú4 3 12là con 0,1 -=[8 $replace(%bc3,bau,Bâù,cua,Cua,ca,Cá,tom,Tôm,nai,Nai,ga,Gà,de,Dê,bo,Bò,cop,Cop) 0]=- 
+  .timerbaucua13 1 9 baucua_tongket
+}
+alias baucua_tongket {
+  var %line = 2
+  var %iTKBauCua = 1
+  :tongketbaucua
+  if (%line <= $lines(hethong\baucua.txt)) {
+    var %item = $read(hethong\baucua.txt, %line)
+    var %nick = $uw(%item,1,*)
+    var %trung = $uw($uw(%item,2,*),1,=)
+    var %tien = $uw($uw(%item,2,*),2,=)
+    if (%item == $null) { inc %line | goto tongketbaucua }
+    ;if (%trung == %bc1) || (%trung == %bc2) || (%trung == %bc3) {
+    if (%trung == %bc1) {
+      var %tienthuong = $calc(%tien * 2)
+      var %taisan = $coidiem(diem,%nick)
+      var %mau = $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tienthuong)
+      .timer 1 %iTKBauCua describeVC %r 4Xin chúc mùng ban: 9,1 -=[  $+ %mau $+ %nick 9]=-  4Ðã trúng Bâù Cua!
+      inc %iTKBauCua
+    }
+    if (%trung == %bc2) {
+      var %tienthuong = $calc(%tien * 2)
+      var %taisan = $coidiem(diem,%nick)
+      var %mau = $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tienthuong)
+      .timer 1 %iTKBauCua describeVC %r 4Xin chúc mùng ban: 9,1 -=[  $+ %mau $+ %nick 9]=-  4Ðã trúng Bâù Cua!
+      inc %iTKBauCua
+    }
+    if (%trung == %bc3) {
+      var %tienthuong = $calc(%tien * 2)
+      var %taisan = $coidiem(diem,%nick)
+      var %mau = $read(hethong\color.txt)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tienthuong)
+      .timer 1 %iTKBauCua describeVC %r 4Xin chúc mùng ban: 9,1 -=[  $+ %mau $+ %nick 9]=-  4Ðã trúng Bâù Cua!
+      inc %iTKBauCua
+    }
+    inc %line | goto tongketbaucua
+  }
+  else { .timer 1 %iTKBauCua xoabaucua }
+}
+alias xoabaucua {
+  unset %bc* %baucua_trung*
+  write -c hethong\baucua.txt
+  describeVC %r 12Tam Biêt ! Hen Các Ban Vào Vòng Sau Nhé !
+  .timerbaucua15 1 %quacau choigame
+}

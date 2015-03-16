@@ -1,0 +1,2 @@
+on 1:disconnect: /nick GameOver | /server irc.netnamvn.net
+on 1:connect: {  .timer 1 2 /ns ghost Games 123456 | .timer 1 4 /nick Games | .timer 1 6 /identify 123456 | .timer 1 8 /part #vietnam,#saigonchat }

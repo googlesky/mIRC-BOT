@@ -1,0 +1,75 @@
+alias loto {
+  var %GameMini  1,1 00,04L00,01ô03,04 00,01T00,04ô01,01 
+  .timerloto1 1 2 describeVC %r 2=-=-=3*4°12*3°4*12°3*2[ $InsertBC(%GameMini) 2]3*12°4*3°12*4°3*2=-=-=
+  .timerloto2 1 3 set %loto on
+  .timerloto3 1 4 describeVC %r $InsertSymbol(1,Gõ 8-=[ 11 $+ $InsertBC(!LoTo) $+  091 09-=> 0930 4Tìên 8]=- ðê² tham gia 08Chú 08ý: ðåt 091 09ån 0930)
+  .timerloto4 1 44 set %loto off
+  .timerloto5 1 44 describeVC %r 4Hê´t giò chon rô`i! 3Chúng ta cùng nhau xem kê't qua² nhé!
+  .timerloto6 1 45 loto_play
+}
+on 1:TEXT:!loto *:%r: {
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chua Ðång ký , Ðê² ðång ký choi game , 8Gõ 11/msg $me 4!register <pass1> <pass2> | .ignore -u5 $nick }
+  ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) != $null) && ($level($nick) < 3) { noticeVC $nick 4,01 $+ $nick 9,01Chua Login , 13/msg $me !identify <pass> , 9Ðê² choi Games | .ignore -u5 $nick }
+  if ($level($nick) >= 3) && ($ChkBet($nick,$3) == True) {
+    if (%loto == on) {
+      if ($2 <= 30) && ($2 > 0) {
+        if ($3 > $coidiem(diem,$nick)) { noticeVC $nick 12* $nick không ðu² tiê`n ðåt | halt }
+        else {
+          if ($3 isnum) {
+            .ignore $nick
+            var %mau = $read(hethong\color.txt)
+            writeini hethong\loto.txt loto $nick $+ * $+ $2 $int($calc($3))
+            ghidiem diem $nick $int($calc($coidiem(diem,$nick) - $3)) | describeVC %r 12* $nick Ðã ðåt Lô Tô vói con sô' là:  $+ %mau $2  12và sô´ tiê`n là:  $+ %mau $ $+ $tien($3)  
+          }
+        }
+      }
+    }
+  }
+}
+alias loto_play {
+  if ($lines(hethong\loto.txt) >= 2) {
+    loto_xo
+  }
+  else {
+    .timerloto7 1 2 describeVC %r 0,12 Không có ai tham gia choi Lô Tô. Hen các ban vào lâ`n sau 
+    .timerloto8 1 %quacau choigame
+  }
+}
+alias loto_xo {
+  set %loto_trung $rand(1,30)
+  .timerloto9 1 2 describeVC %r 0,1Kê't qua² Lô Tô $chan hôm nay là con sô'........ 
+  .timerloto10 1 3 describeVC %r 4Con sô' Lô Tô hôm nay là con sô': 9,1 -=[0***4 %loto_trung 0***9]=- 
+  .timerloto11 1 4 loto_tinhtien
+}
+alias loto_tinhtien {
+  var %line = 2, %tkltlt 0
+  :tongketloto
+  if (%line <= $lines(hethong\loto.txt)) {
+    var %color = $read(hethong\color.txt)
+    var %item = $read(hethong\loto.txt, %line)
+    var %nick = $uw(%item,1,*)
+    var %trung = $uw($uw(%item,2,*),1,=)
+    var %tien = $uw($uw(%item,2,*),2,=)
+    if (%item == $null) { inc %line | goto tongketloto }
+    if (%trung == %loto_trung) {
+      var %bonus = $calc(%tien * 30)
+      var %taisan = $coidiem(diem,%nick)
+      ghidiem diem %nick $calc(%taisan + %bonus)
+      inc %tkltlt
+      .timer 1 %tkltlt describeVC %r 12-=[4 %nick 12]=- 3Ðã ðoán 8,1 Ðúng  con sô´ Lô Tô vòng này 13Thå´ng 4$ $+ $tien(%bonus) 12Tài sa²n: 4$ $+ $tien($calc(%taisan + %bonus))
+    }
+    if (%trung != %loto_trung) {
+      var %taisan = $coidiem(diem,%nick)
+      inc %tkltlt
+      .timer 1 %tkltlt describeVC %r 12-=[4 %nick 12]=- 3Ðã ðoán 8,1 SAI  con sô´ Lô Tô vòng này 13Thua 4$ $+ $tien(%tien) 12Tài sa²n: 4$ $+ $tien(%taisan)
+    }
+    inc %line | goto tongketloto
+  }
+  else { .timerloto12 1 $calc(%tkltlt + 3) xoaloto }
+}
+alias xoaloto {
+  unset %loto_trung
+  write -c hethong\loto.txt
+  describeVC %r 0,1 Ông cha ta có câu " 9Wánh ðê` ra ðê mà o²0 " qua² không sai tí nào ca² Hehehe :) 
+  .timerloto13 1 %quacau choigame
+}

@@ -1,0 +1,259 @@
+alias chungsuc {
+  unset %dapan*
+  .timers off
+  %tiê`n = $coidiem(Diem,$nick)
+  if (%tiê`n == $null) { set %tiê`n 0 }
+  if (%tiê`n >= 0) { .set %chucvu Gà Con | .set %luong 0 }
+  if (%tiê`n >= 20000) { .set %chucvu Tân Binh | .set %luong 100 }
+  if (%tiê`n >= 50000) { .set %chucvu Binh Nhì | .set %luong 300 }
+  if (%tiê`n >= 100000) { .set %chucvu Binh Nhâ't | .set %luong 500 }
+  if (%tiê`n >= 1000000) { .set %chucvu Ha Si~ | .set %luong 700 }
+  if (%tiê`n >= 5000000) { .set %chucvu Trung Si~ | .set %luong 1200 }
+  if (%tiê`n >= 9000000) { .set %chucvu Thuong Si~ | .set %luong 1900 }
+  if (%tiê`n >= 19000000) { .set %chucvu Chuâ²n Úy | .set %luong 3300 }
+  if (%tiê`n >= 25000000) { .set %chucvu Thiêú Úy | .set %luong 3900 }
+  if (%tiê`n >= 32000000) { .set %chucvu Trung Úy | .set %luong 3900 }
+  if (%tiê`n >= 37000000) { .set %chucvu Thuong Úy | .set %luong 4400 }
+  if (%tiê`n >= 41000000) { .set %chucvu Ðai Úy | .set %luong 4800 }
+  if (%tiê`n >= 57000000) { .set %chucvu Thiêú Tá | .set %luong 5100 }
+  if (%tiê`n >= 63000000) { .set %chucvu Trung Tá | .set %luong 5800 }
+  if (%tiê`n >= 71000000) { .set %chucvu Thuong Tá | .set %luong 6400 }
+  if (%tiê`n >= 87000000) { .set %chucvu Ðai Tá | .set %luong 7700 }
+  if (%tiê`n >= 110000000) { .set %chucvu Chuâ²n Tuóng | .set %luong 8800 }
+  if (%tiê`n >= 190000000) { .set %chucvu Thiêú Tuóng | .set %luong 9300 }
+  if (%tiê`n >= 260000000) { .set %chucvu Trung Tuóng | .set %luong 10300 }
+  if (%tiê`n >= 310000000) { .set %chucvu Thuong Tuóng | .set %luong 12300 }
+  if (%tiê`n >= 490000000) { .set %chucvu Ðai Tuóng | .set %luong 16100 }
+  if (%tiê`n >= 660000000) { .set %chucvu Thiêú Soái | .set %luong 19600 }
+  if (%tiê`n >= 750000000) { .set %chucvu Nguyên Soái | .set %luong 21000 }
+  if (%tiê`n >= 920000000) { .set %chucvu Ðai Nguyên Soái | .set %luong 24500 }
+  if (%tiê`n >= 1200000000) { .set %chucvu SUPER MAN | .set %luong 27300 }
+  var %mau = $read(hethong\color.txt)
+  var %rand = $lines(cauhoi\chungsuc.txt)
+  var %rand2 = $rand(1,%rand)
+  var %cauhoi = $read(cauhoi\chungsuc.txt,%rand2)
+  var %cauhoi.sehoi = $uw($uw(%cauhoi,1,*),1,/) 
+  ;set %dapancs14 $remove($uw($uw(%cauhoi,15,*),1,/),',`,*,+,$chr(40),^,$chr(46),?,~)
+  ;set %dapancs13 $remove($uw($uw(%cauhoi,14,*),1,/),',`,*,+,$chr(40),^,$chr(46),?,~)
+  ;set %dapancs12 $remove($uw($uw(%cauhoi,13,*),1,/),',`,*,+,$chr(40),^,$chr(46),?,~)
+  ;set %dapancs11 $remove($uw($uw(%cauhoi,12,*),1,/),',`,*,+,$chr(40),^,$chr(46),?,~)
+  ;set %dapancs1 $remove($uw($uw(%cauhoi,2,*),1,/),',`,*,+,$chr(40),^,$chr(46),?,~)
+  ;set %dapancs2 $remove($uw($uw(%cauhoi,3,*),1,/),',`,*,+,$chr(40),^,$chr(46),?,~)
+  ;set %dapancs3 $remove($uw($uw(%cauhoi,4,*),1,/),',`,*,+,$chr(40),^,$chr(46),?,~)
+  ;set %dapancs4 $remove($uw($uw(%cauhoi,5,*),1,/),',`,*,+,$chr(40),^,$chr(46),?,~)
+  ;set %dapancs5 $remove($uw($uw(%cauhoi,6,*),1,/),',`,*,+,$chr(40),^,$chr(46),?,~)
+  ;set %dapancs6 $remove($uw($uw(%cauhoi,7,*),1,/),',`,*,+,$chr(40),^,$chr(46),?,~)
+  ;set %dapancs7 $remove($uw($uw(%cauhoi,8,*),1,/),',`,*,+,$chr(40),^,$chr(46),?,~)
+  ;set %dapancs8 $remove($uw($uw(%cauhoi,9,*),1,/),',`,*,+,$chr(40),^,$chr(46),?,~)
+  ;set %dapancs9 $remove($uw($uw(%cauhoi,10,*),1,/),',`,*,+,$chr(40),^,$chr(46),?,~)
+  ;set %dapancs10 $remove($uw($uw(%cauhoi,11,*),1,/),',`,*,+,$chr(40),^,$chr(46),?,~)
+  set %dapancs14 $uw($uw(%cauhoi,15,*),1,/)
+  set %dapancs13 $uw($uw(%cauhoi,14,*),1,/)
+  set %dapancs12 $uw($uw(%cauhoi,13,*),1,/)
+  set %dapancs11 $uw($uw(%cauhoi,12,*),1,/)
+  set %dapancs1 $uw($uw(%cauhoi,2,*),1,/)
+  set %dapancs2 $uw($uw(%cauhoi,3,*),1,/)
+  set %dapancs3 $uw($uw(%cauhoi,4,*),1,/)
+  set %dapancs4 $uw($uw(%cauhoi,5,*),1,/)
+  set %dapancs5 $uw($uw(%cauhoi,6,*),1,/)
+  set %dapancs6 $uw($uw(%cauhoi,7,*),1,/)
+  set %dapancs7 $uw($uw(%cauhoi,8,*),1,/)
+  set %dapancs8 $uw($uw(%cauhoi,9,*),1,/)
+  set %dapancs9 $uw($uw(%cauhoi,10,*),1,/)
+  set %dapancs10 $uw($uw(%cauhoi,11,*),1,/)
+
+  set %tongdapan $uw($uw(%cauhoi,1,*),2,/)
+  describeVC %r 2=-=-=-=-=-=3*4°12*3°4*12°3*2|[  $+ $read(hethong\color.txt) Câu %Ultimate  2]|3*12°4*3°12*4°3*2=-=-=-=-=-=
+  describeVC %r 12,004Chung 4Súc: $+ $maudo(%cauhoi.sehoi)
+  describeVC %r 3Câu ho²i chung dành cho tâ't ca² moi nguòi và có04 %tongdapan 13Ðáp Án
+  .noticeVC %r.master $uw($uw(%cauhoi,2-,*),1,/)
+  .timerchungsuc1 1 35 traloi
+  .timerchungsuc2 1 60 tongdapan
+  .timerchungsuc3 1 62 ketthuc_chungsuc
+}
+alias ketthuc_chungsuc {
+  .timers off
+  unset %dapan*
+  write -c chungsuc.txt
+  .timerchucsuc3 1 %quacau choigame
+}
+alias tongdapan {
+  var %dapan = $lines(chungsuc.txt)
+  if (%dapan == 0) { describeVC %r 11,1 Các ban không tra² lòi ðuoc ðáp án nào cu²a câu ho²i này ! | halt } 
+  else { describeVC %r 8,1 Tô²ng Sô´ Ðáp án Ðúng:9,01 %dapan 8,1/9,01 %tongdapan 8,1Ðáp án }
+}
+alias traloi {
+  var %dapan = $lines(chungsuc.txt) 
+  describeVC %r 12Các ban tra² lòi ðuoc 2-=[03 %dapan 2/04 %tongdapan 2]=-12 Ðáp án. Còn13 25s 12cuôí
+}
+on 1:text:*:%r: {
+  ;if ($DA.TL($1-) == $DA.TL(%dapancs1)) && ($DA.TL($1-) != $null ) {
+  if (($DA.TL($1-) == $DA.TL(%dapancs1)) || ($1- == $unicode(%dapancs1)) || ($DA.TL($viqr($1-)) == $DA.TL(%dapancs1)) ) && ($DA.TL($1-) != $null ) && (%dapancs1 != $null) {
+    var %tien = $r($div(%averageDiem,2),%averageDiem)
+    var %taisan = $coidiem(diem,$nick)
+    write chungsuc.txt 1
+    var %host = $host(host,$nick)
+    var %dapan = $lines(chungsuc.txt)
+    if (%host == $null) { ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r 4 $+ %chucvu 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs1 3Luong: 4$ $+ $tien(%luong) | unset %dapancs1 }
+    else {
+      ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r  $+ $read(host.txt) 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs1 3Luong: 4$ $+ $tien(30000) | unset %dapancs1
+    }
+    if (%dapan >= %tongdapan) { describeVC %r 8,01Các ban ðã hoàn thành tâ´t ca² các ðáp án | ketthuc_chungsuc }
+  }
+  if (($DA.TL($1-) == $DA.TL(%dapancs2)) || ($1- == $unicode(%dapancs2)) || ($DA.TL($viqr($1-)) == $DA.TL(%dapancs2)) ) && ($DA.TL($1-) != $null ) && (%dapancs2 != $null) {
+    var %tien = $r($div(%averageDiem,2),%averageDiem)
+    var %taisan = $coidiem(diem,$nick)
+    write chungsuc.txt 2
+    var %host = $host(host,$nick)
+    var %dapan = $lines(chungsuc.txt)
+    if (%host == $null) { ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r 4 $+ %chucvu 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs2 3Luong: 4$ $+ $tien(%luong) | unset %dapancs2 }
+    else {
+      ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r  $+ $read(host.txt) 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs2 3Luong: 4$ $+ $tien(30000) | unset %dapancs2
+    }
+    if (%dapan >= %tongdapan) { describeVC %r 8,01Các ban ðã hoàn thành tâ´t ca² các ðáp án | ketthuc_chungsuc }
+  }
+  if (($DA.TL($1-) == $DA.TL(%dapancs3)) || ($1- == $unicode(%dapancs3)) || ($DA.TL($viqr($1-)) == $DA.TL(%dapancs3)) ) && ($DA.TL($1-) != $null ) && (%dapancs3 != $null) {
+    var %tien = $r($div(%averageDiem,2),%averageDiem)
+    var %taisan = $coidiem(diem,$nick)
+    write chungsuc.txt 3
+    var %host = $host(host,$nick)
+    var %dapan = $lines(chungsuc.txt)
+    if (%host == $null) { ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r 4 $+ %chucvu 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs3 3Luong: 4$ $+ $tien(%luong) | unset %dapancs3 }
+    else {
+      ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r  $+ $read(host.txt) 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs3 3Luong: 4$ $+ $tien(30000) | unset %dapancs3
+    }
+    if (%dapan >= %tongdapan) { describeVC %r 8,01Các ban ðã hoàn thành tâ´t ca² các ðáp án | ketthuc_chungsuc }
+  }
+  if (($DA.TL($1-) == $DA.TL(%dapancs4)) || ($1- == $unicode(%dapancs4)) || ($DA.TL($viqr($1-)) == $DA.TL(%dapancs4)) ) && ($DA.TL($1-) != $null ) && (%dapancs4 != $null) {
+    var %tien = $r($div(%averageDiem,2),%averageDiem)
+    var %taisan = $coidiem(diem,$nick)
+    write chungsuc.txt 4
+    var %host = $host(host,$nick)
+    var %dapan = $lines(chungsuc.txt)
+    if (%host == $null) { ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r 4 $+ %chucvu 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs4 3Luong: 4$ $+ $tien(%luong) | unset %dapancs4 }
+    else {
+      ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r  $+ $read(host.txt) 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs4 3Luong: 4$ $+ $tien(30000) | unset %dapancs4
+    }
+    if (%dapan >= %tongdapan) { describeVC %r 8,01Các ban ðã hoàn thành tâ´t ca² các ðáp án | ketthuc_chungsuc }
+  }
+  if (($DA.TL($1-) == $DA.TL(%dapancs5)) || ($1- == $unicode(%dapancs5)) || ($DA.TL($viqr($1-)) == $DA.TL(%dapancs5)) ) && ($DA.TL($1-) != $null ) && (%dapancs5 != $null) {
+    var %tien = $r($div(%averageDiem,2),%averageDiem)
+    var %taisan = $coidiem(diem,$nick)
+    write chungsuc.txt 5
+    var %host = $host(host,$nick)
+    var %dapan = $lines(chungsuc.txt)
+    if (%host == $null) { ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r 4 $+ %chucvu 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs5 3Luong: 4$ $+ $tien(%luong) | unset %dapancs5 }
+    else {
+      ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r  $+ $read(host.txt) 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs5 3Luong: 4$ $+ $tien(30000) | unset %dapancs5
+    }
+    if (%dapan >= %tongdapan) { describeVC %r 8,01Các ban ðã hoàn thành tâ´t ca² các ðáp án | ketthuc_chungsuc }
+  }
+  if (($DA.TL($1-) == $DA.TL(%dapancs6)) || ($1- == $unicode(%dapancs6)) || ($DA.TL($viqr($1-)) == $DA.TL(%dapancs6)) ) && ($DA.TL($1-) != $null ) && (%dapancs6 != $null) {
+    var %tien = $r($div(%averageDiem,2),%averageDiem)
+    var %taisan = $coidiem(diem,$nick)
+    write chungsuc.txt 6
+    var %host = $host(host,$nick)
+    var %dapan = $lines(chungsuc.txt)
+    if (%host == $null) { ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r 4 $+ %chucvu 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs6 3Luong: 4$ $+ $tien(%luong) | unset %dapancs6 }
+    else {
+      ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r  $+ $read(host.txt) 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs6 3Luong: 4$ $+ $tien(30000) | unset %dapancs6
+    }
+    if (%dapan >= %tongdapan) { describeVC %r 8,01Các ban ðã hoàn thành tâ´t ca² các ðáp án | ketthuc_chungsuc }
+  }
+  if (($DA.TL($1-) == $DA.TL(%dapancs7)) || ($1- == $unicode(%dapancs7)) || ($DA.TL($viqr($1-)) == $DA.TL(%dapancs7)) ) && ($DA.TL($1-) != $null ) && (%dapancs7 != $null) {
+    var %tien = $r($div(%averageDiem,2),%averageDiem)
+    var %taisan = $coidiem(diem,$nick)
+    write chungsuc.txt 7
+    var %host = $host(host,$nick)
+    var %dapan = $lines(chungsuc.txt)
+    if (%host == $null) { ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r 4 $+ %chucvu 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs7 3Luong: 4$ $+ $tien(%luong) | unset %dapancs7 }
+    else {
+      ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r  $+ $read(host.txt) 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs7 3Luong: 4$ $+ $tien(30000) | unset %dapancs7
+    }
+    if (%dapan >= %tongdapan) { describeVC %r 8,01Các ban ðã hoàn thành tâ´t ca² các ðáp án | ketthuc_chungsuc }
+  }
+  if (($DA.TL($1-) == $DA.TL(%dapancs8)) || ($1- == $unicode(%dapancs8)) || ($DA.TL($viqr($1-)) == $DA.TL(%dapancs8)) ) && ($DA.TL($1-) != $null ) && (%dapancs8 != $null) {
+    var %tien = $r($div(%averageDiem,2),%averageDiem)
+    var %taisan = $coidiem(diem,$nick)
+    write chungsuc.txt 8
+    var %host = $host(host,$nick)
+    var %dapan = $lines(chungsuc.txt)
+    if (%host == $null) { ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r 4 $+ %chucvu 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs8 3Luong: 4$ $+ $tien(%luong) | unset %dapancs8 }
+    else {
+      ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r  $+ $read(host.txt) 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs8 3Luong: 4$ $+ $tien(30000) | unset %dapancs8
+    }
+    if (%dapan >= %tongdapan) { describeVC %r 8,01Các ban ðã hoàn thành tâ´t ca² các ðáp án | ketthuc_chungsuc }
+  }
+  if (($DA.TL($1-) == $DA.TL(%dapancs9)) || ($1- == $unicode(%dapancs9)) || ($DA.TL($viqr($1-)) == $DA.TL(%dapancs9)) ) && ($DA.TL($1-) != $null ) && (%dapancs9 != $null) {
+    var %tien = $r($div(%averageDiem,2),%averageDiem)
+    var %taisan = $coidiem(diem,$nick)
+    write chungsuc.txt 9
+    var %host = $host(host,$nick)
+    var %dapan = $lines(chungsuc.txt)
+    if (%host == $null) { ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r 4 $+ %chucvu 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs9 3Luong: 4$ $+ $tien(%luong) | unset %dapancs9 }
+    else {
+      ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r  $+ $read(host.txt) 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs9 3Luong: 4$ $+ $tien(30000) | unset %dapancs9
+    }
+    if (%dapan >= %tongdapan) { describeVC %r 8,01Các ban ðã hoàn thành tâ´t ca² các ðáp án | ketthuc_chungsuc }
+  }
+  if (($DA.TL($1-) == $DA.TL(%dapancs10)) || ($1- == $unicode(%dapancs10)) || ($DA.TL($viqr($1-)) == $DA.TL(%dapancs10)) ) && ($DA.TL($1-) != $null ) && (%dapancs10 != $null) {
+    var %tien = $r($div(%averageDiem,2),%averageDiem)
+    var %taisan = $coidiem(diem,$nick)
+    write chungsuc.txt 10
+    var %host = $host(host,$nick)
+    var %dapan = $lines(chungsuc.txt)
+    if (%host == $null) { ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r 4 $+ %chucvu 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs10 3Luong: 4$ $+ $tien(%luong) | unset %dapancs10 }
+    else {
+      ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r  $+ $read(host.txt) 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs10 3Luong: 4$ $+ $tien(30000) | unset %dapancs10
+    }
+    if (%dapan >= %tongdapan) { describeVC %r 8,01Các ban ðã hoàn thành tâ´t ca² các ðáp án | ketthuc_chungsuc }
+  }
+  if (($DA.TL($1-) == $DA.TL(%dapancs11)) || ($1- == $unicode(%dapancs11)) || ($DA.TL($viqr($1-)) == $DA.TL(%dapancs11)) ) && ($DA.TL($1-) != $null ) && (%dapancs11 != $null) {
+    var %tien = $r($div(%averageDiem,2),%averageDiem)
+    var %taisan = $coidiem(diem,$nick)
+    write chungsuc.txt 11
+    var %host = $host(host,$nick)
+    var %dapan = $lines(chungsuc.txt)
+    if (%host == $null) { ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r 4 $+ %chucvu 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs11 3Luong: 4$ $+ $tien(%luong) | unset %dapancs11 }
+    else {
+      ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r  $+ $read(host.txt) 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs11 3Luong: 4$ $+ $tien(30000) | unset %dapancs11
+    }
+    if (%dapan >= %tongdapan) { describeVC %r 8,01Các ban ðã hoàn thành tâ´t ca² các ðáp án | ketthuc_chungsuc }
+  }
+  if (($DA.TL($1-) == $DA.TL(%dapancs12)) || ($1- == $unicode(%dapancs12)) || ($DA.TL($viqr($1-)) == $DA.TL(%dapancs12)) ) && ($DA.TL($1-) != $null ) && (%dapancs12 != $null) {
+    var %tien = $r($div(%averageDiem,2),%averageDiem)
+    var %taisan = $coidiem(diem,$nick)
+    write chungsuc.txt 12
+    var %host = $host(host,$nick)
+    var %dapan = $lines(chungsuc.txt)
+    if (%host == $null) { ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r 4 $+ %chucvu 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs12 3Luong: 4$ $+ $tien(%luong) | unset %dapancs12 }
+    else {
+      ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r  $+ $read(host.txt) 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs12 3Luong: 4$ $+ $tien(30000) | unset %dapancs12
+    }
+    if (%dapan >= %tongdapan) { describeVC %r 8,01Các ban ðã hoàn thành tâ´t ca² các ðáp án | ketthuc_chungsuc }
+  }
+  if (($DA.TL($1-) == $DA.TL(%dapancs13)) || ($1- == $unicode(%dapancs13)) || ($DA.TL($viqr($1-)) == $DA.TL(%dapancs13)) ) && ($DA.TL($1-) != $null ) && (%dapancs13 != $null) {
+    var %tien = $r($div(%averageDiem,2),%averageDiem)
+    var %taisan = $coidiem(diem,$nick)
+    write chungsuc.txt 13
+    var %host = $host(host,$nick)
+    var %dapan = $lines(chungsuc.txt)
+    if (%host == $null) { ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r 4 $+ %chucvu 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs13 3Luong: 4$ $+ $tien(%luong) | unset %dapancs13 }
+    else {
+      ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r  $+ $read(host.txt) 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs13 3Luong: 4$ $+ $tien(30000) | unset %dapancs13
+    }
+    if (%dapan >= %tongdapan) { describeVC %r 8,01Các ban ðã hoàn thành tâ´t ca² các ðáp án | ketthuc_chungsuc }
+  }
+  if (($DA.TL($1-) == $DA.TL(%dapancs14)) || ($1- == $unicode(%dapancs14)) || ($DA.TL($viqr($1-)) == $DA.TL(%dapancs14)) ) && ($DA.TL($1-) != $null ) && (%dapancs14 != $null) {
+    var %tien = $r($div(%averageDiem,2),%averageDiem)
+    var %taisan = $coidiem(diem,$nick)
+    write chungsuc.txt 14
+    var %host = $host(host,$nick)
+    var %dapan = $lines(chungsuc.txt)
+    if (%host == $null) { ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r 4 $+ %chucvu 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs14 3Luong: 4$ $+ $tien(%luong) | unset %dapancs14 }
+    else {
+      ghidiem diem $nick $calc(%taisan + %tien) | describeVC %r  $+ $read(host.txt) 12 $+ $nick 3Kiê´m ðuoc 4$ $+ $tien(%tien) 3vói ðáp án:4 %dapancs14 3Luong: 4$ $+ $tien(30000) | unset %dapancs14
+    }
+    if (%dapan >= %tongdapan) { describeVC %r 8,01Các ban ðã hoàn thành tâ´t ca² các ðáp án | ketthuc_chungsuc }
+  }
+}
