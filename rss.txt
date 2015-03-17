@@ -1,91 +1,196 @@
-ngoisao.net /rss/dan-choi.rss
+www.24h.com.vn /upload/rss/cuoi24h.rss
 HTTP/1.1 200 OK
-Server: Fengine/1.5.2
-Date: Mon, 16 Mar 2015 11:35:35 GMT
-Content-Type: application/xml; charset=utf-8
+Server: 24h.com.vn
+Date: Tue, 17 Mar 2015 09:32:57 GMT
+Content-Type: application/rss+xml
+Content-Length: 12815
+Last-Modified: Tue, 17 Mar 2015 07:20:06 GMT
 Connection: close
-Vary: Accept-Encoding
-Set-Cookie: device_env=4; expires=Mon, 23-Mar-2015 11:35:34 GMT; path=/; domain=vnexpress.net
-server: web_141.170
+Expires: Thu, 31 Dec 2037 23:55:55 GMT
+Cache-Control: max-age=315360000
+Accept-Ranges: bytes
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
+<rss version="2.0">
 <channel>
-<title>Dân chơi - Ngôi sao RSS</title>
-<description>Ngoisao RSS</description>
-<pubDate>Mon, 16 Mar 2015 18:35:34 +0700</pubDate>
-<generator>ngoisao.net:http://ngoisao.net/rss</generator>
-<link>http://ngoisao.net/rss/dan-choi.rss</link>
+<title>Tin tuc 24h | tin nhanh bong da | the thao | thoi trang, giai tri vn | bao online</title>
+<link>http://www.24h.com.vn/cuoi-24h-c70.html</link>
+<description>Tin tuc trong ngay, bóng đá, thể thao, thời trang, giải trí. Update tin nhanh 24/24h. Nhiều đặc sản video tin tức việt nam, thế giới, video bong da anh chỉ có tại 24h.Tổng hợp tintuc vn, BAO CONG AN, an ninh, phap luat</description>
+<image>
+<url>http://www.24h.com.vn/images/logo24h-128x85.gif</url>
+<title>Tin tuc 24h | tin nhanh bong da | the thao | thoi trang, giai tri vn | báo online</title>
+<link>http://www.24h.com.vn</link>
+</image>
+<language>vi-vn</language>
+<copyright>(c)24h.com.vn</copyright>
+<ttl>60</ttl>
+<generator>noreply@24h.com.vn</generator>
 <item>
-<title>Đánh giá Galaxy A7: Thiết kế thời trang, giải trí ấn tượng</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/dan-choi/danh-gia-galaxy-a7-thiet-ke-thoi-trang-giai-tri-an-tuong-3158059.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/03/16/IMG-6483-2545-1426487852_210x158.jpg" ></a></br>Smartphone Samsung đẹp, hoàn thiện tốt, màn hình 5,5 inch, camera chất lượng cao cùng cấu hình tốt.]]></description>
-<pubDate>Mon, 16 Mar 2015 13:38:04 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/danh-gia-galaxy-a7-thiet-ke-thoi-trang-giai-tri-an-tuong-3158059.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/danh-gia-galaxy-a7-thiet-ke-thoi-trang-giai-tri-an-tuong-3158059.html</guid>
-<slash:comments>0</slash:comments>
+<title>"Giật mình" với những cô nàng lười "vô đối"</title>
+<description>Thực sự khi xem xong những hình ảnh này các bạn sẽ phải "giật mình" về độ lười biếng "vô đối" của chị em.</description>
+<link>http://www.24h.com.vn/cuoi-24h/giat-minh-voi-nhung-co-nang-luoi-vo-doi-c70a696742.html</link>
+<pubDate>2015-03-17 12:21:59</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-17/1426569316-thumbl1.jpg</summaryImg>
 </item>
 <item>
-<title>LG G4 màn hình 5,6 inch ra mắt tháng 5</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/dan-choi/lg-g4-man-hinh-5-6-inch-ra-mat-thang-5-3158042.html"><img width=210 height=158 src="http://c1.f21.img.vnecdn.net/2015/03/16/lg-1426481665_210x158.jpg" ></a></br>Mẫu điện thoại màn hình lớn, chip 8 nhân Snapdragon 810 của công ty Hàn Quốc trình làng tháng 5 năm nay.]]></description>
-<pubDate>Mon, 16 Mar 2015 12:13:12 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/lg-g4-man-hinh-5-6-inch-ra-mat-thang-5-3158042.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/lg-g4-man-hinh-5-6-inch-ra-mat-thang-5-3158042.html</guid>
-<slash:comments>0</slash:comments>
+<title>Đơn giản, phụ nữ thích đàn ông dũng cảm</title>
+<description>Bạn thích một nàng nhưng không biết tìm ngôn ngữ, không biết tạo hoàn cảnh, hay là không biết nói chuyện?</description>
+<link>http://www.24h.com.vn/cuoi-24h/don-gian-phu-nu-thich-dan-ong-dung-cam-c70a696664.html</link>
+<pubDate>2015-03-17 09:00:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-17/1426554227-tranh_vui_300x225_427__bhlj.jpg</summaryImg>
 </item>
 <item>
-<title>Asus tung video ấn tượng về Zenfone 2</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/dan-choi/asus-tung-video-an-tuong-ve-zenfone-2-3158053.html"><img width=210 height=158 src="http://c1.f24.img.vnecdn.net/2015/03/16/cc-1426482429_210x158.jpg" ></a></br>Công ty Đài Loan nhấn mạnh tới bộ nhớ khủng, công nghệ chụp ảnh PixelMaster cùng mức giá hợp lý.]]></description>
-<pubDate>Mon, 16 Mar 2015 12:08:08 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/asus-tung-video-an-tuong-ve-zenfone-2-3158053.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/asus-tung-video-an-tuong-ve-zenfone-2-3158053.html</guid>
-<slash:comments>0</slash:comments>
+<title>Tình yêu trong mắt dân kinh doanh</title>
+<description>Hãy cùng xem dân kinh doanh nhìn nhận về gái đẹp và hôn nhân thế nào qua tình huống sau:</description>
+<link>http://www.24h.com.vn/cuoi-24h/tinh-yeu-trong-mat-dan-kinh-doanh-c70a696574.html</link>
+<pubDate>2015-03-17 08:54:12</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-16/1426494829-thumbnail.jpg</summaryImg>
 </item>
 <item>
-<title>Bản vẽ Nokia 1100 chạy Android, viền kim loại</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/dan-choi/ban-ve-nokia-1100-chay-android-vien-kim-loai-3158012.html"><img width=210 height=158 src="http://c1.f21.img.vnecdn.net/2015/03/16/no5-2644-1426479182-3453-1426479948_210x158.jpg" ></a></br>Nhà thiết kế Jermaine Smit hình dung về mẫu điện thoại tương lai của Nokia qua những thông tin rò rỉ sơ khai.]]></description>
-<pubDate>Mon, 16 Mar 2015 11:39:43 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/ban-ve-nokia-1100-chay-android-vien-kim-loai-3158012.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/ban-ve-nokia-1100-chay-android-vien-kim-loai-3158012.html</guid>
-<slash:comments>0</slash:comments>
+<title>Video clip: Troll thế này có ngày “rớt tim“</title>
+<description>Những tiếng súng vô hình troll mọi người như thế này không khiến người ta tái mào "chạy mất dép" mới lạ.</description>
+<link>http://www.24h.com.vn/cuoi-24h/video-clip-troll-the-nay-co-ngay-rot-tim-c70a696658.html</link>
+<pubDate>2015-03-17 06:50:51</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-17/1426559292-troll_voi_phao_aeks.jpg</summaryImg>
 </item>
 <item>
-<title>Khắc phục tình trạng hao pin trên iOS 8.2</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/dan-choi/khac-phuc-tinh-trang-hao-pin-tren-ios-8-2-3157986.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/03/16/ip-4622-1426477816_210x158.jpg" ></a></br>iPhone, iPad có thể sụt pin nhanh hơn bởi tính năng theo dõi sức khỏe được Apple kích hoạt.]]></description>
-<pubDate>Mon, 16 Mar 2015 10:58:33 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/khac-phuc-tinh-trang-hao-pin-tren-ios-8-2-3157986.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/khac-phuc-tinh-trang-hao-pin-tren-ios-8-2-3157986.html</guid>
-<slash:comments>0</slash:comments>
+<title>Phì cười với những bức ảnh trùng hợp đến khó tin</title>
+<description>Những bức ảnh được chụp một cách vô tình nhưng lại có thể đánh lừa thị giác của người xem.</description>
+<link>http://www.24h.com.vn/cuoi-24h/phi-cuoi-voi-nhung-buc-anh-trung-hop-den-kho-tin-c70a696660.html</link>
+<pubDate>2015-03-17 07:47:22</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-17/1426574581-14_vzqr.jpg</summaryImg>
 </item>
 <item>
-<title>Dàn xe sang đen của nhà thiết kế trang sức</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/dan-choi/dan-xe-sang-den-cua-nha-thiet-ke-trang-suc-3157892.html"><img width=210 height=158 src="http://m.f31.img.vnecdn.net/2015/03/14/rolls-royce-ghost-2-6864-1426321549_210x158.jpg" ></a></br>Lamborghini Aventador hay Bentley Flying Spur của nhà thiết kế trang sức Ben Baller đều có màu đen tuyền.]]></description>
-<pubDate>Mon, 16 Mar 2015 09:29:52 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/dan-xe-sang-den-cua-nha-thiet-ke-trang-suc-3157892.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/dan-xe-sang-den-cua-nha-thiet-ke-trang-suc-3157892.html</guid>
-<slash:comments>0</slash:comments>
+<title>Năm Mùi ngắm ảnh... dê (6)</title>
+<description>Tái dê mà nấu tương gừng ăn xong ta lại bừng bừng máu dê, tương gừng mà nấu tái dê ăn xong ta lại máu dê bừng bừng.</description>
+<link>http://www.24h.com.vn/cuoi-24h/nam-mui-ngam-anh-de-6-c70a696433.html</link>
+<pubDate>2015-03-16 06:53:28</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-16/1426463267-_72__vbez.jpg</summaryImg>
 </item>
 <item>
-<title>7 mẹo hữu ích kéo dài thời lượng pin điện thoại</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/dan-choi/7-meo-huu-ich-keo-dai-thoi-luong-pin-dien-thoai-3157734.html"><img width=210 height=158 src="http://c1.f21.img.vnecdn.net/2015/03/15/cc-5321-1426417523_210x158.jpg" ></a></br>Nếu smartphone sắp hết pin, bạn sẽ chẳng quan tâm tới việc nó sở hữu vi xử lý mạnh mẽ tới đâu và camera tốt thế nào.]]></description>
-<pubDate>Sun, 15 Mar 2015 18:04:06 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/7-meo-huu-ich-keo-dai-thoi-luong-pin-dien-thoai-3157734.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/7-meo-huu-ich-keo-dai-thoi-luong-pin-dien-thoai-3157734.html</guid>
-<slash:comments>0</slash:comments>
+<title>Nghẹt thở với những hình ảnh khó đỡ</title>
+<description>Những khoảnh khắc hài hước, hành động khó đỡ được "chộp" lại đúng lúc khiến người xem phải cười vỡ bụng.</description>
+<link>http://www.24h.com.vn/cuoi-24h/nghet-tho-voi-nhung-hinh-anh-kho-do-c70a696494.html</link>
+<pubDate>2015-03-16 12:10:10</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-16/1426475440-thumbl1.jpg</summaryImg>
 </item>
 <item>
-<title>Galaxy S6 đầu tiên xuất hiện ở Việt Nam</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/dan-choi/galaxy-s6-dau-tien-xuat-hien-o-viet-nam-3157732.html"><img width=210 height=158 src="http://c1.f21.img.vnecdn.net/2015/03/15/IMG-0139-4016-1426415253_210x158.jpg" ></a></br>Điện thoại thông minh bom tấn của Samsung có mặt tại Hà Nội sáng nay 15/3 dù chưa được bán chính hãng.]]></description>
-<pubDate>Sun, 15 Mar 2015 17:49:35 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/galaxy-s6-dau-tien-xuat-hien-o-viet-nam-3157732.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/galaxy-s6-dau-tien-xuat-hien-o-viet-nam-3157732.html</guid>
-<slash:comments>0</slash:comments>
+<title>Chùm truyện cười ngắn về đối thoại vợ chồng</title>
+<description>Nếu không khai thì chồng không biết, nếu khai ra thì khối kẻ tức bụng vì cười.</description>
+<link>http://www.24h.com.vn/cuoi-24h/chum-truyen-cuoi-ngan-ve-doi-thoai-vo-chong-c70a695502.html</link>
+<pubDate>2015-03-15 09:00:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-11/1426043208-thumbnail.jpg</summaryImg>
 </item>
 <item>
-<title>Harley-Davidson chạy điện ra mắt</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/dan-choi/harley-davidson-chay-dien-ra-mat-3157895.html"><img width=210 height=158 src="http://m.f29.img.vnecdn.net/2015/03/13/Harley-Davidson-Livewire-2-1882-1426216230_210x158.jpg" ></a></br>Mẫu xe xanh sử dụng động cơ điện có công suất 75 mã lực, có thể chạy 80 km mỗi lần sạc.]]></description>
-<pubDate>Sun, 15 Mar 2015 17:34:03 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/harley-davidson-chay-dien-ra-mat-3157895.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/harley-davidson-chay-dien-ra-mat-3157895.html</guid>
-<slash:comments>0</slash:comments>
+<title>Giữa núi rừng hoang vu gặp sơn nữ mà không dám nhìn</title>
+<description>Trên đời này chỉ có 2 nhân vật khiến ta không dám nhìn một cô nàng xinh đẹp, đó là vợ ta và... cha nàng.</description>
+<link>http://www.24h.com.vn/cuoi-24h/giua-nui-rung-hoang-vu-gap-son-nu-ma-khong-dam-nhin-c70a695972.html</link>
+<pubDate>2015-03-15 09:00:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-13/1426217497-tranh_vui_300x225_425__raeh.jpg</summaryImg>
+</item>
+<item>
+<title>Video clip: Chết cười với “thánh” phá hoại</title>
+<description>Các bạn sẽ phải cười nghiêng ngả khi xem "thánh" phá hoại tìm mọi cách để trêu chọc những người xung quanh.</description>
+<link>http://www.24h.com.vn/cuoi-24h/video-clip-chet-cuoi-voi-thanh-pha-hoai-c70a696150.html</link>
+<pubDate>2015-03-15 00:00:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-14/1426297621-thanh_pha_hoai_tkgy.jpg</summaryImg>
+</item>
+<item>
+<title>Tổng hợp những hình ảnh hài hước cuối tuần</title>
+<description>Cuối tuần rồi giải trí thôi! nhưng cẩn thận cười "rách miệng" với bộ sưu tập hình ảnh hài hước này nhé.</description>
+<link>http://www.24h.com.vn/cuoi-24h/tong-hop-nhung-hinh-anh-hai-huoc-cuoi-tuan-c70a696202.html</link>
+<pubDate>2015-03-15 12:00:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-15/1426389646-tranh-vui-300x225--426-.jpg</summaryImg>
+</item>
+<item>
+<title>Những hình ảnh "siêu hài" trên bãi biển</title>
+<description>Trên bãi biển không thiếu những khoảnh khắc "siêu hài hước" được ghi lại khiến người xem phải bật cười.</description>
+<link>http://www.24h.com.vn/cuoi-24h/nhung-hinh-anh-sieu-hai-tren-bai-bien-c70a696181.html</link>
+<pubDate>2015-03-14 12:00:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-14/1426301649-thumbl1.jpg</summaryImg>
+</item>
+<item>
+<title>Đố anh em biết hôm nay là ngày gì?</title>
+<description>Nhiều người không biết hôm nay là ngày gì, xin he hé bí mật nhé: Gần giống ngày này cách đây 1 tháng đấy.</description>
+<link>http://www.24h.com.vn/cuoi-24h/do-anh-em-biet-hom-nay-la-ngay-gi-c70a696144.html</link>
+<pubDate>2015-03-14 09:00:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-14/1426296667-300x225_bdgp.jpg</summaryImg>
+</item>
+<item>
+<title>Clip: Lý do tại sao nhiều người thích đi xe buýt</title>
+<description>Hoàn cảnh của anh chàng này ít người gặp, và cái cách mà anh ta lấy lại kính không phải ai cũng nghĩ ra.</description>
+<link>http://www.24h.com.vn/cuoi-24h/clip-ly-do-tai-sao-nhieu-nguoi-thich-di-xe-buyt-nhu-vay-c70a696123.html</link>
+<pubDate>2015-03-14 07:25:53</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-14/1426295712-dixe_bus2_odpa.jpg</summaryImg>
+</item>
+<item>
+<title>"Con Lợn" nó có khác "con Heo" đấy bà con</title>
+<description>Dạo này thấy các bác cứ sôi sục lợn với heo loạn cả lên, em xin có ý kiến nho nhỏ thế này các bác xem có đúng không.</description>
+<link>http://www.24h.com.vn/cuoi-24h/con-lon-no-co-khac-con-heo-day-ba-con-c70a695936.html</link>
+<pubDate>2015-03-13 09:27:55</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-13/1426213469-tranh_vui_300x225_424__aflh.jpg</summaryImg>
+</item>
+<item>
+<title>Thán ca Valentine trắng</title>
+<description>Valentine mới qua đã thấy Valentine trắng trước mắt, không biết có đủ các loại Valentine cho hợp với... 7 sắc cầu vồng không ta?</description>
+<link>http://www.24h.com.vn/cuoi-24h/than-ca-valentine-trang-c70a695928.html</link>
+<pubDate>2015-03-13 08:57:06</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-13/1426211622-tranh_vui_300x225_423__dbzg.jpg</summaryImg>
+</item>
+<item>
+<title>Những con lợn sướng như... con heo</title>
+<description>Chắc chắn khi xem những bức ảnh này các bác sẽ phải thốt lên rằng: "Những con lợn sướng như... con heo".</description>
+<link>http://www.24h.com.vn/cuoi-24h/nhung-con-lon-suong-nhu-con-heo-c70a695886.html</link>
+<pubDate>2015-03-13 07:04:07</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-13/1426204874-thumbl_xtll.jpg</summaryImg>
+</item>
+<item>
+<title>Cười "té ghế" với những cô gái "khó đỡ"</title>
+<description>Con gái đôi khi vô tình hay cố ý có những hành động phải nói là "khó đỡ" khiến các bác phải cười té ghế.</description>
+<link>http://www.24h.com.vn/cuoi-24h/cuoi-te-ghe-voi-nhung-co-gai-kho-do-c70a695990.html</link>
+<pubDate>2015-03-13 12:09:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-13/1426219688-thumbl1.jpg</summaryImg>
+</item>
+<item>
+<title>Thơ phản đối ví chồng như heo</title>
+<description>Có ông chồng nọ bấy lâu chăm chỉ cả "việc nước" lẫn "việc nhà", tiền lương đầy đủ, thuế má không thiếu, bỗng một hôm chậm rửa bát giúp vợ bị vợ tổng xỉ vả cho một trận và đặt cho nick Con Heo, "Con Heo" ức chế mới làm thơ thế này:</description>
+<link>http://www.24h.com.vn/cuoi-24h/tho-phan-doi-vi-chong-nhu-heo-c70a695918.html</link>
+<pubDate>2015-03-13 08:42:16</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-13/1426210612-tranh_vui_300x225_422__jyxb.jpg</summaryImg>
+</item>
+<item>
+<title>So sánh đàn ông và (xin lỗi)... con heo</title>
+<description>Trong một lần trả lời phỏng vấn của báo chí, nhà văn đầy cá tính Trang Hạ có câu "Đàn ông về nhà chỉ ăn - tắm - ngủ khác gì con lợn" khiến động đồng mạng như bị đổ dầu vào lửa. Thực ra đàn ông nếu bị đem so sánh với con này con kia một cách vui vui thì ít khi họ để tâm, nhưng so sánh một cách nghiêm túc dễ bị các Adam nổi giận lắm đấy. Ví dụ so sánh theo lối của cây bút hài H</description>
+<link>http://www.24h.com.vn/cuoi-24h/so-sanh-dan-ong-va-xin-loi-con-heo-c70a695754.html</link>
+<pubDate>2015-03-12 12:18:11</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-12/1426137247-tranh_vui_300x225_419__qnnm.jpg</summaryImg>
+</item>
+<item>
+<title>Khi “lợn” biết rửa bát</title>
+<description>Một vài vần thơ vui vui hưởng ứng tranh luận của cộng đồng mạng mấy hôm nay về vấn đề "lợn" với "nấu cơm, rửa bát, quét nhà" gì đó.</description>
+<link>http://www.24h.com.vn/cuoi-24h/khi-lon-biet-rua-bat-c70a695781.html</link>
+<pubDate>2015-03-12 12:27:15</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-12/1426137849-tranh_vui_300x225_421__igsp.jpg</summaryImg>
+</item>
+<item>
+<title>Bổ sung bộ sưu tập hình ảnh CĐV bóng đá hài hước</title>
+<description>Theo yêu cầu của các bác, em xin bổ sung thêm vào bộ sưu tập hình ảnh các cổ động viên bóng đá hài hước.</description>
+<link>http://www.24h.com.vn/cuoi-24h/bo-sung-bo-suu-tap-hinh-anh-cdv-bong-da-hai-huoc-c70a695744.html</link>
+<pubDate>2015-03-12 12:00:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-12/1426138074-tranh-vui-300x225--420-.jpg</summaryImg>
+</item>
+<item>
+<title>Cười ngất với các CĐV bóng đá</title>
+<description>Các bác xem trận Chelsea và PSG tối qua có thấy tình huống nào trên khán đài nóng bỏng như thế này không?</description>
+<link>http://www.24h.com.vn/cuoi-24h/cuoi-ngat-voi-cac-cdv-bong-da-c70a695672.html</link>
+<pubDate>2015-03-12 07:11:10</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-12/1426118896-thumbl1_plns.jpg</summaryImg>
+</item>
+<item>
+<title>Cách trị “bệnh ngứa mồm” hiệu quả</title>
+<description>Tôi đã đưa vợ đi xem bói xem có ma tà gì không, đốt đủ loại vía rồi mà không thấy hiện tượng thuyên giảm.</description>
+<link>http://www.24h.com.vn/cuoi-24h/cach-tri-benh-ngua-mom-hieu-qua-c70a695474.html</link>
+<pubDate>2015-03-11 09:00:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-11/1426037699-tranh_vui_300x225_418__qfvg.jpg</summaryImg>
 </item>
 </channel>
 </rss>
