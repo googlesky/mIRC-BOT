@@ -254,17 +254,38 @@ on *:text:*:?: {
     }
   }
   if ($1 == !register) {
-    var %register = $gettok($readini(hethong\login.ini,DangNhap,$nick),1,32)
-    if (%register == $null) {
-      var %passsssss2.tam = $chr(42) $+ $3 $+ $chr(42)
-      if ($2 == $nick) && ($read(hethong\login.ini, w, %passsssss2.tam) == $null) {
-        writeini -n hethong\login.ini DangNhap $nick $3 $4
+    var %sqlnick = $nick
+    var %sqlquery2 = SELECT * FROM login WHERE nick = ' $+ %sqlnick $+ ';
+    var %register = $sqlite_query( %botdb , %sqlquery2 )
+;    echo 3 -a %register
+    if ($sqlite_num_rows(%register) == 0 ) {
+    
+      var %passsssss1.tam = $3
+      var %passsssss2.tam = $4
+      var %sqlquerypass1 = $sqlite_query( %botdb , SELECT * FROM login WHERE pass1 = ' $+ %passsssss1.tam $+ '; )
+      var %sqlquerypass2 = $sqlite_query( %botdb , SELECT * FROM login WHERE pass2 = ' $+ %passsssss2.tam $+ '; )
+      if ($2 == $nick) && ( $sqlite_num_rows(%sqlquerypass1) == 0 ) && ( $sqlite_num_rows(%sqlquerypass2) == 0 ) {
+        ;writeini -n hethong\login.ini DangNhap $nick $3 $4
         ;describeVC %r.master 11,1 Chào mùng $nick ! 0Ban ðã ðång ký xong. Mât khâ²u tài khoa²n cua² ban là:9 $2 0Mât khâ²u Recover là:13 $3 0. Múôn ðô²i mât khâ²u gõ 11 !SetPassword <mât khâ²u cu~> <mât khâ²u mói> 0Ban ðuoc tång truóc 4$ $+ $tien(%MinReg) 0vào tài khoa²n 4Chúc vu hiên tai : 11,01 Little Chick 
-        .describeVC %r.master 11,1 Chào mùng $nick ! 0Ban ðã ðång ký xong. Mât khâ²u tài khoa²n cua² ban là:9 $2 0Mât khâ²u Recover là:13 $3 0. Múôn ðô²i mât khâ²u gõ 11 !SetPassword <mât khâ²u cu~> <mât khâ²u mói> 4Chúc vu hiên tai : 11,01 Little Chick 
+        
+        ;SQL
+        %sqlqueryinsert = INSERT INTO "main"."login" ("nick", "pass1", "pass2") VALUES ( ' $+ %sqlnick $+ ' , ' $+ $3 $+ ' , ' $+ $4 $+ ');
+        sqlite_exec %botdb %sqlqueryinsert
+        ;echo 3 -a $sqlite_changes(%botdb) dòng table login đã được thêm vào.
+        
+        .describeVC %r.master 11,1 Chào mùng $nick ! 0Ban ðã ðång ký xong. Mât khâ²u tài khoa²n cua² ban là:9 $3 0Mât khâ²u Recover là:13 $4 0. Múôn ðô²i mât khâ²u gõ 11 !SetPassword <mât khâ²u cu~> <mât khâ²u mói> 4Chúc vu hiên tai : 11,01 Little Chick 
         .describeVC %r 11,1 Chào mùng ban8 $nick 11ðã ðê´n vói4 $network 9Chúc ban ôm ðuoc nhiê`u tiê`n cua² $me 
         halt
       }
-      elseif ($read(hethong\login.ini, w, %passsssss2.tam) != $null) { noticeVC %r.master 4Nick $nick Ðång Ký Trùng Vói $gettok($read(hethong\login.ini, w, %passsssss2.tam),1,61) | halt }
+      ;elseif ($read(hethong\login.ini, w, %passsssss2.tam) != $null) { noticeVC %r.master 4Nick $nick Ðång Ký Trùng Vói $gettok($read(hethong\login.ini, w, %passsssss2.tam),1,61) | halt }
+      elseif ($sqlite_num_rows(%sqlquerypass1)) {
+        $sqlite_fetch_row(%sqlquerypass1, row, $SQLITE_ASSOC)
+        noticeVC %r.master 4Nick $nick dùng pass 1 của $hget(row, nick) | halt
+      }
+      elseif ($sqlite_num_rows(%sqlquerypass2)) {
+        $sqlite_fetch_row(%sqlquerypass2, row, $SQLITE_ASSOC)
+        noticeVC %r.master 4Nick $nick dùng pass 2 của $hget(row, nick) | halt
+      }
       elseif ($2 != $nick) { noticeVC %r.master 4Nick $nick Ðång Ký Cho $2 | halt }
     }
     else { .noticeVC %r.master 4Nick $nick Ðã Ðång Ký Rôì! }

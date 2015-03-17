@@ -1,18 +1,91 @@
-www.eva.vn /rss/rss.php/162
-HTTP/1.1 301 Moved Permanently
-Server: 24h.com.vn
-Date: Tue, 17 Mar 2015 10:17:00 GMT
-Content-Type: text/html
-Content-Length: 191
+ngoisao.net /rss/thoi-trang.rss
+HTTP/1.1 200 OK
+Server: Fengine/1.5.2
+Date: Tue, 17 Mar 2015 16:32:03 GMT
+Content-Type: application/xml; charset=utf-8
 Connection: close
-Location: http://eva.vn/rss/rss.php/162
-Expires: Thu, 01 Jan 1970 00:00:01 GMT
-Cache-Control: no-cache
-Pragma: no-cache
-<html>
-<head><title>301 Moved Permanently</title></head>
-<body bgcolor="white">
-<center><h1>301 Moved Permanently</h1></center>
-<hr><center>Website 24h.com.vn</center>
-</body>
-</html>
+Vary: Accept-Encoding
+Set-Cookie: device_env=4; expires=Tue, 24-Mar-2015 16:32:03 GMT; path=/; domain=vnexpress.net
+server: web_141.158
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
+<channel>
+<title>Thời trang - Ngôi sao RSS</title>
+<description>Ngoisao RSS</description>
+<pubDate>Tue, 17 Mar 2015 23:32:03 +0700</pubDate>
+<generator>ngoisao.net:http://ngoisao.net/rss</generator>
+<link>http://ngoisao.net/rss/thoi-trang.rss</link>
+<item>
+<title>Nàng blogger gốc Á chuộng phong cách casual</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/nang-blogger-goc-a-chuong-phong-cach-casual-3158549.html"><img width=210 height=158 src="http://c1.f22.img.vnecdn.net/2015/03/17/top-1426576050_210x158.jpg" ></a></br>Style phóng khoáng, tiện dụng với những món đồ phổ biến được Claire Liu biến hóa đầy cá tính.]]></description>
+<pubDate>Tue, 17 Mar 2015 15:36:09 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/nang-blogger-goc-a-chuong-phong-cach-casual-3158549.html</link>
+<guid>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/nang-blogger-goc-a-chuong-phong-cach-casual-3158549.html</guid>
+<slash:comments>0</slash:comments>
+</item>
+<item>
+<title>Headphone tuyệt đẹp của Dolce &amp;amp; Gabbana giá 160 triệu</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/headphone-tuyet-dep-cua-dolce-amp-gabbana-gia-160-trieu-3158592.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/03/17/dolcegabbaheadphonet-1426577868_210x158.jpg" ></a></br>Tai nghe làm từ da nappa, trang trí pha lê Swarovski, ngọc trai, có chất lượng âm thanh tuyệt hảo.]]></description>
+<pubDate>Tue, 17 Mar 2015 15:16:59 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/headphone-tuyet-dep-cua-dolce-amp-gabbana-gia-160-trieu-3158592.html</link>
+<guid>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/headphone-tuyet-dep-cua-dolce-amp-gabbana-gia-160-trieu-3158592.html</guid>
+<slash:comments>0</slash:comments>
+</item>
+<item>
+<title>Trà Ngọc Hằng mix gam đen điệu nghệ</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/tra-ngoc-hang-mix-gam-den-dieu-nghe-3158416.html"><img width=210 height=158 src="http://c1.f22.img.vnecdn.net/2015/03/17/top1-1426558415_210x158.jpg" ></a></br>Người đẹp tiết lộ bí quyết cách chọn lựa và mặc tông màu đen để không bị già trước tuổi.]]></description>
+<pubDate>Tue, 17 Mar 2015 10:03:35 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/tra-ngoc-hang-mix-gam-den-dieu-nghe-3158416.html</link>
+<guid>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/tra-ngoc-hang-mix-gam-den-dieu-nghe-3158416.html</guid>
+<slash:comments>0</slash:comments>
+</item>
+<item>
+<title>Bộ sưu tập xuân hè của Yoshino</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/bo-suu-tap-xuan-he-cua-yoshino-3157840.html"><img width=210 height=158 src="http://c0.f23.img.vnecdn.net/2015/03/16/13-3-201553-232873482-3243-1426482722_210x158.jpeg" ></a></br>Thương hiệu cho ra mắt những mẫu thiết kế tinh tế với màu sắc và chất liệu được ưa chuộng.]]></description>
+<pubDate>Tue, 17 Mar 2015 10:00:00 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/bo-suu-tap-xuan-he-cua-yoshino-3157840.html</link>
+<guid>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/bo-suu-tap-xuan-he-cua-yoshino-3157840.html</guid>
+<slash:comments>0</slash:comments>
+</item>
+<item>
+<title>BOSS Womenswear ra mắt BST thu-đông 2015</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/boss-womenswear-ra-mat-bst-thu-dong-2015-3157839.html"><img width=210 height=158 src="http://c0.f23.img.vnecdn.net/2015/03/16/12-3-201556-560663835-3703-1426473194_210x158.jpeg" ></a></br>Show diễn giới thiệu bộ sưu tập thu- đông của BOSS Womenswear thu hút nhiều sao Hollywood.]]></description>
+<pubDate>Tue, 17 Mar 2015 09:00:00 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/boss-womenswear-ra-mat-bst-thu-dong-2015-3157839.html</link>
+<guid>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/boss-womenswear-ra-mat-bst-thu-dong-2015-3157839.html</guid>
+<slash:comments>0</slash:comments>
+</item>
+<item>
+<title>Á hậu Huyền My cá tính với 'Nghệ thuật Pop art'</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/a-hau-huyen-my-ca-tinh-voi-nghe-thuat-pop-art-3158112.html"><img width=210 height=158 src="http://c0.f22.img.vnecdn.net/2015/03/16/16-3-201520-8752-1426492687_210x158.jpeg" ></a></br>Sunfly ra mắt bộ sưu tập 'Nghệ thuật Pop art' với những thiết kế casual wear mang đậm hơi thở thời đại.]]></description>
+<pubDate>Tue, 17 Mar 2015 09:00:00 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/a-hau-huyen-my-ca-tinh-voi-nghe-thuat-pop-art-3158112.html</link>
+<guid>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/a-hau-huyen-my-ca-tinh-voi-nghe-thuat-pop-art-3158112.html</guid>
+<slash:comments>0</slash:comments>
+</item>
+<item>
+<title>Emspo gợi ý trang phục công sở cho mùa hè</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/emspo-goi-y-trang-phuc-cong-so-cho-mua-he-3158070.html"><img width=210 height=158 src="http://c0.f22.img.vnecdn.net/2015/03/16/16-3-201551-889551675-4179-1426490208_210x158.jpeg" ></a></br>Các thiết kế trẻ trung, hiện đại không chỉ phù hợp với công sở mà còn linh hoạt và dễ ứng dụng trong mọi hoàn cảnh.]]></description>
+<pubDate>Tue, 17 Mar 2015 08:00:00 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/emspo-goi-y-trang-phuc-cong-so-cho-mua-he-3158070.html</link>
+<guid>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/emspo-goi-y-trang-phuc-cong-so-cho-mua-he-3158070.html</guid>
+<slash:comments>0</slash:comments>
+</item>
+<item>
+<title>7 cách mặc quần lửng đẹp như sao Việt</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/7-cach-mac-quan-lung-dep-nhu-sao-viet-3157954.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/03/16/top1-1426475697_210x158.jpg" ></a></br>Hồ Ngọc Hà, Ngô Thanh Vân, Huyền Trang mix trang phục sành điệu khi xuống phố trong những ngày nắng nóng.]]></description>
+<pubDate>Tue, 17 Mar 2015 00:46:00 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/7-cach-mac-quan-lung-dep-nhu-sao-viet-3157954.html</link>
+<guid>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/7-cach-mac-quan-lung-dep-nhu-sao-viet-3157954.html</guid>
+<slash:comments>0</slash:comments>
+</item>
+<item>
+<title>Trang phục xấu của showbiz Việt tuần qua</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/trang-phuc-xau-cua-showbiz-viet-tuan-qua-3158068.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/03/16/saovietmacxaut-1426500777_210x158.jpg" ></a></br>Váy áo phô nội y lộ liễu của Hương Tràm, Hà Kiều Anh không nhận được ý kiến đánh giá tích cực.]]></description>
+<pubDate>Tue, 17 Mar 2015 00:10:00 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/trang-phuc-xau-cua-showbiz-viet-tuan-qua-3158068.html</link>
+<guid>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/trang-phuc-xau-cua-showbiz-viet-tuan-qua-3158068.html</guid>
+<slash:comments>0</slash:comments>
+</item>
+</channel>
+</rss>
