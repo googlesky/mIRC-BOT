@@ -1,0 +1,14 @@
+AZ
+ZA
+ChiecNon
+TiengAnh
+XiDach
+ChungSuc
+TenFilm
+TangDan
+GiamDan
+CauThanhNgu
+DonGian
+TypeNguoc
+NotNhacVui
+GameNhom

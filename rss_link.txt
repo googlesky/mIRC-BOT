@@ -38,7 +38,6 @@ http://ngoisao.net/rss/showbiz-viet.rss
 http://ngoisao.net/rss/chau-a.rss
 http://ngoisao.net/rss/hollywood.rss
 http://ngoisao.net/rss/the-thao.rss
-http://ngoisao.net/rss/clip.rss
 http://ngoisao.net/rss/chuyen-la.rss
 http://ngoisao.net/rss/hinh-su.rss
 http://ngoisao.net/rss/thuong-truong.rss
@@ -62,7 +61,6 @@ http://www.eva.vn/rss/rss.php/66
 http://www.eva.vn/rss/rss.php/85
 http://www.eva.vn/rss/rss.php/10
 http://www.eva.vn/rss/rss.php/169
-http://www.eva.vn/rss/rss.php/162
 http://www.eva.vn/rss/rss.php/2
 http://www.eva.vn/rss/rss.php/40
 http://www.eva.vn/rss/rss.php/3

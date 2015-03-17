@@ -51,19 +51,19 @@ on 1:text:*:%r: {
   if ($1 == !tiepmau) {
     ;LaNgTu 1 17/11/2001
     var %maxTiepMau = $calc(%MinReg / 10)
-;    if ($coidiem(diem,$nick) >= %maxTiepMau) { msgVC $nick 0,1 Ban không ðu² ðiêù kiên ðê² 4Tiê´p Máu0! Ðiêù kiên ðê² 4Tiê´p Máu0 là 8Tài sa²n0 cu²a ban pha²i nho² hon09,01 $chr(36) $+ $tien(%maxTiepMau) 0và ban chi² ðuoc tiê´p máu 3 lâ`n/ngày. Tài sa²n hiên tai cu²a ban là09,01 $chr(36) $+ $tien($coidiem(diem,$nick))  | ignore -pu111 $nick }
+    ;    if ($coidiem(diem,$nick) >= %maxTiepMau) { msgVC $nick 0,1 Ban không ðu² ðiêù kiên ðê² 4Tiê´p Máu0! Ðiêù kiên ðê² 4Tiê´p Máu0 là 8Tài sa²n0 cu²a ban pha²i nho² hon09,01 $chr(36) $+ $tien(%maxTiepMau) 0và ban chi² ðuoc tiê´p máu 3 lâ`n/ngày. Tài sa²n hiên tai cu²a ban là09,01 $chr(36) $+ $tien($coidiem(diem,$nick))  | ignore -pu111 $nick }
     if ($coidiem(diem,$nick) >= %maxTiepMau) { noticeVC $nick 0,1 Ban không ðu² ðiêù kiên ðê² 4Tiê´p Máu0! Ðiêù kiên ðê² 4Tiê´p Máu0 là 8Tài sa²n0 cu²a ban pha²i nho² hon09,01 $chr(36) $+ $tien(%maxTiepMau) 0và ban chi² ðuoc tiê´p máu 3 lâ`n/ngày. Tài sa²n hiên tai cu²a ban là09,01 $chr(36) $+ $tien($coidiem(diem,$nick))  | ignore -pu111 $nick }
     elseif ($ulevel = 3) {
       var %iTiepMau $read(HETHONG\tiepmau.txt,s,$nick)
       ;echo %r %iTiepMau <
       if ($gettok(%iTiepMau,2,32) != $date) { write -ds $+ $nick HETHONG\tiepmau.txt | unset %iTiepMau }
-;      if ($gettok(%iTiepMau,1,32) >= 3) { msgVC $nick 0,1 Ban ðã su² dung hê´t sô´ lâ`n 4Tiê´p Máu0 trong môt ngày. Ngày mai 4Tiê´p Máu0 nhé ban.  | .ignore -pu 15 }
+      ;      if ($gettok(%iTiepMau,1,32) >= 3) { msgVC $nick 0,1 Ban ðã su² dung hê´t sô´ lâ`n 4Tiê´p Máu0 trong môt ngày. Ngày mai 4Tiê´p Máu0 nhé ban.  | .ignore -pu 15 }
       if ($gettok(%iTiepMau,1,32) >= 3) { noticeVC $nick 0,1 Ban ðã su² dung hê´t sô´ lâ`n 4Tiê´p Máu0 trong môt ngày. Ngày mai 4Tiê´p Máu0 nhé ban.  | .ignore -pu 15 }
       else {
         write -ds $+ $nick HETHONG\tiepmau.txt
         write HETHONG\tiepmau.txt $nick $calc($gettok(%iTiepMau,1,32) + 1) $date
         ghidiem diem $nick $calc($coidiem(diem,$nick) + %maxTiepMau)
-;        msgVC $nick 0,1 Ðã 4Tiê´p Máu0 thành công. Ban ðã tiê´p máu lâ`n thú8 $calc($gettok(%iTiepMau,1,32) + 1) 0trong ngày. Tài sa²n hiên tai cu²a ban là09,01 $chr(36) $+ $tien($coidiem(diem,$nick)) 
+        ;        msgVC $nick 0,1 Ðã 4Tiê´p Máu0 thành công. Ban ðã tiê´p máu lâ`n thú8 $calc($gettok(%iTiepMau,1,32) + 1) 0trong ngày. Tài sa²n hiên tai cu²a ban là09,01 $chr(36) $+ $tien($coidiem(diem,$nick)) 
         noticeVC $nick 0,1 Ðã 4Tiê´p Máu0 thành công. Ban ðã tiê´p máu lâ`n thú8 $calc($gettok(%iTiepMau,1,32) + 1) 0trong ngày. Tài sa²n hiên tai cu²a ban là09,01 $chr(36) $+ $tien($coidiem(diem,$nick)) 
         .ignore -pu15 $nick
       }
@@ -79,7 +79,7 @@ on 1:text:*:%r: {
       if ($gettok($read(HETHONG\tiepmau.txt,s,$nick),2,32) != $date) { var %n.tiepmau = 0 }
       else { var %n.tiepmau = $gettok($read(HETHONG\tiepmau.txt,s,$nick),1,32) }
       noticeVC $nick  $+ $read(hethong\color.txt) $tiengviet(%host) 8,1 $+ $nick 13,1Sô´ câu tra² lòi ðúng: 8,01 $+ %n.socau 4,01Tài sa²n: 8,01$ $+ $tien(%n.taisan) 9,1Check time:13,01 $time(h:nn:ss) $+ 9,1s 13Đã Tíêp máu:8 %n.tiepmau 13lần 
-;      if ($nick != LangTuBuon) && ($nick != LaNgTu) { .ignore -u15 $nick }
+      ;      if ($nick != LangTuBuon) && ($nick != LaNgTu) { .ignore -u15 $nick }
     } 
     else {
       var %host = $host(host,$2) | if (%host == $null) { set %host Nick chua ðång ký }
@@ -89,7 +89,7 @@ on 1:text:*:%r: {
       if ($gettok($read(HETHONG\tiepmau.txt,s,$2),2,32) != $date) { var %n.tiepmau = 0 }
       else { var %n.tiepmau = $gettok($read(HETHONG\tiepmau.txt,s,$2),1,32) }
       noticeVC $nick  $+ $read(hethong\color.txt) $tiengviet(%host) 8,1 $+ $2 13,1Sô´ câu tra² lòi ðúng: 8,01 $+ %n.socau 4,01Tài sa²n: 8,01$ $+ $tien(%n.taisan) 9,1Check time:13,01 $time(h:nn:ss) $+ 9,1s 13Đã Tíêp máu:8 %n.tiepmau 13lần 
-;      if ($nick != LangTuBuon) && ($nick != LaNgTu) { .ignore -u15 $nick }
+      ;      if ($nick != LangTuBuon) && ($nick != LaNgTu) { .ignore -u15 $nick }
     }
   }
   if ($1 == !omlo) && ($2) && ($level($nick) >= 3) && ($nick isop %r) { noticeVC $nick $omlo($2) }
@@ -106,7 +106,7 @@ on 1:text:*:%r: {
       noticeVC $nick 8,1 $2  12Sô´ lâ`n Chuyê²n Tiê`n Ði4 %n.vd1 12Sô´ lâ`n Nhân Chuyê²n Tiê`n4 %n.vd2 
     }
   }
-  if (!help* iswm $1-) && ($level($nick) >= 3) { .ignore -u15 $nick | describeVC %r 0,2 Command cu²a $me $+ : 9!0buyhost <host> , 9!0taisan , 9!0donate , 9!0tiepmau , 9!0hint , 9!0last , 9!0register , 9!0login , 9!0lo , 9!0de , 9!0baicaoto , 9!0war , 9!0taixiu , 9!0top10 , 9!0topAnswer , 9!0topWPM , 9!0topFast , 9!0topStreak  }
+;  if (!help* iswm $1-) && ($level($nick) >= 3) { .ignore -u15 $nick | describeVC %r 0,2 Command cu²a $me $+ : 9!0buyhost <host> , 9!0taisan , 9!0donate , 9!0tiepmau , 9!0hint , 9!0last , 9!0register , 9!0login , 9!0lo , 9!0de , 9!0baicaoto , 9!0war , 9!0taixiu , 9!0top10 , 9!0topAnswer , 9!0topWPM , 9!0topFast , 9!0topStreak  }
   if ($1 == !donate) && ($level($nick) >= 3) && ($2) && ($2 != $nick) {
     if ($4 == tỷ) { set %SoTienDonate $calc($3 * 1000000000) }
     elseif ($4 == tỏi) { set %SoTienDonate $calc($3 * 1000000000) }
