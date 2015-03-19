@@ -26,7 +26,6 @@ http://www.24h.com.vn/upload/rss/phithuongkyquac.rss
 http://www.24h.com.vn/upload/rss/congnghethongtin.rss
 http://www.24h.com.vn/upload/rss/otoxemay.rss
 http://www.24h.com.vn/upload/rss/thitruongtieudung.rss
-http://www.24h.com.vn/upload/rss/dulich.rss
 http://www.24h.com.vn/upload/rss/suckhoedoisong.rss
 http://www.24h.com.vn/upload/rss/cuoi24h.rss
 http://ngoisao.net/rss/hau-truong.rss
@@ -43,12 +42,12 @@ http://ngoisao.net/rss/clip.rss
 http://ngoisao.net/rss/chuyen-la.rss
 http://ngoisao.net/rss/hinh-su.rss
 http://ngoisao.net/rss/thuong-truong.rss
+http://ngoisao.net/rss/thoi-trang.rss
 http://ngoisao.net/rss/lam-dep.rss
 http://ngoisao.net/rss/tam-tinh.rss
 http://ngoisao.net/rss/dan-choi.rss
 http://ngoisao.net/rss/trac-nghiem.rss
 http://ngoisao.net/rss/cuoi.rss
-http://ngoisao.net/rss/an-choi-xem.rss
 http://ngoisao.net/rss/thi-anh.rss
 http://ngoisao.net/rss/choi-blog.rss
 http://ngoisao.net/rss/sach-hay.rss
@@ -67,7 +66,6 @@ http://www.eva.vn/rss/rss.php/2
 http://www.eva.vn/rss/rss.php/40
 http://www.eva.vn/rss/rss.php/3
 http://www.eva.vn/rss/rss.php/173
-http://www.eva.vn/rss/rss.php/186
 http://www.eva.vn/rss/rss.php/157
 http://www.zing.vn/news/rss/new.html
 http://TorViet.com/torrentrss.php?rows=10&ismalldescr=1&isize=1&iuplder=1

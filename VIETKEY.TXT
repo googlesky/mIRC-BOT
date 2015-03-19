@@ -35,19 +35,6 @@ on 1:text:*:%r: {
     }
     else { noticeVC $nick 11,1Mua cái gì vâ.y , ignore 15s vì cái tô.i khôn quá ^^ | .ignore -u15 $nick }
   }
-
-  ;Event New year
-  if ($1 == !nhanqua) && ($level($nick) >= 3) {
-    ;if ( $read(hethong\nhanqua.txt,ns,$nick) > 0 ) { noticeVC $nick 11,1Bạn đã nhận quà rồi. Chúc mừng năm mới - An Lành- Hạnh Phúc }
-    ;else { 
-    ;var %TienNhanQua = $rand(1,20000000000)
-    ;write hethong\nhanqua.txt $nick %TienNhanQua | noticeVC $nick 11,1Bạn đã nhận 04,1$ $+ $tien(%TienNhanQua) 11,1 làm quà tặng. Chúc mừng năm mới - An Lành- Hạnh Phúc | .ignore -u15 $nick
-    ;ghidiem diem $nick $calc($coidiem(diem,$nick) + %TienNhanQua )
-    ;timerNhanQua 1 3 noticeVC $nick 11,1ignore 15s vì đã nhận quà ^^ 
-    ; noticeVC $nick 0,04Event đã kết thúc. Cám ơn bạn đã quan tâm
-    ;}
-    noticeVC $nick 0,04Event đã kết thúc. Cám ơn bạn đã quan tâm
-  }
   if ($1 == !tiepmau) {
     ;LaNgTu 1 17/11/2001
     var %maxTiepMau = $calc(%MinReg / 10)
@@ -106,7 +93,7 @@ on 1:text:*:%r: {
       noticeVC $nick 8,1 $2  12Sô´ lâ`n Chuyê²n Tiê`n Ði4 %n.vd1 12Sô´ lâ`n Nhân Chuyê²n Tiê`n4 %n.vd2 
     }
   }
-;  if (!help* iswm $1-) && ($level($nick) >= 3) { .ignore -u15 $nick | describeVC %r 0,2 Command cu²a $me $+ : 9!0buyhost <host> , 9!0taisan , 9!0donate , 9!0tiepmau , 9!0hint , 9!0last , 9!0register , 9!0login , 9!0lo , 9!0de , 9!0baicaoto , 9!0war , 9!0taixiu , 9!0top10 , 9!0topAnswer , 9!0topWPM , 9!0topFast , 9!0topStreak  }
+  ;  if (!help* iswm $1-) && ($level($nick) >= 3) { .ignore -u15 $nick | describeVC %r 0,2 Command cu²a $me $+ : 9!0buyhost <host> , 9!0taisan , 9!0donate , 9!0tiepmau , 9!0hint , 9!0last , 9!0register , 9!0login , 9!0lo , 9!0de , 9!0baicaoto , 9!0war , 9!0taixiu , 9!0top10 , 9!0topAnswer , 9!0topWPM , 9!0topFast , 9!0topStreak  }
   if ($1 == !donate) && ($level($nick) >= 3) && ($2) && ($2 != $nick) {
     if ($4 == tỷ) { set %SoTienDonate $calc($3 * 1000000000) }
     elseif ($4 == tỏi) { set %SoTienDonate $calc($3 * 1000000000) }
@@ -147,7 +134,22 @@ on 1:text:*:%r: {
     var %iList = 1 | .ignore -u30 $nick | msgVC $nick Ban bi ignore 30 giây vì su² dung cmd 11,1 !ListPhanThuong 
     while (%iList <= $lines(PHANTHUONG.txt)) { msgVC $nick 08,01 $gettok($read(PHANTHUONG.txt, %iList),1,61)  tri. giá 09,01 $tien($gettok($read(PHANTHUONG.txt, %iList),2,61)) $+ $  | inc %iList }
   }
-  if ($1 == !Top10) && (%CmdChkTop == on) && ($level($nick) >= 3) { .ignore -u300 $nick | set %CmdChkTop off | msgVC $chan 00,01 Top Ðiê²m => $+ $ChkTopHD(HETHONG\diem.ini) }
+  if ($1 == !Top10) && (%CmdChkTop == on) && ($level($nick) >= 3) { 
+    .ignore -u300 $nick | set %CmdChkTop off 
+
+    var %sqlqueryselect = SELECT * FROM diem WHERE nick LIKE '%-HD' ORDER BY diem DESC Limit 10;
+    var %sqlres = $sqlite_query( %botdb , %sqlqueryselect)
+    if ( $sqlite_num_rows(%sqlres) > 0 ) {
+      var %numline = 1
+      var %top10sql
+      while ($sqlite_fetch_row(%sqlres, row, $SQLITE_ASSOC)) {
+        %top10sql = %top10sql $+ %numline $+ : $+ $r(9,13) $hget(row, nick) $+ 07 $tien($hget(row, diem)) $+ 04$ 0,01
+        inc %numline
+      }
+    }
+
+    msgVC $chan 00,01 Top Ðiê²m => %top10sql
+  }
   if ($1 == !TopAnswer) && (%CmdChkTop == on) && ($level($nick) >= 3) { .ignore -u300 $nick | set %CmdChkTop off | msgVC $chan 00,01 Top Answer => $+ $ChkHofHD(HETHONG\socau.ini) }
   if ($1 == !TopFast) && (%CmdChkTop == on) && ($level($nick) >= 3) { .ignore -u300 $nick | set %CmdChkTop off | msgVC $chan 00,01 Top Fast => $+ $ChkHofHD(HETHONG\fast.ini) }
   if ($1 == !TopWPM) && (%CmdChkTop == on) && ($level($nick) >= 3) { .ignore -u300 $nick | set %CmdChkTop off | msgVC $chan 00,01 Top WPM => $+ $ChkHofHD(HETHONG\wpm.ini) }
@@ -160,6 +162,35 @@ on 1:text:*:%r: {
   if (($nick == LangTuBuon) || ($nick == LaNgTu) || ($nick == vuichat) || ($nick == DrKhoQua)) && ($level($nick) >= 3) {
     if ($1 == !Stop) { .timers off | unset %dapan* | describeVC %r 12,11Temporary Stop GAME by Master 4 $+ $nick }
     if ($1 == !Start) { khoidonggame }
+    if ($1 == !Reset) {
+      timer 1 1 msg %r  $+ $r(1,13) $+ G  $+ $r(1,13) $+ a  $+ $r(1,13) $+ m  $+ $r(1,13) $+ e 07Sẽ reset trong 043 giây
+      timer 1 2 msg %r  $+ $r(1,13) $+ G  $+ $r(1,13) $+ a  $+ $r(1,13) $+ m  $+ $r(1,13) $+ e 07Sẽ reset trong 042 giây
+      timer 1 3 msg %r  $+ $r(1,13) $+ G  $+ $r(1,13) $+ a  $+ $r(1,13) $+ m  $+ $r(1,13) $+ e 07Sẽ reset trong 041 giây
+
+      var %sqlqueryselect = SELECT * FROM diem WHERE nick LIKE '%-HD';
+      var %sqlres = $sqlite_query( %botdb , %sqlqueryselect)
+      if ( $sqlite_num_rows(%sqlres) > 0 ) {
+        while ($sqlite_fetch_row(%sqlres, row, $SQLITE_ASSOC)) {
+          write HETHONG\ketquareset.txt $hget(row, nick) = $hget(row, diem)
+        }
+      }
+      copy bot.db $replace($+(BACKUP\bot-,$date,--,$time,.db),:,-,/,-)
+      .msgVC %r.master Backup Done! $replace($+(BACKUP\bot-,$date,--,$time,.ini),:,-,/,-)
+      
+      var %sqlquerydelete = DELETE FROM diem WHERE nick LIKE '%-HD';
+      sqlite_exec %botdb %sqlquerydelete
+      .msgVC %r.master $sqlite_changes(%botdb) dòng đã bị xóa.
+      
+      remove -b HETHONG\diem.ini
+      remove -b HETHONG\donate.txt
+      remove -b HETHONG\Lo.txt
+      remove -b HETHONG\De.txt
+      remove -b HETHONG\tiepmau.txt
+      
+      timer 1 5 .msgVC %r 0,04 $+ $me đã Reset điểm. Mời mọi người gõ 0,01!TiepMau
+      timer 1 6 .msgVC %r 0,04 $+ $me đã Reset điểm. Mời mọi người gõ 0,01!TiepMau
+      timer 1 7 .msgVC %r 0,04 $+ $me đã Reset điểm. Mời mọi người gõ 0,01!TiepMau
+    }
     if ($1 == !Random) { .timers off | unset %dapan* | describeVC %r 12,11 Temporary Stop GAME by Master 4 $+ $nick  | .timer 1 1 $read(game.txt) }
     if ($1 == !Game) && ($2) {
       var %iGame = 1, %mGame = $null
@@ -257,9 +288,9 @@ on *:text:*:?: {
     var %sqlnick = $nick
     var %sqlquery2 = SELECT * FROM login WHERE nick = ' $+ %sqlnick $+ ';
     var %register = $sqlite_query( %botdb , %sqlquery2 )
-;    echo 3 -a %register
+    ;    echo 3 -a %register
     if ($sqlite_num_rows(%register) == 0 ) {
-    
+
       var %passsssss1.tam = $3
       var %passsssss2.tam = $4
       var %sqlquerypass1 = $sqlite_query( %botdb , SELECT * FROM login WHERE pass1 = ' $+ %passsssss1.tam $+ '; )
@@ -267,12 +298,12 @@ on *:text:*:?: {
       if ($2 == $nick) && ( $sqlite_num_rows(%sqlquerypass1) == 0 ) && ( $sqlite_num_rows(%sqlquerypass2) == 0 ) {
         ;writeini -n hethong\login.ini DangNhap $nick $3 $4
         ;describeVC %r.master 11,1 Chào mùng $nick ! 0Ban ðã ðång ký xong. Mât khâ²u tài khoa²n cua² ban là:9 $2 0Mât khâ²u Recover là:13 $3 0. Múôn ðô²i mât khâ²u gõ 11 !SetPassword <mât khâ²u cu~> <mât khâ²u mói> 0Ban ðuoc tång truóc 4$ $+ $tien(%MinReg) 0vào tài khoa²n 4Chúc vu hiên tai : 11,01 Little Chick 
-        
+
         ;SQL
         %sqlqueryinsert = INSERT INTO "main"."login" ("nick", "pass1", "pass2") VALUES ( ' $+ %sqlnick $+ ' , ' $+ $3 $+ ' , ' $+ $4 $+ ');
         sqlite_exec %botdb %sqlqueryinsert
         ;echo 3 -a $sqlite_changes(%botdb) dòng table login đã được thêm vào.
-        
+
         .describeVC %r.master 11,1 Chào mùng $nick ! 0Ban ðã ðång ký xong. Mât khâ²u tài khoa²n cua² ban là:9 $3 0Mât khâ²u Recover là:13 $4 0. Múôn ðô²i mât khâ²u gõ 11 !SetPassword <mât khâ²u cu~> <mât khâ²u mói> 4Chúc vu hiên tai : 11,01 Little Chick 
         .describeVC %r 11,1 Chào mùng ban8 $nick 11ðã ðê´n vói4 $network 9Chúc ban ôm ðuoc nhiê`u tiê`n cua² $me 
         halt

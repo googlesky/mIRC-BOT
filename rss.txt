@@ -1,91 +1,197 @@
-ngoisao.net /rss/thoi-trang.rss
+www.24h.com.vn /upload/rss/dulich.rss
 HTTP/1.1 200 OK
-Server: Fengine/1.5.2
-Date: Tue, 17 Mar 2015 16:32:03 GMT
-Content-Type: application/xml; charset=utf-8
+Server: 24h.com.vn
+Date: Thu, 19 Mar 2015 19:02:21 GMT
+Content-Type: application/rss+xml
+Content-Length: 14489
+Last-Modified: Thu, 19 Mar 2015 01:35:01 GMT
 Connection: close
-Vary: Accept-Encoding
-Set-Cookie: device_env=4; expires=Tue, 24-Mar-2015 16:32:03 GMT; path=/; domain=vnexpress.net
-server: web_141.158
+Expires: Thu, 31 Dec 2037 23:55:55 GMT
+Cache-Control: max-age=315360000
+Accept-Ranges: bytes
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
+<rss version="2.0">
 <channel>
-<title>Thời trang - Ngôi sao RSS</title>
-<description>Ngoisao RSS</description>
-<pubDate>Tue, 17 Mar 2015 23:32:03 +0700</pubDate>
-<generator>ngoisao.net:http://ngoisao.net/rss</generator>
-<link>http://ngoisao.net/rss/thoi-trang.rss</link>
+<title>Tin tuc 24h | tin nhanh bong da | the thao | thoi trang, giai tri vn | bao online</title>
+<link>http://www.24h.com.vn/du-lich-c76.html</link>
+<description>Tin tuc trong ngay, bóng đá, thể thao, thời trang, giải trí. Update tin nhanh 24/24h. Nhiều đặc sản video tin tức việt nam, thế giới, video bong da anh chỉ có tại 24h.Tổng hợp tintuc vn, BAO CONG AN, an ninh, phap luat</description>
+<image>
+<url>http://www.24h.com.vn/images/logo24h-128x85.gif</url>
+<title>Tin tuc 24h | tin nhanh bong da | the thao | thoi trang, giai tri vn | báo online</title>
+<link>http://www.24h.com.vn</link>
+</image>
+<language>vi-vn</language>
+<copyright>(c)24h.com.vn</copyright>
+<ttl>60</ttl>
+<generator>noreply@24h.com.vn</generator>
 <item>
-<title>Nàng blogger gốc Á chuộng phong cách casual</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/nang-blogger-goc-a-chuong-phong-cach-casual-3158549.html"><img width=210 height=158 src="http://c1.f22.img.vnecdn.net/2015/03/17/top-1426576050_210x158.jpg" ></a></br>Style phóng khoáng, tiện dụng với những món đồ phổ biến được Claire Liu biến hóa đầy cá tính.]]></description>
-<pubDate>Tue, 17 Mar 2015 15:36:09 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/nang-blogger-goc-a-chuong-phong-cach-casual-3158549.html</link>
-<guid>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/nang-blogger-goc-a-chuong-phong-cach-casual-3158549.html</guid>
-<slash:comments>0</slash:comments>
+<title>Vẻ đẹp huyền ảo dưới dòng sông băng ở Iceland</title>
+<description>Hang động ngầm dưới lòng sông băng do núi lửa tạo ra khiến du khách không khỏi choáng ngợp.</description>
+<link>http://www.24h.com.vn/du-lich/ve-dep-huyen-ao-duoi-dong-song-bang-o-iceland-c76a697085.html</link>
+<pubDate>2015-03-19 07:30:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-19/1426728531-thumbnail.jpg</summaryImg>
 </item>
 <item>
-<title>Headphone tuyệt đẹp của Dolce &amp;amp; Gabbana giá 160 triệu</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/headphone-tuyet-dep-cua-dolce-amp-gabbana-gia-160-trieu-3158592.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/03/17/dolcegabbaheadphonet-1426577868_210x158.jpg" ></a></br>Tai nghe làm từ da nappa, trang trí pha lê Swarovski, ngọc trai, có chất lượng âm thanh tuyệt hảo.]]></description>
-<pubDate>Tue, 17 Mar 2015 15:16:59 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/headphone-tuyet-dep-cua-dolce-amp-gabbana-gia-160-trieu-3158592.html</link>
-<guid>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/headphone-tuyet-dep-cua-dolce-amp-gabbana-gia-160-trieu-3158592.html</guid>
-<slash:comments>0</slash:comments>
+<title>Độc và dị bảo tàng toilet ở Ấn Độ</title>
+<description>Mỹ, Mexico,... là nơi hội tụ nhiều bảo tàng kỳ lạ trên thế giới như bảo tàng Bad Art, bảo tàng xác ướp hay bảo tàng dưới nước Cancun.</description>
+<link>http://www.24h.com.vn/du-lich/doc-va-di-bao-tang-toilet-o-an-do-c76a697000.html</link>
+<pubDate>2015-03-18 13:30:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-18/1426650672-thumbnail.jpg</summaryImg>
 </item>
 <item>
-<title>Trà Ngọc Hằng mix gam đen điệu nghệ</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/tra-ngoc-hang-mix-gam-den-dieu-nghe-3158416.html"><img width=210 height=158 src="http://c1.f22.img.vnecdn.net/2015/03/17/top1-1426558415_210x158.jpg" ></a></br>Người đẹp tiết lộ bí quyết cách chọn lựa và mặc tông màu đen để không bị già trước tuổi.]]></description>
-<pubDate>Tue, 17 Mar 2015 10:03:35 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/tra-ngoc-hang-mix-gam-den-dieu-nghe-3158416.html</link>
-<guid>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/tra-ngoc-hang-mix-gam-den-dieu-nghe-3158416.html</guid>
-<slash:comments>0</slash:comments>
+<title>Những điểm du lịch "hot" nhất tháng ba</title>
+<description>Tháng ba, thời tiết ấm dần lên sau những ngày đông lạnh giá và cũng là thời điểm lý tưởng để bạn "xách ba lô và lên đường" khám phá những điểm đi chơi hấp dẫn.</description>
+<link>http://www.24h.com.vn/du-lich/nhung-diem-du-lich-hot-nhat-thang-ba-c76a696680.html</link>
+<pubDate>2015-03-18 07:30:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-17/1426555761-thumbnail.jpg</summaryImg>
 </item>
 <item>
-<title>Bộ sưu tập xuân hè của Yoshino</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/bo-suu-tap-xuan-he-cua-yoshino-3157840.html"><img width=210 height=158 src="http://c0.f23.img.vnecdn.net/2015/03/16/13-3-201553-232873482-3243-1426482722_210x158.jpeg" ></a></br>Thương hiệu cho ra mắt những mẫu thiết kế tinh tế với màu sắc và chất liệu được ưa chuộng.]]></description>
-<pubDate>Tue, 17 Mar 2015 10:00:00 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/bo-suu-tap-xuan-he-cua-yoshino-3157840.html</link>
-<guid>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/bo-suu-tap-xuan-he-cua-yoshino-3157840.html</guid>
-<slash:comments>0</slash:comments>
+<title>Sửng sốt trước làng cáo ở Nhật Bản</title>
+<description>Chúng ta đã từng nghe về đảo thỏ và đảo mèo ở Nhật Bản, nhưng tại quốc gia này còn có cả một ngôi làng là nơi trú ngụ của 6 loài cáo khác nhau, sinh tồn một cách tự nhiên.</description>
+<link>http://www.24h.com.vn/du-lich/sung-sot-truoc-lang-cao-o-nhat-ban-c76a695596.html</link>
+<pubDate>2015-03-17 07:30:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-17/1426560102-1426063492-langcao_infonet.jpg</summaryImg>
 </item>
 <item>
-<title>BOSS Womenswear ra mắt BST thu-đông 2015</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/boss-womenswear-ra-mat-bst-thu-dong-2015-3157839.html"><img width=210 height=158 src="http://c0.f23.img.vnecdn.net/2015/03/16/12-3-201556-560663835-3703-1426473194_210x158.jpeg" ></a></br>Show diễn giới thiệu bộ sưu tập thu- đông của BOSS Womenswear thu hút nhiều sao Hollywood.]]></description>
-<pubDate>Tue, 17 Mar 2015 09:00:00 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/boss-womenswear-ra-mat-bst-thu-dong-2015-3157839.html</link>
-<guid>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/boss-womenswear-ra-mat-bst-thu-dong-2015-3157839.html</guid>
-<slash:comments>0</slash:comments>
+<title>Đà Nẵng tổ chức cho người dân tham quan cầu vượt 3 tầng</title>
+<description>Ngày 17.3, Công ty TNHH BT Ngã Ba Huế Trung Nam, nhà đầu tư công trình Ngã Ba Huế cho biết, sẽ tổ chức cho người dân tham quan cầu vượt 3 tầng Ngã Ba Huế có quy mô lớn nhất Việt Nam trước ngày công trình khánh thành.</description>
+<link>http://www.24h.com.vn/du-lich/da-nang-to-chuc-cho-nguoi-dan-tham-quan-cau-vuot-3-tang-c76a696846.html</link>
+<pubDate>2015-03-17 17:24:02</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-17/1426587527-nga_ba_hue_lfut.jpg</summaryImg>
 </item>
 <item>
-<title>Á hậu Huyền My cá tính với 'Nghệ thuật Pop art'</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/a-hau-huyen-my-ca-tinh-voi-nghe-thuat-pop-art-3158112.html"><img width=210 height=158 src="http://c0.f22.img.vnecdn.net/2015/03/16/16-3-201520-8752-1426492687_210x158.jpeg" ></a></br>Sunfly ra mắt bộ sưu tập 'Nghệ thuật Pop art' với những thiết kế casual wear mang đậm hơi thở thời đại.]]></description>
-<pubDate>Tue, 17 Mar 2015 09:00:00 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/a-hau-huyen-my-ca-tinh-voi-nghe-thuat-pop-art-3158112.html</link>
-<guid>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/a-hau-huyen-my-ca-tinh-voi-nghe-thuat-pop-art-3158112.html</guid>
-<slash:comments>0</slash:comments>
+<title>Kỳ lạ lễ hội đi chân trần trên lửa tại Nhật Bản</title>
+<description>Lễ hội đi bộ trên lửa đỏ, than hồng bằng đôi chân trần ở Nhật Bản được tổ chức với mục đích cầu may mắn, bình an, sức khỏe và hòa bình thế giới.</description>
+<link>http://www.24h.com.vn/du-lich/ky-la-le-hoi-di-chan-tran-tren-lua-tai-nhat-ban-c76a696547.html</link>
+<pubDate>2015-03-16 14:29:09</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-16/1426490337-thumbnail.jpg</summaryImg>
 </item>
 <item>
-<title>Emspo gợi ý trang phục công sở cho mùa hè</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/emspo-goi-y-trang-phuc-cong-so-cho-mua-he-3158070.html"><img width=210 height=158 src="http://c0.f22.img.vnecdn.net/2015/03/16/16-3-201551-889551675-4179-1426490208_210x158.jpeg" ></a></br>Các thiết kế trẻ trung, hiện đại không chỉ phù hợp với công sở mà còn linh hoạt và dễ ứng dụng trong mọi hoàn cảnh.]]></description>
-<pubDate>Tue, 17 Mar 2015 08:00:00 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/emspo-goi-y-trang-phuc-cong-so-cho-mua-he-3158070.html</link>
-<guid>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/emspo-goi-y-trang-phuc-cong-so-cho-mua-he-3158070.html</guid>
-<slash:comments>0</slash:comments>
+<title>Đảo Corse, "nàng tiên biển" yêu kiều của nước Pháp</title>
+<description>Đảo Corse (Pháp) mang đến sự ấm áp, cảm giác hưởng thụ tuyệt vời, giúp du khách như chìm vào cõi bồng lai, thoát khỏi những áp lực của cuộc sống hiện đại.</description>
+<link>http://www.24h.com.vn/du-lich/dao-corse-nang-tien-bien-yeu-kieu-cua-nuoc-phap-c76a695762.html</link>
+<pubDate>2015-03-16 07:30:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-12/1426133130-dao_corse_2_qget.jpg</summaryImg>
 </item>
 <item>
-<title>7 cách mặc quần lửng đẹp như sao Việt</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/7-cach-mac-quan-lung-dep-nhu-sao-viet-3157954.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/03/16/top1-1426475697_210x158.jpg" ></a></br>Hồ Ngọc Hà, Ngô Thanh Vân, Huyền Trang mix trang phục sành điệu khi xuống phố trong những ngày nắng nóng.]]></description>
-<pubDate>Tue, 17 Mar 2015 00:46:00 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/7-cach-mac-quan-lung-dep-nhu-sao-viet-3157954.html</link>
-<guid>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/7-cach-mac-quan-lung-dep-nhu-sao-viet-3157954.html</guid>
-<slash:comments>0</slash:comments>
+<title>5 công trình tâm linh tọa lạc ở độ cao "khủng" nhất VN</title>
+<description>Chùa Đồng, tượng chúa Kito, chùa Linh Ứng, tượng Phật Thích Ca, chùa Linh Sơn Tiên Thạch là những công trình tâm linh nổi tiếng nằm trong danh sách này.</description>
+<link>http://www.24h.com.vn/du-lich/5-cong-trinh-tam-linh-noi-tieng-o-do-cao-khung-nhat-vn-c76a696230.html</link>
+<pubDate>2015-03-15 07:30:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-15/1426387822-thumbnail.jpg</summaryImg>
 </item>
 <item>
-<title>Trang phục xấu của showbiz Việt tuần qua</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/trang-phuc-xau-cua-showbiz-viet-tuan-qua-3158068.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/03/16/saovietmacxaut-1426500777_210x158.jpg" ></a></br>Váy áo phô nội y lộ liễu của Hương Tràm, Hà Kiều Anh không nhận được ý kiến đánh giá tích cực.]]></description>
-<pubDate>Tue, 17 Mar 2015 00:10:00 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/trang-phuc-xau-cua-showbiz-viet-tuan-qua-3158068.html</link>
-<guid>http://ngoisao.net/tin-tuc/phong-cach/thoi-trang/trang-phuc-xau-cua-showbiz-viet-tuan-qua-3158068.html</guid>
-<slash:comments>0</slash:comments>
+<title>Lãng đãng bức tranh phố cổ Đồng Văn</title>
+<description>Hà Giang - điểm hẹn nơi cực Bắc với địa hình đặc trưng của cao nguyên phía Bắc là một địa chỉ du lịch hấp dẫn. Đặc biệt, khu phố cổ Đồng Văn là một điểm đến mà du khách không thể bỏ qua.</description>
+<link>http://www.24h.com.vn/du-lich/lang-dang-buc-tranh-pho-co-dong-van-c76a695910.html</link>
+<pubDate>2015-03-14 07:30:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-13/1426209361-pho_co_adjs.jpg</summaryImg>
+</item>
+<item>
+<title>Phú Quốc - Điểm trăng mật lý tưởng thế giới</title>
+<description>Rough Guides - Tạp chí du lịch nổi tiếng của Anh vừa đưa ra danh sách 20 điểm trăng mật lý tưởng dành cho các cặp đôi, trong đó đảo Phú Quốc của Việt Nam.</description>
+<link>http://www.24h.com.vn/du-lich/phu-quoc-diem-trang-mat-ly-tuong-the-gioi-c76a695788.html</link>
+<pubDate>2015-03-13 07:30:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-12/1426144977-thumbnail.jpg</summaryImg>
+</item>
+<item>
+<title>Hai du khách Mỹ bị bắt vì khắc tên lên đấu trường La Mã</title>
+<description>Hai du khách đến từ Mỹ đã bị bắt khi sử dụng một đồng xu để khắc tên lên thành Đấu trường La Mã sau đó chụp ảnh tự sướng, báo La Stampa của Italia đưa tin.</description>
+<link>http://www.24h.com.vn/du-lich/hai-du-khach-my-bi-bat-vi-khac-ten-len-dau-truong-la-ma-c76a695766.html</link>
+<pubDate>2015-03-12 14:34:23</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-12/1426133602-rome_colosseum_3224540b_jprg.jpg</summaryImg>
+</item>
+<item>
+<title>10 hòn đảo lãng mạn nhất Nam Thái Bình Dương</title>
+<description>Với hơn 20.000 hòn đảo nằm rải rác trên một diện tích rất rộng, Nam Thái Bình Dương thực sự là một thiên đường đầy lãng mạn cho các cặp tình nhân cũng như du khách từ khắp nơi trên thế giới.</description>
+<link>http://www.24h.com.vn/du-lich/10-hon-dao-lang-man-nhat-o-nam-thai-binh-duong-c76a695606.html</link>
+<pubDate>2015-03-12 07:30:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-12/1426123296-thumbnail.jpg</summaryImg>
+</item>
+<item>
+<title>Mê đắm 10 "thiên đường sắc màu" rực rỡ nhất thế giới</title>
+<description>Khi nhìn vào những tấm hình bên dưới, thật khó để tin rằng những nơi này thực sự tồn tại trên trái đất chứ không phải chỉ trong mơ hay trong phim ảnh.</description>
+<link>http://www.24h.com.vn/du-lich/me-dam-10-thien-duong-sac-mau-ruc-ro-nhat-the-gioi-c76a695481.html</link>
+<pubDate>2015-03-11 11:00:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-11/1426057889-thumbnail.jpg</summaryImg>
+</item>
+<item>
+<title>“Gậy tự sướng” gây phiền nhiễu ở các bảo tàng Paris</title>
+<description>“Gậy tự sướng”, thiết bị gắn vào điện thoại di động hoặc máy chụp hình để người dùng thuận tiện chụp ảnh đang gặp phải cái nhìn phản cảm từ các bảo tàng, phòng trưng bày nghệ thuật ở Pháp.</description>
+<link>http://www.24h.com.vn/du-lich/gay-tu-suong-gay-phien-nhieu-o-cac-bao-tang-paris-c76a695258.html</link>
+<pubDate>2015-03-11 07:30:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-10/1425955353-gay_tu_suong_dgrk.jpg</summaryImg>
+</item>
+<item>
+<title>Ishtar - Cửa ngõ tuyệt đẹp dẫn đến kỳ quan Babylon</title>
+<description>Khi nhắc đến Babylon, cánh cổng Ishtar dẫn vào trung tâm thành phố Babylon luôn gây ấn tượng mạnh với khách, được xây dựng từ thế kỷ thứ 6 TCN (trước công nguyên).</description>
+<link>http://www.24h.com.vn/du-lich/ishtar-cua-ngo-tuyet-dep-dan-den-ky-quan-babylon-c76a694470.html</link>
+<pubDate>2015-03-10 13:30:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-05/1425552703-cong_babylon_1_sllx.jpg</summaryImg>
+</item>
+<item>
+<title>12 kỳ quan thiên nhiên nổi tiếng nhất thế giới</title>
+<description>Đây là những kỳ quan thiên nhiên nổi bật nhất thế giới, được lựa chọn từ khắp các khu vực như châu Phi, châu Á, châu Âu, châu Mỹ như là đại diện tiêu biểu nhất, thu hút nhiều du khách ghé thăm mỗi năm.</description>
+<link>http://www.24h.com.vn/du-lich/12-ky-quan-thien-nhien-noi-tieng-nhat-the-gioi-c76a694613.html</link>
+<pubDate>2015-03-10 07:30:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-06/1425628398-ky_quan_10_copy_copy_thzr.jpg</summaryImg>
+</item>
+<item>
+<title>Báo động tình trạng du khách khỏa thân tại di sản TG</title>
+<description>Người Camphuchia đang rất bức xúc trước tình trạng này. Không chỉ ở Campuchia, số lượng khách du lịch chụp ảnh “nóng” tại di sản Machu Picchu của Peru cũng đang gia tăng.
+ </description>
+<link>http://www.24h.com.vn/du-lich/bao-dong-tinh-trang-du-khach-khoa-than-o-di-san-the-gioi-c76a694611.html</link>
+<pubDate>2015-03-09 07:30:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-06/1425628344-machu_picchu_qjan.jpg</summaryImg>
+</item>
+<item>
+<title>Đỏ mặt với bảo tàng tình dục lâu đời nhất Hà Lan</title>
+<description>Thành phố Amsterdam (Hà Lan) nổi tiếng là một trong những thành phố “cởi mở” nhất thế giới, là “quê hương” của bảo tàng tình dục đền thờ thần Vệ Nữ nóng bỏng, táo bạo nhất.</description>
+<link>http://www.24h.com.vn/du-lich/den-tho-than-ve-nu-bao-tang-tinh-duc-lau-doi-nhat-ha-lan-c76a694471.html</link>
+<pubDate>2015-03-08 07:30:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-05/1425552815-bao_tang_tinh_duc_1_hufr.jpg</summaryImg>
+</item>
+<item>
+<title>Xếp hạng 8 di tích quốc gia tại 3 tỉnh</title>
+<description>Bộ VHTTDL vừa quyết định xếp hạng 8 di tích lịch sử, di tích kiến trúc nghệ thuật và danh lam thắng cảnh quốc gia tại 3 tỉnh thành.</description>
+<link>http://www.24h.com.vn/du-lich/xep-hang-8-di-tich-quoc-gia-tai-3-tinh-c76a694615.html</link>
+<pubDate>2015-03-08 13:00:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-06/1425628445-images1135022_hophi_atat.jpg</summaryImg>
+</item>
+<item>
+<title>Những trải nghiệm không thể bỏ lỡ ở Dubai</title>
+<description>Là thành phố với mức dân số cao nhất trong Các Tiểu vương Quốc Arab Thống nhất (UAE), Dubai với những công trình tráng lệ đã trở thành một trong những thành phố đẹp nhất, “đáng sống” và “đáng đến” nhất ở Trung Đông và trên toàn thế giới.</description>
+<link>http://www.24h.com.vn/du-lich/nhung-trai-nghiem-khong-the-bo-lo-o-dubai-c76a694465.html</link>
+<pubDate>2015-03-07 07:30:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-07/1425701526-thumbnail.jpg</summaryImg>
+</item>
+<item>
+<title>Hà Nội đẹp tinh khôi trong màu trắng hoa sưa</title>
+<description>Ngắm nhìn những chùm hoa sưa trắng tinh khôi, lòng người như cảm thấy nhẹ dịu đến lạ lùng.</description>
+<link>http://www.24h.com.vn/du-lich/ha-noi-dep-tinh-khoi-trong-mau-trang-hoa-sua-c76a694345.html</link>
+<pubDate>2015-03-06 07:30:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-06/1425609580-1425520894-1--9-.jpg</summaryImg>
+</item>
+<item>
+<title>Ốc đảo "thần tiên" giữa sa mạc khô cằn nhất thế giới</title>
+<description>Phố quận Huacachina nằm lọt thỏm giữa một trong những miền khô cằn nhất trái đất, với những cây cọ tán sum suê và một đầm phá êm đềm được cho là có đặc tính chữa bệnh.</description>
+<link>http://www.24h.com.vn/du-lich/oc-dao-than-tien-giua-sa-mac-kho-can-nhat-the-gioi-c76a694069.html</link>
+<pubDate>2015-03-05 07:30:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-04/1425432070-thumbnail.jpg</summaryImg>
+</item>
+<item>
+<title>Thủ tướng đồng ý thành lập Sở Du lịch Hà Nội</title>
+<description>Người đứng đầu Chính phủ nhất trí với đề xuất của thành phố Hà Nội về việc thành lập Sở Du lịch Hà Nội.</description>
+<link>http://www.24h.com.vn/du-lich/thu-tuong-dong-y-thanh-lap-so-du-lich-ha-noi-c76a694482.html</link>
+<pubDate>2015-03-05 21:01:40</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-05/1425564203-so_du_lich_pfrn.jpg</summaryImg>
+</item>
+<item>
+<title>Ngắm “thành phố không ngủ” Las Vegas từ độ cao 2600 mét</title>
+<description>Lần đầu tiên, một nhiếp ảnh gia ngồi trực thăng bay lên độ cao 2.600 mét để chụp lại những hình ảnh tuyệt đẹp của thành phố Las Vegas về đêm.</description>
+<link>http://www.24h.com.vn/du-lich/ngam-thanh-pho-khong-ngu-las-vegas-tu-do-cao-2600-met-c76a693991.html</link>
+<pubDate>2015-03-04 07:30:00</pubDate>
+<summaryImg>/upload/1-2015/images/2015-03-04/1425456165-thumbnail.jpg</summaryImg>
 </item>
 </channel>
 </rss>
