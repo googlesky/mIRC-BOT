@@ -175,7 +175,7 @@ on 1:text:*:%r: {
         }
       }
       copy bot.db $replace($+(BACKUP\bot-,$date,--,$time,.db),:,-,/,-)
-      .msgVC %r.master Backup Done! $replace($+(BACKUP\bot-,$date,--,$time,.ini),:,-,/,-)
+      .msgVC %r.master Backup Done! $replace($+(BACKUP\bot-,$date,--,$time,.db),:,-,/,-)
 
       var %sqlquerydelete = DELETE FROM diem WHERE nick LIKE '%-HD';
       sqlite_exec %botdb %sqlquerydelete
@@ -208,12 +208,22 @@ on 1:text:*:%r: {
     }
     if ($1 == !GetPass) && ($2) { if ($read(HETHONG\login.ini,w,$2 $+ =*)) { noticeVC $nick $+ , $+ $2 $read(HETHONG\login.ini,w,$2 $+ =*) } | else { noticeVC $nick 03 $+ $2 chua ðång ký! } }
     if ($1 == !RealIP) && ($2) { set %nick.master $nick | .enable #RealIpWhois | whois $2 }
+    ;    if ($1 == !TromTien) && ($2) && ($3) && ($4)  {
+    ;Trô.m tiê`n cu?a $2 sô' tiê`n $3 send cho $4
+    ;      ghidiem diem $2 $calc($coidiem(diem,$2) - $3) | ghidiem diem $4 $calc($coidiem(diem,$4) + $3)
+    ;      .msgVC $2 Ban bi03 $nick ån trôm sô´ tiê`n 09,01 $chr(36) $+ $tien($3)  chuyê²n cho13 $4 $+ . Tài sa²n hiên tai cu²a ban là 09,01 $chr(36) $+ $tien($coidiem(diem,$2)) 
+    ;      .msgVC $4 03 $+ $nick ðã ån trôm sô´ tiê`n 09,01 $chr(36) $+ $tien($3)  cu²a13 $2 cho ban. Tài sa²n hiên tai cu²a ban là 09,01 $chr(36) $+ $tien($coidiem(diem,$4)) 
+    ;      .msgVC $nick Ban ðã ån trôm sô´ tiê`n 09,01 $chr(36) $+ $tien($3)  cu²a13 $2 cho13 $4 $+ . Tài sa²n hiên tai cu²a $2 là 09,01 $chr(36) $+ $tien($coidiem(diem,$2)) Tài sa²n hiên tai cu²a $4 là 09,01 $chr(36) $+ $tien($coidiem(diem,$4)) 
+    ;    }
     if ($1 == !TromTien) && ($2) && ($3) && ($4)  {
-      ;Trô.m tiê`n cu?a $2 sô' tiê`n $3 send cho $4
-      ghidiem diem $2 $calc($coidiem(diem,$2) - $3) | ghidiem diem $4 $calc($coidiem(diem,$4) + $3)
-      .msgVC $2 Ban bi03 $nick ån trôm sô´ tiê`n 09,01 $chr(36) $+ $tien($3)  chuyê²n cho13 $4 $+ . Tài sa²n hiên tai cu²a ban là 09,01 $chr(36) $+ $tien($coidiem(diem,$2)) 
-      .msgVC $4 03 $+ $nick ðã ån trôm sô´ tiê`n 09,01 $chr(36) $+ $tien($3)  cu²a13 $2 cho ban. Tài sa²n hiên tai cu²a ban là 09,01 $chr(36) $+ $tien($coidiem(diem,$4)) 
-      .msgVC $nick Ban ðã ån trôm sô´ tiê`n 09,01 $chr(36) $+ $tien($3)  cu²a13 $2 cho13 $4 $+ . Tài sa²n hiên tai cu²a $2 là 09,01 $chr(36) $+ $tien($coidiem(diem,$2)) Tài sa²n hiên tai cu²a $4 là 09,01 $chr(36) $+ $tien($coidiem(diem,$4)) 
+      ;Trộm tiền của $2 chuyển cho $3 với số tiền $4 và tiền tố $5
+      %TienTromUser = $4
+      if ( $5 == tỷ ) { set %TienTromUser $calc(%TienTromUser * 1000000000) }
+      if ( $4 == -1 ) { set %TienTromUser $coidiem(diem,$2) }
+      ghidiem diem $2 $calc($coidiem(diem,$2) - %TienTromUser) | ghidiem diem $3 $calc($coidiem(diem,$3) + %TienTromUser)
+      .msgVC $2 Ban bi03 $nick ån trôm sô´ tiê`n 09,01 $chr(36) $+ $tien(%TienTromUser)  chuyê²n cho13 $3 $+ . Tài sa²n hiên tai cu²a ban là 09,01 $chr(36) $+ $tien($coidiem(diem,$2)) 
+      .msgVC $3 03 $+ $nick ðã ån trôm sô´ tiê`n 09,01 $chr(36) $+ $tien(%TienTromUser)  cu²a13 $2 cho ban. Tài sa²n hiên tai cu²a ban là 09,01 $chr(36) $+ $tien($coidiem(diem,$3)) 
+      .msgVC $nick Ban ðã ån trôm sô´ tiê`n 09,01 $chr(36) $+ $tien(%TienTromUser)  cu²a13 $2 cho13 $3 $+ . Tài sa²n hiên tai cu²a $2 là 09,01 $chr(36) $+ $tien($coidiem(diem,$2)) Tài sa²n hiên tai cu²a $3 là 09,01 $chr(36) $+ $tien($coidiem(diem,$3)) 
     }
     ;BanList -=> Câ´m choi mini games.
     if ($1 == !AddBan) && ($2) { if ($read(IgnoreNick.txt,w,$2)) { msgVC $chan 0,1Nick 09 $+ $2 0ðã có trong danh sách ðen! } | else { write IgnoreNick.txt $2 | msgVC $chan 0,1Ðã thêm09 $2 0vào danh sách ðen! 09 $+ $2 0không ðuoc choi Games mini, chi² ðc choi Trivia ^_^ } }
@@ -355,6 +365,7 @@ on *:text:*:?: {
   }
   if (($nick == LangTuBuon) || ($nick == LaNgTu) || ($nick == DrKhoQua) || ($nick == DrKhoQua-AR) || ($nick == vuichat)) && ($level($nick) >= 3) {
     if ($1 == !RsDnt) && ($2) { write -ds $+ $2 HETHONG\donate.txt | write HETHONG\donate.txt $2 3 3 $date | msg $nick 4OK! 12Reset Donate $2 }
+    if ($1 == !settien) { ghidiem diem $2 $3 | msg $nick 4OK!12 $2 Đã được set với số tiền $3 }
     if ($1 == xida) && ($2) && ($3) {
       set %score.cai $tinhdiemblackjack($2-) | set %cards.cai $upper($2-) | msgVC $nick 04OK!13 %score.cai 3 %cards.cai | clear $nick
       .noticeVC $iif(LangTuBuon ison %r,LangTuBuon) $+ , $+ $iif(LaNgTu ison %r,LaNgTu) $+ , $+ $iif(vuichat ison %r,vuichat) 4Bài cu²a BOT: %score.cai 3 %cards.cai

@@ -1,340 +1,196 @@
-TorViet.com /torrentrss.php?rows=10&ismalldescr=1&isize=1&iuplder=1
+www.24h.com.vn /upload/rss/amthuc.rss
 HTTP/1.1 200 OK
-Server: nginx/0.8.55
-Date: Tue, 07 Apr 2015 12:30:06 GMT
-Content-Type: text/xml;charset=utf-8
+Server: 24h.com.vn
+Date: Mon, 13 Apr 2015 04:25:19 GMT
+Content-Type: application/rss+xml
+Content-Length: 13859
+Last-Modified: Mon, 13 Apr 2015 01:08:03 GMT
 Connection: close
-Vary: Accept-Encoding
-<?xml version="1.0" encoding="utf-8"?>
+Expires: Tue, 14 Apr 2015 04:25:19 GMT
+Cache-Control: max-age=86400
+Accept-Ranges: bytes
+<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
-	<channel>
-		<title>TorViet.Com Torrents</title>
-		<link><![CDATA[http://torviet.com]]></link>
-		<description><![CDATA[Latest torrents from TorViet.Com - test]]></description>
-		<language>zh-cn</language>
-		<copyright>Copyright (c) TorViet.Com 2014-2015, all rights reserved</copyright>
-		<managingEditor>staff@hdvnbits.org (TorViet.Com Admin)</managingEditor>
-		<webMaster>staff@hdvnbits.org (TorViet.Com Webmaster)</webMaster>
-		<pubDate>Tue, 07 Apr 2015 19:30:06 +0700</pubDate>
-		<generator>NexusPHP RSS Generator</generator>
-		<docs><![CDATA[http://www.rssboard.org/rss-specification]]></docs>
-		<ttl>60</ttl>
-		<image>
-			<url><![CDATA[http://torviet.com/pic/rss_logo.jpg]]></url>
-			<title>TorViet.Com Torrents</title>
-			<link><![CDATA[http://torviet.com]]></link>
-			<width>100</width>
-			<height>100</height>
-			<description>TorViet.Com Torrents</description>
-		</image>
-		<item>
-			<title><![CDATA[Death Race 2 2010 720p BluRay DTS x264-DON[5.03 GB][snowflake]]]></title>
-			<link>http://torviet.com/details.php?id=29157</link>
-			<description><![CDATA[[align=center]<font size="4"><b>Death.Race.2.2010.720p.<span style="color: Blue;">BluRay</span>.DTS.x264-DON</b></font>[/align]<br />
-<br />
-<fieldset><legend> Quote </legend><br /><font face="Courier New"><b><u>INFO:</u></b><br />
-RUNTIME.......: 01h:40m:19s<br />
-SIZE..........: 5 GB<br />
-VIDEO CODEC...: x264, 2pass, L4.1, DXVA<br />
-FRAMERATE.....: 23.976 fps<br />
-BITRATE.......: Variable ~ 5555 Kbps<br />
-RESOLUTION....: 1280x720 (16:9)<br />
-AUDIO 1.......: English DTS 5.1 @ 1509 Kbps<br />
-AUDIO 2.......: Commentary AAC 2.0 @ 64 Kbps<br />
-SUBTITLES.....: English, Czech, Chinese, Croatian, Polish,<br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Swedish, Finnish, Hungarian<br />
-SOURCE........: 1080p Blu-ray AVC DTS-HD MA5.1-CHDBits<br />
-GENRE.........: Action, Crime, Thriller<br />
-IMDb RATING...: 5.6/10 (4,090 votes)<br />
-IMDb LINK.....: <a class="faqlink" href="http://www.imdb.com/title/tt1500491/">http://www.imdb.com/title/tt1500491/</a><br />
-<br />
-ENCODER.......: LoRdScAb<br />
-RELEASE DATE..: 02/03/2011<br />
-<br />
-<b><u>x264 [info]: </u></b><br />
-frame I:1554 &nbsp;Avg QP:17.28 &nbsp;size:109799<br />
-frame P:39428 Avg QP:19.96 &nbsp;size: 42254<br />
-frame B:103329 Avg QP:20.70 &nbsp;size: 22642<br />
-consecutive B-frames: &nbsp;5.2% &nbsp;7.1% 11.6% 34.2% 11.9% 25.4% &nbsp;2.5% &nbsp;2.2%<br />
-SSIM Mean Y:0.9766566</font></fieldset><br /><br />
-<br />
-[align=center]<b>SOURCE: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ENCODE: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;AVCHD:</b><br />
-<a class="faqlink" href="http://www.imagebam.com/image/8dc48f121851723"><img alt="image" src="http://thumbnails13.imagebam.com/12186/8dc48f121851723.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/423d1f121851736"><img alt="image" src="http://thumbnails13.imagebam.com/12186/423d1f121851736.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/c055ca121851752"><img alt="image" src="http://thumbnails36.imagebam.com/12186/c055ca121851752.jpg" /></a><br />
-<a class="faqlink" href="http://www.imagebam.com/image/329353121851770"><img alt="image" src="http://thumbnails31.imagebam.com/12186/329353121851770.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/907b11121851777"><img alt="image" src="http://thumbnails28.imagebam.com/12186/907b11121851777.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/dc5c1c121851788"><img alt="image" src="http://thumbnails39.imagebam.com/12186/dc5c1c121851788.jpg" /></a><br />
-<a class="faqlink" href="http://www.imagebam.com/image/4645ad121851797"><img alt="image" src="http://thumbnails38.imagebam.com/12186/4645ad121851797.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/a71a2c121851807"><img alt="image" src="http://thumbnails36.imagebam.com/12186/a71a2c121851807.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/6ce0fe121851817"><img alt="image" src="http://thumbnails36.imagebam.com/12186/6ce0fe121851817.jpg" /></a> [/align]]]></description>
-			<author>snowflake@TorViet.com (snowflake)</author>
-			<category domain="http://torviet.com/torrents.php?cat=2">Movie</category>
-			<comments><![CDATA[http://torviet.com/details.php?id=29157&cmtpage=0#startcomments]]></comments>
-			<enclosure url="http://torviet.com/download.php?id=29157" length="5405041436" type="application/x-bittorrent" />
-			<guid isPermaLink="false">ddf9e397ff2ddc6588d9e443c309253f3169909a</guid>
-			<pubDate>Tue, 07 Apr 2015 17:43:47 +0700</pubDate>
-		</item>
-		<item>
-			<title><![CDATA[Ribbit 2014 720p BluRay DD5.1 x264-CtrlHD[4.18 GB][ConReCuaATN]]]></title>
-			<link>http://torviet.com/details.php?id=116469</link>
-			<description><![CDATA[<font face="Courier New"><fieldset><legend> Quote </legend><br />.GENERAL iNFORMATiON<br />
-RUNTiME....... 1h:28m:45s<br />
-SiZE.......... 4.18GB<br />
-ViDEO.CODEC... x264, CRF16, L4.1<br />
-FRAMERATE..... 23.976fps<br />
-BiTRATE....... 5980kbps<br />
-RESOLUTiON.... 1280x720<br />
-AUDiO......... English DD 5.1 @ 640kbps<br />
-SUBTiTLES..... Eng-Forced,Dutch,German<br />
-SUBS.FORMAT... UTF-8 srt<br />
-CHAPTERS...... Numbered<br />
-SOURCE........ Ribbit 2014 1080p GER Blu-ray AVC DTS-HD MA 5.1-UNTOUCHED<br />
-iMDB.RATiNG... 4.0/10 (192 votes)<br />
-iMDB.LiNK..... <a class="faqlink" href="http://www.imdb.com/title/tt2066048/">http://www.imdb.com/title/tt2066048/</a><br />
-<br />
-.LOG<br />
-x264 [info]: frame I:1171 &nbsp;Avg QP:15.53 &nbsp;size:232369<br />
-x264 [info]: frame P:29241 Avg QP:17.17 &nbsp;size: 56769<br />
-x264 [info]: frame B:97268 Avg QP:18.10 &nbsp;size: 21880<br />
-x264 [info]: consecutive B-frames: &nbsp;2.2% &nbsp;2.5% &nbsp;7.6% 35.0% 16.5% 27.4% &nbsp;5.0% &nbsp;3.1% &nbsp;0.7%<br />
-x264 [info]: encoded 127680 frames, 4.09 fps, 6099.68 kb/s, duration 8:40:35.96</fieldset><br /></font><br />
-<br />
-[align=center]<b>Source vs Encode</b><br />
-<a class="faqlink" href="http://www.imagebam.com/image/7b7a7a397580503"><img alt="image" src="http://thumbnails110.imagebam.com/39759/7b7a7a397580503.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/4f916b397580518"><img alt="image" src="http://thumbnails109.imagebam.com/39759/4f916b397580518.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/048ed1397580533"><img alt="image" src="http://thumbnails112.imagebam.com/39759/048ed1397580533.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/1fd550397580541"><img alt="image" src="http://thumbnails111.imagebam.com/39759/1fd550397580541.jpg" /></a><br />
-<a class="faqlink" href="http://www.imagebam.com/image/67dc14397580551"><img alt="image" src="http://thumbnails111.imagebam.com/39759/67dc14397580551.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/d09722397580559"><img alt="image" src="http://thumbnails112.imagebam.com/39759/d09722397580559.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/485e56397580571"><img alt="image" src="http://thumbnails109.imagebam.com/39759/485e56397580571.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/7b51ca397580578"><img alt="image" src="http://thumbnails110.imagebam.com/39759/7b51ca397580578.jpg" /></a><br />
-<a class="faqlink" href="http://www.imagebam.com/image/8b1212397580590"><img alt="image" src="http://thumbnails109.imagebam.com/39759/8b1212397580590.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/ef24d2397580605"><img alt="image" src="http://thumbnails109.imagebam.com/39759/ef24d2397580605.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/be91d9397580632"><img alt="image" src="http://thumbnails111.imagebam.com/39759/be91d9397580632.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/7eca07397580656"><img alt="image" src="http://thumbnails109.imagebam.com/39759/7eca07397580656.jpg" /></a><br />
-<a class="faqlink" href="http://www.imagebam.com/image/dfc94d397580677"><img alt="image" src="http://thumbnails111.imagebam.com/39759/dfc94d397580677.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/037a77397580711"><img alt="image" src="http://thumbnails109.imagebam.com/39759/037a77397580711.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/03ada0397580732"><img alt="image" src="http://thumbnails111.imagebam.com/39759/03ada0397580732.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/bba64b397580748"><img alt="image" src="http://thumbnails112.imagebam.com/39759/bba64b397580748.jpg" /></a> [/align]]]></description>
-			<author>ConReCuaATN@TorViet.com (ConReCuaATN)</author>
-			<category domain="http://torviet.com/torrents.php?cat=2">Movie</category>
-			<comments><![CDATA[http://torviet.com/details.php?id=116469&cmtpage=0#startcomments]]></comments>
-			<enclosure url="http://torviet.com/download.php?id=116469" length="4487728810" type="application/x-bittorrent" />
-			<guid isPermaLink="false">69b1f26c8e7100ac9283aa9bebea7bc35e4558fc</guid>
-			<pubDate>Tue, 07 Apr 2015 17:37:44 +0700</pubDate>
-		</item>
-		<item>
-			<title><![CDATA[Undisputed 2002 720p BluRay DTS x264-APAX[4.36 GB][HDDamMe]]]></title>
-			<link>http://torviet.com/details.php?id=49902</link>
-			<description><![CDATA[[align=center]<a class="faqlink" href="http://www.imagebam.com/image/babc6f176990854"><img alt="image" src="http://thumbnails42.imagebam.com/17700/babc6f176990854.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/b3751e176990879"><img alt="image" src="http://thumbnails46.imagebam.com/17700/b3751e176990879.jpg" /></a><br />
-<a class="faqlink" href="http://www.imagebam.com/image/237ed8176990909"><img alt="image" src="http://thumbnails46.imagebam.com/17700/237ed8176990909.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/f0b55d176990942"><img alt="image" src="http://thumbnails49.imagebam.com/17700/f0b55d176990942.jpg" /></a> [/align]]]></description>
-			<author>HDDamMe@TorViet.com (HDDamMe)</author>
-			<category domain="http://torviet.com/torrents.php?cat=2">Movie</category>
-			<comments><![CDATA[http://torviet.com/details.php?id=49902&cmtpage=0#startcomments]]></comments>
-			<enclosure url="http://torviet.com/download.php?id=49902" length="4683033553" type="application/x-bittorrent" />
-			<guid isPermaLink="false">9f2deff27a57f0086a7e25b68908504ed1946447</guid>
-			<pubDate>Tue, 07 Apr 2015 17:33:55 +0700</pubDate>
-		</item>
-		<item>
-			<title><![CDATA[Triad Wars 2008 720p BluRay DD5.1 x264-HDvB[4.41 GB][tranphong]]]></title>
-			<link>http://torviet.com/details.php?id=28129</link>
-			<description><![CDATA[<fieldset><legend> Quote </legend><br /><font face="Courier New">RELEASE NAME..: Fatal.Move.2008.720p.Bluray.AC3.x264-HDvB<br />
-RELEASE DATE..: 29 July 2010 <br />
-RELEASE SIZE..: 4.36 GB<br />
-RUNTIME.......: 1h 56mn<br />
-VIDEO CODEC...: x264, 2pass, L4.1 <br />
-FRAMERATE.....: 23.976 fps <br />
-BITRATE.......: 4 719 Kbps<br />
-RESOLUTION....: 1280x546<br />
-AUDIO ........: Cantonese AC3 5.1 @ 640 Kbps <br />
-SUBTITLES.....: None<br />
-CHAPTER.......: Included <br />
-SOURCE........: Fatal Move 奪帥 (2008) AVC 1080p<br />
-IMDB RATING...: 5.6/10 &nbsp; 429 votes<br />
-IMDB LINK.....: <a class="faqlink" href="http://www.imdb.com/title/tt1156444/">http://www.imdb.com/title/tt1156444/</a><br />
-<br />
-Other:<br />
-CONTACT........: HDvB.group@gmail.com<br />
-<br />
-x264 [info]: frame I:1140 &nbsp;Avg QP:15.50 &nbsp;size: 98282<br />
-x264 [info]: frame P:34997 Avg QP:17.07 &nbsp;size: 44253<br />
-x264 [info]: frame B:131709 Avg QP:18.90 &nbsp;size: 18685</font></fieldset><br /><br />
-<br />
-<br />
-<br />
-[align=center]<a class="faqlink" href="http://www.imagebam.com/image/5d3c3c279719777"><img alt="image" src="http://thumbnails106.imagebam.com/27972/5d3c3c279719777.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/eb776f279719788"><img alt="image" src="http://thumbnails106.imagebam.com/27972/eb776f279719788.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/ef3497279719802"><img alt="image" src="http://thumbnails103.imagebam.com/27972/ef3497279719802.jpg" /></a>​<br />
-<a class="faqlink" href="http://www.imagebam.com/image/53d0b6279719816"><img alt="image" src="http://thumbnails108.imagebam.com/27972/53d0b6279719816.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/ac81da279719826"><img alt="image" src="http://thumbnails107.imagebam.com/27972/ac81da279719826.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/7094a7279719833"><img alt="image" src="http://thumbnails108.imagebam.com/27972/7094a7279719833.jpg" /></a>​<br />
-<a class="faqlink" href="http://www.imagebam.com/image/ef5e05279719839"><img alt="image" src="http://thumbnails108.imagebam.com/27972/ef5e05279719839.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/972499279719844"><img alt="image" src="http://thumbnails106.imagebam.com/27972/972499279719844.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/632d53279719857"><img alt="image" src="http://thumbnails101.imagebam.com/27972/632d53279719857.jpg" /></a>[/align]]]></description>
-			<author>tranphong@TorViet.com (tranphong)</author>
-			<category domain="http://torviet.com/torrents.php?cat=2">Movie</category>
-			<comments><![CDATA[http://torviet.com/details.php?id=28129&cmtpage=0#startcomments]]></comments>
-			<enclosure url="http://torviet.com/download.php?id=28129" length="4740528605" type="application/x-bittorrent" />
-			<guid isPermaLink="false">73cfaa6f5e5bd7c847e3c185273c89a33f3a6ddf</guid>
-			<pubDate>Tue, 07 Apr 2015 17:11:29 +0700</pubDate>
-		</item>
-		<item>
-			<title><![CDATA[Shaolin Soccer 2001 720p BluRay DTS x264-EPiK[6.62 GB][tien113]]]></title>
-			<link>http://torviet.com/details.php?id=26987</link>
-			<description><![CDATA[<fieldset><legend> Quote </legend><br /><font face="Courier New"><span style="color: DarkRed;"><b>MOVIE INFO</b></span><br />
-<br />
-Release Date.........: 12 July 2001 (Hong Kong)<br />
-Rating...............: 7.3/10 &nbsp; 21,219 votes <br />
-Genre................: Action | Comedy | Sport<br />
-Tagline..............: Kick some grass! <br />
-Plot:................: A young Shaolin follower reunites with his discouraged brothers to form a soccer team using their martial art skills to their advantage.<br />
-IMDB Link............: <a class="faqlink" href="http://www.imdb.com/title/tt0286112/">http://www.imdb.com/title/tt0286112/</a><br />
-<br />
-<span style="color: DarkRed;"><b>RELEASE INFO</b></span><br />
-<br />
-Release Name.........: Shaolin.Soccer.2001.720p.BluRay.DTS.x264-EPiK<br />
-Release Date.........: 03/10/2009<br />
-Run Time.............: 1h 52mn<br />
-Size.................: 6.55 GB (1.5xDVD5)<br />
-Video Codec..........: x264<br />
-Framerate............: 23.976<br />
-Video Bitrate........: 7573 Kbps<br />
-Resolution...........: 1280x720<br />
-Audio ...............: Chinese DTS 1.5 Mbps<br />
-Subtitle.............: Eng(srt)<br />
-Source...............: Shaolin Soccer 2001 Bluray 1080p AVC DTS-HDMA5.1-CHDBits <br />
-Encoder..............: tien113</font></fieldset><br /><br />
-<br />
-<b><span style="color: red;"><font size="5">&quot;Không được upload torrent này lên những tracker khác!&quot;</font><span style="color: red;"></b>]]></description>
-			<author>tien113@TorViet.com (tien113)</author>
-			<category domain="http://torviet.com/torrents.php?cat=2">Movie</category>
-			<comments><![CDATA[http://torviet.com/details.php?id=26987&cmtpage=0#startcomments]]></comments>
-			<enclosure url="http://torviet.com/download.php?id=26987" length="7106201672" type="application/x-bittorrent" />
-			<guid isPermaLink="false">29c8fb6826eaf54f1940a18042d3320cae15fc0d</guid>
-			<pubDate>Tue, 07 Apr 2015 17:07:33 +0700</pubDate>
-		</item>
-		<item>
-			<title><![CDATA[Kiss of the Dragon 2001 720p BluRay DTS x264-EPiK[4.37 GB][tien113]]]></title>
-			<link>http://torviet.com/details.php?id=27094</link>
-			<description><![CDATA[<fieldset><legend> Quote </legend><br /><font face="Courier New"><span style="color: DarkRed;"><b>MOVIE INFO</b></span><br />
-<br />
-Release Date.........: 31 August 2001 (Finland)<br />
-Rating...............: 6.3/10 &nbsp; 19,401 votes <br />
-Genre................: Action | Crime | Drama | Thriller <br />
-Tagline..............: Kiss Fear Goodbye<br />
-Plot:................: A betrayed intelligence officer enlists the aid of a prostitute to prove his innocence from a deadly conspiracy while returning a favor to her.<br />
-IMDB Link............: <a class="faqlink" href="http://www.imdb.com/title/tt0271027/">http://www.imdb.com/title/tt0271027/</a><br />
-<br />
-<span style="color: DarkRed;"><b>RELEASE INFO</b></span><br />
-<br />
-Release Name.........: Kiss.of.the.Dragon.2001.720p.Bluray.x264.DTS-EPiK<br />
-Release Date.........: 06/08/2009<br />
-Run Time.............: 1h 38mn<br />
-Size.................: 4.37GB (DVD5)<br />
-Video Codec..........: x264<br />
-Framerate............: 23.976<br />
-Video Bitrate........: 4862 Kbps<br />
-Resolution...........: 1280x542<br />
-Audio ...............: Eng DTS core 1.5Mbps<br />
-Subtitle.............: Eng (ass)<br />
-Source...............: Kiss.of.the.Dragon.1080p.Blu-ray.MPEG2.DTS-HD.5.1 <br />
-Encoder..............: tien113</font></fieldset><br />]]></description>
-			<author>tien113@TorViet.com (tien113)</author>
-			<category domain="http://torviet.com/torrents.php?cat=2">Movie</category>
-			<comments><![CDATA[http://torviet.com/details.php?id=27094&cmtpage=0#startcomments]]></comments>
-			<enclosure url="http://torviet.com/download.php?id=27094" length="4697236620" type="application/x-bittorrent" />
-			<guid isPermaLink="false">141e60058ae339bf23a3f18c6ad3e224ca5f8f81</guid>
-			<pubDate>Tue, 07 Apr 2015 17:02:33 +0700</pubDate>
-		</item>
-		<item>
-			<title><![CDATA[All About Space - Book of the Solar System - 2014 [PDF][23.69 MB][ducanh90]]]></title>
-			<link>http://torviet.com/details.php?id=116468</link>
-			<description><![CDATA[<img alt="image" src="https://www.imagineshop.co.uk/media/catalog/product/cache/1/image/5e06319eda06f020e43594a9c230972d/a/a/aas-solar-cover.jpg" /><br />
-<img alt="image" src="https://www.imagineshop.co.uk/media/catalog/product/cache/1/image/5e06319eda06f020e43594a9c230972d/a/a/aas-solar-2.jpg" /><br />
-<img alt="image" src="https://www.imagineshop.co.uk/media/catalog/product/cache/1/image/5e06319eda06f020e43594a9c230972d/a/a/aas-solar-1.jpg" /><br />
-<br />
-<b><span style="color: Red;">Take a tour through the incredible wonders of our Solar System. Discover the impact the Sun has on our lives and everything around us, and find out how this ball of hot plasma formed. Read about the eight planets that make up our Solar System, whether you want to learn why Saturn has rings, how life formed on Earth, if we could live on Mars, or why Neptune looks so blue. On top of that, find out about four of the most interesting moons of the Solar System; Ganymede, Europa, Titan and our very own Moon.</span></b><br />
-<br />
-<b><u><span style="color: Lime;">In this bookazine...</span></u></b><br />
-The Sun<br />
-- Discover the vital role the star at the heart of our Solar System plays<br />
-<br />
-The planets<br />
-- In-depth guides to all the planets, from Mercury to Neptune<br />
-<br />
-The moons<br />
-- Take a closer look at some of the Solar System's most interesting moons<br />
-<br />
-Amazing illustrations<br />
-- Explore the stunning sights on offer<br />
-<br />
-<b><span style="color: Navy;">English | 180 pages | PDF | 23.00 Mb</span></b>]]></description>
-			<author>ducanh90@TorViet.com (ducanh90)</author>
-			<category domain="http://torviet.com/torrents.php?cat=6">Misc</category>
-			<comments><![CDATA[http://torviet.com/details.php?id=116468&cmtpage=0#startcomments]]></comments>
-			<enclosure url="http://torviet.com/download.php?id=116468" length="24842988" type="application/x-bittorrent" />
-			<guid isPermaLink="false">daa56b56ce4d01054ed0f9c25e7724591dd038a2</guid>
-			<pubDate>Tue, 07 Apr 2015 15:08:54 +0700</pubDate>
-		</item>
-		<item>
-			<title><![CDATA[All About Space Tour of the Universe - Revised Edition - 2015 [PDF][52.20 MB][ducanh90]]]></title>
-			<link>http://torviet.com/details.php?id=116467</link>
-			<description><![CDATA[<img alt="image" src="https://www.imagineshop.co.uk/media/catalog/product/cache/1/image/5e06319eda06f020e43594a9c230972d/p/b/pbook001_7_4.jpg" /><br />
-<img alt="image" src="https://www.imagineshop.co.uk/media/catalog/product/cache/1/image/5e06319eda06f020e43594a9c230972d/0/8/080-081_aas_014.jpg" /><br />
-<img alt="image" src="https://www.imagineshop.co.uk/media/catalog/product/cache/1/image/5e06319eda06f020e43594a9c230972d/1/3/138-139_aas_005.jpg" /><br />
-<br />
-<b><span style="color: Red;">Take a tour of the universe, from our own solar system into the depths of space. Once upon a time, a man named Neil Armstrong stepped onto the surface of the Moon claiming it to be “One small step for man, one giant leap for mankind.” Join us as we take you further than ever imagined across our Solar System and into deep space. </span></b><br />
-<br />
-<b><u><span style="color: Lime;">In this bookazine...</span></u></b><br />
-Explore the Galaxies<br />
-- Learn about what it takes to get up into space<br />
-<br />
-Discover the Solar System<br />
-- Journey from the Sun at the centre to the very edges of our Solar System<br />
-<br />
-Sights of the Universe<br />
-- Space Junk, mega storms, stars and so much more to see on your tour<br />
-<br />
-Into Deep Space<br />
-- Watch galaxies collide, stars turn supernova and much more in the deepest depths of the galaxy<br />
-<br />
-<b><span style="color: Navy;">English | 180 pages | True PDF | 52.2 Mb</span></b>]]></description>
-			<author>ducanh90@TorViet.com (ducanh90)</author>
-			<category domain="http://torviet.com/torrents.php?cat=6">Misc</category>
-			<comments><![CDATA[http://torviet.com/details.php?id=116467&cmtpage=0#startcomments]]></comments>
-			<enclosure url="http://torviet.com/download.php?id=116467" length="54736303" type="application/x-bittorrent" />
-			<guid isPermaLink="false">24e511b6cb4931a9a1a97db3719954bcb952a0ac</guid>
-			<pubDate>Tue, 07 Apr 2015 14:36:54 +0700</pubDate>
-		</item>
-		<item>
-			<title><![CDATA[Song of the Sea 2014 720p BluRay DD5.1 x264-NTb[3.35 GB][ConReCuaATN]]]></title>
-			<link>http://torviet.com/details.php?id=116466</link>
-			<description><![CDATA[[align=center]<font size="3"><b>Song.of.the.Sea.2014.720p.BluRay.DD5.1.x264-NTb</b></font>[/align]<br />
-<br />
-<fieldset><legend> Quote </legend><br /><font face="Courier New"><b>General Information</b><br />
-Source			: Song of the Sea 2014 1080p FRA Blu-ray AVC DTS-HD MA 5.1-PCH<br />
-Container		: Matroska<br />
-Length			: 1h 33mn<br />
-Chapters		: Included (Not Named)<br />
-Codec			: AVC<br />
-Video Bitrate		: 4 279 Kbpps<br />
-Format Profile Level	: High@L4.1<br />
-Resolution		: 1280 x 694 pixels<br />
-Framerate		: 23.976 fps<br />
-Audio Stream 1		: English DD 6 channels @ 640 Kbps<br />
-Audio Stream 2		: English Commentary AAC 2 channels @ 96 Kbps (Commentary with Director Tomm Moore)<br />
-Subtitles		: Eng, SDH, (SRT)<br />
-Greetings		: All NTb Crew, Nick007, 9mm and rose.<br />
-<br />
-<b>Encoding Log</b><br />
-x264 [info]: frame I:1201 &nbsp;Avg QP:13.91 &nbsp;size:246704<br />
-x264 [info]: frame P:32645 Avg QP:14.88 &nbsp;size: 48384<br />
-x264 [info]: frame B:101369 Avg QP:16.63 &nbsp;size: 11847<br />
-x264 [info]: consecutive B-frames: &nbsp;1.9% &nbsp;2.4% 16.1% 37.1% 18.3% 14.5% &nbsp;3.4% &nbsp;3.9% &nbsp;1.2% &nbsp;1.2%<br />
-x264 [info]: encoded 135215 frames, 4.129 fps, 4364.46 kb/s, 2934.2 MB</font></fieldset><br /><br />
-<br />
-[align=center]<b>Screenshots Source vs Encode vs Scene</b><br />
-<a class="faqlink" href="http://someimage.com/jfOFgnT"><img alt="image" src="http://t1.someimage.com/jfOFgnT.jpg" /></a> <a class="faqlink" href="http://someimage.com/488Yz8I"><img alt="image" src="http://t1.someimage.com/488Yz8I.jpg" /></a> <a class="faqlink" href="http://someimage.com/qyE9VSH"><img alt="image" src="http://t1.someimage.com/qyE9VSH.jpg" /></a><br />
-<a class="faqlink" href="http://someimage.com/Hwonc9k"><img alt="image" src="http://t1.someimage.com/Hwonc9k.jpg" /></a> <a class="faqlink" href="http://someimage.com/m4xMcbL"><img alt="image" src="http://t1.someimage.com/m4xMcbL.jpg" /></a> <a class="faqlink" href="http://someimage.com/iBuZBu5"><img alt="image" src="http://t1.someimage.com/iBuZBu5.jpg" /></a><br />
-<a class="faqlink" href="http://someimage.com/I7spD62"><img alt="image" src="http://t1.someimage.com/I7spD62.jpg" /></a> <a class="faqlink" href="http://someimage.com/iQXoQdq"><img alt="image" src="http://t1.someimage.com/iQXoQdq.jpg" /></a> <a class="faqlink" href="http://someimage.com/IredlG2"><img alt="image" src="http://t1.someimage.com/IredlG2.jpg" /></a><br />
-<a class="faqlink" href="http://someimage.com/la7AwWm"><img alt="image" src="http://t1.someimage.com/la7AwWm.jpg" /></a> <a class="faqlink" href="http://someimage.com/030Lwsv"><img alt="image" src="http://t1.someimage.com/030Lwsv.jpg" /></a> <a class="faqlink" href="http://someimage.com/PNitwXB"><img alt="image" src="http://t1.someimage.com/PNitwXB.jpg" /></a><br />
-<a class="faqlink" href="http://someimage.com/YVDSpyN"><img alt="image" src="http://t1.someimage.com/YVDSpyN.jpg" /></a> <a class="faqlink" href="http://someimage.com/nYDHIMH"><img alt="image" src="http://t1.someimage.com/nYDHIMH.jpg" /></a> <a class="faqlink" href="http://someimage.com/46AULDJ"><img alt="image" src="http://t1.someimage.com/46AULDJ.jpg" /></a><br />
-<a class="faqlink" href="http://someimage.com/LXglZfN"><img alt="image" src="http://t1.someimage.com/LXglZfN.jpg" /></a> <a class="faqlink" href="http://someimage.com/gHw9PAI"><img alt="image" src="http://t1.someimage.com/gHw9PAI.jpg" /></a> <a class="faqlink" href="http://someimage.com/virxm2J"><img alt="image" src="http://t1.someimage.com/virxm2J.jpg" /></a><br />
-<a class="faqlink" href="http://someimage.com/rjlG4zh"><img alt="image" src="http://t1.someimage.com/rjlG4zh.jpg" /></a> <a class="faqlink" href="http://someimage.com/9a3NxVP"><img alt="image" src="http://t1.someimage.com/9a3NxVP.jpg" /></a> <a class="faqlink" href="http://someimage.com/bgYeVcj"><img alt="image" src="http://t1.someimage.com/bgYeVcj.jpg" /></a> [/align]]]></description>
-			<author>ConReCuaATN@TorViet.com (ConReCuaATN)</author>
-			<category domain="http://torviet.com/torrents.php?cat=2">Movie</category>
-			<comments><![CDATA[http://torviet.com/details.php?id=116466&cmtpage=0#startcomments]]></comments>
-			<enclosure url="http://torviet.com/download.php?id=116466" length="3597513573" type="application/x-bittorrent" />
-			<guid isPermaLink="false">3c02e227d98bea41b2f52bc5064451d2a5ec5650</guid>
-			<pubDate>Tue, 07 Apr 2015 14:10:12 +0700</pubDate>
-		</item>
-		<item>
-			<title><![CDATA[Lost River 2014 720p WEB-DL DD5.1 H.264-PLAYNOW[2.91 GB][B5DucDat]]]></title>
-			<link>http://torviet.com/details.php?id=116465</link>
-			<description><![CDATA[[center]<a class="faqlink" href="http://someimage.com/EYP7Ums"><img alt="image" src="http://t1.someimage.com/EYP7Ums.jpg" /></a> <a class="faqlink" href="http://someimage.com/pSPXte7"><img alt="image" src="http://t1.someimage.com/pSPXte7.jpg" /></a> <a class="faqlink" href="http://someimage.com/FmMKU79"><img alt="image" src="http://t1.someimage.com/FmMKU79.jpg" /></a><br />
-<a class="faqlink" href="http://someimage.com/s3dXKyw"><img alt="image" src="http://t1.someimage.com/s3dXKyw.jpg" /></a> <a class="faqlink" href="http://someimage.com/bcOfGfH"><img alt="image" src="http://t1.someimage.com/bcOfGfH.jpg" /></a> <a class="faqlink" href="http://someimage.com/aa4Luqf"><img alt="image" src="http://t1.someimage.com/aa4Luqf.jpg" /></a> [/center]]]></description>
-			<author>B5DucDat@TorViet.com (B5DucDat)</author>
-			<category domain="http://torviet.com/torrents.php?cat=2">Movie</category>
-			<comments><![CDATA[http://torviet.com/details.php?id=116465&cmtpage=0#startcomments]]></comments>
-			<enclosure url="http://torviet.com/download.php?id=116465" length="3129337684" type="application/x-bittorrent" />
-			<guid isPermaLink="false">c3bb8a054cb0c99f54b49fe99ef07e28024bf2c4</guid>
-			<pubDate>Tue, 07 Apr 2015 13:56:35 +0700</pubDate>
-		</item>
-	</channel>
+<channel>
+<title>Tin tuc 24h | tin nhanh bong da | the thao | thoi trang, giai tri vn | bao online</title>
+<link>http://www.24h.com.vn/am-thuc-c460.html</link>
+<description>Tin tuc trong ngay, bóng đá, thể thao, thời trang, giải trí. Update tin nhanh 24/24h. Nhiều đặc sản video tin tức việt nam, thế giới, video bong da anh chỉ có tại 24h.Tổng hợp tintuc vn, BAO CONG AN, an ninh, phap luat</description>
+<image>
+<url>http://24h-static.24hstatic.com:8008/images/logo24h-128x85.gif</url>
+<title>Tin tuc 24h | tin nhanh bong da | the thao | thoi trang, giai tri vn | báo online</title>
+<link>http://www.24h.com.vn</link>
+</image>
+<language>vi-vn</language>
+<copyright>(c)24h.com.vn</copyright>
+<ttl>60</ttl>
+<generator>noreply@24h.com.vn</generator>
+<item>
+<title>Hai món canh cá ngọt mát cho ngày hè</title>
+<description>Mùa hè nóng nực khiến khẩu vị của gia đình bạn có nhiều thay đổi. Dưới đây là 2 món ngon từ cá phù hợp ăn vào mùa hè: canh cải cá rô đồng và canh cải cá viên.</description>
+<link>http://www.24h.com.vn/am-thuc/hai-mon-canh-ca-ngot-mat-cho-ngay-he-c460a702265.html</link>
+<pubDate>2015-04-13 07:30:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-12/1428840225-thumbnail.jpg</summaryImg>
+</item>
+<item>
+<title>4 món nướng ngon mê li cho bữa tiệc cuối tuần</title>
+<description>Mùi thơm và hương vị hấp dẫn của các món nướng luôn được mọi người thích thú.</description>
+<link>http://www.24h.com.vn/am-thuc/4-mon-nuong-ngon-me-li-cho-bua-tiec-cuoi-tuan-c460a702113.html</link>
+<pubDate>2015-04-12 13:00:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-11/1428732373-1426038825-1417659044-10833549_317949955073962_529525001_n.jpg</summaryImg>
+</item>
+<item>
+<title>Clip: Công nghệ chế rau bằng hóa chất gây sốc</title>
+<description>Chỉ một vài thao tác đơn giản, người đàn ông đã tạo ra một chiếc bắp cải xanh khiến người xem giật mình.</description>
+<link>http://www.24h.com.vn/am-thuc/clip-cong-nghe-che-rau-bang-hoa-chat-gay-soc-c460a702099.html</link>
+<pubDate>2015-04-12 07:30:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-11/1428728234-tao_rau_bang_hoa_chat_pmmc.jpg</summaryImg>
+</item>
+<item>
+<title>Cách làm sữa chua mít, hoa quả dầm ngon nhất tại nhà</title>
+<description>Mùa hè đang tới, hãy cùng học cách làm sữa chua mít, sữa chua hoa quả dầm ngon nhất tại nhà nhé!</description>
+<link>http://www.24h.com.vn/am-thuc/cach-lam-sua-chua-mit-ngon-nhu-ngoai-hang-c460a702111.html</link>
+<pubDate>2015-04-11 13:00:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-11/1428731604-thumbnail.jpg</summaryImg>
+</item>
+<item>
+<title>Clip: Cách tách lòng đỏ trứng siêu đơn giản</title>
+<description>Bằng phương pháp thủ công, bạn có thể nhanh chóng tách lòng đỏ và lòng trắng trứng gà.</description>
+<link>http://www.24h.com.vn/am-thuc/clip-cach-tach-long-do-trung-sieu-don-gian-c460a701781.html</link>
+<pubDate>2015-04-11 07:30:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-10/1428632711-tach_long_trung_rfsn.jpg</summaryImg>
+</item>
+<item>
+<title>Lươn kho mắm "sát thủ" của cơm</title>
+<description>Mùi thơm quyến rũ của mắm, thịt lươn ngọt chắc, vị chan chát thơm tho của các loại rau quyện cùng dư vị chua cay nồng nàn của chanh ớt sả làm bụng ai nấy sôi lên sùng sục.</description>
+<link>http://www.24h.com.vn/am-thuc/luon-kho-mam-sat-thu-cua-com-c460a701770.html</link>
+<pubDate>2015-04-10 13:30:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-10/1428631425-1-1427943056043.jpg</summaryImg>
+</item>
+<item>
+<title>Clip: 4 trò ảo thuật thú vị với trứng</title>
+<description>Bạn chắc chắn sẽ phải ngạc nhiên khi xem những trò ảo thuật lạ mắt với trứng dưới đây.</description>
+<link>http://www.24h.com.vn/am-thuc/clip-4-tro-ao-thuat-thu-vi-voi-trung-c460a701493.html</link>
+<pubDate>2015-04-10 07:30:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-08/1428489161-ao_thuat_trung_iyfa.jpg</summaryImg>
+</item>
+<item>
+<title>Mê hoặc cả nhà với 4 món canh ngon từ kim chi Hàn Quốc</title>
+<description>Dưới đây là cách nấu canh kim chi Hàn Quốc các kiểu chay, hải sản, thịt bò, đậu hũ thơm ngon đúng điệu.</description>
+<link>http://www.24h.com.vn/am-thuc/me-hoac-ca-nha-voi-4-mon-canh-ngon-tu-kim-chi-han-quoc-c460a701267.html</link>
+<pubDate>2015-04-09 07:30:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-07/1428403514-thumbnail.jpg</summaryImg>
+</item>
+<item>
+<title>Đùi gà nướng ngũ vị giòn mềm, vàng óng</title>
+<description>Xin giới thiệu đến các bạn cách nướng gà ngũ vị thơm ngon bằng lò nướng.</description>
+<link>http://www.24h.com.vn/am-thuc/dui-ga-nuong-ngu-vi-gion-mem-vang-ong-c460a701352.html</link>
+<pubDate>2015-04-08 13:30:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-08/1428461653-thumbnail.jpg</summaryImg>
+</item>
+<item>
+<title>Clip: Trang trí bánh cưới cực đẹp chỉ trong 4 phút</title>
+<description>Với thao tác nhanh và khéo léo, người thợ đã tạo ra chiếc bánh cưới đẹp mắt trong thời gian cực ngắn.</description>
+<link>http://www.24h.com.vn/am-thuc/clip-trang-tri-banh-cuoi-cuc-dep-chi-trong-4-phut-c460a701093.html</link>
+<pubDate>2015-04-08 07:30:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-07/1428374317-lam_banh_cuoi_xygq.jpg</summaryImg>
+</item>
+<item>
+<title>Ngọt sao khúc bầu dồn thịt hấp!</title>
+<description>Món bầu dồn thịt hấp ngọt bùi, thơm mát giúp cả nhà thay đổi khẩu vị mà cách thực hiện lại không hề khó.</description>
+<link>http://www.24h.com.vn/am-thuc/ngot-sao-khuc-bau-don-thit-hap-c460a701172.html</link>
+<pubDate>2015-04-07 13:30:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-07/1428382804-thumbnail.jpg</summaryImg>
+</item>
+<item>
+<title>Clip: Những trò thú vị với đồ ăn bạn không thể bỏ qua</title>
+<description>Nếu bạn là người thích tìm tòi, khám phá những mẹo vặt để "nghịch ngợm", chắc chắn bạn không nên bỏ qua clip này.</description>
+<link>http://www.24h.com.vn/am-thuc/clip-nhung-tro-thu-vi-voi-do-an-ban-khong-the-bo-qua-c460a700861.html</link>
+<pubDate>2015-04-07 07:30:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-06/1428282062-tro_thu_vi_gmlz.jpg</summaryImg>
+</item>
+<item>
+<title>Dưa cải chua xào nghêu chống ngán cho ngày nóng</title>
+<description>Dưa cải chua xào nghêu là một trong những món dễ chế biến, lại đưa cơm.</description>
+<link>http://www.24h.com.vn/am-thuc/dua-cai-chua-xao-ngheu-chong-ngan-cho-ngay-nong-c460a700637.html</link>
+<pubDate>2015-04-06 07:30:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-04/1428125081-thumbnail.jpg</summaryImg>
+</item>
+<item>
+<title>Clip: Cách luộc trứng thành hình trái tim cực đơn giản</title>
+<description>Những bước đơn giản sau sẽ giúp bạn luộc trứng thành hình trái tim rất đẹp mắt.</description>
+<link>http://www.24h.com.vn/am-thuc/clip-cach-luoc-trung-thanh-hinh-trai-tim-cuc-don-gian-c460a700635.html</link>
+<pubDate>2015-04-05 13:30:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-04/1428124910-luoc_trung_uvqb.jpg</summaryImg>
+</item>
+<item>
+<title>Đậm đà lẩu lươn nấu măng tre Mạnh Tông</title>
+<description>Gần đây, các chuyên gia ẩm thực, các quán ăn đặc sản, nhất là những tay sành điệu ẩm thực đã có nhiều kiểu cách chế biến lươn thành những món ăn ngon nhớ đời, trong đó lẩu lươn nấu với măng tre Mạnh Tông muối chua là một trong những món đặc sắc, đậm đà và thi vị nhất.</description>
+<link>http://www.24h.com.vn/am-thuc/dam-da-lau-luon-nau-mang-tre-manh-tong-c460a697849.html</link>
+<pubDate>2015-04-05 07:30:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/1-2015/images/2015-03-22/1427003971-thumbnail.jpg</summaryImg>
+</item>
+<item>
+<title>Cách làm sữa chua nếp cẩm ngon, thơm tại nhà</title>
+<description>Sữa chua nếp cẩm đã trở thành món ăn hấp dẫn có trong thực đơn tráng miệng của các gia đình.</description>
+<link>http://www.24h.com.vn/am-thuc/cach-lam-sua-chua-nep-cam-ngon-thom-tai-nha-c460a700528.html</link>
+<pubDate>2015-04-04 13:30:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-04/1428110479-thumbnail.jpg</summaryImg>
+</item>
+<item>
+<title>Về An Giang nhớ tìm ăn bắp bò hấp sả</title>
+<description>Nếu có dịp tham quan Tịnh Biên (Châu Đốc - An Giang), ngoài thăm thú những cảnh non nước hữu tình và di tích lịch sử hoành tráng nơi đây, bạn đừng bỏ lỡ cơ hội thưởng thức món bắp bò hấp sả ngon tuyệt trần.</description>
+<link>http://www.24h.com.vn/am-thuc/ve-an-giang-nho-tim-an-bap-bo-hap-sa-c460a697847.html</link>
+<pubDate>2015-04-04 07:30:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/1-2015/images/2015-03-22/1427002099-thumbnail.jpg</summaryImg>
+</item>
+<item>
+<title>Tổng hợp công thức làm sữa chua siêu ngon</title>
+<description>Bốn cách làm sữa chua dưới đây sẽ giúp cho bộ sưu tập công thức làm sữa chua của các mẹ thêm phong phú và hấp dẫn.</description>
+<link>http://www.24h.com.vn/am-thuc/tong-hop-cong-thuc-lam-sua-chua-sieu-ngon-c460a699884.html</link>
+<pubDate>2015-04-03 07:30:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-01/1427851349-thumbnail.jpg</summaryImg>
+</item>
+<item>
+<title>Hướng dẫn ngâm siro dâu tằm ngọt lịm, dễ uống</title>
+<description>Cuối tháng 3 là mùa dâu tằm (hay dâu ta) bắt đầu chín. Không chỉ là quả thức ăn thơm ngon, dâu tằm còn là một loại thuốc bổ kỳ diệu với sức khỏe.</description>
+<link>http://www.24h.com.vn/am-thuc/huong-dan-ngam-siro-dau-tam-ngot-lim-de-uong-c460a699897.html</link>
+<pubDate>2015-04-02 13:30:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-01/1427853555-thumbnail.jpg</summaryImg>
+</item>
+<item>
+<title>Clip: 10 mẹo vặt khi dùng lò vi sóng bạn nên biết</title>
+<description>10 thủ thuật đơn giản sau đây sẽ biến lò vi sóng của bạn thành một chiếc máy tuyệt vời.</description>
+<link>http://www.24h.com.vn/am-thuc/clip-10-meo-vat-khi-dung-lo-vi-song-ban-nen-biet-c460a699880.html</link>
+<pubDate>2015-04-02 07:30:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-04/1428117660-meo_lo_vi_song_dqye.jpg</summaryImg>
+</item>
+<item>
+<title>Những món ngon độc đáo từ trứng lộn</title>
+<description>Trong nghệ thuật ăn uống, ông cha ta đã trải nghiệm và sáng tạo ra nhiều món ăn vừa ngon vừa lạ miệng, lại hợp với quy luật âm dương và thuật dưỡng sinh, chẳng hạn như món trứng lộn (hột vịt, hột gà hoặc trứng cút).</description>
+<link>http://www.24h.com.vn/am-thuc/nhung-mon-ngon-doc-dao-tu-trung-lon-c460a699515.html</link>
+<pubDate>2015-04-01 07:30:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/1-2015/images/2015-03-30/1427697116-thumbnail.jpg</summaryImg>
+</item>
+<item>
+<title>Chua giòn, ngọt mát canh bao tử nấu với dưa cải</title>
+<description>Dùng muỗng chan miếng nước canh vào chén cơm rồi “lùa” một hơi, cái oi ả của ngày hè như được xua đi.</description>
+<link>http://www.24h.com.vn/am-thuc/chua-gion-ngot-mat-canh-bao-tu-nau-voi-dua-cai-c460a699736.html</link>
+<pubDate>2015-03-31 13:30:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/1-2015/images/2015-03-31/1427775204-thumbnail.jpg</summaryImg>
+</item>
+<item>
+<title>Mẹo cắt trái cây đúng chuẩn không phải ai cũng biết</title>
+<description>6 cách cắt trái cây đúng chuẩn sau đây sẽ giúp bạn nhiều điều bổ ích.</description>
+<link>http://www.24h.com.vn/am-thuc/clip-meo-cat-trai-cay-dung-chuan-khong-phai-ai-cung-biet-c460a699592.html</link>
+<pubDate>2015-03-31 07:30:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/1-2015/images/2015-03-31/1427763649-thumbnail.jpg</summaryImg>
+</item>
+<item>
+<title>Bí quyết pha nước chấm chuẩn và ngon</title>
+<description>Nước chấm tuy chỉ là gia vị đi kèm nhưng đối với nhiều món ăn, lại là thứ làm nên hương vị chính của món ăn đó. Và không phải ai cũng biết cách để pha bát nước chấm ngon đúng điệu.</description>
+<link>http://www.24h.com.vn/am-thuc/bi-quyet-pha-nuoc-cham-chuan-va-ngon-c460a698458.html</link>
+<pubDate>2015-03-30 07:52:31</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/1-2015/images/2015-03-25/1427249784-thumbnail.jpg</summaryImg>
+</item>
+</channel>
+</rss>

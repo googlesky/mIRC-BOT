@@ -10,7 +10,7 @@ on 1:TEXT:!gamenhom:%r: {
   }
 }
 on 1:TEXT:!GameNhom.DatCuoc*:%r: {
-  if ($nick == %gamenhom.doitruong.datcuoc) && (%gamenhom.datcuoc == on) && ($2 <= $div($GameNhomDatCuocMax,2) && ($ChkBet($nick,$2) == True) {
+  if (($nick == %gamenhom.doitruong.datcuoc) && (%gamenhom.datcuoc == on) && ($2 <= $div($GameNhomDatCuocMax,2)) && ($ChkBet($nick,$2) == True)) {
     describeVC %r 12Ðôi truo²ng4 %gamenhom.doitruong.datcuoc 12ðã ðåt cuoc ván này là 8,1$ $+ $tien($2)
     set %gamenhom.giaithuong $2
     var %iChkGN = 1
