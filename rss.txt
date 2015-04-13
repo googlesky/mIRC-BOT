@@ -1,197 +1,340 @@
-www.24h.com.vn /upload/rss/dulich.rss
+TorViet.com /torrentrss.php?rows=10&ismalldescr=1&isize=1&iuplder=1
 HTTP/1.1 200 OK
-Server: 24h.com.vn
-Date: Thu, 19 Mar 2015 19:02:21 GMT
-Content-Type: application/rss+xml
-Content-Length: 14489
-Last-Modified: Thu, 19 Mar 2015 01:35:01 GMT
+Server: nginx/0.8.55
+Date: Tue, 07 Apr 2015 12:30:06 GMT
+Content-Type: text/xml;charset=utf-8
 Connection: close
-Expires: Thu, 31 Dec 2037 23:55:55 GMT
-Cache-Control: max-age=315360000
-Accept-Ranges: bytes
-<?xml version="1.0" encoding="UTF-8"?>
+Vary: Accept-Encoding
+<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
-<channel>
-<title>Tin tuc 24h | tin nhanh bong da | the thao | thoi trang, giai tri vn | bao online</title>
-<link>http://www.24h.com.vn/du-lich-c76.html</link>
-<description>Tin tuc trong ngay, bóng đá, thể thao, thời trang, giải trí. Update tin nhanh 24/24h. Nhiều đặc sản video tin tức việt nam, thế giới, video bong da anh chỉ có tại 24h.Tổng hợp tintuc vn, BAO CONG AN, an ninh, phap luat</description>
-<image>
-<url>http://www.24h.com.vn/images/logo24h-128x85.gif</url>
-<title>Tin tuc 24h | tin nhanh bong da | the thao | thoi trang, giai tri vn | báo online</title>
-<link>http://www.24h.com.vn</link>
-</image>
-<language>vi-vn</language>
-<copyright>(c)24h.com.vn</copyright>
-<ttl>60</ttl>
-<generator>noreply@24h.com.vn</generator>
-<item>
-<title>Vẻ đẹp huyền ảo dưới dòng sông băng ở Iceland</title>
-<description>Hang động ngầm dưới lòng sông băng do núi lửa tạo ra khiến du khách không khỏi choáng ngợp.</description>
-<link>http://www.24h.com.vn/du-lich/ve-dep-huyen-ao-duoi-dong-song-bang-o-iceland-c76a697085.html</link>
-<pubDate>2015-03-19 07:30:00</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-19/1426728531-thumbnail.jpg</summaryImg>
-</item>
-<item>
-<title>Độc và dị bảo tàng toilet ở Ấn Độ</title>
-<description>Mỹ, Mexico,... là nơi hội tụ nhiều bảo tàng kỳ lạ trên thế giới như bảo tàng Bad Art, bảo tàng xác ướp hay bảo tàng dưới nước Cancun.</description>
-<link>http://www.24h.com.vn/du-lich/doc-va-di-bao-tang-toilet-o-an-do-c76a697000.html</link>
-<pubDate>2015-03-18 13:30:00</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-18/1426650672-thumbnail.jpg</summaryImg>
-</item>
-<item>
-<title>Những điểm du lịch "hot" nhất tháng ba</title>
-<description>Tháng ba, thời tiết ấm dần lên sau những ngày đông lạnh giá và cũng là thời điểm lý tưởng để bạn "xách ba lô và lên đường" khám phá những điểm đi chơi hấp dẫn.</description>
-<link>http://www.24h.com.vn/du-lich/nhung-diem-du-lich-hot-nhat-thang-ba-c76a696680.html</link>
-<pubDate>2015-03-18 07:30:00</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-17/1426555761-thumbnail.jpg</summaryImg>
-</item>
-<item>
-<title>Sửng sốt trước làng cáo ở Nhật Bản</title>
-<description>Chúng ta đã từng nghe về đảo thỏ và đảo mèo ở Nhật Bản, nhưng tại quốc gia này còn có cả một ngôi làng là nơi trú ngụ của 6 loài cáo khác nhau, sinh tồn một cách tự nhiên.</description>
-<link>http://www.24h.com.vn/du-lich/sung-sot-truoc-lang-cao-o-nhat-ban-c76a695596.html</link>
-<pubDate>2015-03-17 07:30:00</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-17/1426560102-1426063492-langcao_infonet.jpg</summaryImg>
-</item>
-<item>
-<title>Đà Nẵng tổ chức cho người dân tham quan cầu vượt 3 tầng</title>
-<description>Ngày 17.3, Công ty TNHH BT Ngã Ba Huế Trung Nam, nhà đầu tư công trình Ngã Ba Huế cho biết, sẽ tổ chức cho người dân tham quan cầu vượt 3 tầng Ngã Ba Huế có quy mô lớn nhất Việt Nam trước ngày công trình khánh thành.</description>
-<link>http://www.24h.com.vn/du-lich/da-nang-to-chuc-cho-nguoi-dan-tham-quan-cau-vuot-3-tang-c76a696846.html</link>
-<pubDate>2015-03-17 17:24:02</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-17/1426587527-nga_ba_hue_lfut.jpg</summaryImg>
-</item>
-<item>
-<title>Kỳ lạ lễ hội đi chân trần trên lửa tại Nhật Bản</title>
-<description>Lễ hội đi bộ trên lửa đỏ, than hồng bằng đôi chân trần ở Nhật Bản được tổ chức với mục đích cầu may mắn, bình an, sức khỏe và hòa bình thế giới.</description>
-<link>http://www.24h.com.vn/du-lich/ky-la-le-hoi-di-chan-tran-tren-lua-tai-nhat-ban-c76a696547.html</link>
-<pubDate>2015-03-16 14:29:09</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-16/1426490337-thumbnail.jpg</summaryImg>
-</item>
-<item>
-<title>Đảo Corse, "nàng tiên biển" yêu kiều của nước Pháp</title>
-<description>Đảo Corse (Pháp) mang đến sự ấm áp, cảm giác hưởng thụ tuyệt vời, giúp du khách như chìm vào cõi bồng lai, thoát khỏi những áp lực của cuộc sống hiện đại.</description>
-<link>http://www.24h.com.vn/du-lich/dao-corse-nang-tien-bien-yeu-kieu-cua-nuoc-phap-c76a695762.html</link>
-<pubDate>2015-03-16 07:30:00</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-12/1426133130-dao_corse_2_qget.jpg</summaryImg>
-</item>
-<item>
-<title>5 công trình tâm linh tọa lạc ở độ cao "khủng" nhất VN</title>
-<description>Chùa Đồng, tượng chúa Kito, chùa Linh Ứng, tượng Phật Thích Ca, chùa Linh Sơn Tiên Thạch là những công trình tâm linh nổi tiếng nằm trong danh sách này.</description>
-<link>http://www.24h.com.vn/du-lich/5-cong-trinh-tam-linh-noi-tieng-o-do-cao-khung-nhat-vn-c76a696230.html</link>
-<pubDate>2015-03-15 07:30:00</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-15/1426387822-thumbnail.jpg</summaryImg>
-</item>
-<item>
-<title>Lãng đãng bức tranh phố cổ Đồng Văn</title>
-<description>Hà Giang - điểm hẹn nơi cực Bắc với địa hình đặc trưng của cao nguyên phía Bắc là một địa chỉ du lịch hấp dẫn. Đặc biệt, khu phố cổ Đồng Văn là một điểm đến mà du khách không thể bỏ qua.</description>
-<link>http://www.24h.com.vn/du-lich/lang-dang-buc-tranh-pho-co-dong-van-c76a695910.html</link>
-<pubDate>2015-03-14 07:30:00</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-13/1426209361-pho_co_adjs.jpg</summaryImg>
-</item>
-<item>
-<title>Phú Quốc - Điểm trăng mật lý tưởng thế giới</title>
-<description>Rough Guides - Tạp chí du lịch nổi tiếng của Anh vừa đưa ra danh sách 20 điểm trăng mật lý tưởng dành cho các cặp đôi, trong đó đảo Phú Quốc của Việt Nam.</description>
-<link>http://www.24h.com.vn/du-lich/phu-quoc-diem-trang-mat-ly-tuong-the-gioi-c76a695788.html</link>
-<pubDate>2015-03-13 07:30:00</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-12/1426144977-thumbnail.jpg</summaryImg>
-</item>
-<item>
-<title>Hai du khách Mỹ bị bắt vì khắc tên lên đấu trường La Mã</title>
-<description>Hai du khách đến từ Mỹ đã bị bắt khi sử dụng một đồng xu để khắc tên lên thành Đấu trường La Mã sau đó chụp ảnh tự sướng, báo La Stampa của Italia đưa tin.</description>
-<link>http://www.24h.com.vn/du-lich/hai-du-khach-my-bi-bat-vi-khac-ten-len-dau-truong-la-ma-c76a695766.html</link>
-<pubDate>2015-03-12 14:34:23</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-12/1426133602-rome_colosseum_3224540b_jprg.jpg</summaryImg>
-</item>
-<item>
-<title>10 hòn đảo lãng mạn nhất Nam Thái Bình Dương</title>
-<description>Với hơn 20.000 hòn đảo nằm rải rác trên một diện tích rất rộng, Nam Thái Bình Dương thực sự là một thiên đường đầy lãng mạn cho các cặp tình nhân cũng như du khách từ khắp nơi trên thế giới.</description>
-<link>http://www.24h.com.vn/du-lich/10-hon-dao-lang-man-nhat-o-nam-thai-binh-duong-c76a695606.html</link>
-<pubDate>2015-03-12 07:30:00</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-12/1426123296-thumbnail.jpg</summaryImg>
-</item>
-<item>
-<title>Mê đắm 10 "thiên đường sắc màu" rực rỡ nhất thế giới</title>
-<description>Khi nhìn vào những tấm hình bên dưới, thật khó để tin rằng những nơi này thực sự tồn tại trên trái đất chứ không phải chỉ trong mơ hay trong phim ảnh.</description>
-<link>http://www.24h.com.vn/du-lich/me-dam-10-thien-duong-sac-mau-ruc-ro-nhat-the-gioi-c76a695481.html</link>
-<pubDate>2015-03-11 11:00:00</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-11/1426057889-thumbnail.jpg</summaryImg>
-</item>
-<item>
-<title>“Gậy tự sướng” gây phiền nhiễu ở các bảo tàng Paris</title>
-<description>“Gậy tự sướng”, thiết bị gắn vào điện thoại di động hoặc máy chụp hình để người dùng thuận tiện chụp ảnh đang gặp phải cái nhìn phản cảm từ các bảo tàng, phòng trưng bày nghệ thuật ở Pháp.</description>
-<link>http://www.24h.com.vn/du-lich/gay-tu-suong-gay-phien-nhieu-o-cac-bao-tang-paris-c76a695258.html</link>
-<pubDate>2015-03-11 07:30:00</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-10/1425955353-gay_tu_suong_dgrk.jpg</summaryImg>
-</item>
-<item>
-<title>Ishtar - Cửa ngõ tuyệt đẹp dẫn đến kỳ quan Babylon</title>
-<description>Khi nhắc đến Babylon, cánh cổng Ishtar dẫn vào trung tâm thành phố Babylon luôn gây ấn tượng mạnh với khách, được xây dựng từ thế kỷ thứ 6 TCN (trước công nguyên).</description>
-<link>http://www.24h.com.vn/du-lich/ishtar-cua-ngo-tuyet-dep-dan-den-ky-quan-babylon-c76a694470.html</link>
-<pubDate>2015-03-10 13:30:00</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-05/1425552703-cong_babylon_1_sllx.jpg</summaryImg>
-</item>
-<item>
-<title>12 kỳ quan thiên nhiên nổi tiếng nhất thế giới</title>
-<description>Đây là những kỳ quan thiên nhiên nổi bật nhất thế giới, được lựa chọn từ khắp các khu vực như châu Phi, châu Á, châu Âu, châu Mỹ như là đại diện tiêu biểu nhất, thu hút nhiều du khách ghé thăm mỗi năm.</description>
-<link>http://www.24h.com.vn/du-lich/12-ky-quan-thien-nhien-noi-tieng-nhat-the-gioi-c76a694613.html</link>
-<pubDate>2015-03-10 07:30:00</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-06/1425628398-ky_quan_10_copy_copy_thzr.jpg</summaryImg>
-</item>
-<item>
-<title>Báo động tình trạng du khách khỏa thân tại di sản TG</title>
-<description>Người Camphuchia đang rất bức xúc trước tình trạng này. Không chỉ ở Campuchia, số lượng khách du lịch chụp ảnh “nóng” tại di sản Machu Picchu của Peru cũng đang gia tăng.
- </description>
-<link>http://www.24h.com.vn/du-lich/bao-dong-tinh-trang-du-khach-khoa-than-o-di-san-the-gioi-c76a694611.html</link>
-<pubDate>2015-03-09 07:30:00</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-06/1425628344-machu_picchu_qjan.jpg</summaryImg>
-</item>
-<item>
-<title>Đỏ mặt với bảo tàng tình dục lâu đời nhất Hà Lan</title>
-<description>Thành phố Amsterdam (Hà Lan) nổi tiếng là một trong những thành phố “cởi mở” nhất thế giới, là “quê hương” của bảo tàng tình dục đền thờ thần Vệ Nữ nóng bỏng, táo bạo nhất.</description>
-<link>http://www.24h.com.vn/du-lich/den-tho-than-ve-nu-bao-tang-tinh-duc-lau-doi-nhat-ha-lan-c76a694471.html</link>
-<pubDate>2015-03-08 07:30:00</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-05/1425552815-bao_tang_tinh_duc_1_hufr.jpg</summaryImg>
-</item>
-<item>
-<title>Xếp hạng 8 di tích quốc gia tại 3 tỉnh</title>
-<description>Bộ VHTTDL vừa quyết định xếp hạng 8 di tích lịch sử, di tích kiến trúc nghệ thuật và danh lam thắng cảnh quốc gia tại 3 tỉnh thành.</description>
-<link>http://www.24h.com.vn/du-lich/xep-hang-8-di-tich-quoc-gia-tai-3-tinh-c76a694615.html</link>
-<pubDate>2015-03-08 13:00:00</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-06/1425628445-images1135022_hophi_atat.jpg</summaryImg>
-</item>
-<item>
-<title>Những trải nghiệm không thể bỏ lỡ ở Dubai</title>
-<description>Là thành phố với mức dân số cao nhất trong Các Tiểu vương Quốc Arab Thống nhất (UAE), Dubai với những công trình tráng lệ đã trở thành một trong những thành phố đẹp nhất, “đáng sống” và “đáng đến” nhất ở Trung Đông và trên toàn thế giới.</description>
-<link>http://www.24h.com.vn/du-lich/nhung-trai-nghiem-khong-the-bo-lo-o-dubai-c76a694465.html</link>
-<pubDate>2015-03-07 07:30:00</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-07/1425701526-thumbnail.jpg</summaryImg>
-</item>
-<item>
-<title>Hà Nội đẹp tinh khôi trong màu trắng hoa sưa</title>
-<description>Ngắm nhìn những chùm hoa sưa trắng tinh khôi, lòng người như cảm thấy nhẹ dịu đến lạ lùng.</description>
-<link>http://www.24h.com.vn/du-lich/ha-noi-dep-tinh-khoi-trong-mau-trang-hoa-sua-c76a694345.html</link>
-<pubDate>2015-03-06 07:30:00</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-06/1425609580-1425520894-1--9-.jpg</summaryImg>
-</item>
-<item>
-<title>Ốc đảo "thần tiên" giữa sa mạc khô cằn nhất thế giới</title>
-<description>Phố quận Huacachina nằm lọt thỏm giữa một trong những miền khô cằn nhất trái đất, với những cây cọ tán sum suê và một đầm phá êm đềm được cho là có đặc tính chữa bệnh.</description>
-<link>http://www.24h.com.vn/du-lich/oc-dao-than-tien-giua-sa-mac-kho-can-nhat-the-gioi-c76a694069.html</link>
-<pubDate>2015-03-05 07:30:00</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-04/1425432070-thumbnail.jpg</summaryImg>
-</item>
-<item>
-<title>Thủ tướng đồng ý thành lập Sở Du lịch Hà Nội</title>
-<description>Người đứng đầu Chính phủ nhất trí với đề xuất của thành phố Hà Nội về việc thành lập Sở Du lịch Hà Nội.</description>
-<link>http://www.24h.com.vn/du-lich/thu-tuong-dong-y-thanh-lap-so-du-lich-ha-noi-c76a694482.html</link>
-<pubDate>2015-03-05 21:01:40</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-05/1425564203-so_du_lich_pfrn.jpg</summaryImg>
-</item>
-<item>
-<title>Ngắm “thành phố không ngủ” Las Vegas từ độ cao 2600 mét</title>
-<description>Lần đầu tiên, một nhiếp ảnh gia ngồi trực thăng bay lên độ cao 2.600 mét để chụp lại những hình ảnh tuyệt đẹp của thành phố Las Vegas về đêm.</description>
-<link>http://www.24h.com.vn/du-lich/ngam-thanh-pho-khong-ngu-las-vegas-tu-do-cao-2600-met-c76a693991.html</link>
-<pubDate>2015-03-04 07:30:00</pubDate>
-<summaryImg>/upload/1-2015/images/2015-03-04/1425456165-thumbnail.jpg</summaryImg>
-</item>
-</channel>
-</rss>
+	<channel>
+		<title>TorViet.Com Torrents</title>
+		<link><![CDATA[http://torviet.com]]></link>
+		<description><![CDATA[Latest torrents from TorViet.Com - test]]></description>
+		<language>zh-cn</language>
+		<copyright>Copyright (c) TorViet.Com 2014-2015, all rights reserved</copyright>
+		<managingEditor>staff@hdvnbits.org (TorViet.Com Admin)</managingEditor>
+		<webMaster>staff@hdvnbits.org (TorViet.Com Webmaster)</webMaster>
+		<pubDate>Tue, 07 Apr 2015 19:30:06 +0700</pubDate>
+		<generator>NexusPHP RSS Generator</generator>
+		<docs><![CDATA[http://www.rssboard.org/rss-specification]]></docs>
+		<ttl>60</ttl>
+		<image>
+			<url><![CDATA[http://torviet.com/pic/rss_logo.jpg]]></url>
+			<title>TorViet.Com Torrents</title>
+			<link><![CDATA[http://torviet.com]]></link>
+			<width>100</width>
+			<height>100</height>
+			<description>TorViet.Com Torrents</description>
+		</image>
+		<item>
+			<title><![CDATA[Death Race 2 2010 720p BluRay DTS x264-DON[5.03 GB][snowflake]]]></title>
+			<link>http://torviet.com/details.php?id=29157</link>
+			<description><![CDATA[[align=center]<font size="4"><b>Death.Race.2.2010.720p.<span style="color: Blue;">BluRay</span>.DTS.x264-DON</b></font>[/align]<br />
+<br />
+<fieldset><legend> Quote </legend><br /><font face="Courier New"><b><u>INFO:</u></b><br />
+RUNTIME.......: 01h:40m:19s<br />
+SIZE..........: 5 GB<br />
+VIDEO CODEC...: x264, 2pass, L4.1, DXVA<br />
+FRAMERATE.....: 23.976 fps<br />
+BITRATE.......: Variable ~ 5555 Kbps<br />
+RESOLUTION....: 1280x720 (16:9)<br />
+AUDIO 1.......: English DTS 5.1 @ 1509 Kbps<br />
+AUDIO 2.......: Commentary AAC 2.0 @ 64 Kbps<br />
+SUBTITLES.....: English, Czech, Chinese, Croatian, Polish,<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Swedish, Finnish, Hungarian<br />
+SOURCE........: 1080p Blu-ray AVC DTS-HD MA5.1-CHDBits<br />
+GENRE.........: Action, Crime, Thriller<br />
+IMDb RATING...: 5.6/10 (4,090 votes)<br />
+IMDb LINK.....: <a class="faqlink" href="http://www.imdb.com/title/tt1500491/">http://www.imdb.com/title/tt1500491/</a><br />
+<br />
+ENCODER.......: LoRdScAb<br />
+RELEASE DATE..: 02/03/2011<br />
+<br />
+<b><u>x264 [info]: </u></b><br />
+frame I:1554 &nbsp;Avg QP:17.28 &nbsp;size:109799<br />
+frame P:39428 Avg QP:19.96 &nbsp;size: 42254<br />
+frame B:103329 Avg QP:20.70 &nbsp;size: 22642<br />
+consecutive B-frames: &nbsp;5.2% &nbsp;7.1% 11.6% 34.2% 11.9% 25.4% &nbsp;2.5% &nbsp;2.2%<br />
+SSIM Mean Y:0.9766566</font></fieldset><br /><br />
+<br />
+[align=center]<b>SOURCE: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ENCODE: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;AVCHD:</b><br />
+<a class="faqlink" href="http://www.imagebam.com/image/8dc48f121851723"><img alt="image" src="http://thumbnails13.imagebam.com/12186/8dc48f121851723.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/423d1f121851736"><img alt="image" src="http://thumbnails13.imagebam.com/12186/423d1f121851736.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/c055ca121851752"><img alt="image" src="http://thumbnails36.imagebam.com/12186/c055ca121851752.jpg" /></a><br />
+<a class="faqlink" href="http://www.imagebam.com/image/329353121851770"><img alt="image" src="http://thumbnails31.imagebam.com/12186/329353121851770.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/907b11121851777"><img alt="image" src="http://thumbnails28.imagebam.com/12186/907b11121851777.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/dc5c1c121851788"><img alt="image" src="http://thumbnails39.imagebam.com/12186/dc5c1c121851788.jpg" /></a><br />
+<a class="faqlink" href="http://www.imagebam.com/image/4645ad121851797"><img alt="image" src="http://thumbnails38.imagebam.com/12186/4645ad121851797.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/a71a2c121851807"><img alt="image" src="http://thumbnails36.imagebam.com/12186/a71a2c121851807.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/6ce0fe121851817"><img alt="image" src="http://thumbnails36.imagebam.com/12186/6ce0fe121851817.jpg" /></a> [/align]]]></description>
+			<author>snowflake@TorViet.com (snowflake)</author>
+			<category domain="http://torviet.com/torrents.php?cat=2">Movie</category>
+			<comments><![CDATA[http://torviet.com/details.php?id=29157&cmtpage=0#startcomments]]></comments>
+			<enclosure url="http://torviet.com/download.php?id=29157" length="5405041436" type="application/x-bittorrent" />
+			<guid isPermaLink="false">ddf9e397ff2ddc6588d9e443c309253f3169909a</guid>
+			<pubDate>Tue, 07 Apr 2015 17:43:47 +0700</pubDate>
+		</item>
+		<item>
+			<title><![CDATA[Ribbit 2014 720p BluRay DD5.1 x264-CtrlHD[4.18 GB][ConReCuaATN]]]></title>
+			<link>http://torviet.com/details.php?id=116469</link>
+			<description><![CDATA[<font face="Courier New"><fieldset><legend> Quote </legend><br />.GENERAL iNFORMATiON<br />
+RUNTiME....... 1h:28m:45s<br />
+SiZE.......... 4.18GB<br />
+ViDEO.CODEC... x264, CRF16, L4.1<br />
+FRAMERATE..... 23.976fps<br />
+BiTRATE....... 5980kbps<br />
+RESOLUTiON.... 1280x720<br />
+AUDiO......... English DD 5.1 @ 640kbps<br />
+SUBTiTLES..... Eng-Forced,Dutch,German<br />
+SUBS.FORMAT... UTF-8 srt<br />
+CHAPTERS...... Numbered<br />
+SOURCE........ Ribbit 2014 1080p GER Blu-ray AVC DTS-HD MA 5.1-UNTOUCHED<br />
+iMDB.RATiNG... 4.0/10 (192 votes)<br />
+iMDB.LiNK..... <a class="faqlink" href="http://www.imdb.com/title/tt2066048/">http://www.imdb.com/title/tt2066048/</a><br />
+<br />
+.LOG<br />
+x264 [info]: frame I:1171 &nbsp;Avg QP:15.53 &nbsp;size:232369<br />
+x264 [info]: frame P:29241 Avg QP:17.17 &nbsp;size: 56769<br />
+x264 [info]: frame B:97268 Avg QP:18.10 &nbsp;size: 21880<br />
+x264 [info]: consecutive B-frames: &nbsp;2.2% &nbsp;2.5% &nbsp;7.6% 35.0% 16.5% 27.4% &nbsp;5.0% &nbsp;3.1% &nbsp;0.7%<br />
+x264 [info]: encoded 127680 frames, 4.09 fps, 6099.68 kb/s, duration 8:40:35.96</fieldset><br /></font><br />
+<br />
+[align=center]<b>Source vs Encode</b><br />
+<a class="faqlink" href="http://www.imagebam.com/image/7b7a7a397580503"><img alt="image" src="http://thumbnails110.imagebam.com/39759/7b7a7a397580503.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/4f916b397580518"><img alt="image" src="http://thumbnails109.imagebam.com/39759/4f916b397580518.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/048ed1397580533"><img alt="image" src="http://thumbnails112.imagebam.com/39759/048ed1397580533.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/1fd550397580541"><img alt="image" src="http://thumbnails111.imagebam.com/39759/1fd550397580541.jpg" /></a><br />
+<a class="faqlink" href="http://www.imagebam.com/image/67dc14397580551"><img alt="image" src="http://thumbnails111.imagebam.com/39759/67dc14397580551.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/d09722397580559"><img alt="image" src="http://thumbnails112.imagebam.com/39759/d09722397580559.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/485e56397580571"><img alt="image" src="http://thumbnails109.imagebam.com/39759/485e56397580571.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/7b51ca397580578"><img alt="image" src="http://thumbnails110.imagebam.com/39759/7b51ca397580578.jpg" /></a><br />
+<a class="faqlink" href="http://www.imagebam.com/image/8b1212397580590"><img alt="image" src="http://thumbnails109.imagebam.com/39759/8b1212397580590.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/ef24d2397580605"><img alt="image" src="http://thumbnails109.imagebam.com/39759/ef24d2397580605.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/be91d9397580632"><img alt="image" src="http://thumbnails111.imagebam.com/39759/be91d9397580632.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/7eca07397580656"><img alt="image" src="http://thumbnails109.imagebam.com/39759/7eca07397580656.jpg" /></a><br />
+<a class="faqlink" href="http://www.imagebam.com/image/dfc94d397580677"><img alt="image" src="http://thumbnails111.imagebam.com/39759/dfc94d397580677.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/037a77397580711"><img alt="image" src="http://thumbnails109.imagebam.com/39759/037a77397580711.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/03ada0397580732"><img alt="image" src="http://thumbnails111.imagebam.com/39759/03ada0397580732.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/bba64b397580748"><img alt="image" src="http://thumbnails112.imagebam.com/39759/bba64b397580748.jpg" /></a> [/align]]]></description>
+			<author>ConReCuaATN@TorViet.com (ConReCuaATN)</author>
+			<category domain="http://torviet.com/torrents.php?cat=2">Movie</category>
+			<comments><![CDATA[http://torviet.com/details.php?id=116469&cmtpage=0#startcomments]]></comments>
+			<enclosure url="http://torviet.com/download.php?id=116469" length="4487728810" type="application/x-bittorrent" />
+			<guid isPermaLink="false">69b1f26c8e7100ac9283aa9bebea7bc35e4558fc</guid>
+			<pubDate>Tue, 07 Apr 2015 17:37:44 +0700</pubDate>
+		</item>
+		<item>
+			<title><![CDATA[Undisputed 2002 720p BluRay DTS x264-APAX[4.36 GB][HDDamMe]]]></title>
+			<link>http://torviet.com/details.php?id=49902</link>
+			<description><![CDATA[[align=center]<a class="faqlink" href="http://www.imagebam.com/image/babc6f176990854"><img alt="image" src="http://thumbnails42.imagebam.com/17700/babc6f176990854.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/b3751e176990879"><img alt="image" src="http://thumbnails46.imagebam.com/17700/b3751e176990879.jpg" /></a><br />
+<a class="faqlink" href="http://www.imagebam.com/image/237ed8176990909"><img alt="image" src="http://thumbnails46.imagebam.com/17700/237ed8176990909.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/f0b55d176990942"><img alt="image" src="http://thumbnails49.imagebam.com/17700/f0b55d176990942.jpg" /></a> [/align]]]></description>
+			<author>HDDamMe@TorViet.com (HDDamMe)</author>
+			<category domain="http://torviet.com/torrents.php?cat=2">Movie</category>
+			<comments><![CDATA[http://torviet.com/details.php?id=49902&cmtpage=0#startcomments]]></comments>
+			<enclosure url="http://torviet.com/download.php?id=49902" length="4683033553" type="application/x-bittorrent" />
+			<guid isPermaLink="false">9f2deff27a57f0086a7e25b68908504ed1946447</guid>
+			<pubDate>Tue, 07 Apr 2015 17:33:55 +0700</pubDate>
+		</item>
+		<item>
+			<title><![CDATA[Triad Wars 2008 720p BluRay DD5.1 x264-HDvB[4.41 GB][tranphong]]]></title>
+			<link>http://torviet.com/details.php?id=28129</link>
+			<description><![CDATA[<fieldset><legend> Quote </legend><br /><font face="Courier New">RELEASE NAME..: Fatal.Move.2008.720p.Bluray.AC3.x264-HDvB<br />
+RELEASE DATE..: 29 July 2010 <br />
+RELEASE SIZE..: 4.36 GB<br />
+RUNTIME.......: 1h 56mn<br />
+VIDEO CODEC...: x264, 2pass, L4.1 <br />
+FRAMERATE.....: 23.976 fps <br />
+BITRATE.......: 4 719 Kbps<br />
+RESOLUTION....: 1280x546<br />
+AUDIO ........: Cantonese AC3 5.1 @ 640 Kbps <br />
+SUBTITLES.....: None<br />
+CHAPTER.......: Included <br />
+SOURCE........: Fatal Move 奪帥 (2008) AVC 1080p<br />
+IMDB RATING...: 5.6/10 &nbsp; 429 votes<br />
+IMDB LINK.....: <a class="faqlink" href="http://www.imdb.com/title/tt1156444/">http://www.imdb.com/title/tt1156444/</a><br />
+<br />
+Other:<br />
+CONTACT........: HDvB.group@gmail.com<br />
+<br />
+x264 [info]: frame I:1140 &nbsp;Avg QP:15.50 &nbsp;size: 98282<br />
+x264 [info]: frame P:34997 Avg QP:17.07 &nbsp;size: 44253<br />
+x264 [info]: frame B:131709 Avg QP:18.90 &nbsp;size: 18685</font></fieldset><br /><br />
+<br />
+<br />
+<br />
+[align=center]<a class="faqlink" href="http://www.imagebam.com/image/5d3c3c279719777"><img alt="image" src="http://thumbnails106.imagebam.com/27972/5d3c3c279719777.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/eb776f279719788"><img alt="image" src="http://thumbnails106.imagebam.com/27972/eb776f279719788.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/ef3497279719802"><img alt="image" src="http://thumbnails103.imagebam.com/27972/ef3497279719802.jpg" /></a>​<br />
+<a class="faqlink" href="http://www.imagebam.com/image/53d0b6279719816"><img alt="image" src="http://thumbnails108.imagebam.com/27972/53d0b6279719816.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/ac81da279719826"><img alt="image" src="http://thumbnails107.imagebam.com/27972/ac81da279719826.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/7094a7279719833"><img alt="image" src="http://thumbnails108.imagebam.com/27972/7094a7279719833.jpg" /></a>​<br />
+<a class="faqlink" href="http://www.imagebam.com/image/ef5e05279719839"><img alt="image" src="http://thumbnails108.imagebam.com/27972/ef5e05279719839.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/972499279719844"><img alt="image" src="http://thumbnails106.imagebam.com/27972/972499279719844.jpg" /></a> <a class="faqlink" href="http://www.imagebam.com/image/632d53279719857"><img alt="image" src="http://thumbnails101.imagebam.com/27972/632d53279719857.jpg" /></a>[/align]]]></description>
+			<author>tranphong@TorViet.com (tranphong)</author>
+			<category domain="http://torviet.com/torrents.php?cat=2">Movie</category>
+			<comments><![CDATA[http://torviet.com/details.php?id=28129&cmtpage=0#startcomments]]></comments>
+			<enclosure url="http://torviet.com/download.php?id=28129" length="4740528605" type="application/x-bittorrent" />
+			<guid isPermaLink="false">73cfaa6f5e5bd7c847e3c185273c89a33f3a6ddf</guid>
+			<pubDate>Tue, 07 Apr 2015 17:11:29 +0700</pubDate>
+		</item>
+		<item>
+			<title><![CDATA[Shaolin Soccer 2001 720p BluRay DTS x264-EPiK[6.62 GB][tien113]]]></title>
+			<link>http://torviet.com/details.php?id=26987</link>
+			<description><![CDATA[<fieldset><legend> Quote </legend><br /><font face="Courier New"><span style="color: DarkRed;"><b>MOVIE INFO</b></span><br />
+<br />
+Release Date.........: 12 July 2001 (Hong Kong)<br />
+Rating...............: 7.3/10 &nbsp; 21,219 votes <br />
+Genre................: Action | Comedy | Sport<br />
+Tagline..............: Kick some grass! <br />
+Plot:................: A young Shaolin follower reunites with his discouraged brothers to form a soccer team using their martial art skills to their advantage.<br />
+IMDB Link............: <a class="faqlink" href="http://www.imdb.com/title/tt0286112/">http://www.imdb.com/title/tt0286112/</a><br />
+<br />
+<span style="color: DarkRed;"><b>RELEASE INFO</b></span><br />
+<br />
+Release Name.........: Shaolin.Soccer.2001.720p.BluRay.DTS.x264-EPiK<br />
+Release Date.........: 03/10/2009<br />
+Run Time.............: 1h 52mn<br />
+Size.................: 6.55 GB (1.5xDVD5)<br />
+Video Codec..........: x264<br />
+Framerate............: 23.976<br />
+Video Bitrate........: 7573 Kbps<br />
+Resolution...........: 1280x720<br />
+Audio ...............: Chinese DTS 1.5 Mbps<br />
+Subtitle.............: Eng(srt)<br />
+Source...............: Shaolin Soccer 2001 Bluray 1080p AVC DTS-HDMA5.1-CHDBits <br />
+Encoder..............: tien113</font></fieldset><br /><br />
+<br />
+<b><span style="color: red;"><font size="5">&quot;Không được upload torrent này lên những tracker khác!&quot;</font><span style="color: red;"></b>]]></description>
+			<author>tien113@TorViet.com (tien113)</author>
+			<category domain="http://torviet.com/torrents.php?cat=2">Movie</category>
+			<comments><![CDATA[http://torviet.com/details.php?id=26987&cmtpage=0#startcomments]]></comments>
+			<enclosure url="http://torviet.com/download.php?id=26987" length="7106201672" type="application/x-bittorrent" />
+			<guid isPermaLink="false">29c8fb6826eaf54f1940a18042d3320cae15fc0d</guid>
+			<pubDate>Tue, 07 Apr 2015 17:07:33 +0700</pubDate>
+		</item>
+		<item>
+			<title><![CDATA[Kiss of the Dragon 2001 720p BluRay DTS x264-EPiK[4.37 GB][tien113]]]></title>
+			<link>http://torviet.com/details.php?id=27094</link>
+			<description><![CDATA[<fieldset><legend> Quote </legend><br /><font face="Courier New"><span style="color: DarkRed;"><b>MOVIE INFO</b></span><br />
+<br />
+Release Date.........: 31 August 2001 (Finland)<br />
+Rating...............: 6.3/10 &nbsp; 19,401 votes <br />
+Genre................: Action | Crime | Drama | Thriller <br />
+Tagline..............: Kiss Fear Goodbye<br />
+Plot:................: A betrayed intelligence officer enlists the aid of a prostitute to prove his innocence from a deadly conspiracy while returning a favor to her.<br />
+IMDB Link............: <a class="faqlink" href="http://www.imdb.com/title/tt0271027/">http://www.imdb.com/title/tt0271027/</a><br />
+<br />
+<span style="color: DarkRed;"><b>RELEASE INFO</b></span><br />
+<br />
+Release Name.........: Kiss.of.the.Dragon.2001.720p.Bluray.x264.DTS-EPiK<br />
+Release Date.........: 06/08/2009<br />
+Run Time.............: 1h 38mn<br />
+Size.................: 4.37GB (DVD5)<br />
+Video Codec..........: x264<br />
+Framerate............: 23.976<br />
+Video Bitrate........: 4862 Kbps<br />
+Resolution...........: 1280x542<br />
+Audio ...............: Eng DTS core 1.5Mbps<br />
+Subtitle.............: Eng (ass)<br />
+Source...............: Kiss.of.the.Dragon.1080p.Blu-ray.MPEG2.DTS-HD.5.1 <br />
+Encoder..............: tien113</font></fieldset><br />]]></description>
+			<author>tien113@TorViet.com (tien113)</author>
+			<category domain="http://torviet.com/torrents.php?cat=2">Movie</category>
+			<comments><![CDATA[http://torviet.com/details.php?id=27094&cmtpage=0#startcomments]]></comments>
+			<enclosure url="http://torviet.com/download.php?id=27094" length="4697236620" type="application/x-bittorrent" />
+			<guid isPermaLink="false">141e60058ae339bf23a3f18c6ad3e224ca5f8f81</guid>
+			<pubDate>Tue, 07 Apr 2015 17:02:33 +0700</pubDate>
+		</item>
+		<item>
+			<title><![CDATA[All About Space - Book of the Solar System - 2014 [PDF][23.69 MB][ducanh90]]]></title>
+			<link>http://torviet.com/details.php?id=116468</link>
+			<description><![CDATA[<img alt="image" src="https://www.imagineshop.co.uk/media/catalog/product/cache/1/image/5e06319eda06f020e43594a9c230972d/a/a/aas-solar-cover.jpg" /><br />
+<img alt="image" src="https://www.imagineshop.co.uk/media/catalog/product/cache/1/image/5e06319eda06f020e43594a9c230972d/a/a/aas-solar-2.jpg" /><br />
+<img alt="image" src="https://www.imagineshop.co.uk/media/catalog/product/cache/1/image/5e06319eda06f020e43594a9c230972d/a/a/aas-solar-1.jpg" /><br />
+<br />
+<b><span style="color: Red;">Take a tour through the incredible wonders of our Solar System. Discover the impact the Sun has on our lives and everything around us, and find out how this ball of hot plasma formed. Read about the eight planets that make up our Solar System, whether you want to learn why Saturn has rings, how life formed on Earth, if we could live on Mars, or why Neptune looks so blue. On top of that, find out about four of the most interesting moons of the Solar System; Ganymede, Europa, Titan and our very own Moon.</span></b><br />
+<br />
+<b><u><span style="color: Lime;">In this bookazine...</span></u></b><br />
+The Sun<br />
+- Discover the vital role the star at the heart of our Solar System plays<br />
+<br />
+The planets<br />
+- In-depth guides to all the planets, from Mercury to Neptune<br />
+<br />
+The moons<br />
+- Take a closer look at some of the Solar System's most interesting moons<br />
+<br />
+Amazing illustrations<br />
+- Explore the stunning sights on offer<br />
+<br />
+<b><span style="color: Navy;">English | 180 pages | PDF | 23.00 Mb</span></b>]]></description>
+			<author>ducanh90@TorViet.com (ducanh90)</author>
+			<category domain="http://torviet.com/torrents.php?cat=6">Misc</category>
+			<comments><![CDATA[http://torviet.com/details.php?id=116468&cmtpage=0#startcomments]]></comments>
+			<enclosure url="http://torviet.com/download.php?id=116468" length="24842988" type="application/x-bittorrent" />
+			<guid isPermaLink="false">daa56b56ce4d01054ed0f9c25e7724591dd038a2</guid>
+			<pubDate>Tue, 07 Apr 2015 15:08:54 +0700</pubDate>
+		</item>
+		<item>
+			<title><![CDATA[All About Space Tour of the Universe - Revised Edition - 2015 [PDF][52.20 MB][ducanh90]]]></title>
+			<link>http://torviet.com/details.php?id=116467</link>
+			<description><![CDATA[<img alt="image" src="https://www.imagineshop.co.uk/media/catalog/product/cache/1/image/5e06319eda06f020e43594a9c230972d/p/b/pbook001_7_4.jpg" /><br />
+<img alt="image" src="https://www.imagineshop.co.uk/media/catalog/product/cache/1/image/5e06319eda06f020e43594a9c230972d/0/8/080-081_aas_014.jpg" /><br />
+<img alt="image" src="https://www.imagineshop.co.uk/media/catalog/product/cache/1/image/5e06319eda06f020e43594a9c230972d/1/3/138-139_aas_005.jpg" /><br />
+<br />
+<b><span style="color: Red;">Take a tour of the universe, from our own solar system into the depths of space. Once upon a time, a man named Neil Armstrong stepped onto the surface of the Moon claiming it to be “One small step for man, one giant leap for mankind.” Join us as we take you further than ever imagined across our Solar System and into deep space. </span></b><br />
+<br />
+<b><u><span style="color: Lime;">In this bookazine...</span></u></b><br />
+Explore the Galaxies<br />
+- Learn about what it takes to get up into space<br />
+<br />
+Discover the Solar System<br />
+- Journey from the Sun at the centre to the very edges of our Solar System<br />
+<br />
+Sights of the Universe<br />
+- Space Junk, mega storms, stars and so much more to see on your tour<br />
+<br />
+Into Deep Space<br />
+- Watch galaxies collide, stars turn supernova and much more in the deepest depths of the galaxy<br />
+<br />
+<b><span style="color: Navy;">English | 180 pages | True PDF | 52.2 Mb</span></b>]]></description>
+			<author>ducanh90@TorViet.com (ducanh90)</author>
+			<category domain="http://torviet.com/torrents.php?cat=6">Misc</category>
+			<comments><![CDATA[http://torviet.com/details.php?id=116467&cmtpage=0#startcomments]]></comments>
+			<enclosure url="http://torviet.com/download.php?id=116467" length="54736303" type="application/x-bittorrent" />
+			<guid isPermaLink="false">24e511b6cb4931a9a1a97db3719954bcb952a0ac</guid>
+			<pubDate>Tue, 07 Apr 2015 14:36:54 +0700</pubDate>
+		</item>
+		<item>
+			<title><![CDATA[Song of the Sea 2014 720p BluRay DD5.1 x264-NTb[3.35 GB][ConReCuaATN]]]></title>
+			<link>http://torviet.com/details.php?id=116466</link>
+			<description><![CDATA[[align=center]<font size="3"><b>Song.of.the.Sea.2014.720p.BluRay.DD5.1.x264-NTb</b></font>[/align]<br />
+<br />
+<fieldset><legend> Quote </legend><br /><font face="Courier New"><b>General Information</b><br />
+Source			: Song of the Sea 2014 1080p FRA Blu-ray AVC DTS-HD MA 5.1-PCH<br />
+Container		: Matroska<br />
+Length			: 1h 33mn<br />
+Chapters		: Included (Not Named)<br />
+Codec			: AVC<br />
+Video Bitrate		: 4 279 Kbpps<br />
+Format Profile Level	: High@L4.1<br />
+Resolution		: 1280 x 694 pixels<br />
+Framerate		: 23.976 fps<br />
+Audio Stream 1		: English DD 6 channels @ 640 Kbps<br />
+Audio Stream 2		: English Commentary AAC 2 channels @ 96 Kbps (Commentary with Director Tomm Moore)<br />
+Subtitles		: Eng, SDH, (SRT)<br />
+Greetings		: All NTb Crew, Nick007, 9mm and rose.<br />
+<br />
+<b>Encoding Log</b><br />
+x264 [info]: frame I:1201 &nbsp;Avg QP:13.91 &nbsp;size:246704<br />
+x264 [info]: frame P:32645 Avg QP:14.88 &nbsp;size: 48384<br />
+x264 [info]: frame B:101369 Avg QP:16.63 &nbsp;size: 11847<br />
+x264 [info]: consecutive B-frames: &nbsp;1.9% &nbsp;2.4% 16.1% 37.1% 18.3% 14.5% &nbsp;3.4% &nbsp;3.9% &nbsp;1.2% &nbsp;1.2%<br />
+x264 [info]: encoded 135215 frames, 4.129 fps, 4364.46 kb/s, 2934.2 MB</font></fieldset><br /><br />
+<br />
+[align=center]<b>Screenshots Source vs Encode vs Scene</b><br />
+<a class="faqlink" href="http://someimage.com/jfOFgnT"><img alt="image" src="http://t1.someimage.com/jfOFgnT.jpg" /></a> <a class="faqlink" href="http://someimage.com/488Yz8I"><img alt="image" src="http://t1.someimage.com/488Yz8I.jpg" /></a> <a class="faqlink" href="http://someimage.com/qyE9VSH"><img alt="image" src="http://t1.someimage.com/qyE9VSH.jpg" /></a><br />
+<a class="faqlink" href="http://someimage.com/Hwonc9k"><img alt="image" src="http://t1.someimage.com/Hwonc9k.jpg" /></a> <a class="faqlink" href="http://someimage.com/m4xMcbL"><img alt="image" src="http://t1.someimage.com/m4xMcbL.jpg" /></a> <a class="faqlink" href="http://someimage.com/iBuZBu5"><img alt="image" src="http://t1.someimage.com/iBuZBu5.jpg" /></a><br />
+<a class="faqlink" href="http://someimage.com/I7spD62"><img alt="image" src="http://t1.someimage.com/I7spD62.jpg" /></a> <a class="faqlink" href="http://someimage.com/iQXoQdq"><img alt="image" src="http://t1.someimage.com/iQXoQdq.jpg" /></a> <a class="faqlink" href="http://someimage.com/IredlG2"><img alt="image" src="http://t1.someimage.com/IredlG2.jpg" /></a><br />
+<a class="faqlink" href="http://someimage.com/la7AwWm"><img alt="image" src="http://t1.someimage.com/la7AwWm.jpg" /></a> <a class="faqlink" href="http://someimage.com/030Lwsv"><img alt="image" src="http://t1.someimage.com/030Lwsv.jpg" /></a> <a class="faqlink" href="http://someimage.com/PNitwXB"><img alt="image" src="http://t1.someimage.com/PNitwXB.jpg" /></a><br />
+<a class="faqlink" href="http://someimage.com/YVDSpyN"><img alt="image" src="http://t1.someimage.com/YVDSpyN.jpg" /></a> <a class="faqlink" href="http://someimage.com/nYDHIMH"><img alt="image" src="http://t1.someimage.com/nYDHIMH.jpg" /></a> <a class="faqlink" href="http://someimage.com/46AULDJ"><img alt="image" src="http://t1.someimage.com/46AULDJ.jpg" /></a><br />
+<a class="faqlink" href="http://someimage.com/LXglZfN"><img alt="image" src="http://t1.someimage.com/LXglZfN.jpg" /></a> <a class="faqlink" href="http://someimage.com/gHw9PAI"><img alt="image" src="http://t1.someimage.com/gHw9PAI.jpg" /></a> <a class="faqlink" href="http://someimage.com/virxm2J"><img alt="image" src="http://t1.someimage.com/virxm2J.jpg" /></a><br />
+<a class="faqlink" href="http://someimage.com/rjlG4zh"><img alt="image" src="http://t1.someimage.com/rjlG4zh.jpg" /></a> <a class="faqlink" href="http://someimage.com/9a3NxVP"><img alt="image" src="http://t1.someimage.com/9a3NxVP.jpg" /></a> <a class="faqlink" href="http://someimage.com/bgYeVcj"><img alt="image" src="http://t1.someimage.com/bgYeVcj.jpg" /></a> [/align]]]></description>
+			<author>ConReCuaATN@TorViet.com (ConReCuaATN)</author>
+			<category domain="http://torviet.com/torrents.php?cat=2">Movie</category>
+			<comments><![CDATA[http://torviet.com/details.php?id=116466&cmtpage=0#startcomments]]></comments>
+			<enclosure url="http://torviet.com/download.php?id=116466" length="3597513573" type="application/x-bittorrent" />
+			<guid isPermaLink="false">3c02e227d98bea41b2f52bc5064451d2a5ec5650</guid>
+			<pubDate>Tue, 07 Apr 2015 14:10:12 +0700</pubDate>
+		</item>
+		<item>
+			<title><![CDATA[Lost River 2014 720p WEB-DL DD5.1 H.264-PLAYNOW[2.91 GB][B5DucDat]]]></title>
+			<link>http://torviet.com/details.php?id=116465</link>
+			<description><![CDATA[[center]<a class="faqlink" href="http://someimage.com/EYP7Ums"><img alt="image" src="http://t1.someimage.com/EYP7Ums.jpg" /></a> <a class="faqlink" href="http://someimage.com/pSPXte7"><img alt="image" src="http://t1.someimage.com/pSPXte7.jpg" /></a> <a class="faqlink" href="http://someimage.com/FmMKU79"><img alt="image" src="http://t1.someimage.com/FmMKU79.jpg" /></a><br />
+<a class="faqlink" href="http://someimage.com/s3dXKyw"><img alt="image" src="http://t1.someimage.com/s3dXKyw.jpg" /></a> <a class="faqlink" href="http://someimage.com/bcOfGfH"><img alt="image" src="http://t1.someimage.com/bcOfGfH.jpg" /></a> <a class="faqlink" href="http://someimage.com/aa4Luqf"><img alt="image" src="http://t1.someimage.com/aa4Luqf.jpg" /></a> [/center]]]></description>
+			<author>B5DucDat@TorViet.com (B5DucDat)</author>
+			<category domain="http://torviet.com/torrents.php?cat=2">Movie</category>
+			<comments><![CDATA[http://torviet.com/details.php?id=116465&cmtpage=0#startcomments]]></comments>
+			<enclosure url="http://torviet.com/download.php?id=116465" length="3129337684" type="application/x-bittorrent" />
+			<guid isPermaLink="false">c3bb8a054cb0c99f54b49fe99ef07e28024bf2c4</guid>
+			<pubDate>Tue, 07 Apr 2015 13:56:35 +0700</pubDate>
+		</item>
+	</channel>

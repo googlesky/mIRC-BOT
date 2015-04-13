@@ -1,7 +1,7 @@
 on 1:TEXT:!gamenhom:%r: {
   ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chua Ðång ký , Ðê² ðång ký choi game , 8Gõ 11/msg $me 4!register <pass1> <pass2> | .ignore -u5 $nick }
   ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) != $null) && ($level($nick) < 3) { noticeVC $nick 4,01 $+ $nick 9,01Chua Login , 13/msg $me !identify <pass> , 9Ðê² choi Games | .ignore -u5 $nick }
-  if (%gamenhom.dangchoi == on) { noticeVC $nick 3Ðang choi $DenDo(Game Nhóm) 3hoå.c là chua có $DenDo(Game Nhóm)3 bây giò. Ban chò nhé. | .ignore -u20 $nick | .close -m $nick | halt }
+  if (%gamenhom.dangchoi == on) { noticeVC $nick 3Ðang choi $DenDo(Game Nhóm) 3hoå.c là chua có $DenDo(Game Nhóm) 3 bây giò. Ban chò nhé. | .ignore -u20 $nick | .close -m $nick | halt }
   else {
     inc %gamenhom.thutu 1
     writeini -n hethong\GameNhom.ini Gamenhom %gamenhom.thutu $nick
@@ -10,7 +10,7 @@ on 1:TEXT:!gamenhom:%r: {
   }
 }
 on 1:TEXT:!GameNhom.DatCuoc*:%r: {
-  if ($nick == %gamenhom.doitruong.datcuoc) && (%gamenhom.datcuoc == on) && ($ChkBet($nick,$2) == True) {
+  if ($nick == %gamenhom.doitruong.datcuoc) && (%gamenhom.datcuoc == on) && ($2 <= $div($GameNhomDatCuocMax,2) && ($ChkBet($nick,$2) == True) {
     describeVC %r 12Ðôi truo²ng4 %gamenhom.doitruong.datcuoc 12ðã ðåt cuoc ván này là 8,1$ $+ $tien($2)
     set %gamenhom.giaithuong $2
     var %iChkGN = 1
@@ -68,7 +68,7 @@ on 1:text:*:%r: {
         ghidiem diem $nick $int($calc($coidiem(diem,$nick) + %averageDiem))
         .timera1 off
         ;$iif($r(0,1)=0,3ðáp án ðúng4,3tra² lòi ðúng4)
-        describeVC %r 12Nhóm 1:13 $nick $iif($r(0,1)=0,3ðáp án ðúng4,3tra² lòi ðúng4) %goiy2 12Ðiê²m:4 $tien(%averageDiem) 12Tài sa²n: 4$ $+ $tien($coidiem(diem,$nick)) $+ . 7Kê´t qua²: 4Nhóm 1:13 %nhom1.thang 12-4 Nhóm 2:13 %nhom2.thang
+        describeVC %r 12Nhóm 1:13 $nick $iif($r(0,1) = 0,3ðáp án ðúng4,3tra² lòi ðúng4) %goiy2 12Ðiê²m:4 $tien(%averageDiem) 12Tài sa²n: 4$ $+ $tien($coidiem(diem,$nick)) $+ . 7Kê´t qua²: 4Nhóm 1:13 %nhom1.thang 12-4 Nhóm 2:13 %nhom2.thang
         unset %gamenhom.tam. %gamenhom.tam %goiy*
         ;if (%nhom1.thang == %nhom2.thang) describeVC %r Ty² sô´ ðang cân bå`ng. Nhóm nào se~ vuo.t lên truóc. Mòi các ba.n theo dõi tiê´p
         ;if (%nhom1.thang == 1) && (%nhom2.thang == 0) describeVC %r 3Kho²i ðâ`u 13Nhóm 13 ðã vuo.t lên dâ~n truóc dô´i phuong
@@ -92,7 +92,7 @@ on 1:text:*:%r: {
         inc %nhom2.thang 1
         ghidiem diem $nick $int($calc($coidiem(diem,$nick) + %averageDiem))
         .timera1 off
-        describeVC %r 12Nhóm 2:13 $nick $iif($r(0,1)=0,3ðáp án ðúng4,3tra² lòi ðúng4) %goiy2 12Ðiê²m:4 $tien(%averageDiem) 12Tài sa²n: 4$ $+ $tien($coidiem(diem,$nick)) $+ . 7Kê´t qua²: 4Nhóm 1:13 %nhom1.thang 12-4 Nhóm 2:13 %nhom2.thang
+        describeVC %r 12Nhóm 2:13 $nick $iif($r(0,1 ) = 0,3ðáp án ðúng4,3tra² lòi ðúng4) %goiy2 12Ðiê²m:4 $tien(%averageDiem) 12Tài sa²n: 4$ $+ $tien($coidiem(diem,$nick)) $+ . 7Kê´t qua²: 4Nhóm 1:13 %nhom1.thang 12-4 Nhóm 2:13 %nhom2.thang
         unset %gamenhom.tam. %gamenhom.tam %goiy*
         ;if (%nhom1.thang == %nhom2.thang) describeVC %r Ty² sô´ ðang cân bå`ng. Nhóm nào se~ vuo.t lên truóc. Mòi các ba.n theo dõi tiê´p
         ;if (%nhom1.thang == 0) && (%nhom2.thang == 1) describeVC %r 3Kho²i ðâ`u 13Nhóm 23 ðã vuo.t lên dâ~n truóc ðô'i phuong
@@ -194,7 +194,7 @@ alias choigamenhom {
     .timertieptuc 1 %quacau choigame | halt
   }
   describeVC %r 2=-=-=-=-=-=3¤412¤34¤123¤2[ $DenDo(Game Nhóm) 12Câu 04 $+ %gamenhom.thutuhoi 2]3¤124¤312¤43¤2=-=-=-=-=-=
-  %cauhoi.sehoi = $DenDo(Game Nhóm) $+ $InsertSymbol(0,$replace(%cauhoi.,_,*)))
+  %cauhoi.sehoi = $DenDo(Game Nhóm) $+ $InsertSymbol(0,$replace(%cauhoi.,_,*)) )
   describeVC %r %cauhoi.sehoi
   %goiy2 = $uw(%cauhoi.tam,2,*)
   %goiy3 = $uw(%cauhoi.tam,3,*)

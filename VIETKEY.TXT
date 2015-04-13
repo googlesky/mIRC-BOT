@@ -30,8 +30,8 @@ on 1:text:*:%r: {
   }
   if ($1 == !buyhost) && ($level($nick) >= 3) {
     if ($2 != $null) && ($len($2-) <= 35) {
-      if ($coidiem(diem,$nick) >= 10000000000) { ghidiem diem $nick $calc($coidiem(diem,$nick) - 10000000000) | writeini hethong\host.ini host $nick $tiengviet($2-) | describeVC %r 3Ban04 $nick 3ðã mua thành công HOST GAME: 11,01 $tiengviet($2-)  vói sô´ tiê`n 09,01 $chr(36) $+ $tien(10000000000)  }
-      else { noticeVC $nick 11,1Còn thiêú 4,01$ $+ $tien($calc(10000000000 - $coidiem(diem,$nick))) 11,1Ban se~ mua ðuoc host | .ignore -u15 $nick }
+      if ($coidiem(diem,$nick) >= 1000000000) { ghidiem diem $nick $calc($coidiem(diem,$nick) - 1000000000) | writeini hethong\host.ini host $nick $tiengviet($2-) | describeVC %r 3Ban04 $nick 3ðã mua thành công HOST GAME: 11,01 $tiengviet($2-)  vói sô´ tiê`n 09,01 $chr(36) $+ $tien(1000000000)  }
+      else { noticeVC $nick 11,1Còn thiêú 4,01$ $+ $tien($calc(1000000000 - $coidiem(diem,$nick))) 11,1Ban se~ mua ðuoc host | .ignore -u15 $nick }
     }
     else { noticeVC $nick 11,1Mua cái gì vâ.y , ignore 15s vì cái tô.i khôn quá ^^ | .ignore -u15 $nick }
   }
@@ -176,17 +176,17 @@ on 1:text:*:%r: {
       }
       copy bot.db $replace($+(BACKUP\bot-,$date,--,$time,.db),:,-,/,-)
       .msgVC %r.master Backup Done! $replace($+(BACKUP\bot-,$date,--,$time,.ini),:,-,/,-)
-      
+
       var %sqlquerydelete = DELETE FROM diem WHERE nick LIKE '%-HD';
       sqlite_exec %botdb %sqlquerydelete
       .msgVC %r.master $sqlite_changes(%botdb) dòng đã bị xóa.
-      
+
       remove -b HETHONG\diem.ini
       remove -b HETHONG\donate.txt
       remove -b HETHONG\Lo.txt
       remove -b HETHONG\De.txt
       remove -b HETHONG\tiepmau.txt
-      
+
       timer 1 5 .msgVC %r 0,04 $+ $me đã Reset điểm. Mời mọi người gõ 0,01!TiepMau
       timer 1 6 .msgVC %r 0,04 $+ $me đã Reset điểm. Mời mọi người gõ 0,01!TiepMau
       timer 1 7 .msgVC %r 0,04 $+ $me đã Reset điểm. Mời mọi người gõ 0,01!TiepMau
