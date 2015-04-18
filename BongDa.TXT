@@ -58,10 +58,10 @@ Alias DuongDanBd {
 Alias DoiBd {
   set %cadobongda on
   ;%tyleDoiBD1 %tyleHoa %tyleDoiBD2
-  set %tyleDoiBD1 $calc($r(111,333) / 100) | set %tyleHoa $calc($r(111,333) / 100)
+  set %tyleDoiBD1 $calc($r(111,222) / 100) | set %tyleHoa $calc($r(111,333) / 100)
   if ($calc(%tyleDoiBD1 * 100) > 155) { set %tyleDoiBD2 $calc($r(111,155) / 100) }
-  else { set %tyleDoiBD2 $calc($r(155,333) / 100) }
-  var %GameMini 0,1 00,04F00,01o00,04o00,01t00,04b00,01a00,04l00,01l04,04 00,01F00,04e00,01v00,04a01,01 
+  else { set %tyleDoiBD2 $calc($r(155,222) / 100) }
+  var %GameMini 0,1 00,04F00,01o00,04o00,01t00,04b00,01a00,04l00,01l04,04 00,01F00,04e00,01v00,04a01,01 
   describeVC %r 2=-=-=3*4°12*3°4*12°3*2[ $InsertBC(%GameMini) 2]3*12°4*3°12*4°3*2=-=-=
   if (Frosty_Girl143 ison %r) { msgVC Frosty_Girl143 Ðê´n Games Ðá Banh nè! }
   .timerbongda1 1 2 describeVC %r 3=2-3=2-3=2-3=12 Hôm nay có trân ðâ´u giuã 2 ðôi 3=2-3=2-3=2-3=
@@ -228,7 +228,7 @@ Alias BdHoa {
       var %tien = $uw(%item,2,=)
       if (%item == $null) { %inc %line | goto tongketcado }
       ghidiem diem %nick $calc($coidiem(diem,%nick) + (%tien * %tyleHoa))
-      describeVC %r 12Xin chúc mùng  $+ %nick 12Ðã ðoán ðúng ti² sô´ cu²a trân ðâú - Tài sa²n 11,1$ $+ $tien($coidiem(diem,%nick))
+      describeVC %r 12Xin chúc mùng  $+ %nick 12Ðã ðoán ðúng ti² sô´ cu²a trân ðâú - Tài sa²n 11,1$ $+ $tien($coidiem(diem,%nick)) 
       inc %line | goto tongketcado
       .timerchungcuoc1 1 3 ketthuccado
     }

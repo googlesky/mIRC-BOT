@@ -1,9 +1,7 @@
 ZA
 CaDao0
-ChiecNon
 XepNick
 BaiHat
 TangDan
-GiamDan
 DonGian
 NotNhacVui

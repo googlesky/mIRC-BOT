@@ -1,19 +1,19 @@
-www.24h.com.vn /upload/rss/amthuc.rss
+www.24h.com.vn /upload/rss/canhacmtv.rss
 HTTP/1.1 200 OK
 Server: 24h.com.vn
-Date: Mon, 13 Apr 2015 04:25:19 GMT
+Date: Sat, 18 Apr 2015 09:00:22 GMT
 Content-Type: application/rss+xml
-Content-Length: 13859
-Last-Modified: Mon, 13 Apr 2015 01:08:03 GMT
+Content-Length: 13950
+Last-Modified: Sat, 18 Apr 2015 08:46:03 GMT
 Connection: close
-Expires: Tue, 14 Apr 2015 04:25:19 GMT
+Expires: Sun, 19 Apr 2015 09:00:22 GMT
 Cache-Control: max-age=86400
 Accept-Ranges: bytes
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 <channel>
 <title>Tin tuc 24h | tin nhanh bong da | the thao | thoi trang, giai tri vn | bao online</title>
-<link>http://www.24h.com.vn/am-thuc-c460.html</link>
+<link>http://www.24h.com.vn/ca-nhac-mtv-c73.html</link>
 <description>Tin tuc trong ngay, bóng đá, thể thao, thời trang, giải trí. Update tin nhanh 24/24h. Nhiều đặc sản video tin tức việt nam, thế giới, video bong da anh chỉ có tại 24h.Tổng hợp tintuc vn, BAO CONG AN, an ninh, phap luat</description>
 <image>
 <url>http://24h-static.24hstatic.com:8008/images/logo24h-128x85.gif</url>
@@ -25,172 +25,176 @@ Accept-Ranges: bytes
 <ttl>60</ttl>
 <generator>noreply@24h.com.vn</generator>
 <item>
-<title>Hai món canh cá ngọt mát cho ngày hè</title>
-<description>Mùa hè nóng nực khiến khẩu vị của gia đình bạn có nhiều thay đổi. Dưới đây là 2 món ngon từ cá phù hợp ăn vào mùa hè: canh cải cá rô đồng và canh cải cá viên.</description>
-<link>http://www.24h.com.vn/am-thuc/hai-mon-canh-ca-ngot-mat-cho-ngay-he-c460a702265.html</link>
-<pubDate>2015-04-13 07:30:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-12/1428840225-thumbnail.jpg</summaryImg>
+<title>Ngắm bạn gái Lee Min Ho "sexy hết cỡ" trên sân khấu</title>
+<description>Dù nổi tiếng với hình tượng trong sáng nhưng đôi lần nữ ca sỹ Suzy cũng khiến khán giả bất ngờ bởi những màn biểu diễn vô cùng sexy.</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/ngam-ban-gai-lee-min-ho-sexy-het-co-tren-san-khau-c73a703534.html</link>
+<pubDate>2015-04-18 15:35:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-18/1429345211-img_201409022234593544_fokg.jpg</summaryImg>
 </item>
 <item>
-<title>4 món nướng ngon mê li cho bữa tiệc cuối tuần</title>
-<description>Mùi thơm và hương vị hấp dẫn của các món nướng luôn được mọi người thích thú.</description>
-<link>http://www.24h.com.vn/am-thuc/4-mon-nuong-ngon-me-li-cho-bua-tiec-cuoi-tuan-c460a702113.html</link>
-<pubDate>2015-04-12 13:00:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-11/1428732373-1426038825-1417659044-10833549_317949955073962_529525001_n.jpg</summaryImg>
+<title>Clip chàng trai hát “giọng mái” hay hơn cả con gái</title>
+<description>Ba vị giám khảo The Voice China phấn khích khi quay lại nhìn thấy người thể hiện bài hát giọng nữ là một chàng trai.</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/clip-chang-trai-hat-giong-mai-hay-hon-ca-con-gai-c73a703475.html</link>
+<pubDate>2015-04-18 11:09:39</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-18/1429338354-5_ilur.jpg</summaryImg>
 </item>
 <item>
-<title>Clip: Công nghệ chế rau bằng hóa chất gây sốc</title>
-<description>Chỉ một vài thao tác đơn giản, người đàn ông đã tạo ra một chiếc bắp cải xanh khiến người xem giật mình.</description>
-<link>http://www.24h.com.vn/am-thuc/clip-cong-nghe-che-rau-bang-hoa-chat-gay-soc-c460a702099.html</link>
-<pubDate>2015-04-12 07:30:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-11/1428728234-tao_rau_bang_hoa_chat_pmmc.jpg</summaryImg>
+<title>Trấn Thành: Ăn “bạn” của mình thật tàn nhẫn</title>
+<description>Trấn Thành cùng dàn sao Việt lên tiếng chỉ trích nạn trộm chó và kêu gọi mọi người cùng chung tay để bảo vệ những chú chó tội nghiệp.</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/tran-thanh-an-ban-cua-minh-that-tan-nhan-c73a703294.html</link>
+<pubDate>2015-04-18 05:05:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429261151-thumbnail.jpg</summaryImg>
 </item>
 <item>
-<title>Cách làm sữa chua mít, hoa quả dầm ngon nhất tại nhà</title>
-<description>Mùa hè đang tới, hãy cùng học cách làm sữa chua mít, sữa chua hoa quả dầm ngon nhất tại nhà nhé!</description>
-<link>http://www.24h.com.vn/am-thuc/cach-lam-sua-chua-mit-ngon-nhu-ngoai-hang-c460a702111.html</link>
-<pubDate>2015-04-11 13:00:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-11/1428731604-thumbnail.jpg</summaryImg>
+<title>Thu Minh: Tôi sẵn sàng…hóa hổ để giữ chồng</title>
+<description>Mỗi khi xuất hiện “nữ hoàng nhạc dance” Thu Minh lại khiến khán giả phải trầm trồ khen ngợi bởi phong cách thời trang sành điệu, thanh lịch.</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/thu-minh-toi-san-sanghoa-ho-de-giu-chong-c73a703447.html</link>
+<pubDate>2015-04-18 10:12:03</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-18/1429326587-thumbnail.jpg</summaryImg>
 </item>
 <item>
-<title>Clip: Cách tách lòng đỏ trứng siêu đơn giản</title>
-<description>Bằng phương pháp thủ công, bạn có thể nhanh chóng tách lòng đỏ và lòng trắng trứng gà.</description>
-<link>http://www.24h.com.vn/am-thuc/clip-cach-tach-long-do-trung-sieu-don-gian-c460a701781.html</link>
-<pubDate>2015-04-11 07:30:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-10/1428632711-tach_long_trung_rfsn.jpg</summaryImg>
+<title>Hồ Quang Hiếu lái mô tô cực ngầu lên sân khấu</title>
+<description>Nam ca sĩ đưa chiếc mô tô trị giá nửa tỷ đồng lên sân khấu buổi họp fan và ra mắt MV.</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/ho-quang-hieu-lai-mo-to-cuc-ngau-len-san-khau-c73a703409.html</link>
+<pubDate>2015-04-18 08:45:52</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-18/1429321513-ho_quang_hieu_av_evom.jpg</summaryImg>
 </item>
 <item>
-<title>Lươn kho mắm "sát thủ" của cơm</title>
-<description>Mùi thơm quyến rũ của mắm, thịt lươn ngọt chắc, vị chan chát thơm tho của các loại rau quyện cùng dư vị chua cay nồng nàn của chanh ớt sả làm bụng ai nấy sôi lên sùng sục.</description>
-<link>http://www.24h.com.vn/am-thuc/luon-kho-mam-sat-thu-cua-com-c460a701770.html</link>
-<pubDate>2015-04-10 13:30:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-10/1428631425-1-1427943056043.jpg</summaryImg>
+<title>Trùm truyền thông xứ Hàn tố "gà Trung Quốc" kiếm tiền lén lút</title>
+<description>Hai cựu thành viên EXO là Luhan và Kris bị công ty quản lý SM khởi tố vì có hành vi kiếm tiền thương mại khi vẫn là người của SM.</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/trum-truyen-thong-xu-han-to-ga-trung-quoc-kiem-tien-len-lut-c73a703426.html</link>
+<pubDate>2015-04-18 09:21:44</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-18/1429323635-_kris_luhan_4_oauw.jpg</summaryImg>
 </item>
 <item>
-<title>Clip: 4 trò ảo thuật thú vị với trứng</title>
-<description>Bạn chắc chắn sẽ phải ngạc nhiên khi xem những trò ảo thuật lạ mắt với trứng dưới đây.</description>
-<link>http://www.24h.com.vn/am-thuc/clip-4-tro-ao-thuat-thu-vi-voi-trung-c460a701493.html</link>
-<pubDate>2015-04-10 07:30:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-08/1428489161-ao_thuat_trung_iyfa.jpg</summaryImg>
+<title>Những lời có cánh Phan Hiển "dành cho Khánh Thi"</title>
+<description>Nhiều người cảm thấy ngưỡng mộ với tình cảm mà Phan Hiển dành cho "người phụ nữ" của anh.</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/nhung-loi-co-canh-phan-hien-danh-cho-khanh-thi-c73a703340.html</link>
+<pubDate>2015-04-17 18:13:40</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429269163-11043045_685743074880895_4058248383519508248_n_xrjo.jpg</summaryImg>
 </item>
 <item>
-<title>Mê hoặc cả nhà với 4 món canh ngon từ kim chi Hàn Quốc</title>
-<description>Dưới đây là cách nấu canh kim chi Hàn Quốc các kiểu chay, hải sản, thịt bò, đậu hũ thơm ngon đúng điệu.</description>
-<link>http://www.24h.com.vn/am-thuc/me-hoac-ca-nha-voi-4-mon-canh-ngon-tu-kim-chi-han-quoc-c460a701267.html</link>
-<pubDate>2015-04-09 07:30:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-07/1428403514-thumbnail.jpg</summaryImg>
+<title>Bé gái múa ballet bằng 1 chân khiến triệu người rơi lệ</title>
+<description>Chỉ sử dụng một chân duy nhất để di chuyển, Alissa vẫn có thể thực hiện những động tác ballet uyển chuyển hay thậm chí nhào lộn không kém những vận động viên chuyên nghiệp.</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/be-gai-mua-ballet-bang-mot-chan-khien-trieu-nguoi-roi-le-c73a703255.html</link>
+<pubDate>2015-04-17 13:37:12</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429252105-2_aurm.jpg</summaryImg>
 </item>
 <item>
-<title>Đùi gà nướng ngũ vị giòn mềm, vàng óng</title>
-<description>Xin giới thiệu đến các bạn cách nướng gà ngũ vị thơm ngon bằng lò nướng.</description>
-<link>http://www.24h.com.vn/am-thuc/dui-ga-nuong-ngu-vi-gion-mem-vang-ong-c460a701352.html</link>
-<pubDate>2015-04-08 13:30:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-08/1428461653-thumbnail.jpg</summaryImg>
+<title>Clip mới của Big Bang khiến fan "đứng ngồi không yên"</title>
+<description>Sáng nay 17.4, YG Entertainment đã chính thức tung "trailer" đánh dấu sự trở lại của Big Bang sau gần 3 năm khiến cho cộng đồng fan không khỏi phấn khích.</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/clip-moi-cua-big-bang-khien-fan-dung-ngoi-khong-yen-c73a703268.html</link>
+<pubDate>2015-04-17 14:17:31</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429254102-anh_chung_xggw.jpg</summaryImg>
 </item>
 <item>
-<title>Clip: Trang trí bánh cưới cực đẹp chỉ trong 4 phút</title>
-<description>Với thao tác nhanh và khéo léo, người thợ đã tạo ra chiếc bánh cưới đẹp mắt trong thời gian cực ngắn.</description>
-<link>http://www.24h.com.vn/am-thuc/clip-trang-tri-banh-cuoi-cuc-dep-chi-trong-4-phut-c460a701093.html</link>
-<pubDate>2015-04-08 07:30:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-07/1428374317-lam_banh_cuoi_xygq.jpg</summaryImg>
+<title>Selena và Miley Cyrus mang thai con của Justin Bieber?</title>
+<description>Công chúng càng sốc hơn khi chính Miley là người đưa ra tuyên bố này.</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/selena-va-miley-cyrus-mang-thai-con-cua-justin-bieber-c73a703272.html</link>
+<pubDate>2015-04-17 14:16:38</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429255062-3_urqf.jpg</summaryImg>
 </item>
 <item>
-<title>Ngọt sao khúc bầu dồn thịt hấp!</title>
-<description>Món bầu dồn thịt hấp ngọt bùi, thơm mát giúp cả nhà thay đổi khẩu vị mà cách thực hiện lại không hề khó.</description>
-<link>http://www.24h.com.vn/am-thuc/ngot-sao-khuc-bau-don-thit-hap-c460a701172.html</link>
-<pubDate>2015-04-07 13:30:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-07/1428382804-thumbnail.jpg</summaryImg>
+<title>Hà Hồ tháo giày hát nhảy hết mình</title>
+<description>Bà mẹ một con nhiệt tình biểu diễn trong sự hưởng ứng nhiệt tình của khán giả.</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/ha-ho-thao-giay-hat-nhay-het-minh-c73a703241.html</link>
+<pubDate>2015-04-17 11:45:32</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429245251-ha_ho_8_elzl.jpg</summaryImg>
 </item>
 <item>
-<title>Clip: Những trò thú vị với đồ ăn bạn không thể bỏ qua</title>
-<description>Nếu bạn là người thích tìm tòi, khám phá những mẹo vặt để "nghịch ngợm", chắc chắn bạn không nên bỏ qua clip này.</description>
-<link>http://www.24h.com.vn/am-thuc/clip-nhung-tro-thu-vi-voi-do-an-ban-khong-the-bo-qua-c460a700861.html</link>
-<pubDate>2015-04-07 07:30:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-06/1428282062-tro_thu_vi_gmlz.jpg</summaryImg>
+<title>Isaac nhí nhảnh trong MV ca khúc "gây sốt" ở The Remix</title>
+<description>Trưởng nhóm điển trai của 365 tung teaser đáng yêu cho MV "Yêu không nghỉ phép".</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/isaac-nhi-nhanh-trong-mv-ca-khuc-gay-sot-o-the-remix-c73a703194.html</link>
+<pubDate>2015-04-17 09:53:14</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429238688-isaac_av_dbfh.jpg</summaryImg>
 </item>
 <item>
-<title>Dưa cải chua xào nghêu chống ngán cho ngày nóng</title>
-<description>Dưa cải chua xào nghêu là một trong những món dễ chế biến, lại đưa cơm.</description>
-<link>http://www.24h.com.vn/am-thuc/dua-cai-chua-xao-ngheu-chong-ngan-cho-ngay-nong-c460a700637.html</link>
-<pubDate>2015-04-06 07:30:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-04/1428125081-thumbnail.jpg</summaryImg>
+<title>Tuấn Hưng hé lộ cách trả lương cho HLV The Voice 2015</title>
+<description>Tuấn Hưng chia sẻ, cát-xê mà Cát Tiên Sa trả cho từng HLV phụ thuộc vào vị thế của từng ca sĩ trên thị trường âm nhạc và cách thỏa thuận với nhà sản xuất.</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/tuan-hung-he-lo-cach-tra-luong-cho-hlv-the-voice-2015-c73a703175.html</link>
+<pubDate>2015-04-17 08:22:59</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429233643-thumbnail.jpg</summaryImg>
 </item>
 <item>
-<title>Clip: Cách luộc trứng thành hình trái tim cực đơn giản</title>
-<description>Những bước đơn giản sau sẽ giúp bạn luộc trứng thành hình trái tim rất đẹp mắt.</description>
-<link>http://www.24h.com.vn/am-thuc/clip-cach-luoc-trung-thanh-hinh-trai-tim-cuc-don-gian-c460a700635.html</link>
-<pubDate>2015-04-05 13:30:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-04/1428124910-luoc_trung_uvqb.jpg</summaryImg>
+<title>“Chàng rể Việt” hát “Yêu lại từ đầu” trên đất Hàn</title>
+<description>Fan Việt đều tỏ ra tự hào khi bài hit của Khắc Việt một lần nữa được vang lên trên đất Hàn bởi một thần tượng Kpop.</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/chang-re-viet-hat-yeu-lai-tu-dau-tren-san-khau-han-c73a703163.html</link>
+<pubDate>2015-04-17 07:56:16</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429232759-11065612_411904878990073_7143875083816143280_n_d40da_gjqb.jpg</summaryImg>
 </item>
 <item>
-<title>Đậm đà lẩu lươn nấu măng tre Mạnh Tông</title>
-<description>Gần đây, các chuyên gia ẩm thực, các quán ăn đặc sản, nhất là những tay sành điệu ẩm thực đã có nhiều kiểu cách chế biến lươn thành những món ăn ngon nhớ đời, trong đó lẩu lươn nấu với măng tre Mạnh Tông muối chua là một trong những món đặc sắc, đậm đà và thi vị nhất.</description>
-<link>http://www.24h.com.vn/am-thuc/dam-da-lau-luon-nau-mang-tre-manh-tong-c460a697849.html</link>
-<pubDate>2015-04-05 07:30:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/1-2015/images/2015-03-22/1427003971-thumbnail.jpg</summaryImg>
+<title>Hồ Vĩnh Khoa khoe body 6 múi bên "người tình mới"</title>
+<description>Hồ Vĩnh Khoa cùng Á hậu Hoàng Oanh tình tứ quảng bá cho MV Secret lover vừa được ra mắt.</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/ho-vinh-khoa-khoe-body-6-mui-ben-nguoi-tinh-moi-c73a703278.html</link>
+<pubDate>2015-04-17 14:40:44</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429255784-ho_vinh_khoa_8_mtii.jpg</summaryImg>
 </item>
 <item>
-<title>Cách làm sữa chua nếp cẩm ngon, thơm tại nhà</title>
-<description>Sữa chua nếp cẩm đã trở thành món ăn hấp dẫn có trong thực đơn tráng miệng của các gia đình.</description>
-<link>http://www.24h.com.vn/am-thuc/cach-lam-sua-chua-nep-cam-ngon-thom-tai-nha-c460a700528.html</link>
-<pubDate>2015-04-04 13:30:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-04/1428110479-thumbnail.jpg</summaryImg>
+<title>Đầu năm 2015, sao trẻ miền Bắc &amp;#34;đua nhau&amp;#34; Nam tiến</title>
+<description>
+Đầu năm 2015, showbiz Việt chứng kiến công cuộc Nam tiến của hàng loạt sao trẻ miền Bắc.
+</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/dau-nam-2015-loat-sao-tre-mien-bac-o-at-nam-tien-c73a703096.html</link>
+<pubDate>2015-04-17 05:05:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429233117-min_st319_762940675_yggi.jpg</summaryImg>
 </item>
 <item>
-<title>Về An Giang nhớ tìm ăn bắp bò hấp sả</title>
-<description>Nếu có dịp tham quan Tịnh Biên (Châu Đốc - An Giang), ngoài thăm thú những cảnh non nước hữu tình và di tích lịch sử hoành tráng nơi đây, bạn đừng bỏ lỡ cơ hội thưởng thức món bắp bò hấp sả ngon tuyệt trần.</description>
-<link>http://www.24h.com.vn/am-thuc/ve-an-giang-nho-tim-an-bap-bo-hap-sa-c460a697847.html</link>
-<pubDate>2015-04-04 07:30:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/1-2015/images/2015-03-22/1427002099-thumbnail.jpg</summaryImg>
+<title>Sao Việt cưng nựng chó như “con yêu”, bạn thân</title>
+<description>Trong khi Mr. Đàm, Minh Hằng, Cao Thái Sơn,... xem cún như những người bạn thân, Tăng Thanh Hà lại cưng nựng gọi 2 chú chó của cô là "Con yêu của mẹ".</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/sao-viet-cung-nung-cho-nhu-con-yeu-ban-than-c73a703112.html</link>
+<pubDate>2015-04-16 17:01:20</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429232902-sao_iqmr.jpg</summaryImg>
 </item>
 <item>
-<title>Tổng hợp công thức làm sữa chua siêu ngon</title>
-<description>Bốn cách làm sữa chua dưới đây sẽ giúp cho bộ sưu tập công thức làm sữa chua của các mẹ thêm phong phú và hấp dẫn.</description>
-<link>http://www.24h.com.vn/am-thuc/tong-hop-cong-thuc-lam-sua-chua-sieu-ngon-c460a699884.html</link>
-<pubDate>2015-04-03 07:30:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-01/1427851349-thumbnail.jpg</summaryImg>
+<title>Lan Ngọc gợi cảm hơn sau Bước nhảy hoàn vũ</title>
+<description>Người đẹp 9x thay đổi hình ảnh sau khi đăng quang Bước nhảy hoàn vũ.</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/lan-ngoc-goi-cam-hon-sau-buoc-nhay-hoan-vu-c73a703049.html</link>
+<pubDate>2015-04-16 14:08:58</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-16/1429168101-lan_ngoc_av_lool.jpg</summaryImg>
 </item>
 <item>
-<title>Hướng dẫn ngâm siro dâu tằm ngọt lịm, dễ uống</title>
-<description>Cuối tháng 3 là mùa dâu tằm (hay dâu ta) bắt đầu chín. Không chỉ là quả thức ăn thơm ngon, dâu tằm còn là một loại thuốc bổ kỳ diệu với sức khỏe.</description>
-<link>http://www.24h.com.vn/am-thuc/huong-dan-ngam-siro-dau-tam-ngot-lim-de-uong-c460a699897.html</link>
-<pubDate>2015-04-02 13:30:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-01/1427853555-thumbnail.jpg</summaryImg>
+<title>Khán giả chen chúc leo cây, vượt tường xem Hà Hồ diễn</title>
+<description>Nhiều khán giả đã tìm mọi cách để được xem Hà Hồ biểu diễn trong tour xuyên Việt tại Đà Nẵng tối qua.</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/khan-gia-chen-chuc-leo-cay-vuot-tuong-xem-ha-ho-dien-c73a703003.html</link>
+<pubDate>2015-04-16 10:28:17</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-16/1429154746-ha_ho_15_jvdk.jpg</summaryImg>
 </item>
 <item>
-<title>Clip: 10 mẹo vặt khi dùng lò vi sóng bạn nên biết</title>
-<description>10 thủ thuật đơn giản sau đây sẽ biến lò vi sóng của bạn thành một chiếc máy tuyệt vời.</description>
-<link>http://www.24h.com.vn/am-thuc/clip-10-meo-vat-khi-dung-lo-vi-song-ban-nen-biet-c460a699880.html</link>
-<pubDate>2015-04-02 07:30:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-04/1428117660-meo_lo_vi_song_dqye.jpg</summaryImg>
+<title>4 thí sinh không phục kết quả các gameshow Việt</title>
+<description>Có những thí sinh đã lên tiếng gay gắt chỉ trích ban tổ chức các chương trình nổi tiếng này.
+ 
+</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/4-thi-sinh-khong-phuc-ket-qua-cac-gameshow-viet-c73a702944.html</link>
+<pubDate>2015-04-16 05:30:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-16/1429146797-300_ffab.jpg</summaryImg>
 </item>
 <item>
-<title>Những món ngon độc đáo từ trứng lộn</title>
-<description>Trong nghệ thuật ăn uống, ông cha ta đã trải nghiệm và sáng tạo ra nhiều món ăn vừa ngon vừa lạ miệng, lại hợp với quy luật âm dương và thuật dưỡng sinh, chẳng hạn như món trứng lộn (hột vịt, hột gà hoặc trứng cút).</description>
-<link>http://www.24h.com.vn/am-thuc/nhung-mon-ngon-doc-dao-tu-trung-lon-c460a699515.html</link>
-<pubDate>2015-04-01 07:30:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/1-2015/images/2015-03-30/1427697116-thumbnail.jpg</summaryImg>
+<title>Fan 365 lo lắng vì Isaac hát solo ngày càng nhiều</title>
+<description>Fan của 365daband đang lo lắng trước nguy cơ tan vỡ của nhóm nhạc đình đám này khi trưởng nhóm Isaac ngày càng “hăng say” đánh quả lẻ từ khi tham gia The Remix.</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/fan-365-lo-lang-vi-isaac-hat-solo-ngay-cang-nhieu-c73a703009.html</link>
+<pubDate>2015-04-16 10:37:01</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-16/1429155287-2_pjrc.jpg</summaryImg>
 </item>
 <item>
-<title>Chua giòn, ngọt mát canh bao tử nấu với dưa cải</title>
-<description>Dùng muỗng chan miếng nước canh vào chén cơm rồi “lùa” một hơi, cái oi ả của ngày hè như được xua đi.</description>
-<link>http://www.24h.com.vn/am-thuc/chua-gion-ngot-mat-canh-bao-tu-nau-voi-dua-cai-c460a699736.html</link>
-<pubDate>2015-03-31 13:30:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/1-2015/images/2015-03-31/1427775204-thumbnail.jpg</summaryImg>
+<title>Sốc với màn cưỡng hôn của U60 Madonna với trai trẻ</title>
+<description>Màn cưỡng hôn của "Nữ hoàng nhạc pop" với chàng rapper 28 tuổi khiến nam ca sĩ bàng hoàng và sau đó Madonna cũng điêu đứng vì bị "ném đá".</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/soc-voi-man-cuong-hon-cua-u60-madonna-voi-trai-tre-c73a702966.html</link>
+<pubDate>2015-04-16 09:00:30</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-16/1429148718-madonna_8_knio.jpg</summaryImg>
 </item>
 <item>
-<title>Mẹo cắt trái cây đúng chuẩn không phải ai cũng biết</title>
-<description>6 cách cắt trái cây đúng chuẩn sau đây sẽ giúp bạn nhiều điều bổ ích.</description>
-<link>http://www.24h.com.vn/am-thuc/clip-meo-cat-trai-cay-dung-chuan-khong-phai-ai-cung-biet-c460a699592.html</link>
-<pubDate>2015-03-31 07:30:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/1-2015/images/2015-03-31/1427763649-thumbnail.jpg</summaryImg>
+<title>Khánh Đơn phân trần lý do Lương Bích Hữu ở ẩn sinh con</title>
+<description>Tác giả hàng loạt ca khúc hit cho hay, anh và "cô gái Trung Hoa" sẽ chia sẻ tin đồn mang bầu, sinh con vào dịp khác.</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/khanh-don-phan-tran-ly-do-luong-bich-huu-o-an-sinh-con-c73a702968.html</link>
+<pubDate>2015-04-16 08:51:27</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-16/1429148824-thumbnail.jpg</summaryImg>
 </item>
 <item>
-<title>Bí quyết pha nước chấm chuẩn và ngon</title>
-<description>Nước chấm tuy chỉ là gia vị đi kèm nhưng đối với nhiều món ăn, lại là thứ làm nên hương vị chính của món ăn đó. Và không phải ai cũng biết cách để pha bát nước chấm ngon đúng điệu.</description>
-<link>http://www.24h.com.vn/am-thuc/bi-quyet-pha-nuoc-cham-chuan-va-ngon-c460a698458.html</link>
-<pubDate>2015-03-30 07:52:31</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/1-2015/images/2015-03-25/1427249784-thumbnail.jpg</summaryImg>
+<title>Tiêu Châu Như Quỳnh hôn trai đẹp 10 lần trong MV mới</title>
+<description>Đây là lần đầu tiên Tiêu Châu Như Quỳnh đóng cảnh hôn trong MV ca nhạc.</description>
+<link>http://www.24h.com.vn/ca-nhac-mtv/tieu-chau-nhu-quynh-hon-trai-dep-10-lan-trong-mv-moi-c73a702960.html</link>
+<pubDate>2015-04-16 08:23:47</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-16/1429147322-av_wzyp.jpg</summaryImg>
 </item>
 </channel>
 </rss>
