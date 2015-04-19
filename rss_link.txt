@@ -18,8 +18,8 @@ http://www.24h.com.vn/upload/rss/taichinhbatdongsan.rss
 http://www.24h.com.vn/upload/rss/amthuc.rss
 http://www.24h.com.vn/upload/rss/lamdep.rss
 http://www.24h.com.vn/upload/rss/phim.rss
-http://www.24h.com.vn/upload/rss/giaoducduhoc.rss
 http://www.24h.com.vn/upload/rss/bantrecuocsong.rss
+http://www.24h.com.vn/upload/rss/canhacmtv.rss
 http://www.24h.com.vn/upload/rss/thethao.rss
 http://www.24h.com.vn/upload/rss/phithuongkyquac.rss
 http://www.24h.com.vn/upload/rss/congnghethongtin.rss

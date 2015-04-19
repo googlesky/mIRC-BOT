@@ -87,7 +87,7 @@ on 1:TEXT:!veso *:%r: {
         var %veso2 = $nick $+ * $+ $2
         var %veso1 = $readini hethong\veso.txt veso %veso2
         var %mau = $read(hethong\color.txt)
-        writeini hethong\veso.txt veso $nick $+ * $+ $2 3000 | describeVC %r 12* $nick ðã mua  $+ %mau Vé Sô'  12mang sô'  $+ %mau $2  | .ignore -u6 $nick
+        writeini hethong\veso.txt veso $nick $+ * $+ $2 3000 | describeVC %r 12* $nick ðã mua  $+ %mau Vé Sô'  12mang sô'  $+ %mau $2  | .ignore -u3 $nick
       }
     }
   }
@@ -110,7 +110,7 @@ alias veso_play {
 }
 alias ketqua_veso {
   .timerveso8 1 2 mode %r +miR
-  .timerveso9 1 4 describeVC %r 11,1*4,4************************************0,4Tô²ng kê´t  Vé Sô'4,4************************************11,1*
+  .timerveso9 1 4 describeVC %r 11,1*4,4************************************0,4Tô²ng kê´t  Vé Sô'4,4*************************************11,1*
   .timerveso10 1 6 describeVC %r $read(bangveso.txt,1)
   .timerveso11 1 8 describeVC %r $read(bangveso.txt,2)
   .timerveso12 1 10 describeVC %r $read(bangveso.txt,3)
@@ -157,15 +157,15 @@ alias veso_tinhtien {
   .timer 1 %iTimeVS xoaveso
 }
 alias veso_giai {
-  if ($1 == 8) { return 10000000 }
-  if ($1 == 7) { return 20000000 }
-  if ($1 == 6) { return 40000000 }
-  if ($1 == 5) { return 60000000 }
-  if ($1 == 4) { return 100000000 }
-  if ($1 == 3) { return 200000000 }
-  if ($1 == 2) { return 400000000 }
-  if ($1 == 1) { return 1000000000 }
-  if ($1 == 0) { return 2000000000 }
+  if ($1 == 8) { return 100000000 }
+  if ($1 == 7) { return 200000000 }
+  if ($1 == 6) { return 400000000 }
+  if ($1 == 5) { return 600000000 }
+  if ($1 == 4) { return 1000000000 }
+  if ($1 == 3) { return 2000000000 }
+  if ($1 == 2) { return 4000000000 }
+  if ($1 == 1) { return 5000000000 }
+  if ($1 == 0) { return 10000000000 }
 }
 alias veso_tengiai {
   if ($1 == 8) { return Tám }

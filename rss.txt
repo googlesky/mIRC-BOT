@@ -1,19 +1,20 @@
-www.24h.com.vn /upload/rss/canhacmtv.rss
+www.24h.com.vn /upload/rss/giaoducduhoc.rss
 HTTP/1.1 200 OK
 Server: 24h.com.vn
-Date: Sat, 18 Apr 2015 09:00:22 GMT
+Date: Sun, 19 Apr 2015 16:09:46 GMT
 Content-Type: application/rss+xml
-Content-Length: 13950
-Last-Modified: Sat, 18 Apr 2015 08:46:03 GMT
+Content-Length: 16533
+Last-Modified: Sun, 19 Apr 2015 11:20:05 GMT
 Connection: close
-Expires: Sun, 19 Apr 2015 09:00:22 GMT
+ETag: "55338f65-4095"
+Expires: Mon, 20 Apr 2015 16:09:46 GMT
 Cache-Control: max-age=86400
 Accept-Ranges: bytes
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 <channel>
 <title>Tin tuc 24h | tin nhanh bong da | the thao | thoi trang, giai tri vn | bao online</title>
-<link>http://www.24h.com.vn/ca-nhac-mtv-c73.html</link>
+<link>http://www.24h.com.vn/giao-duc-du-hoc-c216.html</link>
 <description>Tin tuc trong ngay, bóng đá, thể thao, thời trang, giải trí. Update tin nhanh 24/24h. Nhiều đặc sản video tin tức việt nam, thế giới, video bong da anh chỉ có tại 24h.Tổng hợp tintuc vn, BAO CONG AN, an ninh, phap luat</description>
 <image>
 <url>http://24h-static.24hstatic.com:8008/images/logo24h-128x85.gif</url>
@@ -25,176 +26,173 @@ Accept-Ranges: bytes
 <ttl>60</ttl>
 <generator>noreply@24h.com.vn</generator>
 <item>
-<title>Ngắm bạn gái Lee Min Ho "sexy hết cỡ" trên sân khấu</title>
-<description>Dù nổi tiếng với hình tượng trong sáng nhưng đôi lần nữ ca sỹ Suzy cũng khiến khán giả bất ngờ bởi những màn biểu diễn vô cùng sexy.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/ngam-ban-gai-lee-min-ho-sexy-het-co-tren-san-khau-c73a703534.html</link>
-<pubDate>2015-04-18 15:35:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-18/1429345211-img_201409022234593544_fokg.jpg</summaryImg>
+<title>Cuộc sống của chàng sinh viên nghèo trả lại hơn 1,4 tỷ đồng</title>
+<description>Cuộc sống của chàng sinh viên nghèo trả lại hơn 1,4 tỷ đồng tiền nhặt được Doãn Ý vẫn ngày ngày phải làm thêm lo cho gia đình.</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/cuoc-song-cua-chang-sinh-vien-ngheo-tra-lai-hon-14-ty-dong-c216a703668.html</link>
+<pubDate>2015-04-19 14:20:48</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-19/1429427997-nhat_tien_1__usav.jpg</summaryImg>
 </item>
 <item>
-<title>Clip chàng trai hát “giọng mái” hay hơn cả con gái</title>
-<description>Ba vị giám khảo The Voice China phấn khích khi quay lại nhìn thấy người thể hiện bài hát giọng nữ là một chàng trai.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/clip-chang-trai-hat-giong-mai-hay-hon-ca-con-gai-c73a703475.html</link>
-<pubDate>2015-04-18 11:09:39</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-18/1429338354-5_ilur.jpg</summaryImg>
+<title>Đổ tường bể bơi, một học sinh lớp 4 tử vong</title>
+<description>Khi học sinh đang tắm trong bể bơi, bức tường bất ngờ đổ xập xuống khiến nhiều em nhỏ hoảng loạn. 1 học sinh lớp 4 bị tường đè tử vong, một số học sinh bị thương nhẹ.</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/do-tuong-be-boi-mot-hoc-sinh-lop-4-tu-vong-c216a703642.html</link>
+<pubDate>2015-04-19 10:59:03</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-19/1429426545-anh_2_xvtp.jpg</summaryImg>
 </item>
 <item>
-<title>Trấn Thành: Ăn “bạn” của mình thật tàn nhẫn</title>
-<description>Trấn Thành cùng dàn sao Việt lên tiếng chỉ trích nạn trộm chó và kêu gọi mọi người cùng chung tay để bảo vệ những chú chó tội nghiệp.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/tran-thanh-an-ban-cua-minh-that-tan-nhan-c73a703294.html</link>
-<pubDate>2015-04-18 05:05:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429261151-thumbnail.jpg</summaryImg>
+<title>“Song kiệt” ở xứ sở nắng gió</title>
+<description>Hai chàng trai ấy có cùng tên, cùng lớn lên từ vùng đất Ninh Thuận đầy nắng gió và đều nổi tiếng như cồn với những kỳ tích xác lập ở nước ngoài.</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/song-kiet-o-xu-so-nang-gio-c216a703617.html</link>
+<pubDate>2015-04-19 07:18:49</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-19/1429402685-100_qdbk.jpg</summaryImg>
 </item>
 <item>
-<title>Thu Minh: Tôi sẵn sàng…hóa hổ để giữ chồng</title>
-<description>Mỗi khi xuất hiện “nữ hoàng nhạc dance” Thu Minh lại khiến khán giả phải trầm trồ khen ngợi bởi phong cách thời trang sành điệu, thanh lịch.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/thu-minh-toi-san-sanghoa-ho-de-giu-chong-c73a703447.html</link>
-<pubDate>2015-04-18 10:12:03</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-18/1429326587-thumbnail.jpg</summaryImg>
+<title>Phó Thủ tướng ở Hội Sách</title>
+<description>Sáng 17/4, Hội sách chào mừng Ngày Sách Việt Nam 2015 được tổ chức tại Công viên Thống Nhất, Hà Nội. Đến sớm trước giờ khai mạc, Phó Thủ tướng Vũ Đức Đam cũng “lạc” vào dòng người mua sách.</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/pho-thu-tuong-o-hoi-sach-c216a703397.html</link>
+<pubDate>2015-04-18 08:29:09</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-18/1429320340-ptt_mua_sach3_gtkd.jpg</summaryImg>
 </item>
 <item>
-<title>Hồ Quang Hiếu lái mô tô cực ngầu lên sân khấu</title>
-<description>Nam ca sĩ đưa chiếc mô tô trị giá nửa tỷ đồng lên sân khấu buổi họp fan và ra mắt MV.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/ho-quang-hieu-lai-mo-to-cuc-ngau-len-san-khau-c73a703409.html</link>
-<pubDate>2015-04-18 08:45:52</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-18/1429321513-ho_quang_hieu_av_evom.jpg</summaryImg>
+<title>Thầy giáo vụt gậy tre vào mặt học sinh</title>
+<description>Ngày 17/4, Phòng GD&amp;ĐT huyện Phú Vang (tỉnh TT-Huế) tiến hành họp với Trường THCS Phú Đa để lấy biểu quyết mức xử lý kỷ luật cảnh cáo hoặc buộc thôi việc đối với giáo viên Võ Thế Lân, do hành vi bạo hành nhiều học sinh.</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/thay-giao-vut-gay-tre-vao-mat-hoc-sinh-c216a703377.html</link>
+<pubDate>2015-04-18 07:26:54</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-18/1429316556-hoc_sinh_640_ewgj.jpg</summaryImg>
 </item>
 <item>
-<title>Trùm truyền thông xứ Hàn tố "gà Trung Quốc" kiếm tiền lén lút</title>
-<description>Hai cựu thành viên EXO là Luhan và Kris bị công ty quản lý SM khởi tố vì có hành vi kiếm tiền thương mại khi vẫn là người của SM.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/trum-truyen-thong-xu-han-to-ga-trung-quoc-kiem-tien-len-lut-c73a703426.html</link>
-<pubDate>2015-04-18 09:21:44</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-18/1429323635-_kris_luhan_4_oauw.jpg</summaryImg>
+<title>Phạt "công ty cá thối" tuồn thực phẩm bẩn vào trường học</title>
+<description>Chiều17.4, Sở Y tế tỉnh Bình Dương đã thông báo quyết định xử phạt đối với Công ty Phú Nhật Hào – đơn vị cung cấp suất ăn cho hơn 14 nghìn học sinh của 18 trường học ở Bình Dương.</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/phat-cong-ty-ca-thoi-tuon-thuc-pham-ban-vao-truong-hoc-c216a703348.html</link>
+<pubDate>2015-04-17 19:21:52</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429272281-ca_thoi_gaii.jpg</summaryImg>
 </item>
 <item>
-<title>Những lời có cánh Phan Hiển "dành cho Khánh Thi"</title>
-<description>Nhiều người cảm thấy ngưỡng mộ với tình cảm mà Phan Hiển dành cho "người phụ nữ" của anh.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/nhung-loi-co-canh-phan-hien-danh-cho-khanh-thi-c73a703340.html</link>
-<pubDate>2015-04-17 18:13:40</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429269163-11043045_685743074880895_4058248383519508248_n_xrjo.jpg</summaryImg>
+<title>TPHCM: 59 tuổi vẫn đăng ký thi THPT</title>
+<description>Cơ quan đại diện Bộ GDĐT tại TPHCM cho biết, đã có một thí sinh 59 tuổi, chuẩn bị nghỉ hưu nhưng vẫn đăng ký thi THPT để xét tuyển vào ĐH.</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/tphcm-59-tuoi-van-dang-ky-thi-thpt-c216a703338.html</link>
+<pubDate>2015-04-17 18:48:38</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429268898-dangky_maqd.jpg</summaryImg>
 </item>
 <item>
-<title>Bé gái múa ballet bằng 1 chân khiến triệu người rơi lệ</title>
-<description>Chỉ sử dụng một chân duy nhất để di chuyển, Alissa vẫn có thể thực hiện những động tác ballet uyển chuyển hay thậm chí nhào lộn không kém những vận động viên chuyên nghiệp.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/be-gai-mua-ballet-bang-mot-chan-khien-trieu-nguoi-roi-le-c73a703255.html</link>
-<pubDate>2015-04-17 13:37:12</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429252105-2_aurm.jpg</summaryImg>
+<title>Tuyển sinh lớp 6: Phương án mới quá gấp gáp, thiệt thòi cho nhiều học sinh</title>
+<description>“Rất nhiều học sinh có thể đỗ nếu thi dạng đề cũ, nhưng lại trượt khi thi theo phương thức mới”</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/tuyen-sinh-lop-6-phuong-an-moi-qua-gap-gap-thiet-thoi-cho-nhieu-hoc-sinh-c216a703291.html</link>
+<pubDate>2015-04-17 15:44:28</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429260209-ts_otyi.jpg</summaryImg>
 </item>
 <item>
-<title>Clip mới của Big Bang khiến fan "đứng ngồi không yên"</title>
-<description>Sáng nay 17.4, YG Entertainment đã chính thức tung "trailer" đánh dấu sự trở lại của Big Bang sau gần 3 năm khiến cho cộng đồng fan không khỏi phấn khích.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/clip-moi-cua-big-bang-khien-fan-dung-ngoi-khong-yen-c73a703268.html</link>
-<pubDate>2015-04-17 14:17:31</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429254102-anh_chung_xggw.jpg</summaryImg>
+<title>Tuyển sinh lớp 6: Hà Nội đã thống nhất được phương án thay thế</title>
+<description>Tại cuộc họp giữa Sở GDĐT Hà Nội với các trường THCS có phương án tuyển sinh riêng, các ý kiến đều thống nhất tuyển sinh lớp 6 sẽ xét tuyển hồ sơ và dựa vào bài đánh giá năng lực toàn diện của học trò.</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/tuyen-sinh-lop-6-ha-noi-da-thong-nhat-duoc-phuong-an-thay-the-c216a703230.html</link>
+<pubDate>2015-04-17 11:12:25</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429243559-tuyen-sinh0.jpg</summaryImg>
 </item>
 <item>
-<title>Selena và Miley Cyrus mang thai con của Justin Bieber?</title>
-<description>Công chúng càng sốc hơn khi chính Miley là người đưa ra tuyên bố này.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/selena-va-miley-cyrus-mang-thai-con-cua-justin-bieber-c73a703272.html</link>
-<pubDate>2015-04-17 14:16:38</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429255062-3_urqf.jpg</summaryImg>
+<title>Cấm thi vào lớp 6: Đổ xô đi luyện IQ, EQ và tiếng Anh</title>
+<description>Sau khi các trường “hot” ở Hà Nội lần lượt trình phương án tuyển sinh lớp 6 theo phương thức test IQ, EQ, “Ai là triệu phú”, còn trường chuyên THCS Trần Đại Nghĩa (TPHCM) thì tuyên bố khảo sát môn Anh văn, các phụ huynh đã chuyển hướng đổ xô cho con đi luyện thi IQ, EQ và tiếng Anh.</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/cam-thi-vao-lop-6-do-xo-di-luyen-iq-eq-va-tieng-anh-c216a703171.html</link>
+<pubDate>2015-04-17 08:16:34</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429233315-hoc_sinh1_kvfm.jpg</summaryImg>
 </item>
 <item>
-<title>Hà Hồ tháo giày hát nhảy hết mình</title>
-<description>Bà mẹ một con nhiệt tình biểu diễn trong sự hưởng ứng nhiệt tình của khán giả.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/ha-ho-thao-giay-hat-nhay-het-minh-c73a703241.html</link>
-<pubDate>2015-04-17 11:45:32</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429245251-ha_ho_8_elzl.jpg</summaryImg>
+<title>TP.HCM: Gần 2.000 chỉ tiêu vào lớp 10 chuyên</title>
+<description>Sở GD&amp;ĐT TP.HCM chiều 15-4 chính thức thông báo lịch thi cụ thể, điều kiện và chỉ tiêu tuyển sinh vào lớp 10 các trường THPT chuyên và không chuyên tại TP.</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/tphcm-gan-2000-chi-tieu-vao-lop-10-chuyen-c216a703043.html</link>
+<pubDate>2015-04-16 14:27:35</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-16/1429167465-thi0.jpg</summaryImg>
 </item>
 <item>
-<title>Isaac nhí nhảnh trong MV ca khúc "gây sốt" ở The Remix</title>
-<description>Trưởng nhóm điển trai của 365 tung teaser đáng yêu cho MV "Yêu không nghỉ phép".</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/isaac-nhi-nhanh-trong-mv-ca-khuc-gay-sot-o-the-remix-c73a703194.html</link>
-<pubDate>2015-04-17 09:53:14</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429238688-isaac_av_dbfh.jpg</summaryImg>
+<title>Cấm thi tuyển vào lớp 6: Dễ nảy sinh tiêu cực</title>
+<description>Trước việc Bộ GD&amp;ĐT cấm thi tuyển vào lớp 6, nhiều phương thức mới thay thế việc thi tuyển như khảo sát, test IQ, EQ… đã được các trường đề ra, trong đó trường chuyên Trần Đại Nghĩa TPHCM chọn phương án khảo sát năng lực bằng tiếng Anh thay cho việc thi ba môn Toán, tiếng Việt và Anh văn như trước. Tuy nhiên, phương án này được các chuyên gia và phụ huynh cho rằng chưa thật sự phù hợp</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/cam-thi-tuyen-vao-lop-6-de-nay-sinh-tieu-cuc-c216a702967.html</link>
+<pubDate>2015-04-16 08:49:18</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-16/1429148871-cam_thi_lop_6_mdgj.jpg</summaryImg>
 </item>
 <item>
-<title>Tuấn Hưng hé lộ cách trả lương cho HLV The Voice 2015</title>
-<description>Tuấn Hưng chia sẻ, cát-xê mà Cát Tiên Sa trả cho từng HLV phụ thuộc vào vị thế của từng ca sĩ trên thị trường âm nhạc và cách thỏa thuận với nhà sản xuất.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/tuan-hung-he-lo-cach-tra-luong-cho-hlv-the-voice-2015-c73a703175.html</link>
-<pubDate>2015-04-17 08:22:59</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429233643-thumbnail.jpg</summaryImg>
+<title>Hà Nội chốt phương án tuyển sinh vào lớp 6</title>
+<description>Ngày 15.4, Sở GDĐT Hà Nội đã họp với các trường THCS có phương án tuyển sinh riêng vào lớp 6 năm học 2015 - 2016. </description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/ha-noi-chot-phuong-an-tuyen-sinh-vao-lop-6-c216a702955.html</link>
+<pubDate>2015-04-16 06:43:10</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-16/1429141348-ojputhi_lop_6_ixmk.jpg</summaryImg>
 </item>
 <item>
-<title>“Chàng rể Việt” hát “Yêu lại từ đầu” trên đất Hàn</title>
-<description>Fan Việt đều tỏ ra tự hào khi bài hit của Khắc Việt một lần nữa được vang lên trên đất Hàn bởi một thần tượng Kpop.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/chang-re-viet-hat-yeu-lai-tu-dau-tren-san-khau-han-c73a703163.html</link>
-<pubDate>2015-04-17 07:56:16</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429232759-11065612_411904878990073_7143875083816143280_n_d40da_gjqb.jpg</summaryImg>
+<title>Đổi mới sách giáo khoa: Thầy cô tự soạn bài giảng riêng mình?</title>
+<description>Thứ trưởng Bộ GDĐT Nguyễn Vinh Hiển cho biết sẽ có nhiều bộ SGK để từng trường lựa chọn và giáo viên có năng lực cũng có thể tự biên soạn chương trình giảng dạy miễn sao đáp ứng chuẩn chương trình.</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/doi-moi-sach-giao-khoa-thay-co-tu-soan-bai-giang-rieng-minh-c216a702814.html</link>
+<pubDate>2015-04-15 13:10:00</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-15/1429072108-sach-giao-khoa0.jpg</summaryImg>
 </item>
 <item>
-<title>Hồ Vĩnh Khoa khoe body 6 múi bên "người tình mới"</title>
-<description>Hồ Vĩnh Khoa cùng Á hậu Hoàng Oanh tình tứ quảng bá cho MV Secret lover vừa được ra mắt.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/ho-vinh-khoa-khoe-body-6-mui-ben-nguoi-tinh-moi-c73a703278.html</link>
-<pubDate>2015-04-17 14:40:44</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429255784-ho_vinh_khoa_8_mtii.jpg</summaryImg>
+<title>Kỳ thi THPT quốc gia: Lo lắng khi đề thi minh họa quá khó</title>
+<description>Thời điểm này, nhiều Trung tâm GDTX tại TPHCM đã hoàn thành xong kỳ thi học kỳ II cho học sinh lớp 12 và bắt đầu công tác ôn tập, tuy nhiên vẫn còn khá nhiều băn khoăn và lo lắng.</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/ky-thi-thpt-quoc-gia-lo-lang-khi-de-thi-minh-hoa-qua-kho-c216a702850.html</link>
+<pubDate>2015-04-15 14:35:56</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-15/1429083290-ky_thi_mbym.jpg</summaryImg>
 </item>
 <item>
-<title>Đầu năm 2015, sao trẻ miền Bắc &amp;#34;đua nhau&amp;#34; Nam tiến</title>
+<title>Hai học sinh lớp 7 trả người đánh rơi hơn nửa cây vàng</title>
+<description>Dù hoàn cảnh gia đình khó khăn, nhưng 2 em học sinh lớp 7 ở Bà Rịa - Vũng Tàu vẫn không tham của rơi và đã trả lại cho người mất 5,5 chỉ vàng 24K (trị giá hơn 15 triệu đồng) mà các em nhặt được trên đường tới trường.</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/hai-hoc-sinh-lop-7-tra-nguoi-danh-roi-hon-nua-cay-vang-c216a702793.html</link>
+<pubDate>2015-04-15 10:12:18</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-15/1429073810-anh2_ewzx.jpg</summaryImg>
+</item>
+<item>
+<title>Chùm ảnh: Ế ẩm “khách sạn sinh viên” tại Hà Nội</title>
+<description>Giá rẻ, cơ sở vật chất khang trang đáp ứng điều kiện sinh hoạt cho sinh viên giống như một khu nhà ở của chung cư thương mại, nhưng cho đến nay số đơn đăng ký chỉ đạt chưa đầy 1/10 chỗ ở. Đó là thực trạng tại Khu nhà ở sinh viên Pháp Vân - Tứ Hiệp (Hoàng Mai, Hà Nội).</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/chum-anh-e-am-khach-san-sinh-vien-tai-ha-noi-c216a702757.html</link>
+<pubDate>2015-04-15 08:33:33</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-15/1429061226-anh1_3__wpbr.jpg</summaryImg>
+</item>
+<item>
+<title>Cấm thi tuyển lớp 6, một quyết định vội vàng?</title>
+<description>Theo lịch, ngày mai (16.4), Sở GD&amp;ĐT Hà Nội sẽ chốt các phương án tuyển sinh vào lớp 6 của các trường “hot” ở Hà Nội. Theo PGS Văn Như Cương, Chủ tịch Hội đồng quản trị Trường THCS Lương Thế Vinh, trên thực tế chỉ có khoảng 10% học sinh giỏi có nguyện vọng vào các trường vốn xưa nay phải thi tuyển, mà Bộ GD&amp;ĐT phải ra một chỉ thị “cấm thi” là quá vội vàng.</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/cam-thi-tuyen-lop-6-mot-quyet-dinh-voi-vang-c216a702756.html</link>
+<pubDate>2015-04-15 08:26:33</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-15/1429061085-hoc_sinh_ugkk.jpg</summaryImg>
+</item>
+<item>
+<title>Có thể dùng đồng thời 3 giấy chứng nhận kết quả thi</title>
+<description>Dưới đây là những thông tin về xét tuyển mới nhất, được biết, sẽ được công bố trong tuần này, để giúp thí sinh lựa chọn các nguyện vọng sao cho hợp lý.</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/co-the-dung-dong-thoi-3-giay-chung-nhan-ket-qua-thi-c216a702620.html</link>
+<pubDate>2015-04-14 14:10:33</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-14/1428995094-xet_tuyen_gmlf.jpg</summaryImg>
+</item>
+<item>
+<title>Tuyển sinh lớp 6: Trường Nguyễn Siêu công bố phương án "Ngày trải nghiệm"</title>
+<description>Trước yêu cầu cấm tổ chức thi vào lớp 6 của Bộ GDĐT, hiện trường THCS Nguyễn Siêu (Hà Nội) cũng đã trình Sở GDĐT phương án tuyển sinh.</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/tuyen-sinh-lop-6-truong-nguyen-sieu-cong-bo-phuong-an-ngay-trai-nghiem-c216a702619.html</link>
+<pubDate>2015-04-14 14:08:26</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-14/1428995039-tuyen0.jpg</summaryImg>
+</item>
+<item>
+<title>Tuyển sinh ĐH-CĐ 2015: Rối vì quá nhiều tiêu chí phụ</title>
+<description>Ở kỳ tuyển sinh ĐH-CĐ năm 2015, thí sinh được trao nhiều cơ hội khi tham gia các đợt xét tuyển. Tuy nhiên, không ít thí sinh tỏ ra băn khoăn, lo lắng bởi hầu như trường ĐH-CĐ nào cũng có thêm các tổ hợp khối thi mới, kèm theo hàng loạt tiêu chí phụ.</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/tuyen-sinh-dh-cd-2015-roi-vi-qua-nhieu-tieu-chi-phu-c216a702618.html</link>
+<pubDate>2015-04-14 14:07:39</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-14/1428994951-tuyen_sinh_tram.jpg</summaryImg>
+</item>
+<item>
+<title>Vào lớp 6 trường Amsterdam Hà Nội không phải thi văn hóa</title>
+<description>Nhà trường không tổ chức thi các môn văn hóa mà sẽ tập trung phát hiện năng lực theo các dạng thông minh.</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/vao-lop-6-truong-amsterdam-ha-noi-khong-phai-thi-van-hoa-c216a702405.html</link>
+<pubDate>2015-04-13 14:21:08</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-13/1428909393-arm_kcov.jpg</summaryImg>
+</item>
+<item>
+<title>Vụ “7 năm học không viết nổi tên mình”: Buông lỏng đào tạo</title>
 <description>
-Đầu năm 2015, showbiz Việt chứng kiến công cuộc Nam tiến của hàng loạt sao trẻ miền Bắc.
-</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/dau-nam-2015-loat-sao-tre-mien-bac-o-at-nam-tien-c73a703096.html</link>
-<pubDate>2015-04-17 05:05:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429233117-min_st319_762940675_yggi.jpg</summaryImg>
+Theo Thứ trưởng Bộ GD-ĐT, học sinh 7 năm không viết nổi tiên mình là do Ban giám hiệu trường buông lỏng quản lý chỉ đạo, thiếu sâu sát thực tế…</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/vu-7-nam-hoc-khong-viet-noi-ten-minh-buong-long-dao-tao-c216a702442.html</link>
+<pubDate>2015-04-13 16:17:41</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-13/1428916711-hoc_sinh_dghf.jpg</summaryImg>
 </item>
 <item>
-<title>Sao Việt cưng nựng chó như “con yêu”, bạn thân</title>
-<description>Trong khi Mr. Đàm, Minh Hằng, Cao Thái Sơn,... xem cún như những người bạn thân, Tăng Thanh Hà lại cưng nựng gọi 2 chú chó của cô là "Con yêu của mẹ".</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/sao-viet-cung-nung-cho-nhu-con-yeu-ban-than-c73a703112.html</link>
-<pubDate>2015-04-16 17:01:20</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429232902-sao_iqmr.jpg</summaryImg>
-</item>
-<item>
-<title>Lan Ngọc gợi cảm hơn sau Bước nhảy hoàn vũ</title>
-<description>Người đẹp 9x thay đổi hình ảnh sau khi đăng quang Bước nhảy hoàn vũ.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/lan-ngoc-goi-cam-hon-sau-buoc-nhay-hoan-vu-c73a703049.html</link>
-<pubDate>2015-04-16 14:08:58</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-16/1429168101-lan_ngoc_av_lool.jpg</summaryImg>
-</item>
-<item>
-<title>Khán giả chen chúc leo cây, vượt tường xem Hà Hồ diễn</title>
-<description>Nhiều khán giả đã tìm mọi cách để được xem Hà Hồ biểu diễn trong tour xuyên Việt tại Đà Nẵng tối qua.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/khan-gia-chen-chuc-leo-cay-vuot-tuong-xem-ha-ho-dien-c73a703003.html</link>
-<pubDate>2015-04-16 10:28:17</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-16/1429154746-ha_ho_15_jvdk.jpg</summaryImg>
-</item>
-<item>
-<title>4 thí sinh không phục kết quả các gameshow Việt</title>
-<description>Có những thí sinh đã lên tiếng gay gắt chỉ trích ban tổ chức các chương trình nổi tiếng này.
- 
-</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/4-thi-sinh-khong-phuc-ket-qua-cac-gameshow-viet-c73a702944.html</link>
-<pubDate>2015-04-16 05:30:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-16/1429146797-300_ffab.jpg</summaryImg>
-</item>
-<item>
-<title>Fan 365 lo lắng vì Isaac hát solo ngày càng nhiều</title>
-<description>Fan của 365daband đang lo lắng trước nguy cơ tan vỡ của nhóm nhạc đình đám này khi trưởng nhóm Isaac ngày càng “hăng say” đánh quả lẻ từ khi tham gia The Remix.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/fan-365-lo-lang-vi-isaac-hat-solo-ngay-cang-nhieu-c73a703009.html</link>
-<pubDate>2015-04-16 10:37:01</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-16/1429155287-2_pjrc.jpg</summaryImg>
-</item>
-<item>
-<title>Sốc với màn cưỡng hôn của U60 Madonna với trai trẻ</title>
-<description>Màn cưỡng hôn của "Nữ hoàng nhạc pop" với chàng rapper 28 tuổi khiến nam ca sĩ bàng hoàng và sau đó Madonna cũng điêu đứng vì bị "ném đá".</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/soc-voi-man-cuong-hon-cua-u60-madonna-voi-trai-tre-c73a702966.html</link>
-<pubDate>2015-04-16 09:00:30</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-16/1429148718-madonna_8_knio.jpg</summaryImg>
-</item>
-<item>
-<title>Khánh Đơn phân trần lý do Lương Bích Hữu ở ẩn sinh con</title>
-<description>Tác giả hàng loạt ca khúc hit cho hay, anh và "cô gái Trung Hoa" sẽ chia sẻ tin đồn mang bầu, sinh con vào dịp khác.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/khanh-don-phan-tran-ly-do-luong-bich-huu-o-an-sinh-con-c73a702968.html</link>
-<pubDate>2015-04-16 08:51:27</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-16/1429148824-thumbnail.jpg</summaryImg>
-</item>
-<item>
-<title>Tiêu Châu Như Quỳnh hôn trai đẹp 10 lần trong MV mới</title>
-<description>Đây là lần đầu tiên Tiêu Châu Như Quỳnh đóng cảnh hôn trong MV ca nhạc.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/tieu-chau-nhu-quynh-hon-trai-dep-10-lan-trong-mv-moi-c73a702960.html</link>
-<pubDate>2015-04-16 08:23:47</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-16/1429147322-av_wzyp.jpg</summaryImg>
+<title>1.700 học sinh đội nắng làm bài thi giữa sân trường</title>
+<description>Hàng ngàn học sinh của một trường trung học ở Trung Quốc đã lần đầu tiên tham gia kỳ thi ngoài trời gây tranh cãi được tổ chức ngày 11-4 vừa qua.</description>
+<link>http://www.24h.com.vn/giao-duc-du-hoc/1700-hoc-sinh-doi-nang-lam-bai-thi-giua-san-truong-c216a702437.html</link>
+<pubDate>2015-04-13 16:05:15</pubDate>
+<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-13/1428915634-chi_na_1__zkau.jpg</summaryImg>
 </item>
 </channel>
 </rss>
