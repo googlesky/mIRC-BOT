@@ -1,198 +1,91 @@
-www.24h.com.vn /upload/rss/giaoducduhoc.rss
+ngoisao.net /rss/thu-gian.rss
 HTTP/1.1 200 OK
-Server: 24h.com.vn
-Date: Sun, 19 Apr 2015 16:09:46 GMT
-Content-Type: application/rss+xml
-Content-Length: 16533
-Last-Modified: Sun, 19 Apr 2015 11:20:05 GMT
+Server: Fengine/1.5.2
+Date: Sun, 19 Apr 2015 16:43:52 GMT
+Content-Type: application/xml; charset=utf-8
 Connection: close
-ETag: "55338f65-4095"
-Expires: Mon, 20 Apr 2015 16:09:46 GMT
-Cache-Control: max-age=86400
-Accept-Ranges: bytes
+Vary: Accept-Encoding
+Set-Cookie: device_env=4; expires=Sun, 26-Apr-2015 16:43:52 GMT; path=/; domain=vnexpress.net
+server: web_141.169
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
 <channel>
-<title>Tin tuc 24h | tin nhanh bong da | the thao | thoi trang, giai tri vn | bao online</title>
-<link>http://www.24h.com.vn/giao-duc-du-hoc-c216.html</link>
-<description>Tin tuc trong ngay, bóng đá, thể thao, thời trang, giải trí. Update tin nhanh 24/24h. Nhiều đặc sản video tin tức việt nam, thế giới, video bong da anh chỉ có tại 24h.Tổng hợp tintuc vn, BAO CONG AN, an ninh, phap luat</description>
-<image>
-<url>http://24h-static.24hstatic.com:8008/images/logo24h-128x85.gif</url>
-<title>Tin tuc 24h | tin nhanh bong da | the thao | thoi trang, giai tri vn | báo online</title>
-<link>http://www.24h.com.vn</link>
-</image>
-<language>vi-vn</language>
-<copyright>(c)24h.com.vn</copyright>
-<ttl>60</ttl>
-<generator>noreply@24h.com.vn</generator>
+<title>Thư giãn - Ngôi sao RSS</title>
+<description>Ngoisao RSS</description>
+<pubDate>Sun, 19 Apr 2015 23:43:52 +0700</pubDate>
+<generator>ngoisao.net:http://ngoisao.net/rss</generator>
+<link>http://ngoisao.net/rss/thu-gian.rss</link>
 <item>
-<title>Cuộc sống của chàng sinh viên nghèo trả lại hơn 1,4 tỷ đồng</title>
-<description>Cuộc sống của chàng sinh viên nghèo trả lại hơn 1,4 tỷ đồng tiền nhặt được Doãn Ý vẫn ngày ngày phải làm thêm lo cho gia đình.</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/cuoc-song-cua-chang-sinh-vien-ngheo-tra-lai-hon-14-ty-dong-c216a703668.html</link>
-<pubDate>2015-04-19 14:20:48</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-19/1429427997-nhat_tien_1__usav.jpg</summaryImg>
+<title>Mắm ruốc xào thịt ba chỉ dùng lâu vẫn thơm ngon</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/an-choi/mam-ruoc-xao-thit-ba-chi-dung-lau-van-thom-ngon-3202924.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/04/19/DSC05217-JPG-5686-1429418613_210x158.jpg" ></a></br>Chỉ cần cho vào tủ mát, một hủ mắm ruốc xào thịt có thể để hàng tháng mà không ảnh hưởng đến mùi vị thơm ngon.]]></description>
+<pubDate>Sun, 19 Apr 2015 11:47:39 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thu-gian/an-choi/mam-ruoc-xao-thit-ba-chi-dung-lau-van-thom-ngon-3202924.html</link>
+<guid>http://ngoisao.net/tin-tuc/thu-gian/an-choi/mam-ruoc-xao-thit-ba-chi-dung-lau-van-thom-ngon-3202924.html</guid>
+<slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Đổ tường bể bơi, một học sinh lớp 4 tử vong</title>
-<description>Khi học sinh đang tắm trong bể bơi, bức tường bất ngờ đổ xập xuống khiến nhiều em nhỏ hoảng loạn. 1 học sinh lớp 4 bị tường đè tử vong, một số học sinh bị thương nhẹ.</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/do-tuong-be-boi-mot-hoc-sinh-lop-4-tu-vong-c216a703642.html</link>
-<pubDate>2015-04-19 10:59:03</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-19/1429426545-anh_2_xvtp.jpg</summaryImg>
+<title>iPhone 5 và 5S lock 'tạo sóng' khi vừa về Việt Nam</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/dan-choi/iphone-5-va-5s-lock-tao-song-khi-vua-ve-viet-nam-3202878.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/04/19/sim-2791-1429408564_210x158.jpg" ></a></br>Sự xuất hiện của iPhone 5 và 5S lock phần nào khiến cho cơn sốt 5C giảm nhiệt.]]></description>
+<pubDate>Sun, 19 Apr 2015 08:56:24 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/iphone-5-va-5s-lock-tao-song-khi-vua-ve-viet-nam-3202878.html</link>
+<guid>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/iphone-5-va-5s-lock-tao-song-khi-vua-ve-viet-nam-3202878.html</guid>
+<slash:comments>0</slash:comments>
 </item>
 <item>
-<title>“Song kiệt” ở xứ sở nắng gió</title>
-<description>Hai chàng trai ấy có cùng tên, cùng lớn lên từ vùng đất Ninh Thuận đầy nắng gió và đều nổi tiếng như cồn với những kỳ tích xác lập ở nước ngoài.</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/song-kiet-o-xu-so-nang-gio-c216a703617.html</link>
-<pubDate>2015-04-19 07:18:49</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-19/1429402685-100_qdbk.jpg</summaryImg>
+<title>Maserati sản xuất 20 siêu xe LaMaserati</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/dan-choi/maserati-san-xuat-20-sieu-xe-lamaserati-3202875.html"><img width=210 height=158 src="http://m.f32.img.vnecdn.net/2015/04/18/we-hear-lamaserati-halo-car-ap-1505-4039-1429330400_210x158.jpg" ></a></br>Hãng xe Italy phát triển siêu phẩm mới có giá 3,24 triệu USD với số lượng giới hạn.]]></description>
+<pubDate>Sun, 19 Apr 2015 08:49:26 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/maserati-san-xuat-20-sieu-xe-lamaserati-3202875.html</link>
+<guid>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/maserati-san-xuat-20-sieu-xe-lamaserati-3202875.html</guid>
+<slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Phó Thủ tướng ở Hội Sách</title>
-<description>Sáng 17/4, Hội sách chào mừng Ngày Sách Việt Nam 2015 được tổ chức tại Công viên Thống Nhất, Hà Nội. Đến sớm trước giờ khai mạc, Phó Thủ tướng Vũ Đức Đam cũng “lạc” vào dòng người mua sách.</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/pho-thu-tuong-o-hoi-sach-c216a703397.html</link>
-<pubDate>2015-04-18 08:29:09</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-18/1429320340-ptt_mua_sach3_gtkd.jpg</summaryImg>
+<title>9 thực phẩm bổ máu cực tốt cho phụ nữ</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/an-choi/9-thuc-pham-bo-mau-cuc-tot-cho-phu-nu-3202581.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/04/18/topbomau-1429327648_210x158.jpg" ></a></br>Các chị em thường dễ bị thiếu máu hơn cánh đàn ông nên cần phải luôn bổ sung thêm các thực phẩm giàu chất sắt.]]></description>
+<pubDate>Sun, 19 Apr 2015 03:20:00 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thu-gian/an-choi/9-thuc-pham-bo-mau-cuc-tot-cho-phu-nu-3202581.html</link>
+<guid>http://ngoisao.net/tin-tuc/thu-gian/an-choi/9-thuc-pham-bo-mau-cuc-tot-cho-phu-nu-3202581.html</guid>
+<slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Thầy giáo vụt gậy tre vào mặt học sinh</title>
-<description>Ngày 17/4, Phòng GD&amp;ĐT huyện Phú Vang (tỉnh TT-Huế) tiến hành họp với Trường THCS Phú Đa để lấy biểu quyết mức xử lý kỷ luật cảnh cáo hoặc buộc thôi việc đối với giáo viên Võ Thế Lân, do hành vi bạo hành nhiều học sinh.</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/thay-giao-vut-gay-tre-vao-mat-hoc-sinh-c216a703377.html</link>
-<pubDate>2015-04-18 07:26:54</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-18/1429316556-hoc_sinh_640_ewgj.jpg</summaryImg>
+<title>Chiffon trà xanh cho cuối tuần thanh mát</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/an-choi/chiffon-tra-xanh-cho-cuoi-tuan-thanh-mat-3202537.html"><img width=210 height=158 src="http://c1.f21.img.vnecdn.net/2015/04/18/topchiffon-1429324244_210x158.jpg" ></a></br>Nếu bạn thích vị chiffon thanh mát, thơm nhẹ thì chiffon trà xanh là lựa chọn số một.]]></description>
+<pubDate>Sun, 19 Apr 2015 00:33:00 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thu-gian/an-choi/chiffon-tra-xanh-cho-cuoi-tuan-thanh-mat-3202537.html</link>
+<guid>http://ngoisao.net/tin-tuc/thu-gian/an-choi/chiffon-tra-xanh-cho-cuoi-tuan-thanh-mat-3202537.html</guid>
+<slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Phạt "công ty cá thối" tuồn thực phẩm bẩn vào trường học</title>
-<description>Chiều17.4, Sở Y tế tỉnh Bình Dương đã thông báo quyết định xử phạt đối với Công ty Phú Nhật Hào – đơn vị cung cấp suất ăn cho hơn 14 nghìn học sinh của 18 trường học ở Bình Dương.</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/phat-cong-ty-ca-thoi-tuon-thuc-pham-ban-vao-truong-hoc-c216a703348.html</link>
-<pubDate>2015-04-17 19:21:52</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429272281-ca_thoi_gaii.jpg</summaryImg>
+<title>Galaxy S6 Edge bị phàn nàn về chất lượng sơn</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/dan-choi/galaxy-s6-edge-bi-phan-nan-ve-chat-luong-son-3202706.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/04/18/cc-1429340551_210x158.jpg" ></a></br>Lớp sơn ở khu vực camera sau của máy bị xước chỉ sau một ngày được người dùng mua về.]]></description>
+<pubDate>Sat, 18 Apr 2015 14:02:34 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/galaxy-s6-edge-bi-phan-nan-ve-chat-luong-son-3202706.html</link>
+<guid>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/galaxy-s6-edge-bi-phan-nan-ve-chat-luong-son-3202706.html</guid>
+<slash:comments>0</slash:comments>
 </item>
 <item>
-<title>TPHCM: 59 tuổi vẫn đăng ký thi THPT</title>
-<description>Cơ quan đại diện Bộ GDĐT tại TPHCM cho biết, đã có một thí sinh 59 tuổi, chuẩn bị nghỉ hưu nhưng vẫn đăng ký thi THPT để xét tuyển vào ĐH.</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/tphcm-59-tuoi-van-dang-ky-thi-thpt-c216a703338.html</link>
-<pubDate>2015-04-17 18:48:38</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429268898-dangky_maqd.jpg</summaryImg>
+<title>Tablet Nokia N1 về Việt Nam giá 7 triệu đồng</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/dan-choi/tablet-nokia-n1-ve-viet-nam-gia-7-trieu-dong-3202684.html"><img width=210 height=158 src="http://m.f6.img.vnecdn.net/2015/04/18/n1-4819-1429331790_210x158.jpg" ></a></br>Máy tính bảng chạy Android của Nokia vừa có mặt tại Sài Gòn theo đường xách tay. ]]></description>
+<pubDate>Sat, 18 Apr 2015 11:36:56 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/tablet-nokia-n1-ve-viet-nam-gia-7-trieu-dong-3202684.html</link>
+<guid>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/tablet-nokia-n1-ve-viet-nam-gia-7-trieu-dong-3202684.html</guid>
+<slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Tuyển sinh lớp 6: Phương án mới quá gấp gáp, thiệt thòi cho nhiều học sinh</title>
-<description>“Rất nhiều học sinh có thể đỗ nếu thi dạng đề cũ, nhưng lại trượt khi thi theo phương thức mới”</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/tuyen-sinh-lop-6-phuong-an-moi-qua-gap-gap-thiet-thoi-cho-nhieu-hoc-sinh-c216a703291.html</link>
-<pubDate>2015-04-17 15:44:28</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429260209-ts_otyi.jpg</summaryImg>
+<title>Beer club đậm chất châu Âu</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/an-choi/beer-club-dam-chat-chau-au-3202253.html"><img width=210 height=158 src="http://c0.f24.img.vnecdn.net/2015/04/18/17-4-201510-4973-1429319232_210x158.png" ></a></br>Ra đời vào tháng 5/2014 tại Hà Nội với mô hình kinh doanh Beer club khác biệt, The Camorra đã trở nên quen thuộc với các tín đồ bia.]]></description>
+<pubDate>Sat, 18 Apr 2015 10:00:00 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thu-gian/an-choi/beer-club-dam-chat-chau-au-3202253.html</link>
+<guid>http://ngoisao.net/tin-tuc/thu-gian/an-choi/beer-club-dam-chat-chau-au-3202253.html</guid>
+<slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Tuyển sinh lớp 6: Hà Nội đã thống nhất được phương án thay thế</title>
-<description>Tại cuộc họp giữa Sở GDĐT Hà Nội với các trường THCS có phương án tuyển sinh riêng, các ý kiến đều thống nhất tuyển sinh lớp 6 sẽ xét tuyển hồ sơ và dựa vào bài đánh giá năng lực toàn diện của học trò.</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/tuyen-sinh-lop-6-ha-noi-da-thong-nhat-duoc-phuong-an-thay-the-c216a703230.html</link>
-<pubDate>2015-04-17 11:12:25</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429243559-tuyen-sinh0.jpg</summaryImg>
-</item>
-<item>
-<title>Cấm thi vào lớp 6: Đổ xô đi luyện IQ, EQ và tiếng Anh</title>
-<description>Sau khi các trường “hot” ở Hà Nội lần lượt trình phương án tuyển sinh lớp 6 theo phương thức test IQ, EQ, “Ai là triệu phú”, còn trường chuyên THCS Trần Đại Nghĩa (TPHCM) thì tuyên bố khảo sát môn Anh văn, các phụ huynh đã chuyển hướng đổ xô cho con đi luyện thi IQ, EQ và tiếng Anh.</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/cam-thi-vao-lop-6-do-xo-di-luyen-iq-eq-va-tieng-anh-c216a703171.html</link>
-<pubDate>2015-04-17 08:16:34</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-17/1429233315-hoc_sinh1_kvfm.jpg</summaryImg>
-</item>
-<item>
-<title>TP.HCM: Gần 2.000 chỉ tiêu vào lớp 10 chuyên</title>
-<description>Sở GD&amp;ĐT TP.HCM chiều 15-4 chính thức thông báo lịch thi cụ thể, điều kiện và chỉ tiêu tuyển sinh vào lớp 10 các trường THPT chuyên và không chuyên tại TP.</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/tphcm-gan-2000-chi-tieu-vao-lop-10-chuyen-c216a703043.html</link>
-<pubDate>2015-04-16 14:27:35</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-16/1429167465-thi0.jpg</summaryImg>
-</item>
-<item>
-<title>Cấm thi tuyển vào lớp 6: Dễ nảy sinh tiêu cực</title>
-<description>Trước việc Bộ GD&amp;ĐT cấm thi tuyển vào lớp 6, nhiều phương thức mới thay thế việc thi tuyển như khảo sát, test IQ, EQ… đã được các trường đề ra, trong đó trường chuyên Trần Đại Nghĩa TPHCM chọn phương án khảo sát năng lực bằng tiếng Anh thay cho việc thi ba môn Toán, tiếng Việt và Anh văn như trước. Tuy nhiên, phương án này được các chuyên gia và phụ huynh cho rằng chưa thật sự phù hợp</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/cam-thi-tuyen-vao-lop-6-de-nay-sinh-tieu-cuc-c216a702967.html</link>
-<pubDate>2015-04-16 08:49:18</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-16/1429148871-cam_thi_lop_6_mdgj.jpg</summaryImg>
-</item>
-<item>
-<title>Hà Nội chốt phương án tuyển sinh vào lớp 6</title>
-<description>Ngày 15.4, Sở GDĐT Hà Nội đã họp với các trường THCS có phương án tuyển sinh riêng vào lớp 6 năm học 2015 - 2016. </description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/ha-noi-chot-phuong-an-tuyen-sinh-vao-lop-6-c216a702955.html</link>
-<pubDate>2015-04-16 06:43:10</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-16/1429141348-ojputhi_lop_6_ixmk.jpg</summaryImg>
-</item>
-<item>
-<title>Đổi mới sách giáo khoa: Thầy cô tự soạn bài giảng riêng mình?</title>
-<description>Thứ trưởng Bộ GDĐT Nguyễn Vinh Hiển cho biết sẽ có nhiều bộ SGK để từng trường lựa chọn và giáo viên có năng lực cũng có thể tự biên soạn chương trình giảng dạy miễn sao đáp ứng chuẩn chương trình.</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/doi-moi-sach-giao-khoa-thay-co-tu-soan-bai-giang-rieng-minh-c216a702814.html</link>
-<pubDate>2015-04-15 13:10:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-15/1429072108-sach-giao-khoa0.jpg</summaryImg>
-</item>
-<item>
-<title>Kỳ thi THPT quốc gia: Lo lắng khi đề thi minh họa quá khó</title>
-<description>Thời điểm này, nhiều Trung tâm GDTX tại TPHCM đã hoàn thành xong kỳ thi học kỳ II cho học sinh lớp 12 và bắt đầu công tác ôn tập, tuy nhiên vẫn còn khá nhiều băn khoăn và lo lắng.</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/ky-thi-thpt-quoc-gia-lo-lang-khi-de-thi-minh-hoa-qua-kho-c216a702850.html</link>
-<pubDate>2015-04-15 14:35:56</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-15/1429083290-ky_thi_mbym.jpg</summaryImg>
-</item>
-<item>
-<title>Hai học sinh lớp 7 trả người đánh rơi hơn nửa cây vàng</title>
-<description>Dù hoàn cảnh gia đình khó khăn, nhưng 2 em học sinh lớp 7 ở Bà Rịa - Vũng Tàu vẫn không tham của rơi và đã trả lại cho người mất 5,5 chỉ vàng 24K (trị giá hơn 15 triệu đồng) mà các em nhặt được trên đường tới trường.</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/hai-hoc-sinh-lop-7-tra-nguoi-danh-roi-hon-nua-cay-vang-c216a702793.html</link>
-<pubDate>2015-04-15 10:12:18</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-15/1429073810-anh2_ewzx.jpg</summaryImg>
-</item>
-<item>
-<title>Chùm ảnh: Ế ẩm “khách sạn sinh viên” tại Hà Nội</title>
-<description>Giá rẻ, cơ sở vật chất khang trang đáp ứng điều kiện sinh hoạt cho sinh viên giống như một khu nhà ở của chung cư thương mại, nhưng cho đến nay số đơn đăng ký chỉ đạt chưa đầy 1/10 chỗ ở. Đó là thực trạng tại Khu nhà ở sinh viên Pháp Vân - Tứ Hiệp (Hoàng Mai, Hà Nội).</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/chum-anh-e-am-khach-san-sinh-vien-tai-ha-noi-c216a702757.html</link>
-<pubDate>2015-04-15 08:33:33</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-15/1429061226-anh1_3__wpbr.jpg</summaryImg>
-</item>
-<item>
-<title>Cấm thi tuyển lớp 6, một quyết định vội vàng?</title>
-<description>Theo lịch, ngày mai (16.4), Sở GD&amp;ĐT Hà Nội sẽ chốt các phương án tuyển sinh vào lớp 6 của các trường “hot” ở Hà Nội. Theo PGS Văn Như Cương, Chủ tịch Hội đồng quản trị Trường THCS Lương Thế Vinh, trên thực tế chỉ có khoảng 10% học sinh giỏi có nguyện vọng vào các trường vốn xưa nay phải thi tuyển, mà Bộ GD&amp;ĐT phải ra một chỉ thị “cấm thi” là quá vội vàng.</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/cam-thi-tuyen-lop-6-mot-quyet-dinh-voi-vang-c216a702756.html</link>
-<pubDate>2015-04-15 08:26:33</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-15/1429061085-hoc_sinh_ugkk.jpg</summaryImg>
-</item>
-<item>
-<title>Có thể dùng đồng thời 3 giấy chứng nhận kết quả thi</title>
-<description>Dưới đây là những thông tin về xét tuyển mới nhất, được biết, sẽ được công bố trong tuần này, để giúp thí sinh lựa chọn các nguyện vọng sao cho hợp lý.</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/co-the-dung-dong-thoi-3-giay-chung-nhan-ket-qua-thi-c216a702620.html</link>
-<pubDate>2015-04-14 14:10:33</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-14/1428995094-xet_tuyen_gmlf.jpg</summaryImg>
-</item>
-<item>
-<title>Tuyển sinh lớp 6: Trường Nguyễn Siêu công bố phương án "Ngày trải nghiệm"</title>
-<description>Trước yêu cầu cấm tổ chức thi vào lớp 6 của Bộ GDĐT, hiện trường THCS Nguyễn Siêu (Hà Nội) cũng đã trình Sở GDĐT phương án tuyển sinh.</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/tuyen-sinh-lop-6-truong-nguyen-sieu-cong-bo-phuong-an-ngay-trai-nghiem-c216a702619.html</link>
-<pubDate>2015-04-14 14:08:26</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-14/1428995039-tuyen0.jpg</summaryImg>
-</item>
-<item>
-<title>Tuyển sinh ĐH-CĐ 2015: Rối vì quá nhiều tiêu chí phụ</title>
-<description>Ở kỳ tuyển sinh ĐH-CĐ năm 2015, thí sinh được trao nhiều cơ hội khi tham gia các đợt xét tuyển. Tuy nhiên, không ít thí sinh tỏ ra băn khoăn, lo lắng bởi hầu như trường ĐH-CĐ nào cũng có thêm các tổ hợp khối thi mới, kèm theo hàng loạt tiêu chí phụ.</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/tuyen-sinh-dh-cd-2015-roi-vi-qua-nhieu-tieu-chi-phu-c216a702618.html</link>
-<pubDate>2015-04-14 14:07:39</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-14/1428994951-tuyen_sinh_tram.jpg</summaryImg>
-</item>
-<item>
-<title>Vào lớp 6 trường Amsterdam Hà Nội không phải thi văn hóa</title>
-<description>Nhà trường không tổ chức thi các môn văn hóa mà sẽ tập trung phát hiện năng lực theo các dạng thông minh.</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/vao-lop-6-truong-amsterdam-ha-noi-khong-phai-thi-van-hoa-c216a702405.html</link>
-<pubDate>2015-04-13 14:21:08</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-13/1428909393-arm_kcov.jpg</summaryImg>
-</item>
-<item>
-<title>Vụ “7 năm học không viết nổi tên mình”: Buông lỏng đào tạo</title>
-<description>
-Theo Thứ trưởng Bộ GD-ĐT, học sinh 7 năm không viết nổi tiên mình là do Ban giám hiệu trường buông lỏng quản lý chỉ đạo, thiếu sâu sát thực tế…</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/vu-7-nam-hoc-khong-viet-noi-ten-minh-buong-long-dao-tao-c216a702442.html</link>
-<pubDate>2015-04-13 16:17:41</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-13/1428916711-hoc_sinh_dghf.jpg</summaryImg>
-</item>
-<item>
-<title>1.700 học sinh đội nắng làm bài thi giữa sân trường</title>
-<description>Hàng ngàn học sinh của một trường trung học ở Trung Quốc đã lần đầu tiên tham gia kỳ thi ngoài trời gây tranh cãi được tổ chức ngày 11-4 vừa qua.</description>
-<link>http://www.24h.com.vn/giao-duc-du-hoc/1700-hoc-sinh-doi-nang-lam-bai-thi-giua-san-truong-c216a702437.html</link>
-<pubDate>2015-04-13 16:05:15</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-04-13/1428915634-chi_na_1__zkau.jpg</summaryImg>
+<title>7 ngày chinh phục cố đô Luang Prabang</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/an-choi/7-ngay-chinh-phuc-co-do-luang-prabang-3202271.html"><img width=210 height=158 src="http://c1.f24.img.vnecdn.net/2015/04/18/topluangprabang-1429320458_210x158.jpg" ></a></br>Luang Prabang - cố đô của xứ sở triệu voi - là một trong những điểm dừng chân được du khách thế giới yêu thích khi đến khám phá văn hoá Đông Nam Á.]]></description>
+<pubDate>Sat, 18 Apr 2015 09:32:33 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thu-gian/an-choi/7-ngay-chinh-phuc-co-do-luang-prabang-3202271.html</link>
+<guid>http://ngoisao.net/tin-tuc/thu-gian/an-choi/7-ngay-chinh-phuc-co-do-luang-prabang-3202271.html</guid>
+<slash:comments>0</slash:comments>
 </item>
 </channel>
 </rss>

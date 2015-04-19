@@ -18,6 +18,7 @@ http://www.24h.com.vn/upload/rss/taichinhbatdongsan.rss
 http://www.24h.com.vn/upload/rss/amthuc.rss
 http://www.24h.com.vn/upload/rss/lamdep.rss
 http://www.24h.com.vn/upload/rss/phim.rss
+http://www.24h.com.vn/upload/rss/giaoducduhoc.rss
 http://www.24h.com.vn/upload/rss/bantrecuocsong.rss
 http://www.24h.com.vn/upload/rss/canhacmtv.rss
 http://www.24h.com.vn/upload/rss/thethao.rss
@@ -32,7 +33,6 @@ http://ngoisao.net/rss/hau-truong.rss
 http://ngoisao.net/rss/the-thao.rss
 http://ngoisao.net/rss/thoi-cuoc.rss
 http://ngoisao.net/rss/phong-cach.rss
-http://ngoisao.net/rss/thu-gian.rss
 http://ngoisao.net/rss/goc-doc-gia.rss
 http://ngoisao.net/rss/showbiz-viet.rss
 http://ngoisao.net/rss/chau-a.rss
