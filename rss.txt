@@ -1,90 +1,90 @@
-ngoisao.net /rss/thu-gian.rss
+ngoisao.net /rss/thoi-cuoc.rss
 HTTP/1.1 200 OK
 Server: Fengine/1.5.2
-Date: Sun, 19 Apr 2015 16:43:52 GMT
+Date: Mon, 20 Apr 2015 03:47:32 GMT
 Content-Type: application/xml; charset=utf-8
 Connection: close
 Vary: Accept-Encoding
-Set-Cookie: device_env=4; expires=Sun, 26-Apr-2015 16:43:52 GMT; path=/; domain=vnexpress.net
-server: web_141.169
+Set-Cookie: device_env=4; expires=Mon, 27-Apr-2015 03:47:31 GMT; path=/; domain=vnexpress.net
+server: web_141.168
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
 <channel>
-<title>Thư giãn - Ngôi sao RSS</title>
+<title>Thời cuộc - Ngôi sao RSS</title>
 <description>Ngoisao RSS</description>
-<pubDate>Sun, 19 Apr 2015 23:43:52 +0700</pubDate>
+<pubDate>Mon, 20 Apr 2015 10:47:31 +0700</pubDate>
 <generator>ngoisao.net:http://ngoisao.net/rss</generator>
-<link>http://ngoisao.net/rss/thu-gian.rss</link>
+<link>http://ngoisao.net/rss/thoi-cuoc.rss</link>
 <item>
-<title>Mắm ruốc xào thịt ba chỉ dùng lâu vẫn thơm ngon</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/an-choi/mam-ruoc-xao-thit-ba-chi-dung-lau-van-thom-ngon-3202924.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/04/19/DSC05217-JPG-5686-1429418613_210x158.jpg" ></a></br>Chỉ cần cho vào tủ mát, một hủ mắm ruốc xào thịt có thể để hàng tháng mà không ảnh hưởng đến mùi vị thơm ngon.]]></description>
-<pubDate>Sun, 19 Apr 2015 11:47:39 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/an-choi/mam-ruoc-xao-thit-ba-chi-dung-lau-van-thom-ngon-3202924.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/an-choi/mam-ruoc-xao-thit-ba-chi-dung-lau-van-thom-ngon-3202924.html</guid>
+<title>Cằm bạnh vì nhai kẹo cao su để giảm cân</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thoi-cuoc/24h/cam-banh-vi-nhai-keo-cao-su-de-giam-can-3203210.html"><img width=210 height=158 src="http://c1.f24.img.vnecdn.net/2015/04/20/womant-1429498537_210x158.jpg" ></a></br>Một phụ nữ Trung Quốc tá hỏa khi phát hiện cằm càng ngày càng bạnh ra sau 6 tháng kiên trì nhai kẹo ca su để giảm cân. ]]></description>
+<pubDate>Mon, 20 Apr 2015 10:40:41 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/cam-banh-vi-nhai-keo-cao-su-de-giam-can-3203210.html</link>
+<guid>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/cam-banh-vi-nhai-keo-cao-su-de-giam-can-3203210.html</guid>
 <slash:comments>0</slash:comments>
 </item>
 <item>
-<title>iPhone 5 và 5S lock 'tạo sóng' khi vừa về Việt Nam</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/dan-choi/iphone-5-va-5s-lock-tao-song-khi-vua-ve-viet-nam-3202878.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/04/19/sim-2791-1429408564_210x158.jpg" ></a></br>Sự xuất hiện của iPhone 5 và 5S lock phần nào khiến cho cơn sốt 5C giảm nhiệt.]]></description>
-<pubDate>Sun, 19 Apr 2015 08:56:24 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/iphone-5-va-5s-lock-tao-song-khi-vua-ve-viet-nam-3202878.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/iphone-5-va-5s-lock-tao-song-khi-vua-ve-viet-nam-3202878.html</guid>
+<title>Lần đầu phát hiện người nhiễm ký sinh trùng gây bệnh ngủ</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thoi-cuoc/24h/lan-dau-phat-hien-nguoi-nhiem-ky-sinh-trung-gay-benh-ngu-3203105.html"><img width=210 height=158 src="http://c1.f22.img.vnecdn.net/2015/04/20/trung-9259-1429492789_210x158.jpg" ></a></br>Bệnh nhân là một phụ nữ 38 tuổi ở Đồng Nai và đây cũng là trường hợp đầu tiên tại Việt Nam được ghi nhận mắc bệnh vốn chỉ có ở châu Phi.]]></description>
+<pubDate>Mon, 20 Apr 2015 10:08:38 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/lan-dau-phat-hien-nguoi-nhiem-ky-sinh-trung-gay-benh-ngu-3203105.html</link>
+<guid>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/lan-dau-phat-hien-nguoi-nhiem-ky-sinh-trung-gay-benh-ngu-3203105.html</guid>
 <slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Maserati sản xuất 20 siêu xe LaMaserati</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/dan-choi/maserati-san-xuat-20-sieu-xe-lamaserati-3202875.html"><img width=210 height=158 src="http://m.f32.img.vnecdn.net/2015/04/18/we-hear-lamaserati-halo-car-ap-1505-4039-1429330400_210x158.jpg" ></a></br>Hãng xe Italy phát triển siêu phẩm mới có giá 3,24 triệu USD với số lượng giới hạn.]]></description>
-<pubDate>Sun, 19 Apr 2015 08:49:26 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/maserati-san-xuat-20-sieu-xe-lamaserati-3202875.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/maserati-san-xuat-20-sieu-xe-lamaserati-3202875.html</guid>
+<title>'Người rừng' sau gần 2 năm về làng</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thoi-cuoc/24h/nguoi-rung-sau-gan-2-nam-ve-lang-3202944.html"><img width=210 height=158 src="http://c1.f24.img.vnecdn.net/2015/04/19/19-4-Anh-9-4566-1429428483-2488-1429455791_210x158.jpg" ></a></br>Cuộc sống của 'người rừng' Hồ Văn Lang (Quảng Ngãi) dần ổn định nhưng người cha Hồ Văn Thanh vẫn quay quắt nhớ về chốn thâm sơn cùng cốc, nơi họ gắn bó suốt 40 năm. ]]></description>
+<pubDate>Sun, 19 Apr 2015 22:10:53 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/nguoi-rung-sau-gan-2-nam-ve-lang-3202944.html</link>
+<guid>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/nguoi-rung-sau-gan-2-nam-ve-lang-3202944.html</guid>
 <slash:comments>0</slash:comments>
 </item>
 <item>
-<title>9 thực phẩm bổ máu cực tốt cho phụ nữ</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/an-choi/9-thuc-pham-bo-mau-cuc-tot-cho-phu-nu-3202581.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/04/18/topbomau-1429327648_210x158.jpg" ></a></br>Các chị em thường dễ bị thiếu máu hơn cánh đàn ông nên cần phải luôn bổ sung thêm các thực phẩm giàu chất sắt.]]></description>
-<pubDate>Sun, 19 Apr 2015 03:20:00 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/an-choi/9-thuc-pham-bo-mau-cuc-tot-cho-phu-nu-3202581.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/an-choi/9-thuc-pham-bo-mau-cuc-tot-cho-phu-nu-3202581.html</guid>
+<title>Nhà tù đẹp như khu nghỉ dưỡng ở Na Uy</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thoi-cuoc/24h/nha-tu-dep-nhu-khu-nghi-duong-o-na-uy-3202007.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/04/17/topnhatu-1429238951_210x158.jpg" ></a></br>Nằm ngoài khơi bờ biển của Na Uy khoảng 75 km, hòn đảo Bastoy là nơi giam giữ 115 tên tội phạm nguy hiểm nhất bị kết án vì tội giết người, buôn ma túy.]]></description>
+<pubDate>Sun, 19 Apr 2015 02:52:00 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/nha-tu-dep-nhu-khu-nghi-duong-o-na-uy-3202007.html</link>
+<guid>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/nha-tu-dep-nhu-khu-nghi-duong-o-na-uy-3202007.html</guid>
 <slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Chiffon trà xanh cho cuối tuần thanh mát</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/an-choi/chiffon-tra-xanh-cho-cuoi-tuan-thanh-mat-3202537.html"><img width=210 height=158 src="http://c1.f21.img.vnecdn.net/2015/04/18/topchiffon-1429324244_210x158.jpg" ></a></br>Nếu bạn thích vị chiffon thanh mát, thơm nhẹ thì chiffon trà xanh là lựa chọn số một.]]></description>
-<pubDate>Sun, 19 Apr 2015 00:33:00 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/an-choi/chiffon-tra-xanh-cho-cuoi-tuan-thanh-mat-3202537.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/an-choi/chiffon-tra-xanh-cho-cuoi-tuan-thanh-mat-3202537.html</guid>
+<title>Kiều nữ lừa đảo tiền tỷ của các quý bà</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thoi-cuoc/24h/kieu-nu-lua-dao-tien-ty-cua-cac-quy-ba-3202680.html"><img width=210 height=158 src="http://c1.f24.img.vnecdn.net/2015/04/18/phuong-ly-ENLB-1326-1429331183-9159-1429331268_210x158.jpg" ></a></br>Tự giới thiệu mình là sếp lớn ở ngân hàng, chồng là công an, Ly đã tiếp cận các phụ nữ giàu có để lừa đảo số tiền khủng.]]></description>
+<pubDate>Sun, 19 Apr 2015 00:32:03 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/kieu-nu-lua-dao-tien-ty-cua-cac-quy-ba-3202680.html</link>
+<guid>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/kieu-nu-lua-dao-tien-ty-cua-cac-quy-ba-3202680.html</guid>
 <slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Galaxy S6 Edge bị phàn nàn về chất lượng sơn</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/dan-choi/galaxy-s6-edge-bi-phan-nan-ve-chat-luong-son-3202706.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/04/18/cc-1429340551_210x158.jpg" ></a></br>Lớp sơn ở khu vực camera sau của máy bị xước chỉ sau một ngày được người dùng mua về.]]></description>
-<pubDate>Sat, 18 Apr 2015 14:02:34 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/galaxy-s6-edge-bi-phan-nan-ve-chat-luong-son-3202706.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/galaxy-s6-edge-bi-phan-nan-ve-chat-luong-son-3202706.html</guid>
+<title>Chàng trai 29 tuổi lặn lội đi tìm người tình 62 tuổi</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thoi-cuoc/24h/chang-trai-29-tuoi-lan-loi-di-tim-nguoi-tinh-62-tuoi-3202615.html"><img width=210 height=158 src="http://c1.f22.img.vnecdn.net/2015/04/18/man-5933-1429328660_210x158.jpg" ></a></br>'Đó là lần đầu tiên tôi yêu một cô gái. Tôi ngày đêm tơ tưởng đến cô ấy. Tôi nhìn thấy hình bóng cô ấy ở mọi nơi', Zhu nói về người tình 62 tuổi. ]]></description>
+<pubDate>Sun, 19 Apr 2015 00:29:47 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/chang-trai-29-tuoi-lan-loi-di-tim-nguoi-tinh-62-tuoi-3202615.html</link>
+<guid>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/chang-trai-29-tuoi-lan-loi-di-tim-nguoi-tinh-62-tuoi-3202615.html</guid>
 <slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Tablet Nokia N1 về Việt Nam giá 7 triệu đồng</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/dan-choi/tablet-nokia-n1-ve-viet-nam-gia-7-trieu-dong-3202684.html"><img width=210 height=158 src="http://m.f6.img.vnecdn.net/2015/04/18/n1-4819-1429331790_210x158.jpg" ></a></br>Máy tính bảng chạy Android của Nokia vừa có mặt tại Sài Gòn theo đường xách tay. ]]></description>
-<pubDate>Sat, 18 Apr 2015 11:36:56 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/tablet-nokia-n1-ve-viet-nam-gia-7-trieu-dong-3202684.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/dan-choi/tablet-nokia-n1-ve-viet-nam-gia-7-trieu-dong-3202684.html</guid>
+<title>Bí ẩn phía sau xác thiếu nữ bị phá hủy khuôn mặt</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thoi-cuoc/24h/bi-an-phia-sau-xac-thieu-nu-bi-pha-huy-khuon-mat-3202691.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/04/18/xac-thieu-nu-5043-1429333085_210x158.jpg" ></a></br>Thi thể một cô gái trẻ bị thả trôi sông được phát hiện, trên người không mảnh vải che thân, cơ thể nhiều thương tích, da mặt bị lóc ra.]]></description>
+<pubDate>Sun, 19 Apr 2015 00:21:05 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/bi-an-phia-sau-xac-thieu-nu-bi-pha-huy-khuon-mat-3202691.html</link>
+<guid>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/bi-an-phia-sau-xac-thieu-nu-bi-pha-huy-khuon-mat-3202691.html</guid>
 <slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Beer club đậm chất châu Âu</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/an-choi/beer-club-dam-chat-chau-au-3202253.html"><img width=210 height=158 src="http://c0.f24.img.vnecdn.net/2015/04/18/17-4-201510-4973-1429319232_210x158.png" ></a></br>Ra đời vào tháng 5/2014 tại Hà Nội với mô hình kinh doanh Beer club khác biệt, The Camorra đã trở nên quen thuộc với các tín đồ bia.]]></description>
-<pubDate>Sat, 18 Apr 2015 10:00:00 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/an-choi/beer-club-dam-chat-chau-au-3202253.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/an-choi/beer-club-dam-chat-chau-au-3202253.html</guid>
+<title>Nữ chính trị gia cởi áo để phản đối chính sách thuế</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thoi-cuoc/24h/nu-chinh-tri-gia-coi-ao-de-phan-doi-chinh-sach-thue-3202639.html"><img width=210 height=158 src="http://c1.f24.img.vnecdn.net/2015/04/18/policitian-4661-1429332040_210x158.jpg" ></a></br>Để phản đối cách tính thuế cao của chính phủ, một nữ chính trị gia ở Séc quay video cởi đồ rồi đăng lên tài khoản Facebook. ]]></description>
+<pubDate>Sat, 18 Apr 2015 17:16:08 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/nu-chinh-tri-gia-coi-ao-de-phan-doi-chinh-sach-thue-3202639.html</link>
+<guid>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/nu-chinh-tri-gia-coi-ao-de-phan-doi-chinh-sach-thue-3202639.html</guid>
 <slash:comments>0</slash:comments>
 </item>
 <item>
-<title>7 ngày chinh phục cố đô Luang Prabang</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/an-choi/7-ngay-chinh-phuc-co-do-luang-prabang-3202271.html"><img width=210 height=158 src="http://c1.f24.img.vnecdn.net/2015/04/18/topluangprabang-1429320458_210x158.jpg" ></a></br>Luang Prabang - cố đô của xứ sở triệu voi - là một trong những điểm dừng chân được du khách thế giới yêu thích khi đến khám phá văn hoá Đông Nam Á.]]></description>
-<pubDate>Sat, 18 Apr 2015 09:32:33 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/an-choi/7-ngay-chinh-phuc-co-do-luang-prabang-3202271.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/an-choi/7-ngay-chinh-phuc-co-do-luang-prabang-3202271.html</guid>
+<title>Hàng chục người kêu cứu trong ôtô khách rách bươm</title>
+<description><![CDATA[<a href="http://ngoisao.net/photo/thoi-cuoc/hang-chuc-nguoi-keu-cuu-trong-oto-khach-rach-buom-3202709.html"><img width=210 height=158 src="http://m.f30.img.vnecdn.net/2015/04/18/nhieu-nguoi-keu-cuu-trong-oto-khach-rach-buom-1429336415_210x158.jpg" ></a></br>Lực lượng chức năng phải dùng nhiều vật dụng đập cửa kính, đưa thi thể tài xế, phụ xe cùng 14 hành khách bị thương trong chiếc xe khách đâm trực diện vào đuôi xe tải, rạng sáng nay.]]></description>
+<pubDate>Sat, 18 Apr 2015 13:09:51 +0700</pubDate>
+<link>http://ngoisao.net/photo/thoi-cuoc/hang-chuc-nguoi-keu-cuu-trong-oto-khach-rach-buom-3202709.html</link>
+<guid>http://ngoisao.net/photo/thoi-cuoc/hang-chuc-nguoi-keu-cuu-trong-oto-khach-rach-buom-3202709.html</guid>
 <slash:comments>0</slash:comments>
 </item>
 </channel>
