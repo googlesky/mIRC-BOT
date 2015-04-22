@@ -1,90 +1,93 @@
-ngoisao.net /rss/thoi-cuoc.rss
+ngoisao.net /rss/chau-a.rss
 HTTP/1.1 200 OK
 Server: Fengine/1.5.2
-Date: Mon, 20 Apr 2015 03:47:32 GMT
+Date: Wed, 22 Apr 2015 06:57:09 GMT
 Content-Type: application/xml; charset=utf-8
 Connection: close
 Vary: Accept-Encoding
-Set-Cookie: device_env=4; expires=Mon, 27-Apr-2015 03:47:31 GMT; path=/; domain=vnexpress.net
-server: web_141.168
+Set-Cookie: device_env=4; expires=Wed, 29-Apr-2015 06:57:08 GMT; path=/; domain=vnexpress.net
+server: web_141.172
+Pragma: no-cache
+Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+Expires: Tue, 01 Jan 1971 02:00:00 GMT
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
 <channel>
-<title>Thời cuộc - Ngôi sao RSS</title>
+<title>Châu Á - Ngôi sao RSS</title>
 <description>Ngoisao RSS</description>
-<pubDate>Mon, 20 Apr 2015 10:47:31 +0700</pubDate>
+<pubDate>Wed, 22 Apr 2015 13:57:08 +0700</pubDate>
 <generator>ngoisao.net:http://ngoisao.net/rss</generator>
-<link>http://ngoisao.net/rss/thoi-cuoc.rss</link>
+<link>http://ngoisao.net/rss/chau-a.rss</link>
 <item>
-<title>Cằm bạnh vì nhai kẹo cao su để giảm cân</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thoi-cuoc/24h/cam-banh-vi-nhai-keo-cao-su-de-giam-can-3203210.html"><img width=210 height=158 src="http://c1.f24.img.vnecdn.net/2015/04/20/womant-1429498537_210x158.jpg" ></a></br>Một phụ nữ Trung Quốc tá hỏa khi phát hiện cằm càng ngày càng bạnh ra sau 6 tháng kiên trì nhai kẹo ca su để giảm cân. ]]></description>
-<pubDate>Mon, 20 Apr 2015 10:40:41 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/cam-banh-vi-nhai-keo-cao-su-de-giam-can-3203210.html</link>
-<guid>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/cam-banh-vi-nhai-keo-cao-su-de-giam-can-3203210.html</guid>
+<title>Thành Long lần đầu nói về con rơi sau 15 năm lạnh nhạt</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/hau-truong/chau-a/thanh-long-lan-dau-noi-ve-con-roi-sau-15-nam-lanh-nhat-3204456.html"><img width=210 height=158 src="http://c1.f22.img.vnecdn.net/2015/04/22/thanh-long-1-7906-1429675588_210x158.jpg" ></a></br>Nam diễn viên nổi tiếng chia sẻ về cô bé Ngô Trác Lâm, con của anh và tình cũ Ngô Ỷ Lợi. ]]></description>
+<pubDate>Wed, 22 Apr 2015 11:56:08 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/hau-truong/chau-a/thanh-long-lan-dau-noi-ve-con-roi-sau-15-nam-lanh-nhat-3204456.html</link>
+<guid>http://ngoisao.net/tin-tuc/hau-truong/chau-a/thanh-long-lan-dau-noi-ve-con-roi-sau-15-nam-lanh-nhat-3204456.html</guid>
 <slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Lần đầu phát hiện người nhiễm ký sinh trùng gây bệnh ngủ</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thoi-cuoc/24h/lan-dau-phat-hien-nguoi-nhiem-ky-sinh-trung-gay-benh-ngu-3203105.html"><img width=210 height=158 src="http://c1.f22.img.vnecdn.net/2015/04/20/trung-9259-1429492789_210x158.jpg" ></a></br>Bệnh nhân là một phụ nữ 38 tuổi ở Đồng Nai và đây cũng là trường hợp đầu tiên tại Việt Nam được ghi nhận mắc bệnh vốn chỉ có ở châu Phi.]]></description>
-<pubDate>Mon, 20 Apr 2015 10:08:38 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/lan-dau-phat-hien-nguoi-nhiem-ky-sinh-trung-gay-benh-ngu-3203105.html</link>
-<guid>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/lan-dau-phat-hien-nguoi-nhiem-ky-sinh-trung-gay-benh-ngu-3203105.html</guid>
+<title>Triệu Vy, Huỳnh Hiểu Minh mệt lử vì hôn nhau 60 lần</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/hau-truong/chau-a/trieu-vy-huynh-hieu-minh-met-lu-vi-hon-nhau-60-lan-3204430.html"><img width=210 height=158 src="http://c1.f21.img.vnecdn.net/2015/04/22/trieu-vy-11-7097-1429671248-6088-1429673245_210x158.jpg" ></a></br>Sau 20 năm, 'Én nhỏ' và bạn thân lần đầu có cơ hội đóng phim chung. ]]></description>
+<pubDate>Wed, 22 Apr 2015 11:02:49 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/hau-truong/chau-a/trieu-vy-huynh-hieu-minh-met-lu-vi-hon-nhau-60-lan-3204430.html</link>
+<guid>http://ngoisao.net/tin-tuc/hau-truong/chau-a/trieu-vy-huynh-hieu-minh-met-lu-vi-hon-nhau-60-lan-3204430.html</guid>
 <slash:comments>0</slash:comments>
 </item>
 <item>
-<title>'Người rừng' sau gần 2 năm về làng</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thoi-cuoc/24h/nguoi-rung-sau-gan-2-nam-ve-lang-3202944.html"><img width=210 height=158 src="http://c1.f24.img.vnecdn.net/2015/04/19/19-4-Anh-9-4566-1429428483-2488-1429455791_210x158.jpg" ></a></br>Cuộc sống của 'người rừng' Hồ Văn Lang (Quảng Ngãi) dần ổn định nhưng người cha Hồ Văn Thanh vẫn quay quắt nhớ về chốn thâm sơn cùng cốc, nơi họ gắn bó suốt 40 năm. ]]></description>
-<pubDate>Sun, 19 Apr 2015 22:10:53 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/nguoi-rung-sau-gan-2-nam-ve-lang-3202944.html</link>
-<guid>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/nguoi-rung-sau-gan-2-nam-ve-lang-3202944.html</guid>
+<title>Tử Di im lặng trước tin chồng là 'con bạc khát nước'</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/hau-truong/chau-a/tu-di-im-lang-truoc-tin-chong-la-con-bac-khat-nuoc-3204361.html"><img width=210 height=158 src="http://c1.f22.img.vnecdn.net/2015/04/22/chuong-tu-di-0-6603-1429668022_210x158.jpg" ></a></br>Người đẹp tỏ ra không vui khi được hỏi thăm chuyện riêng tư. ]]></description>
+<pubDate>Wed, 22 Apr 2015 09:13:59 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/hau-truong/chau-a/tu-di-im-lang-truoc-tin-chong-la-con-bac-khat-nuoc-3204361.html</link>
+<guid>http://ngoisao.net/tin-tuc/hau-truong/chau-a/tu-di-im-lang-truoc-tin-chong-la-con-bac-khat-nuoc-3204361.html</guid>
 <slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Nhà tù đẹp như khu nghỉ dưỡng ở Na Uy</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thoi-cuoc/24h/nha-tu-dep-nhu-khu-nghi-duong-o-na-uy-3202007.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/04/17/topnhatu-1429238951_210x158.jpg" ></a></br>Nằm ngoài khơi bờ biển của Na Uy khoảng 75 km, hòn đảo Bastoy là nơi giam giữ 115 tên tội phạm nguy hiểm nhất bị kết án vì tội giết người, buôn ma túy.]]></description>
-<pubDate>Sun, 19 Apr 2015 02:52:00 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/nha-tu-dep-nhu-khu-nghi-duong-o-na-uy-3202007.html</link>
-<guid>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/nha-tu-dep-nhu-khu-nghi-duong-o-na-uy-3202007.html</guid>
+<title>Con trai Hoắc Tư Yến càng lớn càng kháu khỉnh</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/hau-truong/chau-a/con-trai-hoac-tu-yen-cang-lon-cang-khau-khinh-3204190.html"><img width=210 height=158 src="http://c1.f21.img.vnecdn.net/2015/04/21/hoac-tu-yen-1-3782-1429609448_210x158.jpg" ></a></br>Quý tử nhà họ Đỗ đã được gần hai tuổi và trông rất ngộ nghĩnh, đáng yêu. ]]></description>
+<pubDate>Tue, 21 Apr 2015 17:01:44 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/hau-truong/chau-a/con-trai-hoac-tu-yen-cang-lon-cang-khau-khinh-3204190.html</link>
+<guid>http://ngoisao.net/tin-tuc/hau-truong/chau-a/con-trai-hoac-tu-yen-cang-lon-cang-khau-khinh-3204190.html</guid>
 <slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Kiều nữ lừa đảo tiền tỷ của các quý bà</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thoi-cuoc/24h/kieu-nu-lua-dao-tien-ty-cua-cac-quy-ba-3202680.html"><img width=210 height=158 src="http://c1.f24.img.vnecdn.net/2015/04/18/phuong-ly-ENLB-1326-1429331183-9159-1429331268_210x158.jpg" ></a></br>Tự giới thiệu mình là sếp lớn ở ngân hàng, chồng là công an, Ly đã tiếp cận các phụ nữ giàu có để lừa đảo số tiền khủng.]]></description>
-<pubDate>Sun, 19 Apr 2015 00:32:03 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/kieu-nu-lua-dao-tien-ty-cua-cac-quy-ba-3202680.html</link>
-<guid>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/kieu-nu-lua-dao-tien-ty-cua-cac-quy-ba-3202680.html</guid>
+<title>Lý Á Bằng hò hẹn người mới sau đổ vỡ hôn nhân</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/hau-truong/chau-a/ly-a-bang-ho-hen-nguoi-moi-sau-do-vo-hon-nhan-3204159.html"><img width=210 height=158 src="http://c1.f21.img.vnecdn.net/2015/04/21/ly-a-bang-6285-1429607161_210x158.jpg" ></a></br>Nam diễn viên nổi tiếng được cho là đang đi lại với một phụ nữ lạ. ]]></description>
+<pubDate>Tue, 21 Apr 2015 16:12:28 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/hau-truong/chau-a/ly-a-bang-ho-hen-nguoi-moi-sau-do-vo-hon-nhan-3204159.html</link>
+<guid>http://ngoisao.net/tin-tuc/hau-truong/chau-a/ly-a-bang-ho-hen-nguoi-moi-sau-do-vo-hon-nhan-3204159.html</guid>
 <slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Chàng trai 29 tuổi lặn lội đi tìm người tình 62 tuổi</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thoi-cuoc/24h/chang-trai-29-tuoi-lan-loi-di-tim-nguoi-tinh-62-tuoi-3202615.html"><img width=210 height=158 src="http://c1.f22.img.vnecdn.net/2015/04/18/man-5933-1429328660_210x158.jpg" ></a></br>'Đó là lần đầu tiên tôi yêu một cô gái. Tôi ngày đêm tơ tưởng đến cô ấy. Tôi nhìn thấy hình bóng cô ấy ở mọi nơi', Zhu nói về người tình 62 tuổi. ]]></description>
-<pubDate>Sun, 19 Apr 2015 00:29:47 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/chang-trai-29-tuoi-lan-loi-di-tim-nguoi-tinh-62-tuoi-3202615.html</link>
-<guid>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/chang-trai-29-tuoi-lan-loi-di-tim-nguoi-tinh-62-tuoi-3202615.html</guid>
+<title>Kim Hee Sun trẻ như nữ sinh trung học</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/hau-truong/chau-a/kim-hee-sun-tre-nhu-nu-sinh-trung-hoc-3204087.html"><img width=210 height=158 src="http://c1.f22.img.vnecdn.net/2015/04/21/kim-hee-sun-8-3648-1429602889-6090-1429603751_210x158.jpg" ></a></br>'Gái một con' duyên dáng trong đồng phục học sinh, khi xuất hiện trên trường quay 'Angry Mom' hôm 21/4. ]]></description>
+<pubDate>Tue, 21 Apr 2015 15:14:54 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/hau-truong/chau-a/kim-hee-sun-tre-nhu-nu-sinh-trung-hoc-3204087.html</link>
+<guid>http://ngoisao.net/tin-tuc/hau-truong/chau-a/kim-hee-sun-tre-nhu-nu-sinh-trung-hoc-3204087.html</guid>
 <slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Bí ẩn phía sau xác thiếu nữ bị phá hủy khuôn mặt</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thoi-cuoc/24h/bi-an-phia-sau-xac-thieu-nu-bi-pha-huy-khuon-mat-3202691.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/04/18/xac-thieu-nu-5043-1429333085_210x158.jpg" ></a></br>Thi thể một cô gái trẻ bị thả trôi sông được phát hiện, trên người không mảnh vải che thân, cơ thể nhiều thương tích, da mặt bị lóc ra.]]></description>
-<pubDate>Sun, 19 Apr 2015 00:21:05 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/bi-an-phia-sau-xac-thieu-nu-bi-pha-huy-khuon-mat-3202691.html</link>
-<guid>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/bi-an-phia-sau-xac-thieu-nu-bi-pha-huy-khuon-mat-3202691.html</guid>
+<title>Người đẹp 'Chân Hoàn truyện' khoe ảnh cưới</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/hau-truong/chau-a/nguoi-dep-chan-hoan-truyen-khoe-anh-cuoi-3203966.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/04/21/dao-han-nhien-5-4266-1429589267_1429590984_210x158.jpg" ></a></br>'An Lăng Dung' rạng rỡ trong bộ ảnh cưới đẹp lung linh. Người đẹp sẽ lên xe hoa vào 16/5 tới. ]]></description>
+<pubDate>Tue, 21 Apr 2015 11:36:45 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/hau-truong/chau-a/nguoi-dep-chan-hoan-truyen-khoe-anh-cuoi-3203966.html</link>
+<guid>http://ngoisao.net/tin-tuc/hau-truong/chau-a/nguoi-dep-chan-hoan-truyen-khoe-anh-cuoi-3203966.html</guid>
 <slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Nữ chính trị gia cởi áo để phản đối chính sách thuế</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thoi-cuoc/24h/nu-chinh-tri-gia-coi-ao-de-phan-doi-chinh-sach-thue-3202639.html"><img width=210 height=158 src="http://c1.f24.img.vnecdn.net/2015/04/18/policitian-4661-1429332040_210x158.jpg" ></a></br>Để phản đối cách tính thuế cao của chính phủ, một nữ chính trị gia ở Séc quay video cởi đồ rồi đăng lên tài khoản Facebook. ]]></description>
-<pubDate>Sat, 18 Apr 2015 17:16:08 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/nu-chinh-tri-gia-coi-ao-de-phan-doi-chinh-sach-thue-3202639.html</link>
-<guid>http://ngoisao.net/tin-tuc/thoi-cuoc/24h/nu-chinh-tri-gia-coi-ao-de-phan-doi-chinh-sach-thue-3202639.html</guid>
+<title>Tôn Lệ phờ phạc vì con mọn</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/hau-truong/chau-a/ton-le-pho-phac-vi-con-mon-3203896.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/04/21/a-1429585304_210x158.jpg" ></a></br>Nữ diễn viên nổi tiếng một tay bế con gái, tay kia đẩy xe của con trai, trong khi chồng cô tụt lại phía sau. ]]></description>
+<pubDate>Tue, 21 Apr 2015 10:31:23 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/hau-truong/chau-a/ton-le-pho-phac-vi-con-mon-3203896.html</link>
+<guid>http://ngoisao.net/tin-tuc/hau-truong/chau-a/ton-le-pho-phac-vi-con-mon-3203896.html</guid>
 <slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Hàng chục người kêu cứu trong ôtô khách rách bươm</title>
-<description><![CDATA[<a href="http://ngoisao.net/photo/thoi-cuoc/hang-chuc-nguoi-keu-cuu-trong-oto-khach-rach-buom-3202709.html"><img width=210 height=158 src="http://m.f30.img.vnecdn.net/2015/04/18/nhieu-nguoi-keu-cuu-trong-oto-khach-rach-buom-1429336415_210x158.jpg" ></a></br>Lực lượng chức năng phải dùng nhiều vật dụng đập cửa kính, đưa thi thể tài xế, phụ xe cùng 14 hành khách bị thương trong chiếc xe khách đâm trực diện vào đuôi xe tải, rạng sáng nay.]]></description>
-<pubDate>Sat, 18 Apr 2015 13:09:51 +0700</pubDate>
-<link>http://ngoisao.net/photo/thoi-cuoc/hang-chuc-nguoi-keu-cuu-trong-oto-khach-rach-buom-3202709.html</link>
-<guid>http://ngoisao.net/photo/thoi-cuoc/hang-chuc-nguoi-keu-cuu-trong-oto-khach-rach-buom-3202709.html</guid>
+<title>Mỹ nhân 'Ngôi sao may mắn' sống bế tắc</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/hau-truong/chau-a/my-nhan-ngoi-sao-may-man-song-be-tac-3203780.html"><img width=210 height=158 src="http://c1.f24.img.vnecdn.net/2015/04/21/jkj-1429580288_210x158.jpg" ></a></br>Trở lại làng giải trí sau scandal nghiện ngập, Noriko Sakai không được chào đón, thậm chí rơi vào cảnh thất nghiệp. ]]></description>
+<pubDate>Tue, 21 Apr 2015 08:44:23 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/hau-truong/chau-a/my-nhan-ngoi-sao-may-man-song-be-tac-3203780.html</link>
+<guid>http://ngoisao.net/tin-tuc/hau-truong/chau-a/my-nhan-ngoi-sao-may-man-song-be-tac-3203780.html</guid>
 <slash:comments>0</slash:comments>
 </item>
 </channel>

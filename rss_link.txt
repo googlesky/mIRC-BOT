@@ -31,11 +31,11 @@ http://www.24h.com.vn/upload/rss/suckhoedoisong.rss
 http://www.24h.com.vn/upload/rss/cuoi24h.rss
 http://ngoisao.net/rss/hau-truong.rss
 http://ngoisao.net/rss/the-thao.rss
+http://ngoisao.net/rss/thoi-cuoc.rss
 http://ngoisao.net/rss/phong-cach.rss
 http://ngoisao.net/rss/thu-gian.rss
 http://ngoisao.net/rss/goc-doc-gia.rss
 http://ngoisao.net/rss/showbiz-viet.rss
-http://ngoisao.net/rss/chau-a.rss
 http://ngoisao.net/rss/hollywood.rss
 http://ngoisao.net/rss/the-thao.rss
 http://ngoisao.net/rss/clip.rss
@@ -66,7 +66,6 @@ http://www.eva.vn/rss/rss.php/162
 http://www.eva.vn/rss/rss.php/2
 http://www.eva.vn/rss/rss.php/40
 http://www.eva.vn/rss/rss.php/3
-http://www.eva.vn/rss/rss.php/173
 http://www.eva.vn/rss/rss.php/186
 http://www.eva.vn/rss/rss.php/157
 http://www.zing.vn/news/rss/new.html

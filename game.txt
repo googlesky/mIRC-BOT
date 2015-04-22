@@ -7,8 +7,6 @@ XiDach
 XepNick
 BaiHat
 TenFilm
-TangDan
 GiamDan
 CauThanhNgu
-DonGian
 TypeNguoc
