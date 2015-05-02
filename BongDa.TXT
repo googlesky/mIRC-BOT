@@ -58,9 +58,9 @@ Alias DuongDanBd {
 Alias DoiBd {
   set %cadobongda on
   ;%tyleDoiBD1 %tyleHoa %tyleDoiBD2
-  set %tyleDoiBD1 $calc($r(111,333) / 100) | set %tyleHoa $calc($r(111,333) / 100)
-  if ($calc(%tyleDoiBD1 * 100) > 155) { set %tyleDoiBD2 $calc($r(111,155) / 100) }
-  else { set %tyleDoiBD2 $calc($r(155,333) / 100) }
+  set %tyleDoiBD1 $calc($r(111,300) / 100) | set %tyleHoa $calc($r(111,333) / 100)
+  if ($calc(%tyleDoiBD1 * 100) > 133) { set %tyleDoiBD2 $calc($r(111,133) / 100) }
+  else { set %tyleDoiBD2 $calc($r(133,300) / 100) }
   var %GameMini 0,1 00,04F00,01o00,04o00,01t00,04b00,01a00,04l00,01l04,04 00,01F00,04e00,01v00,04a01,01 
   describeVC %r 2=-=-=3*4°12*3°4*12°3*2[ $InsertBC(%GameMini) 2]3*12°4*3°12*4°3*2=-=-=
   if (Frosty_Girl143 ison %r) { msgVC Frosty_Girl143 Ðê´n Games Ðá Banh nè! }
@@ -88,34 +88,32 @@ alias bongda1 {
     .timer 1 4 Hiep2
   }
   if (%trandau != 6) && (%trandau != 12) {
-    set %tisobd $rand(1,4)
+    set %tisobd $rand(1,2)
     if ($mod(%tisobd,2) = 0) {
       .timer 1 7 tiso $+ %tisobd
       .timer 1 7 BongDa2
     }
     else {
       if (%tlDoiBD1 < %tlDoiBD2) {
-        ;$calc($r($calc(%tyleDoiBD1 * 100),$calc(%tyleDoiBD2 * 100)) / 100) <> $calc((%tyleDoiBD1 + %tyleDoiBD2)/2) %tyleDoiBD1 %tyleDoiBD2
-        ;$calc($r(1,$calc(%tyleDoiBD2 * 100)) / 100) <> %tyleDoiBD1 %tyleDoiBD1 %tyleDoiBD2
-        if ($calc($r(1,$calc(%tyleDoiBD2 * 100)) / 100) > %tyleDoiBD1) {
-          echo %r $v1 <> $v2 %tyleDoiBD1 %tyleDoiBD2
+        if ($calc($r(100,$calc(%tyleDoiBD2 * 100)) / 100) > %tyleDoiBD1) {
+          .timer 1 7 echo %r $v1 <> $v2 %tyleDoiBD1 %tyleDoiBD2
           .timer 1 7 tiso1
           .timer 1 7 BongDa2
         }
         else {
-          echo %r $v1 <> $v2 %tyleDoiBD1 %tyleDoiBD2
+          .timer 1 7 echo %r $v1 <> $v2 %tyleDoiBD1 %tyleDoiBD2
           .timer 1 7 tiso3
           .timer 1 7 BongDa2
         }
       }
       else {
-        if ($calc($r(1,$calc(%tyleDoiBD1 * 100)) / 100) > %tyleDoiBD2) {
-          echo %r $v1 <> $v2 %tyleDoiBD1 %tyleDoiBD2
+        if ($calc($r(100,$calc(%tyleDoiBD1 * 100)) / 100) > %tyleDoiBD2) {
+          .timer 1 7 echo %r $v1 <> $v2 %tyleDoiBD1 %tyleDoiBD2
           .timer 1 7 tiso3
           .timer 1 7 BongDa2
         }
         else {
-          echo %r $v1 <> $v2 %tyleDoiBD1 %tyleDoiBD2
+          .timer 1 7 echo %r $v1 <> $v2 %tyleDoiBD1 %tyleDoiBD2
           .timer 1 7 tiso1
           .timer 1 7 BongDa2
         }
@@ -123,32 +121,6 @@ alias bongda1 {
     }
   }
 }
-;alias tiso1 {
-;  echo %r Phu. thuô.c Ty² Lê. %doibd1 (0, $+ %tyleDoiBD2 $+ ) (0, $+ $calc(%tyleDoiBD2 * 2) $+ ) 
-;  if ($r(0,$calc(%tyleDoiBD2 * 2)) < %tyleDoiBD2) {
-;    set %doibd0 %doibd1 | set %cauthu0 $read(bongda\ $+ %doibd0 $+ .txt)
-;    .timer 1 2 describeVC %r $sutxit0
-;  }
-;  else {
-;    set %tiso1 $calc(%tiso1 + 1)
-;    set %cauthu1 $read(bongda\ $+ %doibd1 $+ .txt)
-;    .timer 1 2 describeVC %r $ghiban1
-;    .timer 1 4 describeVC %r $tiso.td
-;  }
-;}
-;alias tiso3 {
-;  echo %r Phu. thuô.c Ty² Lê. %doibd2 (0, $+ %tyleDoiBD1 $+ ) (0, $+ $calc(%tyleDoiBD1 * 2) $+ )
-;  if ($r(0,$calc(%tyleDoiBD1 * 2)) < %tyleDoiBD1) {
-;    set %doibd0 %doibd2 | set %cauthu0 $read(bongda\ $+ %doibd0 $+ .txt)
-;    .timer 1 2 describeVC %r $sutxit0
-;  }
-;  else {
-;    set %tiso2 $calc(%tiso2 + 1)
-;    set %cauthu2 $read(bongda\ $+ %doibd2 $+ .txt)
-;    .timer 1 2 describeVC %r $ghiban2
-;    .timer 1 4 describeVC %r $tiso.td
-;  }
-;}
 alias tiso1 {
   set %tiso1 $calc(%tiso1 + 1)
   set %cauthu1 $read(bongda\ $+ %doibd1 $+ .txt)
@@ -162,11 +134,6 @@ alias tiso3 {
   .timer 1 4 describeVC %r $tiso.td
 }
 alias tiso2 {
-  set %doibd0 $iif($r(0,1) == 0, %doibd1, %doibd2)
-  set %cauthu0 $read(bongda\ $+ %doibd0 $+ .txt)
-  .timer 1 2 describeVC %r $sutxit0
-}
-alias tiso4 {
   set %doibd0 $iif($r(0,1) == 0, %doibd1, %doibd2)
   set %cauthu0 $read(bongda\ $+ %doibd0 $+ .txt)
   .timer 1 2 describeVC %r $sutxit0

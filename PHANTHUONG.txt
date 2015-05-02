@@ -62,7 +62,7 @@
 1 Dây thông cống 8m=140000
 1 Hộp đựng đồ vải lớn nhiều màu 1952=108000
 1 Điện thoại Apple iPhone 5 16GB=5800000
-1 Còng Số 8=-1000000000
+1 Còng Số 8=-500000000
 1 Áo Juventus=-500000000
 1 Xe Land Rover Range Rover Evoque Dynamic SD4 2.2 MT 4WD 2013=2435125000
 1 Xe Ford Fiesta Sport 1.5 MT 2015 =525000000
