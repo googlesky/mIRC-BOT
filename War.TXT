@@ -150,7 +150,7 @@ alias War_TongKet {
       if (%point.bot < %point.player) {
         var %bonus2 = $calc(%bonus * 2)
         ghidiem diem %nick $int($calc($coidiem(diem,%nick) + %bonus2))
-        .timercasinowar $+ $calc($rand(1000000,9999999) + %line) 1 $calc(%line * 2 - 2) describeVC %r 3Player: 4 $+ %nick 3rút ðuoc lá bài:  $+ %labai. [ $+ [ %nick ] ] $+ 3 - Thå´ng sô' tiê`n: 04,01$ $+ $tien(%bonus) $+  $+ 3 Tài sa²n: 04,01$ $+ $tien($coidiem(diem,%nick))
+        .timercasinowar $+ $calc($rand(1000000,9999999) + %line) 1 $calc(%line * 2 - 2) describeVC %r 3Player: 4 $+ %nick 3rút ðuoc lá bài:  $+ %labai. [ $+ [ %nick ] ] $+ 3 - Thå´ng sô' tiê`n: 04,01$ $+ $tien(%bonus2) $+  $+ 3 Tài sa²n: 04,01$ $+ $tien($coidiem(diem,%nick))
       }
       if (%point.bot == %point.player) {
         var %bonus2 = $calc(%bonus * 3)
