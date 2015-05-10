@@ -17,7 +17,7 @@ alias ltb.mualode {
   while (%iLo <= 99) { writeini hethong\De.txt Lo LangTuBuon $+ * $+ $iif(%iLo < 10,0 $+ %iLo,%iLo) 10000000 | inc %iLo }
   echo %r Ðã mua Lô - Ðê` xong!
 }
-#LoDe off
+#LoDe on
 on 1:TEXT:!Lo *:%r: {
   ;on 1:NOTICE:!Lo *:?: {
   ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chua Ðång ký , Ðê² ðång ký choi game , 8Gõ 11/msg $me 4!register <pass1> <pass2> | .ignore -u5 $nick }

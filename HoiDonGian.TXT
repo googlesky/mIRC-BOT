@@ -10,7 +10,7 @@ alias dongian {
   describeVC %r 3Chú ý: 12Các ban có 04403s12 Ðê~ tra² lòi câu ho²i này
   .timerhetgio1 1 40 hetgio
 }
-#dongian on
+#dongian off
 on 1:text:*:%r: {
   if ($DA.TL($1-) == $DA.TL($str($nick $+ $chr(32),%rand))) {
     if $read(BadNick.txt,w,$nick) { noticeVC $nick 4,1Xin lô~i! 0Nick 9 $+ $nick 0ðã bi câ´m choi games. | halt }

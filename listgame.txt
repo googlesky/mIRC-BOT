@@ -1,1 +1,11 @@
-sode
+BaiCao
+BaiCaoTo
+TaiXiu
+XiDach
+War
+SanThu
+RutTham
+BoiCa
+BangVeSo
+BangXoSo
+SoBD
