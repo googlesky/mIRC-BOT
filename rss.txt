@@ -1,196 +1,99 @@
-www.24h.com.vn /upload/rss/canhacmtv.rss
+ngoisao.net /rss/cuoi.rss
 HTTP/1.1 200 OK
-Server: 24h.com.vn
-Date: Sun, 10 May 2015 07:32:24 GMT
-Content-Type: application/rss+xml
-Content-Length: 13572
-Last-Modified: Sun, 10 May 2015 06:20:05 GMT
+Server: Fengine/1.5.2
+Date: Fri, 15 May 2015 12:21:58 GMT
+Content-Type: application/xml; charset=utf-8
 Connection: close
-Expires: Mon, 11 May 2015 07:32:24 GMT
-Cache-Control: max-age=86400
-Accept-Ranges: bytes
+Vary: Accept-Encoding
+Set-Cookie: device_env=4; expires=Fri, 22-May-2015 12:21:57 GMT; path=/; domain=vnexpress.net
+server: web_141.174
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
 <channel>
-<title>Tin tuc 24h | tin nhanh bong da | the thao | thoi trang, giai tri vn | bao online</title>
-<link>http://www.24h.com.vn/ca-nhac-mtv-c73.html</link>
-<description>Tin tuc trong ngay, bóng đá, thể thao, thời trang, giải trí. Update tin nhanh 24/24h. Nhiều đặc sản video tin tức việt nam, thế giới, video bong da anh chỉ có tại 24h.Tổng hợp tintuc vn, BAO CONG AN, an ninh, phap luat</description>
-<image>
-<url>http://24h-static.24hstatic.com:8008/images/logo24h-128x85.gif</url>
-<title>Tin tuc 24h | tin nhanh bong da | the thao | thoi trang, giai tri vn | báo online</title>
-<link>http://www.24h.com.vn</link>
-</image>
-<language>vi-vn</language>
-<copyright>(c)24h.com.vn</copyright>
-<ttl>60</ttl>
-<generator>noreply@24h.com.vn</generator>
+<title>Cười - Ngôi sao RSS</title>
+<description>Ngoisao RSS</description>
+<pubDate>Fri, 15 May 2015 19:21:57 +0700</pubDate>
+<generator>ngoisao.net:http://ngoisao.net/rss</generator>
+<link>http://ngoisao.net/rss/cuoi.rss</link>
 <item>
-<title>Mỹ nhân Việt “bốc lửa” cùng siêu sao Demi Lovato</title>
-<description>Trong Lễ hội âm nhạc dã ngoại Beatfest 2015 với hơn 50.000 khán giả, các mỹ nhân Việt đua nhau khoe vẻ gợi cảm khi đứng trên cùng sân khấu với Demi Lovato.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/my-nhan-viet-boc-lua-cung-sieu-sao-demi-lovato-c73a707561.html</link>
-<pubDate>2015-05-10 12:38:17</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-10/1431236172-av_blwp.jpg</summaryImg>
+<title>Tình yêu của 'anh hùng bàn phím'</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/cuoi/tinh-yeu-cua-anh-hung-ban-phim-3155303.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/03/09/tinhyeucuaanhhungbanphim-1425898492_1425898511_210x158.jpg" ></a></br>Có nhiều khi gục đầu bên Keyboard. Anh vô tình nhấn Shift viết tên em.]]></description>
+<pubDate>Tue, 10 Mar 2015 13:15:00 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thu-gian/cuoi/tinh-yeu-cua-anh-hung-ban-phim-3155303.html</link>
+<guid>http://ngoisao.net/tin-tuc/thu-gian/cuoi/tinh-yeu-cua-anh-hung-ban-phim-3155303.html</guid>
+<slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Thanh Duy “ẵm” 100 triệu nhờ đóng giả Lệ Quyên</title>
-<description>Giám khảo Mỹ Linh thậm chí còn không nhận ra Thanh Duy vì anh hóa Lệ Quyên quá giống.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/thanh-duy-am-100-trieu-nho-dong-gia-le-quyen-c73a707552.html</link>
-<pubDate>2015-05-10 10:40:07</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-10/1431228967-105_layy.jpg</summaryImg>
+<title>Đẹp như tranh</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/cuoi/dep-nhu-tranh-3155299.html"><img width=210 height=158 src="http://c1.f22.img.vnecdn.net/2015/03/09/depnhutranh-1425897523_1425897536_210x158.jpg" ></a></br>Một cô gái hỏi: "Anh ơi, bên anh là studio đúng không?".]]></description>
+<pubDate>Tue, 10 Mar 2015 00:01:00 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thu-gian/cuoi/dep-nhu-tranh-3155299.html</link>
+<guid>http://ngoisao.net/tin-tuc/thu-gian/cuoi/dep-nhu-tranh-3155299.html</guid>
+<slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Demi Lovato hát “Let it go” cùng 50.000 khán giả Việt</title>
-<description>Nữ ca sĩ đã biểu diễn 10 bản hit trong sự cổ vũ nhiệt tình của 50.000 khán giả Việt Nam.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/demi-lovato-hat-let-it-go-cung-50000-khan-gia-viet-c73a707524.html</link>
-<pubDate>2015-05-10 06:33:46</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-10/1431217333-av_bcyf.jpg</summaryImg>
+<title>Thật thà</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/cuoi/that-tha-3154977.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/03/09/thattha3-1425872674_1425872686_210x158.jpg" ></a></br>Trung úy tập hợp trung đội tân binh lại: "Trước khi nhập ngũ ai trong các anh từng uống rượu?".]]></description>
+<pubDate>Mon, 09 Mar 2015 13:15:00 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thu-gian/cuoi/that-tha-3154977.html</link>
+<guid>http://ngoisao.net/tin-tuc/thu-gian/cuoi/that-tha-3154977.html</guid>
+<slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Lâm Vĩnh Hải “phát cuồng” vì Hằng Bingboong</title>
-<description>Lâm Vinh Hải phấn khích nhún nhảy và lên sân khấu quậy tưng cùng Hằng Bingboong trong ca khúc Nobody.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/lam-vinh-hai-phat-cuong-vi-hang-bingboong-c73a707564.html</link>
-<pubDate>2015-05-10 13:03:59</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-10/1431237650-lam_vinh_hai_1_rhfw.jpg</summaryImg>
+<title>Chỗ nào nóng nhất</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/cuoi/cho-nao-nong-nhat-3154833.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/03/09/chonaonongnhat-1425863104_1425863119_210x158.jpg" ></a></br>Ba ông khách du lịch ngồi nói khoác với nhau. Ông thứ nhất: "Ở nước tôi, thời tiết nóng tới mức người vừa toát mồ hôi ra là bay hơi được rồi".]]></description>
+<pubDate>Mon, 09 Mar 2015 08:52:14 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thu-gian/cuoi/cho-nao-nong-nhat-3154833.html</link>
+<guid>http://ngoisao.net/tin-tuc/thu-gian/cuoi/cho-nao-nong-nhat-3154833.html</guid>
+<slash:comments>0</slash:comments>
 </item>
 <item>
-<title>SNSD sở hữu MV được xem nhiều nhất tháng 4</title>
-<description>"Catch Me If You Can" dẫn đầu danh sách những video Kpop hot nhất tại Mỹ và trên thế giới trong tháng 4 vừa qua do Billboard công bố.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/snsd-so-huu-mv-duoc-xem-nhieu-nhat-thang-4-c73a707498.html</link>
-<pubDate>2015-05-10 08:00:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-09/1431177383-anh_chung_junm.jpg</summaryImg>
+<title>Sắp xếp không hợp lý</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/cuoi/sap-xep-khong-hop-ly-3153851.html"><img width=210 height=158 src="http://c1.f22.img.vnecdn.net/2015/03/06/sapxepkhonghoply-1425638914_1425638926_210x158.jpg" ></a></br>Ba sinh viên ngồi nói chuyện với nhau về cấu tạo cơ thể con người. Sinh viên cơ khí khen: "Các khớp nối cơ thể thật hoàn hảo".]]></description>
+<pubDate>Sun, 08 Mar 2015 13:15:00 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thu-gian/cuoi/sap-xep-khong-hop-ly-3153851.html</link>
+<guid>http://ngoisao.net/tin-tuc/thu-gian/cuoi/sap-xep-khong-hop-ly-3153851.html</guid>
+<slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Hồng Nhung, Phương Uyên đồng lòng cứu Thảo Trang</title>
-<description>Giám khảo của "Tuyệt đỉnh tranh tài" đã rất bất ngờ khi Thảo Trang và Hà My lại đứng trước nguy cơ dừng cuộc chơi ở đêm thi Rock.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/hong-nhung-phuong-uyen-dong-long-cuu-thao-trang-c73a707525.html</link>
-<pubDate>2015-05-10 07:18:47</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-10/1431217209-av_eohw.jpg</summaryImg>
+<title>Giảm nhầm đối tượng</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/cuoi/giam-nham-doi-tuong-3153846.html"><img width=210 height=158 src="http://c1.f21.img.vnecdn.net/2015/03/06/giamnhamdoituong-1425638393_1425638408_210x158.jpg" ></a></br>Một người phụ nữ đến trung tâm thẩm mỹ xin tư vấn để giảm cân thật nhanh.]]></description>
+<pubDate>Sun, 08 Mar 2015 00:01:00 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thu-gian/cuoi/giam-nham-doi-tuong-3153846.html</link>
+<guid>http://ngoisao.net/tin-tuc/thu-gian/cuoi/giam-nham-doi-tuong-3153846.html</guid>
+<slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Clip: Thu Minh, Lam Trường thuở ngô nghê</title>
-<description>Hình ảnh này được “đào xới” lại thu hút được sự chú ý lớn từ cư dân mạng.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/clp-thu-minh-lam-truong-thuo-ngo-nghe-c73a707496.html</link>
-<pubDate>2015-05-10 07:00:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-09/1431180033-1_hqye.jpg</summaryImg>
+<title>Thời gian chầm chậm trôi</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/cuoi/thoi-gian-cham-cham-troi-3153843.html"><img width=210 height=158 src="http://c1.f22.img.vnecdn.net/2015/03/06/thoigianchamchamtroi-1425638137_1425638148_210x158.jpg" ></a></br>"Ôi! Lần đầu tiên tao nhìn thấy được thời gian đang chầm chậm trôi đi", một cậu nói với bạn.]]></description>
+<pubDate>Sat, 07 Mar 2015 13:15:00 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thu-gian/cuoi/thoi-gian-cham-cham-troi-3153843.html</link>
+<guid>http://ngoisao.net/tin-tuc/thu-gian/cuoi/thoi-gian-cham-cham-troi-3153843.html</guid>
+<slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Ngọc Sơn ga lăng sáng tác tặng Sơn Tuyền</title>
-<description>Không chỉ làm khách mời đặc biệt trong liveshow Sơn Tuyền, Ngọc Sơn còn ga lăng sáng tác và hát tặng bài hát mới dành cho đàn chị ở đêm nhạc tối qua.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/ngoc-son-ga-lang-sang-tac-tang-son-tuyen-c73a707563.html</link>
-<pubDate>2015-05-10 12:59:29</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-10/1431237493-ngoc_son_8_oexv.jpg</summaryImg>
+<title>Hỏi đúng một câu</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/cuoi/hoi-dung-mot-cau-3153841.html"><img width=210 height=158 src="http://c1.f22.img.vnecdn.net/2015/03/06/hoidungmotcau-1425637934_1425637947_210x158.jpg" ></a></br>Một cậu khoe: "Mỗi lần tao lên trả bài là thầy chỉ hói có một câu rồi cho về!".]]></description>
+<pubDate>Sat, 07 Mar 2015 00:01:00 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thu-gian/cuoi/hoi-dung-mot-cau-3153841.html</link>
+<guid>http://ngoisao.net/tin-tuc/thu-gian/cuoi/hoi-dung-mot-cau-3153841.html</guid>
+<slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Isaac “chất lừ” như tài tử điện ảnh </title>
-<description>Trưởng nhóm 365 điển trai hơn trong những shoot hình đen trắng.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/isaac-chat-lu-nhu-tai-tu-dien-anh-c73a707500.html</link>
-<pubDate>2015-05-09 20:59:12</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-09/1431179986-300_uprt.jpg</summaryImg>
+<title>Tài hùng biện của sếp</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/cuoi/tai-hung-bien-cua-sep-3153367.html"><img width=210 height=158 src="http://c1.f21.img.vnecdn.net/2015/03/05/taihungbiencuasep-1425553774_1425553785_210x158.jpg" ></a></br>Cô thư ký khoe: "Cậu biết không, sếp của tớ có tài hùng biện. Có lần ổng nói hơn một tiếng đồng hồ không nghỉ, và công nhân vỗ tay không ngớt".]]></description>
+<pubDate>Fri, 06 Mar 2015 13:15:00 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thu-gian/cuoi/tai-hung-bien-cua-sep-3153367.html</link>
+<guid>http://ngoisao.net/tin-tuc/thu-gian/cuoi/tai-hung-bien-cua-sep-3153367.html</guid>
+<slash:comments>0</slash:comments>
 </item>
 <item>
-<title>Video: Hoài Lâm vật vã ôm dép tông hát nhép</title>
-<description>Clip Hoài Lâm ôm đôi tông và hát nhép "Còn mãi nồng nàn" khiến người hâm mộ "cười bò".</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/video-hoai-lam-vat-va-om-dep-tong-hat-nhep-c73a707442.html</link>
-<pubDate>2015-05-09 14:00:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-09/1431147197-hoai_lam_3_itbn.jpg</summaryImg>
-</item>
-<item>
-<title>Diva Đặng Lệ Quân và mối nhân duyên với Việt Nam</title>
-<description>Đặng Lệ Quân từng thể hiện một ca khúc của nhạc sỹ Nguyễn Ánh 9 tại Sài Gòn.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/diva-dang-le-quan-va-moi-nhan-duyen-voi-viet-nam-c73a707439.html</link>
-<pubDate>2015-05-09 11:52:46</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-09/1431147046-300_pokk.jpg</summaryImg>
-</item>
-<item>
-<title>Ngôi sao “Let it go” xinh đẹp đi tổng duyệt chương trình</title>
-<description>Demi Lovato là ngôi sao quốc tế duy nhất sẽ cùng hòa giọng với hơn 80 ca sĩ Việt Nam.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/ngoi-sao-let-it-go-xinh-dep-di-tong-duyet-chuong-trinh-c73a707452.html</link>
-<pubDate>2015-05-09 12:24:11</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-09/1431149004-avatar_vlcj.jpg</summaryImg>
-</item>
-<item>
-<title>Thanh Hằng nổi bật bên Demi Lovato</title>
-<description>Cả 2 liên tục chụp hình "tự sướng" lưu lại những khoảnh khắc kỷ niệm.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/thanh-hang-noi-bat-ben-demi-lovato-c73a707432.html</link>
-<pubDate>2015-05-09 11:28:32</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-09/1431145659-avatar_eplk.jpg</summaryImg>
-</item>
-<item>
-<title>Mỹ Tâm, Mr. Đàm khuấy động làm The Voice “dậy sóng“</title>
-<description>Màn tung hứng đầy ăn ý của cặp đôi Tâm - Đàm hứa hẹn sẽ khiến người xem bất ngờ.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/my-tam-mr-dam-khuay-dong-lam-the-voice-day-song-c73a707343.html</link>
-<pubDate>2015-05-09 08:24:09</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-09/1431141015-thevoice_1_ayma.jpg</summaryImg>
-</item>
-<item>
-<title>Đông Nhi hóa ma cà rồng trong MV "khủng"</title>
-<description>Nữ ca sỹ và Isaac sẽ cùng hóa ma cà rồng trong MV Vì ai vì anh sắp được ra mắt sau khi kết thúc The Remix.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/dong-nhi-hoa-ma-ca-rong-trong-mv-khung-c73a707328.html</link>
-<pubDate>2015-05-09 07:22:34</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-09/1431130658-dong_nhi_5_zthd.jpg</summaryImg>
-</item>
-<item>
-<title>Khoảnh khắc bình yên của bà bầu Lê Kiều Như bên chồng</title>
-<description>Vợ chồng Lê Kiều Như thường cùng nhau đi tản bộ và ngồi cà-phê thư giãn, tận hưởng những khoảnh khắc hạnh phúc trong cuộc sống.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/khoanh-khac-binh-yen-cua-ba-bau-le-kieu-nhu-ben-chong-c73a707317.html</link>
-<pubDate>2015-05-09 06:00:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-09/1431134752-avatar_bjbi.jpg</summaryImg>
-</item>
-<item>
-<title>NS Nguyễn Ánh 9: Tôi tìm thấy tôi trong nỗi buồn</title>
-<description>Sức khỏe đã thực sự sa sút, căn bệnh phổi khiến ông nói rất yếu và nhiều khi nghẹn lời, thế nhưng nhạc sĩ Nguyễn Ánh 9 vẫn đang cố hết sức cho 2 đêm nhạc mang tên “Kỷ niệm” ở Hà Nội vào tối 16 và 17.5. Ông trò chuyện với phóng viên NTNN về liveshow này.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/ns-nguyen-anh-9-toi-tim-thay-toi-trong-noi-buon-c73a707344.html</link>
-<pubDate>2015-05-09 08:26:39</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-09/1431134681-nhac_si_ok_hoqb.jpg</summaryImg>
-</item>
-<item>
-<title>Ca sỹ Hàn làm MV kiểu “50 sắc thái”</title>
-<description>Jay Park và mẫu Tây quấn quýt bên nhau ở hồ bơi lúc ban ngày và không rời vào ban đêm.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/ca-sy-han-lam-mv-kieu-50-sac-thai-c73a707279.html</link>
-<pubDate>2015-05-08 19:00:00</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-08/1431080983-untitled_1_hfqs.jpg</summaryImg>
-</item>
-<item>
-<title> Khánh Thi òa khóc bên Phan Hiển trên sóng truyền hình</title>
-<description>Cô đã không kìm được cảm xúc khi trình diễn một ca khúc gợi nhiều xúc cảm.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/khanh-thi-oa-khoc-ben-phan-hien-tren-song-truyen-hinh-c73a707225.html</link>
-<pubDate>2015-05-08 15:32:19</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-08/1431074968-11219409_855477897861043_7892535989948611911_n_vzxa.jpg</summaryImg>
-</item>
-<item>
-<title>HH Hà Kiều Anh hát tặng Duy Nhân lay động triệu trái tim</title>
-<description>Ca khúc được viết riêng dành tặng Duy Nhân và vợ anh khiến người nghe rơi lệ.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/hoa-hau-ha-kieu-anh-hat-tang-duy-nhan-lay-dong-trieu-trai-tim-c73a707147.html</link>
-<pubDate>2015-05-08 09:17:39</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-08/1431075796-untitled_1_gnoq.jpg</summaryImg>
-</item>
-<item>
-<title>Đàm Vĩnh Hưng nhí nhảnh bên ca sĩ “Let it go“</title>
-<description>Demi Lovato đã có buổi gặp gỡ báo chí chia sẻ về buổi diễn sắp tới của mình cùng với Đàm Vĩnh Hưng và 80 ca sĩ Việt Nam khác.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/dam-vinh-hung-nhi-nhanh-ben-ca-si-let-it-go-c73a707272.html</link>
-<pubDate>2015-05-08 17:21:24</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-08/1431080410-demi_1_ffcf.jpg</summaryImg>
-</item>
-<item>
-<title>Tưởng nhớ Đặng Lệ Quân qua những tình khúc bất hủ</title>
-<description>8.5.2015 - tròn 20 năm ngày diva xứ Đài Đặng Lệ Quân mang theo tiếng hát "mật ngọt" rời khỏi trần thế, để lại cho người hâm mộ nỗi tiếc nhớ và luôn da diết nhẩm những tình khúc bất hủ của bà.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/tuong-nho-dang-le-quan-qua-nhung-tinh-khuc-bat-hu-c73a707262.html</link>
-<pubDate>2015-05-08 16:44:01</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-08/1431078553-dang_le_quan11_tuoe.jpg</summaryImg>
-</item>
-<item>
-<title>Tóc Tiên lại gây sốt trở lại với MV "Vũ điệu cồng chiêng"</title>
-<description>MV "Ngày mai" với phiên bản "Vũ điệu cồng chiêng" vừa ra mắt vào hôm qua đã có lượt xem lớn.</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/toc-tien-lai-gay-sot-tro-lai-voi-mv-vu-dieu-cong-chieng-c73a707242.html</link>
-<pubDate>2015-05-08 16:13:55</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-08/1431076327-av_iohe.jpg</summaryImg>
-</item>
-<item>
-<title>Sao Kpop bị chỉ trích vì chế giễu người nước ngoài nói tiếng Hàn</title>
-<description>Thành viên SNSD, EXO và nhóm F(x) bị coi là "đạo đức giả".</description>
-<link>http://www.24h.com.vn/ca-nhac-mtv/sao-kpop-bi-chi-trich-vi-che-gieu-nguoi-nuoc-ngoai-noi-tieng-han-c73a707203.html</link>
-<pubDate>2015-05-08 14:13:23</pubDate>
-<summaryImg>http://24h-img.24hstatic.com:8008/upload/2-2015/images/2015-05-08/1431069130-untitled_1_wtqp.jpg</summaryImg>
+<title>Thay đổi</title>
+<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/cuoi/thay-doi-3153364.html"><img width=210 height=158 src="http://c1.f24.img.vnecdn.net/2015/03/05/thaydoi-1425553208_1425553218_210x158.jpg" ></a></br>Nữ diễn viên sân khấu đau khổ về chứng căng thẳng thần kinh.]]></description>
+<pubDate>Fri, 06 Mar 2015 00:01:00 +0700</pubDate>
+<link>http://ngoisao.net/tin-tuc/thu-gian/cuoi/thay-doi-3153364.html</link>
+<guid>http://ngoisao.net/tin-tuc/thu-gian/cuoi/thay-doi-3153364.html</guid>
+<slash:comments>0</slash:comments>
 </item>
 </channel>
 </rss>
