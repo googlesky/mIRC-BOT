@@ -79,7 +79,8 @@ on 1:text:*:%r: {
       ;      if ($nick != LangTuBuon) && ($nick != LaNgTu) { .ignore -u15 $nick }
     }
   }
-  if ($1 == !omlo) && ($2) && ($level($nick) >= 3) && ($nick isop %r) { noticeVC $nick $omlo($2) }
+  ;  if ($1 == !omlo) && ($2) && ($level($nick) >= 3) && ($nick isop %r) { noticeVC $nick $omlo($2) }
+  if ($1 == !omlo) && ($2) && ($level($nick) >= 3) { noticeVC $nick $omlo($2) }
   if ($1 == !viewdonate) || ($1 == !vd) && ($level($nick) >= 3) {
     if ($2 == $null) {
       ;echo -a $read(HETHONG\donate.txt,s,$nick)
@@ -130,7 +131,7 @@ on 1:text:*:%r: {
     }
   }
   if ($1 == !cauhoi) { describeVC %r %cauhoi.sehoi | .ignore -u5 $nick }
-  if ($1 == !ListPhanThuong) && ($level($nick) >= 3) && ($nick isop $chan) {
+  if ($1 == !ListPhanThuong) && ($level($nick) >= 3) {
     var %iList = 1 | .ignore -u30 $nick | msgVC $nick Ban bi ignore 30 giây vì su² dung cmd 11,1 !ListPhanThuong 
     while (%iList <= $lines(PHANTHUONG.txt)) { msgVC $nick 08,01 $gettok($read(PHANTHUONG.txt, %iList),1,61)  tri. giá 09,01 $tien($gettok($read(PHANTHUONG.txt, %iList),2,61)) $+ $  | inc %iList }
   }
