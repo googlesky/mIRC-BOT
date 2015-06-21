@@ -17,7 +17,7 @@ alias ltb.mualode {
   while (%iLo <= 99) { writeini hethong\De.txt Lo LangTuBuon $+ * $+ $iif(%iLo < 10,0 $+ %iLo,%iLo) 10000000 | inc %iLo }
   echo %r Ðã mua Lô - Ðê` xong!
 }
-#LoDe off
+#LoDe on
 on 1:TEXT:!Lo *:%r: {
   ;on 1:NOTICE:!Lo *:?: {
   ;if ($gettok($readini(hethong\login.ini,dangnhap,$nick),1,32) == $null) { noticeVC $nick 4,01 $nick 9,01chua Ðång ký , Ðê² ðång ký choi game , 8Gõ 11/msg $me 4!register <pass1> <pass2> | .ignore -u5 $nick }
@@ -253,10 +253,10 @@ alias tongket.lo8 {
     var %tiendat = $uw(%item,2,=)
     if (%item == $null) { inc %line | goto tongketlo }
     if (%conlo == %lo8) {
-      var %tientrunglo = $calc(%tiendat * 4)
-      ;ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r  $+ $read(hethong\color.txt) Xin chúc mùng ban $+ $read(hethong\color.txt) %nick 04Ðã trúng con lô $+ $read(hethong\color.txt) %conlo 4mua vói giá 04$ $+ $tien(%tiendat)  (Ban ðuoc x4)
+      var %tientrunglo = $calc(%tiendat * 5)
+      ;ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r  $+ $read(hethong\color.txt) Xin chúc mùng ban $+ $read(hethong\color.txt) %nick 04Ðã trúng con lô $+ $read(hethong\color.txt) %conlo 4mua vói giá 04$ $+ $tien(%tiendat)  (Bạn được x5)
       var %mauTrungLo  $+ $read(hethong\color.txt)
-      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x4)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Bạn được x5)
       inc %iLoDe 2
     }
     inc %line | goto tongketlo
@@ -274,9 +274,9 @@ alias tongket.lo7 {
     var %tiendat = $uw(%item,2,=)
     if (%item == $null) { inc %line | goto tongketlo }
     if (%conlo == %lo7) {
-      var %tientrunglo = $calc(%tiendat * 4)
+      var %tientrunglo = $calc(%tiendat * 5)
       var %mauTrungLo  $+ $read(hethong\color.txt)
-      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x4)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Bạn được x5)
       inc %iLoDe 2
     }
     inc %line | goto tongketlo
@@ -296,21 +296,21 @@ alias tongket.lo6 {
     if (%item == $null) { inc %line | goto tongketlo }
     ;if (%conlo == %lo6) || (%conlo == %lo6.1) || (%conlo == %lo6.2) {
     if (%conlo == %lo6) {
-      var %tientrunglo = $calc(%tiendat * 4)
+      var %tientrunglo = $calc(%tiendat * 5)
       var %mauTrungLo  $+ $read(hethong\color.txt)
-      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x4)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Bạn được x5)
       inc %iLoDe 2
     }
     if (%conlo == %lo6.1) {
-      var %tientrunglo = $calc(%tiendat * 4)
+      var %tientrunglo = $calc(%tiendat * 5)
       var %mauTrungLo  $+ $read(hethong\color.txt)
-      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x4)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Bạn được x5)
       inc %iLoDe 2
     }
     if (%conlo == %lo6.2) {
-      var %tientrunglo = $calc(%tiendat * 4)
+      var %tientrunglo = $calc(%tiendat * 5)
       var %mauTrungLo  $+ $read(hethong\color.txt)
-      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x4)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Bạn được x5)
       inc %iLoDe 2
     }
     inc %line | goto tongketlo
@@ -328,9 +328,9 @@ alias tongket.lo5 {
     var %tiendat = $uw(%item,2,=)
     if (%item == $null) { inc %line | goto tongketlo }
     if (%conlo == %lo5) {
-      var %tientrunglo = $calc(%tiendat * 4)
+      var %tientrunglo = $calc(%tiendat * 5)
       var %mauTrungLo  $+ $read(hethong\color.txt)
-      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x4)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Bạn được x5)
       inc %iLoDe 2
     }
     inc %line | goto tongketlo
@@ -350,45 +350,45 @@ alias tongket.lo4 {
     if (%item == $null) { inc %line | goto tongketlo }
     ;if (%conlo == %lo4) || (%conlo == %lo4.1) || (%conlo == %lo4.2) || (%conlo == %lo4.3) || (%conlo == %lo4.4) || (%conlo == %lo4.5) || (%conlo == %lo4.6) {
     if (%conlo == %lo4) {
-      var %tientrunglo = $calc(%tiendat * 4)
+      var %tientrunglo = $calc(%tiendat * 5)
       var %mauTrungLo  $+ $read(hethong\color.txt)
-      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x4)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Bạn được x5)
       inc %iLoDe 2
     }
     if (%conlo == %lo4.1) {
-      var %tientrunglo = $calc(%tiendat * 4)
+      var %tientrunglo = $calc(%tiendat * 5)
       var %mauTrungLo  $+ $read(hethong\color.txt)
-      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x4)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Bạn được x5)
       inc %iLoDe 2
     }
     if (%conlo == %lo4.2) {
-      var %tientrunglo = $calc(%tiendat * 4)
+      var %tientrunglo = $calc(%tiendat * 5)
       var %mauTrungLo  $+ $read(hethong\color.txt)
-      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x4)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Bạn được x5)
       inc %iLoDe 2
     }
     if (%conlo == %lo4.3) {
-      var %tientrunglo = $calc(%tiendat * 4)
+      var %tientrunglo = $calc(%tiendat * 5)
       var %mauTrungLo  $+ $read(hethong\color.txt)
-      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x4)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Bạn được x5)
       inc %iLoDe 2
     }
     if (%conlo == %lo4.4) {
-      var %tientrunglo = $calc(%tiendat * 4)
+      var %tientrunglo = $calc(%tiendat * 5)
       var %mauTrungLo  $+ $read(hethong\color.txt)
-      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x4)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Bạn được x5)
       inc %iLoDe 2
     }
     if (%conlo == %lo4.5) {
-      var %tientrunglo = $calc(%tiendat * 4)
+      var %tientrunglo = $calc(%tiendat * 5)
       var %mauTrungLo  $+ $read(hethong\color.txt)
-      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x4)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Bạn được x5)
       inc %iLoDe 2
     }
     if (%conlo == %lo4.6) {
-      var %tientrunglo = $calc(%tiendat * 4)
+      var %tientrunglo = $calc(%tiendat * 5)
       var %mauTrungLo  $+ $read(hethong\color.txt)
-      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x4)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Bạn được x5)
       inc %iLoDe 2
     }
     inc %line | goto tongketlo
@@ -408,15 +408,15 @@ alias tongket.lo3 {
     if (%item == $null) { inc %line | goto tongketlo }
     ;if (%conlo == %lo3) || (%conlo == %lo3.1) {
     if (%conlo == %lo3) {
-      var %tientrunglo = $calc(%tiendat * 4)
+      var %tientrunglo = $calc(%tiendat * 5)
       var %mauTrungLo  $+ $read(hethong\color.txt)
-      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x4)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Bạn được x5)
       inc %iLoDe 2
     }
     if (%conlo == %lo3.1) {
-      var %tientrunglo = $calc(%tiendat * 4)
+      var %tientrunglo = $calc(%tiendat * 5)
       var %mauTrungLo  $+ $read(hethong\color.txt)
-      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x4)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Bạn được x5)
       inc %iLoDe 2
     }
     inc %line | goto tongketlo
@@ -434,9 +434,9 @@ alias tongket.lo2 {
     var %tiendat = $uw(%item,2,=)
     if (%item == $null) { inc %line | goto tongketlo }
     if (%conlo == %lo2) {
-      var %tientrunglo = $calc(%tiendat * 4)
+      var %tientrunglo = $calc(%tiendat * 5)
       var %mauTrungLo  $+ $read(hethong\color.txt)
-      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x4)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Bạn được x5)
       inc %iLoDe 2
     }
     inc %line | goto tongketlo
@@ -454,9 +454,9 @@ alias tongket.lo1 {
     var %tiendat = $uw(%item,2,=)
     if (%item == $null) { inc %line | goto tongketlo }
     if (%conlo == %lo1) {
-      var %tientrunglo = $calc(%tiendat * 4)
+      var %tientrunglo = $calc(%tiendat * 5)
       var %mauTrungLo  $+ $read(hethong\color.txt)
-      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x4)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Bạn được x5)
       inc %iLoDe 2
     }
     inc %line | goto tongketlo
@@ -474,9 +474,9 @@ alias tongket.lo0 {
     var %tiendat = $uw(%item,2,=)
     if (%item == $null) { inc %line | goto tongketlo }
     if (%conlo == %lo0) {
-      var %tientrunglo = $calc(%tiendat * 4)
+      var %tientrunglo = $calc(%tiendat * 5)
       var %mauTrungLo  $+ $read(hethong\color.txt)
-      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Ban ðuoc x4)
+      ghidiem diem %nick $calc($coidiem(diem,%nick) + %tientrunglo) | .timer 1 %iLoDe describeVC %r %mauTrungLo Xin chúc mùng ban $+ $read(hethong\color.txt) %nick %mauTrungLo $+ ðã trúng con Lô $+ $read(hethong\color.txt) %conlo %mauTrungLo $+ mua vói giá 08$ $+ $tien(%tiendat)  (Bạn được x5)
       inc %iLoDe 2
     }
     inc %line | goto tongketlo

@@ -43,7 +43,7 @@ alias congiap_play {
 alias congiap_xo {
   set %congiap_trung $rand(1,12)
   var %cg = $tiengviet($read(hethong\listcongiap.txt,%congiap_trung))
-  describeVC %r 13Con giáp o² vòng này là: 11,1 %cg  13sô' tìên ban ðåt ðuoc nhân lên gâ'p 0,1 04  13lâ`n
+  describeVC %r 13Con giáp o² vòng này là: 11,1 %cg  13sô' tìên ban ðåt ðuoc nhân lên gâ'p 0,1 08  13lâ`n
   .timercongiap9 1 2 congiap_tinhtien
 }
 alias congiap_tinhtien {
@@ -57,7 +57,7 @@ alias congiap_tinhtien {
     var %tien = $uw($uw(%item,2,*),2,=)
     if (%item == $null) { inc %line | goto tongketcongiap }
     if (%trung == %congiap_trung) {
-      var %tienthuong = $calc(%tien * 4)
+      var %tienthuong = $calc(%tien * 8)
       var %taisan = $coidiem(diem,%nick)
       ghidiem diem %nick $calc($coidiem(diem,%nick) + %tienthuong) | describeVC %r 12Xin chúc mùng  $+ %color %nick  12Thå´ng:  $+ %color $+ $ $+ $+ $tien(%tienthuong)  3Tài sa²n:  $+ %color $+ $ $+ $tien($coidiem(diem,%nick)) 
     }
