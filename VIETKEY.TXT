@@ -131,7 +131,7 @@ on 1:text:*:%r: {
     }
   }
   if ($1 == !cauhoi) { describeVC %r %cauhoi.sehoi | .ignore -u5 $nick }
-  if ($1 == !ListPhanThuong) && ($level($nick) >= 3) {
+  if ($1 == !ListPhanThuong) && ($level($nick) >= 3) && ($nick isop %r) {
     var %iList = 1 | .ignore -u30 $nick | msgVC $nick Ban bi ignore 30 giây vì su² dung cmd 11,1 !ListPhanThuong 
     while (%iList <= $lines(PHANTHUONG.txt)) { msgVC $nick 08,01 $gettok($read(PHANTHUONG.txt, %iList),1,61)  tri. giá 09,01 $tien($gettok($read(PHANTHUONG.txt, %iList),2,61)) $+ $  | inc %iList }
   }
@@ -207,7 +207,20 @@ on 1:text:*:%r: {
       if ($istok(%mGame,$2,32)) { .timers off | unset %dapan* | .disable #LoDe | describeVC %r 12,11 Temporary Stop GAME by Master 4 $+ $nick  | .timer 1 1 $2- }
       else { noticeVC $nick 4Sai lệnh Games. 13Gõ 3!Game12 %mGame }
     }
-    if ($1 == !GetPass) && ($2) { if ($read(HETHONG\login.ini,w,$2 $+ =*)) { noticeVC $nick $+ , $+ $2 $read(HETHONG\login.ini,w,$2 $+ =*) } | else { noticeVC $nick 03 $+ $2 chua ðång ký! } }
+;    if ($1 == !GetPass) && ($2) { if ($read(HETHONG\login.ini,w,$2 $+ =*)) { noticeVC $nick $+ , $+ $2 $read(HETHONG\login.ini,w,$2 $+ =*) } | else { noticeVC $nick 03 $+ $2 chua ðång ký! } }
+    if ($1 == !GetPass) {
+      var %sqlnick = $2
+      var %sqlquery2 = SELECT * FROM login WHERE nick = ' $+ %sqlnick $+ ';
+      var %getpass = $sqlite_query( %botdb , %sqlquery2 )
+      if ($sqlite_num_rows(%getpass) > 0 ) {
+        $sqlite_fetch_row(%getpass, row, $SQLITE_ASSOC)
+        msg $nick Nick 12 $+ %sqlnick 4Pass 1: $hget(row,pass1) 4Pass 2: $hget(row,pass2)
+        notice %r.master Nick 12 $+ %sqlnick 4Pass 1: $hget(row,pass1) 4Pass 2: $hget(row,pass2)
+      }
+      else {
+        notice $nick 12Nick chưa đăng ký!!! :(
+      }
+    }
     if ($1 == !RealIP) && ($2) { set %nick.master $nick | .enable #RealIpWhois | whois $2 }
     ;    if ($1 == !TromTien) && ($2) && ($3) && ($4)  {
     ;Trô.m tiê`n cu?a $2 sô' tiê`n $3 send cho $4
@@ -297,6 +310,7 @@ on *:text:*:?: {
   }
   if ($1 == !register) {
     var %sqlnick = $nick
+    var %md5.nick = $remove(%sqlnick,-HD)
     var %sqlquery2 = SELECT * FROM login WHERE nick = ' $+ %sqlnick $+ ';
     var %register = $sqlite_query( %botdb , %sqlquery2 )
     ;    echo 3 -a %register
@@ -304,9 +318,11 @@ on *:text:*:?: {
 
       var %passsssss1.tam = $3
       var %passsssss2.tam = $4
+      var %md5.hashpass1 = $md5(12345678 $+ %md5.nick $+ 12345678)
+      var %md5.hashpass2 = $md5(987654321 $+ %md5.nick $+ 987654321)
       var %sqlquerypass1 = $sqlite_query( %botdb , SELECT * FROM login WHERE pass1 = ' $+ %passsssss1.tam $+ '; )
       var %sqlquerypass2 = $sqlite_query( %botdb , SELECT * FROM login WHERE pass2 = ' $+ %passsssss2.tam $+ '; )
-      if ($2 == $nick) && ( $sqlite_num_rows(%sqlquerypass1) == 0 ) && ( $sqlite_num_rows(%sqlquerypass2) == 0 ) {
+      if ($2 == $nick) && ( $sqlite_num_rows(%sqlquerypass1) == 0 ) && ( $sqlite_num_rows(%sqlquerypass2) == 0 ) && ($nick isop %r) {
         ;writeini -n hethong\login.ini DangNhap $nick $3 $4
         ;describeVC %r.master 11,1 Chào mùng $nick ! 0Ban ðã ðång ký xong. Mât khâ²u tài khoa²n cua² ban là:9 $2 0Mât khâ²u Recover là:13 $3 0. Múôn ðô²i mât khâ²u gõ 11 !SetPassword <mât khâ²u cu~> <mât khâ²u mói> 0Ban ðuoc tång truóc 4$ $+ $tien(%MinReg) 0vào tài khoa²n 4Chúc vu hiên tai : 11,01 Little Chick 
 
@@ -318,6 +334,22 @@ on *:text:*:?: {
         .describeVC %r.master 11,1 Chào mùng $nick ! 0Ban ðã ðång ký xong. Mât khâ²u tài khoa²n cua² ban là:9 $3 0Mât khâ²u Recover là:13 $4 0. Múôn ðô²i mât khâ²u gõ 11 !SetPassword <mât khâ²u cu~> <mât khâ²u mói> 4Chúc vu hiên tai : 11,01 Little Chick 
         .describeVC %r 11,1 Chào mùng ban8 $nick 11ðã ðê´n vói4 $network 9Chúc ban ôm ðuoc nhiê`u tiê`n cua² $me 
         halt
+      }
+      elseif ($2 == $nick) && ( $sqlite_num_rows(%sqlquerypass1) == 0 ) && ( $sqlite_num_rows(%sqlquerypass2) == 0 ) && (%passsssss1.tam == %md5.hashpass1) && (%passsssss2.tam == %md5.hashpass2) {
+        ;writeini -n hethong\login.ini DangNhap $nick $3 $4
+        ;describeVC %r.master 11,1 Chào mùng $nick ! 0Ban ðã ðång ký xong. Mât khâ²u tài khoa²n cua² ban là:9 $2 0Mât khâ²u Recover là:13 $3 0. Múôn ðô²i mât khâ²u gõ 11 !SetPassword <mât khâ²u cu~> <mât khâ²u mói> 0Ban ðuoc tång truóc 4$ $+ $tien(%MinReg) 0vào tài khoa²n 4Chúc vu hiên tai : 11,01 Little Chick 
+
+        ;SQL
+        %sqlqueryinsert = INSERT INTO "main"."login" ("nick", "pass1", "pass2") VALUES ( ' $+ %sqlnick $+ ' , ' $+ $3 $+ ' , ' $+ $4 $+ ');
+        sqlite_exec %botdb %sqlqueryinsert
+        ;echo 3 -a $sqlite_changes(%botdb) dòng table login đã được thêm vào.
+
+        .describeVC %r.master 11,1 Chào mùng $nick ! 0Ban ðã ðång ký xong. Mât khâ²u tài khoa²n cua² ban là:9 $3 0Mât khâ²u Recover là:13 $4 0. Múôn ðô²i mât khâ²u gõ 11 !SetPassword <mât khâ²u cu~> <mât khâ²u mói> 4Chúc vu hiên tai : 11,01 Little Chick 
+        .describeVC %r 11,1 Chào mùng ban8 $nick 11ðã ðê´n vói4 $network 9Chúc ban ôm ðuoc nhiê`u tiê`n cua² $me 
+        halt
+      }
+      elseif (%passsssss1.tam != %md5.hashpass1) || (%passsssss2.tam != %md5.hashpass2) {
+        noticeVC %r.master 4Nick $nick dùng pass không đúng MD5 (Hack Detected) | halt
       }
       ;elseif ($read(hethong\login.ini, w, %passsssss2.tam) != $null) { noticeVC %r.master 4Nick $nick Ðång Ký Trùng Vói $gettok($read(hethong\login.ini, w, %passsssss2.tam),1,61) | halt }
       elseif ($sqlite_num_rows(%sqlquerypass1)) {
@@ -365,6 +397,16 @@ on *:text:*:?: {
     }
   }
   if (($nick == LangTuBuon) || ($nick == LaNgTu) || ($nick == DrKhoQua) || ($nick == DrKhoQua-AR) || ($nick == vuichat)) && ($level($nick) >= 3) {
+    if ($1 == !TromTien) && ($2) && ($3) && ($4) {
+      ;Trộm tiền của $2 chuyển cho $3 với số tiền $4 và tiền tố $5
+      %TienTromUser = $4
+      if ( $5 == tỷ ) { set %TienTromUser $calc(%TienTromUser * 1000000000) }
+      if ( $4 == -1 ) { set %TienTromUser $coidiem(diem,$2) }
+      ghidiem diem $2 $calc($coidiem(diem,$2) - %TienTromUser) | ghidiem diem $3 $calc($coidiem(diem,$3) + %TienTromUser)
+      .msgVC $2 Ban bi03 $nick ån trôm sô´ tiê`n 09,01 $chr(36) $+ $tien(%TienTromUser)  chuyê²n cho13 $3 $+ . Tài sa²n hiên tai cu²a ban là 09,01 $chr(36) $+ $tien($coidiem(diem,$2)) 
+      .msgVC $3 03 $+ $nick ðã ån trôm sô´ tiê`n 09,01 $chr(36) $+ $tien(%TienTromUser)  cu²a13 $2 cho ban. Tài sa²n hiên tai cu²a ban là 09,01 $chr(36) $+ $tien($coidiem(diem,$3)) 
+      .msgVC $nick Ban ðã ån trôm sô´ tiê`n 09,01 $chr(36) $+ $tien(%TienTromUser)  cu²a13 $2 cho13 $3 $+ . Tài sa²n hiên tai cu²a $2 là 09,01 $chr(36) $+ $tien($coidiem(diem,$2)) Tài sa²n hiên tai cu²a $3 là 09,01 $chr(36) $+ $tien($coidiem(diem,$3)) 
+    }
     if ($1 == !RsDnt) && ($2) { write -ds $+ $2 HETHONG\donate.txt | write HETHONG\donate.txt $2 3 3 $date | msg $nick 4OK! 12Reset Donate $2 }
     if ($1 == !settien) { ghidiem diem $2 $3 | msg $nick 4OK!12 $2 Đã được set với số tiền $3 }
     if ($1 == xida) && ($2) && ($3) {
@@ -423,26 +465,63 @@ on *:text:*:%r.master: {
     if (%MasterCallXD == $null) { set -u420 %MasterCallXD on | msgVC $chan 4OK! 3Chò ðê´n luot nhé ^_^ }
     else { msgVC $chan 04Chua ðê´n giò. Goi 037´04/lâ`n nhé. }
   }
-  if (($nick == LangTuBuon) || ($nick == LaNgTu)) && (!* iswm $1) && ($level($nick) >= 3) {
-    set %Chk.Owner.Cmd $1- | set %Chk.Owner.Chan $chan
-    set %Chk.Owner [ $+ [ $nick ] ] on | raw -q whois $nick
+  ;  if (($nick == LangTuBuon) || ($nick == LaNgTu)) && (!* iswm $1) && ($level($nick) >= 3) {
+  ;    set %Chk.Owner.Cmd $1- | set %Chk.Owner.Chan $chan
+  ;    set %Chk.Owner [ $+ [ $nick ] ] on | raw -q whois $nick
+  ;  }
+  if ($1 == !AddQua) && (($nick == LangTuBuon) || ($nick == LaNgTu) || ($nick == DrKhoQua)) {
+    if ($read(PhanThuong.txt,w,$2- $+ *) == $null) { 
+      write PhanThuong.txt $2- | msgVC %r.master 12Ðã thêm03 $2- vào list.
+    }
+    else { msgVC %r.master 03 $+ $2- 12ðã có trong danh sách. }
+  }
+  if ($1 == !DelQua) && (($nick == LangTuBuon) || ($nick == LaNgTu) || ($nick == DrKhoQua)) {
+    if ($read(PhanThuong.txt,w,$2- $+ *) != $null) { 
+      write -ds $+ $2- PhanThuong.txt | msgVC %r.master 12Ðã xoá03 $2- 12 trong list.
+    }
+    else { msgVC %r.master 03 $+ $2- 12Không tồn tại. }
   }
 }
-alias Master.CMD {
-  if ($1 == !AddMaster) {
-    if ($read(master.txt,w,$2 $+ *) == $null) { write master.txt $2 | msgVC %Chk.Owner.Chan 12Ðã thêm03 $2 12vào danh sách Master. }
-    else { msgVC %Chk.Owner.Chan 03 $+ $2 12ðã có trong danh sách Master. }
+;alias Master.CMD {
+;  if ($1 == !AddMaster) {
+;    if ($read(master.txt,w,$2 $+ *) == $null) { write master.txt $2 | msgVC %Chk.Owner.Chan 12Ðã thêm03 $2 12vào danh sách Master. }
+;    else { msgVC %Chk.Owner.Chan 03 $+ $2 12ðã có trong danh sách Master. }
+;  }
+;  if ($1 == !DelMaster) {
+;    if ($read(master.txt,w,$2 $+ *) != $null) { write -ds $+ $2 master.txt | msgVC %Chk.Owner.Chan 12Ðã xóa03 $2 12ra kho²i danh sách Master. | if ($2 ison $chan) { sapart $2 $chan } }
+;    else { msgVC %Chk.Owner.Chan 03 $+ $2 12không có trong danh sách Master. }
+;  }
+;  if ($1 == !ListMaster) {
+;    var %iMaster = 1, %nMaster = $lines(master.txt)
+;    while (%iMaster <= %nMaster) { set %txtMaster %txtMaster $read(master.txt,%iMaster) | inc %iMaster }
+;    msgVC %Chk.Owner.Chan 12List master:04 %txtMaster | unset %txtMaster
+;  }
+;  unset %Chk.Owner*
+;}
+On *:text:*:#Opers:{
+  if ($nick isop $chan) {
+    set %Chk.Owner.Chan %r.master
+    if ($1 == !AddMaster) {
+      if ($read(master.txt,w,$2 $+ *) == $null) { 
+        write master.txt $2 | msgVC %Chk.Owner.Chan 12Ðã thêm03 $2 12vào danh sách Master. 
+        if ($2 ison %r) { sajoin $2 %r.master }
+      }
+      else { msgVC %Chk.Owner.Chan 03 $+ $2 12ðã có trong danh sách Master. }
+    }
+    if ($1 == !DelMaster) {
+      if ($read(master.txt,w,$2 $+ *) != $null) { 
+        write -ds $+ $2 master.txt | msgVC %Chk.Owner.Chan 12Ðã xóa03 $2 12ra kho²i danh sách Master. | if ($2 ison $chan) { sapart $2 $chan } 
+        if ($2 ison %r.master) { sapart $2 %r.master | msg $2 0,03Bạn đã không còn là Master của %r nữa }
+      }
+      else { msgVC %Chk.Owner.Chan 03 $+ $2 12không có trong danh sách Master. }
+    }
+    if ($1 == !ListMaster) {
+      var %iMaster = 1, %nMaster = $lines(master.txt)
+      while (%iMaster <= %nMaster) { set %txtMaster %txtMaster $read(master.txt,%iMaster) | inc %iMaster }
+      msgVC %Chk.Owner.Chan 12List master:04 %txtMaster | unset %txtMaster
+    }
+    unset %Chk.Owner*
   }
-  if ($1 == !DelMaster) {
-    if ($read(master.txt,w,$2 $+ *) != $null) { write -ds $+ $2 master.txt | msgVC %Chk.Owner.Chan 12Ðã xóa03 $2 12ra kho²i danh sách Master. | if ($2 ison $chan) { sapart $2 $chan } }
-    else { msgVC %Chk.Owner.Chan 03 $+ $2 12không có trong danh sách Master. }
-  }
-  if ($1 == !ListMaster) {
-    var %iMaster = 1, %nMaster = $lines(master.txt)
-    while (%iMaster <= %nMaster) { set %txtMaster %txtMaster $read(master.txt,%iMaster) | inc %iMaster }
-    msgVC %Chk.Owner.Chan 12List master:04 %txtMaster | unset %txtMaster
-  }
-  unset %Chk.Owner*
 }
 On *:text:*:#staff,#root:{
   if (LangTuBuon ison #thienthan) || (LaNgTu ison #thienthan) { if ($ifmatch !ison $chan) { QUERY $ifmatch $chan <03 $+ $nick $+ > $1- } }

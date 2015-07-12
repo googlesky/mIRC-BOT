@@ -69,7 +69,7 @@ on 1:TEXT:!xoso *:%r: {
       var %xoso1 = $readini hethong\xoso.txt xoso %xoso2
       var %mau = $read(hethong\color.txt)
       if ($readini(hethong\xoso.txt,xoso,$nick $+ * $+ $2 5000) == $null) { noticeVC $nick Ban ðã mua vé sô´ kíên thíêt này rôì! }
-      else { writeini hethong\xoso.txt xoso $nick $+ * $+ $2 5000 | describeVC %r 12* $nick ðã mua  $+ %mau Vé Sô´ Kiê´n Thiê´t  12mang sô'  $+ %mau $2  | .ignore -u2 $nick }
+      else { writeini hethong\xoso.txt xoso $nick $+ * $+ $2 5000 | describeVC %r 12* $nick ðã mua  $+ %mau Vé Sô´ Kiê´n Thiê´t  12mang sô'  $+ %mau $2  | .ignore -u1 $nick }
     }
   }
 }

@@ -58,7 +58,7 @@ Alias DuongDanBd {
 Alias DoiBd {
   set %cadobongda on
   ;%tyleDoiBD1 %tyleHoa %tyleDoiBD2
-  set %tyleDoiBD1 $calc($r(111,300) / 100) | set %tyleHoa $calc($r(111,333) / 100)
+  set %tyleDoiBD1 $calc($r(111,300) / 100) | set %tyleHoa $calc($r(111,222) / 100)
   if ($calc(%tyleDoiBD1 * 100) > 123) { set %tyleDoiBD2 $calc($r(111,123) / 100) }
   else { set %tyleDoiBD2 $calc($r(123,300) / 100) }
   var %GameMini 0,1 00,04F00,01o00,04o00,01t00,04b00,01a00,04l00,01l04,04 00,01F00,04e00,01v00,04a01,01 
