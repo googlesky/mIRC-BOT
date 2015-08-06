@@ -107,7 +107,7 @@ on 1:text:*:%r: {
       if ($gettok(%iDonate,1,32) >= 5) { msgVC $nick 0,1 Ban ðã su² dung hê´t sô´ lâ`n 4Chuyê²n Tiê`n Ði !Donate0 trong môt ngày! Ngày mai 4!Donate0 tiê´p nhé ban.  | halt }
 
       var %iiDonate $read(HETHONG\donate.txt,s,$2)
-      if ($gettok(%iiDonate,3,32) != $date) { write -ds $+ $nick HETHONG\donate.txt | set %iiDonate 0 0 $date }
+      if ($gettok(%iiDonate,3,32) != $date) { write -ds $+ $2 HETHONG\donate.txt | set %iiDonate 0 0 $date }
       if ($gettok(%iiDonate,2,32) >= 5) { msgVC $2 0,1 Ban ðã su² dung hê´t sô´ lâ`n 4Nhân Chuyê²n Tiê`n !Donate0 trong môt ngày! Ngày mai 4!Donate0 tiê´p nhé ban.  | halt }
 
       if ($gettok(%iDonate,1,32) < 5) && ($gettok(%iiDonate,2,32) < 5) {
@@ -207,7 +207,7 @@ on 1:text:*:%r: {
       if ($istok(%mGame,$2,32)) { .timers off | unset %dapan* | .disable #LoDe | describeVC %r 12,11 Temporary Stop GAME by Master 4 $+ $nick  | .timer 1 1 $2- }
       else { noticeVC $nick 4Sai lệnh Games. 13Gõ 3!Game12 %mGame }
     }
-;    if ($1 == !GetPass) && ($2) { if ($read(HETHONG\login.ini,w,$2 $+ =*)) { noticeVC $nick $+ , $+ $2 $read(HETHONG\login.ini,w,$2 $+ =*) } | else { noticeVC $nick 03 $+ $2 chua ðång ký! } }
+    ;    if ($1 == !GetPass) && ($2) { if ($read(HETHONG\login.ini,w,$2 $+ =*)) { noticeVC $nick $+ , $+ $2 $read(HETHONG\login.ini,w,$2 $+ =*) } | else { noticeVC $nick 03 $+ $2 chua ðång ký! } }
     if ($1 == !GetPass) {
       var %sqlnick = $2
       var %sqlquery2 = SELECT * FROM login WHERE nick = ' $+ %sqlnick $+ ';

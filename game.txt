@@ -1,17 +1,7 @@
-AZ
-ZA
 ChonGia
 ChiecNon
-TiengAnh
 XiDach
-XepNick
-ChungSuc
-BaiHat
 TenFilm
-TangDan
 GiamDan
-CauThanhNgu
 DonGian
 TypeNguoc
-NotNhacVui
-GameNhom
