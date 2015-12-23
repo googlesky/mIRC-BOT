@@ -88,6 +88,14 @@ on 1:TEXT:!veso *:%r: {
         var %veso1 = $readini hethong\veso.txt veso %veso2
         var %mau = $read(hethong\color.txt)
         writeini hethong\veso.txt veso $nick $+ * $+ $2 3000 | describeVC %r 12* $nick ðã mua  $+ %mau Vé Sô'  12mang sô'  $+ %mau $2  | .ignore -u3 $nick
+        set %veso.check on | timervesocheck 1 10 unset %veso.check
+      }
+    }
+    else {
+      if (%veso.check == $null) {
+        ban -u300 %r $nick 
+        cs devoice %r $nick
+        cs kick %r $nick Cấm! mua vé số khi chưa tới vé số!
       }
     }
   }

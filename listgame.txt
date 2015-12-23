@@ -1,5 +1,7 @@
-BaiCaoTo
-ConGiap
-Loto
+BaiCao
+TaiXiu
+XiDach
+SanThu
+BoiCa
 BangXoSo
-XocDia
+SoBD

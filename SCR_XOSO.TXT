@@ -70,7 +70,15 @@ on 1:TEXT:!xoso *:%r: {
       var %mau = $read(hethong\color.txt)
       if ($readini(hethong\xoso.txt,xoso,$nick $+ * $+ $2 5000) == $null) { noticeVC $nick Ban ðã mua vé sô´ kíên thíêt này rôì! }
       else { writeini hethong\xoso.txt xoso $nick $+ * $+ $2 5000 | describeVC %r 12* $nick ðã mua  $+ %mau Vé Sô´ Kiê´n Thiê´t  12mang sô'  $+ %mau $2  | .ignore -u1 $nick }
+      set %veso.check on | timervesocheck 1 10 unset %veso.check
     }
+  }
+  else {
+      if (%veso.check == $null) {
+        ban -u300 %r $nick 
+        cs devoice %r $nick
+        cs kick %r $nick Cấm! mua xổ số khi chưa tới vé số!
+      }
   }
 }
 alias xoso_play {

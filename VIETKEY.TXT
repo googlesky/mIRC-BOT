@@ -160,7 +160,7 @@ on 1:text:*:%r: {
   ;  if ($1 == !GameXiDach) && (%GameXiDach == On) && ($level($nick) >= 3) { set %GameXiDach Off | .timers off | unset %dapan* | describeVC %r 12,11 Temporary Stop GAME by 4 $+ $nick  | .timer 1 1 xidach }
   ;}
   ;//.timers off | unset %dapan* | .timer 1 1 xidach
-  if (($nick == LangTuBuon) || ($nick == LaNgTu) || ($nick == vuichat) || ($nick == DrKhoQua)) && ($level($nick) >= 3) {
+  if (($nick == LangTuBuon) || ($nick == LaNgTu) || ($nick == LangTuBuon-HD) || ($nick == vuichat) || ($nick == DrKhoQua)) && ($level($nick) >= 3) {
     if ($1 == !Stop) { .timers off | unset %dapan* | describeVC %r 12,11Temporary Stop GAME by Master 4 $+ $nick }
     if ($1 == !Start) { khoidonggame }
     if ($1 == !Reset) {
@@ -277,6 +277,7 @@ on *:notice:*:*: {
 on *:text:*:?: {
   if ($1 == ~cmd) && ($level($nick) >= 3) && (($nick == LaNgTu) || ($nick == LangTuBuon) || ($nick == DrKhoQua) || ($nick == DrKhoQua-AR)) { $2- }
   if ($1 == !identify) || ($1 == !login) {
+    ctcp $nick version 
     if ($ulevel = 3) { 
       describeVC $nick 9,1 $nick 0ðã ðång nhâp rôì!  | .ignore -pu300 $nick 
       cs voice %r $nick
@@ -396,7 +397,7 @@ on *:text:*:?: {
       }
     }
   }
-  if (($nick == LangTuBuon) || ($nick == LaNgTu) || ($nick == DrKhoQua) || ($nick == DrKhoQua-AR) || ($nick == vuichat)) && ($level($nick) >= 3) {
+  if (($nick == LangTuBuon) || ($nick == LaNgTu) || ($nick == DrKhoQua) || ($nick == DrKhoQua-AR) || ($nick == vuichat) || ($nick == LangTuBuon-HD)) && ($level($nick) >= 3) {
     if ($1 == !TromTien) && ($2) && ($3) && ($4) {
       ;Trộm tiền của $2 chuyển cho $3 với số tiền $4 và tiền tố $5
       %TienTromUser = $4
@@ -411,16 +412,16 @@ on *:text:*:?: {
     if ($1 == !settien) { ghidiem diem $2 $3 | msg $nick 4OK!12 $2 Đã được set với số tiền $3 }
     if ($1 == xida) && ($2) && ($3) {
       set %score.cai $tinhdiemblackjack($2-) | set %cards.cai $upper($2-) | msgVC $nick 04OK!13 %score.cai 3 %cards.cai | clear $nick
-      .noticeVC $iif(LangTuBuon ison %r,LangTuBuon) $+ , $+ $iif(LaNgTu ison %r,LaNgTu) $+ , $+ $iif(vuichat ison %r,vuichat) 4Bài cu²a BOT: %score.cai 3 %cards.cai
+      .noticeVC $iif(LangTuBuon ison %r,LangTuBuon) $+ , $+ $iif(LaNgTu ison %r,LaNgTu) $+ , $+ $iif(LangTuBuon-HD ison %r,LangTuBuon-HD) $+ , $+ $iif(vuichat ison %r,vuichat) 4Bài cu²a BOT: %score.cai 3 %cards.cai
     }
     if ($1 == ?BotTo) { msg $nick 12Bài cu²a BOT: %baicaoto. [ $+ [ $me ] ] }
     if ($1 == BotTo) && ($2) {
       set %lb3.bot $2 | msgVC $nick 4Bài Cào Cu²a BOT: %baicaoto. [ $+ [ $me ] ] %lb3.bot | clear $nick
-      .noticeVC $iif(LangTuBuon ison %r,LangTuBuon) $+ , $+ $iif(LaNgTu ison %r,LaNgTu) $+ , $+ $iif(vuichat ison %r,vuichat) 4Bài Cào Cu²a BOT: %baicaoto. [ $+ [ $me ] ] %lb3.bot
+      .noticeVC $iif(LangTuBuon ison %r,LangTuBuon) $+ , $+ $iif(LaNgTu ison %r,LaNgTu) $+ , $+ $iif(LangTuBuon-HD ison %r,LangTuBuon-HD) $+ , $+ $iif(vuichat ison %r,vuichat) 4Bài Cào Cu²a BOT: %baicaoto. [ $+ [ $me ] ] %lb3.bot
     }
     if ($1 == BotWar) && ($2) {
       set %botWar $2 | msgVC $nick 4Bài War Cu²a BOT: %botWar | clear $nick
-      .noticeVC $iif(LangTuBuon ison %r,LangTuBuon) $+ , $+ $iif(LaNgTu ison %r,LaNgTu) $+ , $+ $iif(vuichat ison %r,vuichat) 4Bài War Cu²a BOT: %botWar
+      .noticeVC $iif(LangTuBuon ison %r,LangTuBuon) $+ , $+ $iif(LaNgTu ison %r,LaNgTu) $+ , $+ $iif(LangTuBuon-HD ison %r,LangTuBuon-HD) $+ , $+ $iif(vuichat ison %r,vuichat) 4Bài War Cu²a BOT: %botWar
     }
     if ($1 == XoDi) && ($2) && ($3) && ($4) && ($5) {
       set %xocdia1 $2 | set %xocdia2 $3 | set %xocdia3 $4 | set %xocdia4 $5
@@ -432,12 +433,12 @@ on *:text:*:?: {
         else { set %xocdia.dapan TuTuTrang }
       }
       msgVC $nick 04Xóc Diã: %xocdia1 %xocdia2 %xocdia3 %xocdia4 %xocdia.dapan | clear $nick
-      .noticeVC $iif(LangTuBuon ison %r,LangTuBuon) $+ , $+ $iif(LaNgTu ison %r,LaNgTu) $+ , $+ $iif(vuichat ison %r,vuichat) Xóc Diã: %xocdia1 %xocdia2 %xocdia3 %xocdia4 %xocdia.dapan
+      .noticeVC $iif(LangTuBuon ison %r,LangTuBuon) $+ , $+ $iif(LaNgTu ison %r,LaNgTu) $+ , $+ $iif(LangTuBuon-HD ison %r,LangTuBuon-HD) $+ , $+ $iif(vuichat ison %r,vuichat) Xóc Diã: %xocdia1 %xocdia2 %xocdia3 %xocdia4 %xocdia.dapan
     }
     if ($1 == TaXi) && ($2) && ($3) && ($4) {
       set %xingau.diem.1 $2 | set %xingau.diem.2 $3 | set %xingau.diem.3 $4
       msgVC $nick 04Tài Xi~u: %xingau.diem.1 %xingau.diem.2 %xingau.diem.3
-      .noticeVC $iif(LangTuBuon ison %r,LangTuBuon) $+ , $+ $iif(LaNgTu ison %r,LaNgTu) $+ , $+ $iif(vuichat ison %r,vuichat) 04Tài Xi~u: %xingau.diem.1 %xingau.diem.2 %xingau.diem.3
+      .noticeVC $iif(LangTuBuon ison %r,LangTuBuon) $+ , $+ $iif(LaNgTu ison %r,LaNgTu) $+ , $+ $iif(LangTuBuon-HD ison %r,LangTuBuon-HD) $+ , $+ $iif(vuichat ison %r,vuichat) 04Tài Xi~u: %xingau.diem.1 %xingau.diem.2 %xingau.diem.3
     }
   }
   if ($1 == !tiepmau) {
@@ -621,4 +622,20 @@ on *:UNOTIFY:{
 }
 on *:NOTIFY:{
   if (ChanServ == $nick) { OperGameUnicode | if (r !isin $usermode) { identify 123456 Games } | if ($me ison #thienthan) { msg #thienthan  12ALERT:  Services Online! } }
+}
+on *:CTCPREPLY:VERSION*: {
+  echo -t %r $nick is using IRC client: $2-
+  if ((*-HD iswm $nick) && (($2 == AdiIRC) || ($2 == mIRC))) {
+    ;sapart $nick %r
+    ;kline $nick 15m Client is BANED
+    ;echo -t %r BAN $nick vì dùng client $2-
+  }
+}
+
+on *:snotice:*:{
+  if (*nickname is registered and protected* iswm $1-) {
+    if ($network == TorViet) { 
+      nickserv identify k49XtT
+    }
+  }
 }
