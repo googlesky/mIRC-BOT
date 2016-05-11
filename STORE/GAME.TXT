@@ -15,4 +15,3 @@ CauThanhNgu
 DonGian
 TypeNguoc
 NotNhacVui
-GameNhom

@@ -1,99 +1,18 @@
-ngoisao.net /rss/cuoi.rss
-HTTP/1.1 200 OK
-Server: Fengine/1.5.2
-Date: Fri, 15 May 2015 12:21:58 GMT
-Content-Type: application/xml; charset=utf-8
+www.eva.vn /rss/rss.php/169
+HTTP/1.1 301 Moved Permanently
+Server: 24h.com.vn
+Date: Wed, 11 May 2016 02:51:30 GMT
+Content-Type: text/html
+Content-Length: 193
 Connection: close
-Vary: Accept-Encoding
-Set-Cookie: device_env=4; expires=Fri, 22-May-2015 12:21:57 GMT; path=/; domain=vnexpress.net
-server: web_141.174
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
-<channel>
-<title>Cười - Ngôi sao RSS</title>
-<description>Ngoisao RSS</description>
-<pubDate>Fri, 15 May 2015 19:21:57 +0700</pubDate>
-<generator>ngoisao.net:http://ngoisao.net/rss</generator>
-<link>http://ngoisao.net/rss/cuoi.rss</link>
-<item>
-<title>Tình yêu của 'anh hùng bàn phím'</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/cuoi/tinh-yeu-cua-anh-hung-ban-phim-3155303.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/03/09/tinhyeucuaanhhungbanphim-1425898492_1425898511_210x158.jpg" ></a></br>Có nhiều khi gục đầu bên Keyboard. Anh vô tình nhấn Shift viết tên em.]]></description>
-<pubDate>Tue, 10 Mar 2015 13:15:00 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/cuoi/tinh-yeu-cua-anh-hung-ban-phim-3155303.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/cuoi/tinh-yeu-cua-anh-hung-ban-phim-3155303.html</guid>
-<slash:comments>0</slash:comments>
-</item>
-<item>
-<title>Đẹp như tranh</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/cuoi/dep-nhu-tranh-3155299.html"><img width=210 height=158 src="http://c1.f22.img.vnecdn.net/2015/03/09/depnhutranh-1425897523_1425897536_210x158.jpg" ></a></br>Một cô gái hỏi: "Anh ơi, bên anh là studio đúng không?".]]></description>
-<pubDate>Tue, 10 Mar 2015 00:01:00 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/cuoi/dep-nhu-tranh-3155299.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/cuoi/dep-nhu-tranh-3155299.html</guid>
-<slash:comments>0</slash:comments>
-</item>
-<item>
-<title>Thật thà</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/cuoi/that-tha-3154977.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/03/09/thattha3-1425872674_1425872686_210x158.jpg" ></a></br>Trung úy tập hợp trung đội tân binh lại: "Trước khi nhập ngũ ai trong các anh từng uống rượu?".]]></description>
-<pubDate>Mon, 09 Mar 2015 13:15:00 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/cuoi/that-tha-3154977.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/cuoi/that-tha-3154977.html</guid>
-<slash:comments>0</slash:comments>
-</item>
-<item>
-<title>Chỗ nào nóng nhất</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/cuoi/cho-nao-nong-nhat-3154833.html"><img width=210 height=158 src="http://c1.f23.img.vnecdn.net/2015/03/09/chonaonongnhat-1425863104_1425863119_210x158.jpg" ></a></br>Ba ông khách du lịch ngồi nói khoác với nhau. Ông thứ nhất: "Ở nước tôi, thời tiết nóng tới mức người vừa toát mồ hôi ra là bay hơi được rồi".]]></description>
-<pubDate>Mon, 09 Mar 2015 08:52:14 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/cuoi/cho-nao-nong-nhat-3154833.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/cuoi/cho-nao-nong-nhat-3154833.html</guid>
-<slash:comments>0</slash:comments>
-</item>
-<item>
-<title>Sắp xếp không hợp lý</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/cuoi/sap-xep-khong-hop-ly-3153851.html"><img width=210 height=158 src="http://c1.f22.img.vnecdn.net/2015/03/06/sapxepkhonghoply-1425638914_1425638926_210x158.jpg" ></a></br>Ba sinh viên ngồi nói chuyện với nhau về cấu tạo cơ thể con người. Sinh viên cơ khí khen: "Các khớp nối cơ thể thật hoàn hảo".]]></description>
-<pubDate>Sun, 08 Mar 2015 13:15:00 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/cuoi/sap-xep-khong-hop-ly-3153851.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/cuoi/sap-xep-khong-hop-ly-3153851.html</guid>
-<slash:comments>0</slash:comments>
-</item>
-<item>
-<title>Giảm nhầm đối tượng</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/cuoi/giam-nham-doi-tuong-3153846.html"><img width=210 height=158 src="http://c1.f21.img.vnecdn.net/2015/03/06/giamnhamdoituong-1425638393_1425638408_210x158.jpg" ></a></br>Một người phụ nữ đến trung tâm thẩm mỹ xin tư vấn để giảm cân thật nhanh.]]></description>
-<pubDate>Sun, 08 Mar 2015 00:01:00 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/cuoi/giam-nham-doi-tuong-3153846.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/cuoi/giam-nham-doi-tuong-3153846.html</guid>
-<slash:comments>0</slash:comments>
-</item>
-<item>
-<title>Thời gian chầm chậm trôi</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/cuoi/thoi-gian-cham-cham-troi-3153843.html"><img width=210 height=158 src="http://c1.f22.img.vnecdn.net/2015/03/06/thoigianchamchamtroi-1425638137_1425638148_210x158.jpg" ></a></br>"Ôi! Lần đầu tiên tao nhìn thấy được thời gian đang chầm chậm trôi đi", một cậu nói với bạn.]]></description>
-<pubDate>Sat, 07 Mar 2015 13:15:00 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/cuoi/thoi-gian-cham-cham-troi-3153843.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/cuoi/thoi-gian-cham-cham-troi-3153843.html</guid>
-<slash:comments>0</slash:comments>
-</item>
-<item>
-<title>Hỏi đúng một câu</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/cuoi/hoi-dung-mot-cau-3153841.html"><img width=210 height=158 src="http://c1.f22.img.vnecdn.net/2015/03/06/hoidungmotcau-1425637934_1425637947_210x158.jpg" ></a></br>Một cậu khoe: "Mỗi lần tao lên trả bài là thầy chỉ hói có một câu rồi cho về!".]]></description>
-<pubDate>Sat, 07 Mar 2015 00:01:00 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/cuoi/hoi-dung-mot-cau-3153841.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/cuoi/hoi-dung-mot-cau-3153841.html</guid>
-<slash:comments>0</slash:comments>
-</item>
-<item>
-<title>Tài hùng biện của sếp</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/cuoi/tai-hung-bien-cua-sep-3153367.html"><img width=210 height=158 src="http://c1.f21.img.vnecdn.net/2015/03/05/taihungbiencuasep-1425553774_1425553785_210x158.jpg" ></a></br>Cô thư ký khoe: "Cậu biết không, sếp của tớ có tài hùng biện. Có lần ổng nói hơn một tiếng đồng hồ không nghỉ, và công nhân vỗ tay không ngớt".]]></description>
-<pubDate>Fri, 06 Mar 2015 13:15:00 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/cuoi/tai-hung-bien-cua-sep-3153367.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/cuoi/tai-hung-bien-cua-sep-3153367.html</guid>
-<slash:comments>0</slash:comments>
-</item>
-<item>
-<title>Thay đổi</title>
-<description><![CDATA[<a href="http://ngoisao.net/tin-tuc/thu-gian/cuoi/thay-doi-3153364.html"><img width=210 height=158 src="http://c1.f24.img.vnecdn.net/2015/03/05/thaydoi-1425553208_1425553218_210x158.jpg" ></a></br>Nữ diễn viên sân khấu đau khổ về chứng căng thẳng thần kinh.]]></description>
-<pubDate>Fri, 06 Mar 2015 00:01:00 +0700</pubDate>
-<link>http://ngoisao.net/tin-tuc/thu-gian/cuoi/thay-doi-3153364.html</link>
-<guid>http://ngoisao.net/tin-tuc/thu-gian/cuoi/thay-doi-3153364.html</guid>
-<slash:comments>0</slash:comments>
-</item>
-</channel>
-</rss>
+Location: http://eva.vn/rss/rss.php/169
+Expires: Thu, 01 Jan 1970 00:00:01 GMT
+Cache-Control: no-cache
+Pragma: no-cache
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body bgcolor="white">
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center> Website 24h.com.vn </center>
+</body>
+</html>

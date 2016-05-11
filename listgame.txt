@@ -1,7 +1,7 @@
-BaiCao
 TaiXiu
 XiDach
-SanThu
+War
+ConGiap
+Loto
 BoiCa
-BangXoSo
-SoBD
+BangVeSo

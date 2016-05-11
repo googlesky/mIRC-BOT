@@ -13,10 +13,8 @@ http://www.24h.com.vn/upload/rss/tintuctrongngay.rss
 http://www.24h.com.vn/upload/rss/bongda.rss
 http://www.24h.com.vn/upload/rss/anninhhinhsu.rss
 http://www.24h.com.vn/upload/rss/thoitrang.rss
-http://www.24h.com.vn/upload/rss/thoitranghitech.rss
 http://www.24h.com.vn/upload/rss/taichinhbatdongsan.rss
 http://www.24h.com.vn/upload/rss/amthuc.rss
-http://www.24h.com.vn/upload/rss/lamdep.rss
 http://www.24h.com.vn/upload/rss/phim.rss
 http://www.24h.com.vn/upload/rss/giaoducduhoc.rss
 http://www.24h.com.vn/upload/rss/bantrecuocsong.rss
@@ -25,7 +23,6 @@ http://www.24h.com.vn/upload/rss/thethao.rss
 http://www.24h.com.vn/upload/rss/phithuongkyquac.rss
 http://www.24h.com.vn/upload/rss/congnghethongtin.rss
 http://www.24h.com.vn/upload/rss/otoxemay.rss
-http://www.24h.com.vn/upload/rss/thitruongtieudung.rss
 http://www.24h.com.vn/upload/rss/dulich.rss
 http://www.24h.com.vn/upload/rss/suckhoedoisong.rss
 http://www.24h.com.vn/upload/rss/cuoi24h.rss
@@ -48,8 +45,8 @@ http://ngoisao.net/rss/lam-dep.rss
 http://ngoisao.net/rss/tam-tinh.rss
 http://ngoisao.net/rss/dan-choi.rss
 http://ngoisao.net/rss/trac-nghiem.rss
+http://ngoisao.net/rss/cuoi.rss
 http://ngoisao.net/rss/an-choi-xem.rss
-http://ngoisao.net/rss/thi-anh.rss
 http://ngoisao.net/rss/choi-blog.rss
 http://ngoisao.net/rss/sach-hay.rss
 http://ngoisao.net/rss/go-roi.rss
@@ -61,7 +58,6 @@ http://www.eva.vn/rss/rss.php/20
 http://www.eva.vn/rss/rss.php/66
 http://www.eva.vn/rss/rss.php/85
 http://www.eva.vn/rss/rss.php/10
-http://www.eva.vn/rss/rss.php/169
 http://www.eva.vn/rss/rss.php/162
 http://www.eva.vn/rss/rss.php/2
 http://www.eva.vn/rss/rss.php/40

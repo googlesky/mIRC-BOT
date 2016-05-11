@@ -6,11 +6,9 @@ War
 ConGiap
 SanThu
 RutTham
-OanTuTi
 Loto
 BauCua
 BoiCa
 BangVeSo
 BangXoSo
 XocDia
-SoBD

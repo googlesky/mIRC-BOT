@@ -1,7 +1,0 @@
-ChonGia
-ChiecNon
-XiDach
-TenFilm
-GiamDan
-DonGian
-TypeNguoc
